@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/test_left_menu_back"
+    android:orientation="vertical"
+>
+    <!--左侧菜单 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@color/colorPrimaryDark"
+        android:paddingLeft="@dimen/dimen_15"
+        android:paddingTop="@dimen/dimen_80"
+    >
+        <ImageView
+            android:id="@+id/iv_left_header"
+            android:layout_width="@dimen/dimen_60"
+            android:layout_height="@dimen/dimen_60"
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:src="@mipmap/ic_launcher"
+        />
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="@dimen/dimen_180"
+            android:layout_height="@dimen/dimen_40"
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:layout_toRightOf="@id/iv_left_header"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="itisiitisiitisi"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/txtsize_30"
+        />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_0"
+        android:layout_weight="1"
+        android:orientation="vertical"
+
+    >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="左侧菜单的地方"
+            />
+    </LinearLayout>
+</LinearLayout>

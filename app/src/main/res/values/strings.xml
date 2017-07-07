@@ -1,3 +1,37 @@
 <resources>
-    <string name="app_name">GuiZhou</string>
+    <string name="app_name">abcdefg</string>
+
+    <string name="menu_home">主页</string>
+    <string name="menu_news">新闻</string>
+    <string name="menu_guizhou">贵州</string>
+    <string name="menu_leisure">休闲</string>
+    <string name="menu_chat">聊天</string>
+
+    <string name="left_menu_agenda">日程安排</string>
+    <string name="left_menu_birthday">生日提醒</string>
+    <string name="left_menu_account">随手记帐</string>
+    <string name="left_menu_footprint">我的足迹</string>
+    <string name="left_menu_album">我的相册</string>
+    <string name="left_menu_collection">我的收藏</string>
+    <string name="left_menu_about">关于我们</string>
+
+
+    <string name="icon_more">更多</string>
+    <string name="icon_close">关闭</string>
+    <string name="icon_temperature">18℃</string>
+
+
+    <string name="home_menu_recuit">招聘</string>
+    <string name="home_menu_rental">租房</string>
+    <string name="home_menu_read">阅读</string>
+    <string name="home_menu_select">精选</string>
+
+    <string name="guizhou_nation">民族</string>
+    <string name="guizhou_scenic">景点</string>
+    <string name="guizhou_speciality">特产</string>
+    <string name="guizhou_blacklist">黑名单</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

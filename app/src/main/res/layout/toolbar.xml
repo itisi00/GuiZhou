@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+                                   android:id="@+id/toolbar"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="45dp"
+                                   android:background="?attr/colorAccent"
+                                   android:gravity="center"
+
+>
+    <!-- TODO: 调整toolbar的样式 -->
+    <!--android:minHeight="?attr/actionBarSize"-->
+    <!--style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"-->
+    <!--style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"-->
+    <TextView
+        android:id="@+id/toolbar_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:maxLines="1"
+        android:paddingRight="10dp"
+        android:textColor="@color/colorWhite"/>
+    <TextView
+        android:id="@+id/toolbar_title"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:scrollHorizontally="true"
+        android:textColor="@color/colorWhite"/>
+</android.support.v7.widget.Toolbar>

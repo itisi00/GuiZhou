@@ -1,30 +1,129 @@
 apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+apply plugin: 'realm-android'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
     defaultConfig {
-        applicationId "com.itisi.guizhou"
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        resConfigs "zh"
+        multiDexEnabled true
+        renderscriptTargetApi 23 //高斯模糊?
+        renderscriptSupportModeEnabled true //高斯模糊?
+
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+//        jackOptions{
+//            enabled true
+//        }
+        ndk {
+
+        }
     }
+//    compileOptions{
+//        sourceCompatibility = JavaVersion.VERSION_1_8
+//        targetCompatibility = JavaVersion.VERSION_1_8
+//    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
 
+
+}
+configurations.all {
+    resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+//    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+//        def requested = details.requested
+//        if (requested.group == 'com.android.support') {
+//            if (!requested.name.startsWith("multidex")) {
+//                details.useVersion '26.+'
+//            }
+//        }
+//    }
+}
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
+    //noinspection GradleCompatible
+    //base
+    compile rootProject.ext.dependencies["appcompat-v7"]
+    compile rootProject.ext.dependencies["design"]
+    compile rootProject.ext.dependencies["recyclerview-v7"]
+    compile rootProject.ext.dependencies["cardview-v7"]
+
+    //ui
+
+    //    compile rootProject.ext.dependencies["material-calendarview"]
+
+    //    compile rootProject.ext.dependencies["materialsearchview"]
+
+    //    compile rootProject.ext.dependencies["multiline-collapsingtoolbar"]
+    compile rootProject.ext.dependencies["PhotoView"]
+    compile rootProject.ext.dependencies["glide-transformations"]
+    compile rootProject.ext.dependencies["html-textview"]
+    compile rootProject.ext.dependencies["flowingdrawer"]
+    compile rootProject.ext.dependencies["nineoldandroids"]
+    compile rootProject.ext.dependencies["swipebacklayout"]
+    compile rootProject.ext.dependencies["bottom-navigation"]
+    compile rootProject.ext.dependencies["phoenix"]
+    compile rootProject.ext.dependencies["statusbarutil"]
+    compile rootProject.ext.dependencies["tastytoast"]
+
+
+
+    //    compile rootProject.ext.dependencies["rxgalleryfinal"]
+
+    // anim
+
+    //rx
+//    compile rootProject.ext.dependencies["rxjava"]
+//    compile rootProject.ext.dependencies["rxandroid"]
+    compile rootProject.ext.dependencies["rxpermissions"]
+    //network
+
+    //    compile rootProject.ext.dependencies["gson"]
+    compile rootProject.ext.dependencies["retrofit"]
+    compile rootProject.ext.dependencies["retrofit-converter-gson"]
+    compile rootProject.ext.dependencies["retrofit-adapter-rxjava2"]
+    //    compile rootProject.ext.dependencies["okhttp"]
+    compile rootProject.ext.dependencies["okhttp-logging-interceptor"]
+    compile rootProject.ext.dependencies["glide"]
+    compile rootProject.ext.dependencies["glide-okhttp3-integration"]
+    compile rootProject.ext.dependencies["jsoup"]
+    //di
+    compile rootProject.ext.dependencies["dagger"]
+    apt rootProject.ext.dependencies["dagger-compiler"]
+    compile rootProject.ext.dependencies["butterknife"]
+    apt rootProject.ext.dependencies["butterknife-compiler"]
+    provided rootProject.ext.dependencies["annotation"]
+    //other
+    compile rootProject.ext.dependencies["multidex"]
+    compile rootProject.ext.dependencies["logger"]
+    compile rootProject.ext.dependencies["fragmentation"]
+    compile rootProject.ext.dependencies["crashreport"]
+    //canary
+    debugCompile rootProject.ext.dependencies["blockcanary-android"]
+    releaseCompile rootProject.ext.dependencies["blockcanary-no-op"]
+    debugCompile rootProject.ext.dependencies["leakcanary-android"]
+    releaseCompile rootProject.ext.dependencies["leakcanary-android-no-op"]
+
+    //    compile 'com.android.support:support-v4:26.+' //我坚信其他库引用了
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'cn.finalteam.rxgalleryfinal:library:1.0.8'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    // support v4 新增文件的时候 自己会恢复
+//    compile 'com.android.support:support-v4:26.+'
     testCompile 'junit:junit:4.12'
 }
