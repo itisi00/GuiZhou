@@ -1,33 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-                                   android:id="@+id/toolbar"
-                                   android:layout_width="match_parent"
-                                   android:layout_height="45dp"
-                                   android:background="?attr/colorAccent"
-                                   android:gravity="center"
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar_all"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    android:gravity="center"
+    android:theme="@style/ToolbarTheme"
+    app:subtitleTextColor="@color/colorWhite"
+    app:titleTextColor="@color/colorWhite"
 
->
-    <!-- TODO: 调整toolbar的样式 -->
-    <!--android:minHeight="?attr/actionBarSize"-->
-    <!--style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"-->
-    <!--style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"-->
-    <TextView
-        android:id="@+id/toolbar_subtitle"
-        android:layout_width="wrap_content"
+    >
+    <!--
+        需要用代码控制
+    app:navigationIcon="@mipmap/menu_back"-->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:maxLines="1"
-        android:paddingRight="10dp"
-        android:textColor="@color/colorWhite"/>
-    <TextView
-        android:id="@+id/toolbar_title"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:lines="1"
-        android:scrollHorizontally="true"
-        android:textColor="@color/colorWhite"/>
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="@dimen/d_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:maxLines="1"
+            tools:text="放大委屈的氛围"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/txt_18"
+            android:layout_marginRight="@dimen/d_20"
+            />
+
+        <TextView
+            android:id="@+id/toolbar_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d_10"
+            android:layout_marginRight="@dimen/d_10"
+            android:visibility="gone"
+            android:textSize="@dimen/txt_15"
+            android:text="更多"
+            />
+
+        <!--<android.support.v7.widget.SearchView-->
+        <!--android:id="@+id/toolbar_search"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:imeOptions="actionSearch"-->
+        <!--app:searchHintIcon="@mipmap/menu_search"-->
+        <!--app:closeIcon="@mipmap/menu_close2"-->
+        <!--app:defaultQueryHint="搜索"-->
+        <!--/>-->
+
+    </LinearLayout>
 </android.support.v7.widget.Toolbar>

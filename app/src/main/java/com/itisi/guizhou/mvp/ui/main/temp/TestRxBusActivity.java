@@ -1,13 +1,16 @@
 package com.itisi.guizhou.mvp.ui.main.temp;
 
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
+import com.itisi.guizhou.mvp.ui.main.MainActivity;
 import com.itisi.guizhou.mvp.ui.main.MainContract;
 import com.itisi.guizhou.mvp.ui.main.MainPresenter;
-import com.itisi.guizhou.mvp.ui.main.MainActivity;
+import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.RxBus;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 
@@ -24,6 +27,32 @@ public class TestRxBusActivity extends RootActivity<MainPresenter> implements Ma
     @Override
     protected int getLayoutId() {
         return R.layout.activity_test_rx_bus;
+    }
+
+    @Override
+    protected String setToolbarTitle() {
+        return "测试页面测试标题测试页面测试标题测试页面测试标题";
+    }
+
+//    @Override
+//    protected String setToolbarMoreTxt() {
+//        return "更多";
+//    }
+
+    @Override
+    protected int setMenuLayoutId() {
+        return R.menu.test_menu;
+    }
+
+    @Override
+    protected Toolbar.OnMenuItemClickListener setMenuItemClickListener() {
+        return new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                ToastUtil.Success(item.getTitle().toString());
+                return false;
+            }
+        };
     }
 
     @Override

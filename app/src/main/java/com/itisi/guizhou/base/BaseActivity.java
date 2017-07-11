@@ -2,6 +2,7 @@ package com.itisi.guizhou.base;
 
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.widget.Toolbar;
 import android.view.ViewGroup;
 
 import com.itisi.guizhou.app.App;
@@ -27,6 +28,7 @@ import javax.inject.Inject;
 public abstract class BaseActivity <T extends BasePresenter>extends NoMVPActivity implements BaseView{
     @Inject
     protected T mPresenter;
+
 
     /**
      * 注入依赖

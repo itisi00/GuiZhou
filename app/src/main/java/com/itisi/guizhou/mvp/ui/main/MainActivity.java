@@ -65,6 +65,16 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
     }
 
     @Override
+    protected boolean setIsNavigationIconShow() {
+        return false;
+    }
+
+    @Override
+    protected String setToolbarTitle() {
+        return "可以显示嘛";
+    }
+
+    @Override
     protected void initInject() {
         getActivityComponent().inject(this);
     }
@@ -157,7 +167,6 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
      * 初始化页面
      */
     private void initMainPage() {
-        //fragment 页面初始化
         getFragments();
         setDefaultFragment();
     }
@@ -229,6 +238,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
                 .setFirstSelectedPosition(0)
                 .initialise();
     }
+
 
     @Override
     protected boolean setSwipeEnabled() {

@@ -5,49 +5,105 @@
     android:layout_height="match_parent"
     android:background="@mipmap/test_left_menu_back"
     android:orientation="vertical"
->
+    >
     <!--左侧菜单 -->
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="150dp"
         android:background="@color/colorPrimaryDark"
-        android:paddingLeft="@dimen/dimen_15"
-        android:paddingTop="@dimen/dimen_80"
-    >
+        android:paddingLeft="@dimen/d_15"
+        >
+
         <ImageView
             android:id="@+id/iv_left_header"
-            android:layout_width="@dimen/dimen_60"
-            android:layout_height="@dimen/dimen_60"
-            android:layout_marginLeft="@dimen/dimen_10"
-            android:src="@mipmap/ic_launcher"
-        />
+            android:layout_width="@dimen/d_60"
+            android:layout_height="@dimen/d_60"
+            android:layout_marginLeft="@dimen/d_10"
+            android:src="@mipmap/menu_left_header"
+            android:layout_centerVertical="true"
+            />
+
         <TextView
             android:id="@+id/tv_username"
-            android:layout_width="@dimen/dimen_180"
-            android:layout_height="@dimen/dimen_40"
-            android:layout_marginLeft="@dimen/dimen_10"
+            android:layout_width="@dimen/d_180"
+            android:layout_height="@dimen/d_40"
+            android:layout_marginLeft="@dimen/d_10"
             android:layout_toRightOf="@id/iv_left_header"
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="1"
             android:text="itisiitisiitisi"
             android:textColor="@color/colorAccent"
-            android:textSize="@dimen/txtsize_30"
-        />
+            android:textSize="@dimen/txt_30"
+            android:layout_centerVertical="true"
+
+            />
     </RelativeLayout>
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_0"
-        android:layout_weight="1"
-        android:orientation="vertical"
+        android:layout_height="@dimen/d_0"
+        android:layout_weight="1">
 
-    >
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="左侧菜单的地方"
-            />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/d_10"
+            >
+
+            <TextView
+                android:id="@+id/menu_left_calenda"
+                style="@style/MenuLeft"
+                android:text="我的日程"
+                android:drawableLeft="@mipmap/menu_left_calendar"
+                />
+
+            <TextView
+                android:id="@+id/menu_left_birthday"
+                style="@style/MenuLeft"
+                android:text="生日提醒"
+                android:drawableLeft="@mipmap/menu_left_birthday"
+                />
+            <TextView
+                android:id="@+id/menu_left_account"
+                style="@style/MenuLeft"
+                android:text="随手记账"
+                android:drawableLeft="@mipmap/menu_left_account"
+                />
+            <TextView
+                android:id="@+id/menu_left_zuji"
+                style="@style/MenuLeft"
+                android:text="我的足迹"
+                android:drawableLeft="@mipmap/menu_left_zuji"
+                />
+            <TextView
+                android:id="@+id/menu_left_photo"
+                style="@style/MenuLeft"
+                android:text="我的相册"
+                android:drawableLeft="@mipmap/menu_left_photo"
+                />
+            <TextView
+                android:id="@+id/menu_left_collection"
+                style="@style/MenuLeft"
+                android:text="我的收藏"
+                android:drawableLeft="@mipmap/menu_left_collection"
+                />
+
+            <TextView
+                android:id="@+id/menu_left_setting"
+                style="@style/MenuLeft"
+                android:text="系统设置"
+                android:drawableLeft="@mipmap/menu_left_setting"
+                />
+            <TextView
+                android:id="@+id/menu_left_about"
+                style="@style/MenuLeft"
+                android:text="关于我们"
+                android:drawableLeft="@mipmap/menu_left_about"
+                />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
 </LinearLayout>

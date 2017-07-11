@@ -9,7 +9,7 @@
     <com.yalantis.phoenix.PullToRefreshView
         android:id="@+id/pullrefresh"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_0"
+        android:layout_height="@dimen/d_0"
         android:layout_weight="1"
         >
 
@@ -17,10 +17,12 @@
             android:id="@+id/tv_test1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:background="@color/colorGray"
             android:gravity="center"
-            android:padding="@dimen/dimen_10"
-            android:text="home"
+            android:padding="@dimen/d_10"
+            android:text="@string/icon_test"
+            android:textSize="@dimen/txt_30"
+            android:textColor="@color/colorWhite"
             tools:text="home1234"
             />
 

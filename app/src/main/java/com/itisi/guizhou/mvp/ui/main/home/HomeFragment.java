@@ -2,6 +2,7 @@ package com.itisi.guizhou.mvp.ui.main.home;
 
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.View;
 import android.widget.TextView;
 
@@ -13,13 +14,15 @@ import com.yalantis.phoenix.PullToRefreshView;
 
 import butterknife.BindView;
 
+import static com.itisi.guizhou.R.id.tv_test1;
+
 
 /**
  * 首页-主页
  */
 public class HomeFragment extends RootFragment<HomePresenter> implements HomeContract.View {
 
-    @BindView(R.id.tv_test1)
+    @BindView(tv_test1)
     TextView tv_test;
     @BindView(R.id.pullrefresh)
     PullToRefreshView mPullToRefreshView;
@@ -35,6 +38,10 @@ public class HomeFragment extends RootFragment<HomePresenter> implements HomeCon
 
     @Override
     protected void initEventAndData() {
+
+        Typeface iconfont = Typeface.createFromAsset(getActivity().getAssets(), "iconfont.ttf");
+//        TextView textview = (TextView)findViewById(R.id.like);
+        tv_test.setTypeface(iconfont);
 
         tv_test.setOnClickListener(new View.OnClickListener() {
             @Override

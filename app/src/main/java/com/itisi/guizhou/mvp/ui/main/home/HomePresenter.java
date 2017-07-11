@@ -42,12 +42,12 @@ public class HomePresenter extends RxPresenter<HomeContract.View> implements Hom
                 .subscribeWith(new ResourceObserver<List<MeiZiBean>>() {
                     @Override
                     public void onNext(@NonNull List<MeiZiBean> meiZiBeen) {
-                        mView.showContent("itisi:" + meiZiBeen.size());
+                        mView.showContent("itisi:" + meiZiBeen.get(0).getCreatedAt());
                     }
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-                        Logger.i(e.getMessage());
+                        Logger.i("错误信息:"+e.getMessage());
                     }
 
                     @Override
