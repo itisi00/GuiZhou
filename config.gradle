@@ -36,7 +36,7 @@ ext{
             "phoenix"                   : "com.yalantis:phoenix:1.2.3",
             "statusbarutil"             : "com.jaeger.statusbarutil:library:1.4.0",
             "tastytoast"                : "com.sdsmdg.tastytoast:tastytoast:0.1.1",
-
+            "banner"                    : "com.youth.banner:banner:1.4.9",
 
             //主页菜单
             "flowingdrawer"             : "com.mxn.soul:flowingdrawer-core:2.0.0",

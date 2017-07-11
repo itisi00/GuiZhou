@@ -1,16 +1,6 @@
 package com.itisi.guizhou.utils;
 
-/**
- ***********************
- * 功 能:必填必填必填必填必填必填
- * 创建人:itisi
- * 邮  箱:itisivip@qq.com
- * 创建时间:2017/7/7 17:56
- * 修改人:itisi
- * 修改时间: 2017/7/7 17:56
- * 修改内容:itisi
- * *********************
- */
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
@@ -22,6 +12,7 @@ import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+
 /**
  * 对 ViewAnimationUtils.createCircularReveal() 方法的封装.
  * <p/>
@@ -29,6 +20,18 @@ import android.widget.ImageView;
  * GitHub: https://github.com/XunMengWinter
  *
  * @author ice
+ */
+
+/**
+ ***********************
+ * 功 能:新的转场动画---copy的
+ * 创建人:itisi
+ * 邮  箱:itisivip@qq.com
+ * 创建时间:2017/7/7 17:56
+ * 修改人:itisi
+ * 修改时间: 2017/7/7 17:56
+ * 修改内容:itisi
+ * *********************
  */
 public class CircularAnimUtil {
 

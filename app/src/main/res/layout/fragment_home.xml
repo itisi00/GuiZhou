@@ -1,31 +1,100 @@
-<LinearLayout
+<com.yalantis.phoenix.PullToRefreshView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pullrefresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     >
 
-    <com.yalantis.phoenix.PullToRefreshView
-        android:id="@+id/pullrefresh"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/d_0"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         >
+        <com.youth.banner.Banner
+            android:id="@+id/banner_home"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            >
+        </com.youth.banner.Banner>
 
-        <TextView
-            android:id="@+id/tv_test1"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorGray"
-            android:gravity="center"
-            android:padding="@dimen/d_10"
-            android:text="@string/icon_test"
-            android:textSize="@dimen/txt_30"
-            android:textColor="@color/colorWhite"
-            tools:text="home1234"
-            />
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/d_5"
+            android:background="@color/color0094ff"
+            >
 
-    </com.yalantis.phoenix.PullToRefreshView>
+            <TextView
+                android:id="@+id/tv_home_rental"
+                style="@style/HomeMenu"
+                android:drawableTop="@mipmap/home_menu_rental"
+                android:text="@string/home_menu_rental"
 
-</LinearLayout>
+                />
+            <TextView
+                android:id="@+id/tv_home_recuit"
+                style="@style/HomeMenu"
+                android:drawableTop="@mipmap/home_menu_recuit"
+                android:text="@string/home_menu_recuit"
+                />
+            <TextView
+                android:id="@+id/tv_home_read"
+                style="@style/HomeMenu"
+                android:drawableTop="@mipmap/home_menu_read"
+                android:text="@string/home_menu_read"
+                />
+            <TextView
+                android:id="@+id/tv_home_jingxuan"
+                style="@style/HomeMenu"
+                android:drawableTop="@mipmap/home_menu_jingxuan"
+                android:text="@string/home_menu_jingxuan"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/d_10"
+            android:paddingBottom="@dimen/d_5"
+            android:background="@color/color0094ff"
+            >
+            <TextView
+                android:id="@+id/tv_home_ittool"
+                style="@style/HomeMenu"
+                android:drawableTop="@mipmap/home_menu_tool"
+                android:text="@string/home_menu_ittool"
+
+                />
+            <TextView
+                android:id="@+id/tv_home_websit"
+                style="@style/HomeMenu"
+                android:drawableTop="@mipmap/home_menu_websit"
+                android:text="@string/home_menu_websit"
+                />
+
+            <TextView
+                android:id="@+id/tv_home_blacknum"
+                style="@style/HomeMenu"
+                android:drawableTop="@mipmap/home_menu_blacknum"
+                android:text="@string/home_menu_blacknum"
+                />
+            <TextView
+                android:id="@+id/tv_home_more"
+                style="@style/HomeMenu"
+                android:drawableTop="@mipmap/test_menu_love_white"
+                android:text="@string/home_menu_more"
+                android:visibility="invisible"
+                />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</com.yalantis.phoenix.PullToRefreshView>
+

@@ -34,20 +34,25 @@
             android:maxLines="1"
             tools:text="放大委屈的氛围"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/txt_18"
-            android:layout_marginRight="@dimen/d_20"
+            android:textSize="@dimen/txt_16"
+
             />
+        <!--android:background="?android:attr/selectableItemBackgroundBorderless"-->
+
 
         <TextView
             android:id="@+id/toolbar_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/d_10"
-            android:layout_marginRight="@dimen/d_10"
-            android:visibility="gone"
-            android:textSize="@dimen/txt_15"
-            android:text="更多"
+            android:visibility="invisible"
+            android:textSize="@dimen/txt_13"
+            android:paddingRight="@dimen/d_15"
+            tools:text="更多"
             />
+
+
+        <!--android:background="?android:attr/selectableItemBackgroundBorderless"-->
+
 
         <!--<android.support.v7.widget.SearchView-->
         <!--android:id="@+id/toolbar_search"-->

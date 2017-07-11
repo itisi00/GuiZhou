@@ -55,9 +55,34 @@
         <item name="android:textSize">@dimen/txt_18</item>
         <item name="android:drawablePadding">@dimen/d_15</item>
         <item name="android:gravity">center_vertical</item>
-        <!--<item name="android:layout_margin">@dimen/d_10</item>-->
         <item name="android:layout_marginLeft">@dimen/d_20</item>
         <item name="android:layout_marginTop">@dimen/d_10</item>
         <item name="android:layout_marginBottom">@dimen/d_10</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+        <!--
+           有界水波纹 ?android:attr/selectableItemBackground
+           无界 selectableItemBackgroundBorderless
+        -->
+    </style>
+
+    <style name="HomeMenu">
+        <item name="android:layout_width">@dimen/d_0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:drawablePadding">@dimen/d_5</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">@dimen/d_5</item>
+        <item name="android:textSize">@dimen/d_10</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+        <!--
+           有界水波纹 ?android:attr/selectableItemBackground
+           无界 selectableItemBackgroundBorderless
+        -->
+
     </style>
 </resources>

@@ -80,6 +80,7 @@ dependencies {
     compile rootProject.ext.dependencies["phoenix"]
     compile rootProject.ext.dependencies["statusbarutil"]
     compile rootProject.ext.dependencies["tastytoast"]
+    compile rootProject.ext.dependencies["banner"]
 
 
 

@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.App;
-import com.itisi.guizhou.utils.SceneAnim;
+import com.itisi.guizhou.utils.ActivityUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -241,7 +241,8 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
-        SceneAnim.closeActivityByScaleAlpha(this);
+//        finish();
+//        SceneAnim.closeActivityByScaleAlpha(this);
+        ActivityUtil.getInstance().closeActivity(this);
     }
 }

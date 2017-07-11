@@ -54,54 +54,61 @@
             >
 
             <TextView
-                android:id="@+id/menu_left_calenda"
+                android:id="@+id/menu_left_agenda"
                 style="@style/MenuLeft"
-                android:text="我的日程"
+                android:text="@string/left_menu_agenda"
                 android:drawableLeft="@mipmap/menu_left_calendar"
+
                 />
 
             <TextView
                 android:id="@+id/menu_left_birthday"
                 style="@style/MenuLeft"
-                android:text="生日提醒"
+                android:text="@string/left_menu_birthday"
                 android:drawableLeft="@mipmap/menu_left_birthday"
                 />
             <TextView
                 android:id="@+id/menu_left_account"
                 style="@style/MenuLeft"
-                android:text="随手记账"
+                android:text="@string/left_menu_account"
                 android:drawableLeft="@mipmap/menu_left_account"
                 />
             <TextView
-                android:id="@+id/menu_left_zuji"
+                android:id="@+id/menu_left_footprint"
                 style="@style/MenuLeft"
-                android:text="我的足迹"
+                android:text="@string/left_menu_footprint"
                 android:drawableLeft="@mipmap/menu_left_zuji"
                 />
             <TextView
                 android:id="@+id/menu_left_photo"
                 style="@style/MenuLeft"
-                android:text="我的相册"
+                android:text="@string/left_menu_album"
                 android:drawableLeft="@mipmap/menu_left_photo"
                 />
             <TextView
                 android:id="@+id/menu_left_collection"
                 style="@style/MenuLeft"
-                android:text="我的收藏"
+                android:text="@string/left_menu_collection"
                 android:drawableLeft="@mipmap/menu_left_collection"
                 />
 
             <TextView
                 android:id="@+id/menu_left_setting"
                 style="@style/MenuLeft"
-                android:text="系统设置"
+                android:text="@string/left_menu_setting"
                 android:drawableLeft="@mipmap/menu_left_setting"
                 />
             <TextView
                 android:id="@+id/menu_left_about"
                 style="@style/MenuLeft"
-                android:text="关于我们"
+                android:text="@string/left_menu_about"
                 android:drawableLeft="@mipmap/menu_left_about"
+                />
+            <TextView
+                android:id="@+id/menu_left_fadeback"
+                style="@style/MenuLeft"
+                android:text="@string/left_menu_feedback"
+                android:drawableLeft="@mipmap/menu_left_fadeback"
                 />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

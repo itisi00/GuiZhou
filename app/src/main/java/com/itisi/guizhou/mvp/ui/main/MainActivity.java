@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import com.ashokvarma.bottomnavigation.BadgeItem;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
@@ -32,7 +34,8 @@ import java.util.List;
 import butterknife.BindView;
 
 @UseRxBus
-public class MainActivity extends RootActivity<MainPresenter> implements MainContract.View {
+public class MainActivity extends RootActivity<MainPresenter> implements MainContract.View
+        ,View.OnClickListener{
 
     //    @BindView(R.id.tv_test)
 //    TextView tv_test;
@@ -44,6 +47,24 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
     FlowingMenuLayout fm_menu;
     @BindView(R.id.bottom_main)
     BottomNavigationBar bottom_main;
+    @BindView(R.id.menu_left_agenda)
+    TextView menu_left_agenda;
+    @BindView(R.id.menu_left_birthday)
+    TextView menu_left_birthday;
+    @BindView(R.id.menu_left_account)
+    TextView menu_left_account;
+    @BindView(R.id.menu_left_footprint)
+    TextView menu_left_footprint;
+    @BindView(R.id.menu_left_photo)
+    TextView menu_left_photo;
+    @BindView(R.id.menu_left_collection)
+    TextView menu_left_collection;
+    @BindView(R.id.menu_left_setting)
+    TextView menu_left_setting;
+    @BindView(R.id.menu_left_about)
+    TextView menu_left_about;
+    @BindView(R.id.menu_left_fadeback)
+    TextView menu_left_fadeback;
 
 
     //5个主界面
@@ -52,6 +73,8 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
     GuiZhouFragment mGuiZhouFragment;//大贵州
     LeisureFragment mLeisureFragment;//休闲
     ChatSessionFragment mChatFragment;//聊天
+
+    String[] mBottomItems = null;
 
     ClickTree mClickTree = new ClickTree(2); //点击树
     private List<Fragment> mFragments;//main 中的几个页面的fragment集合
@@ -71,7 +94,10 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 
     @Override
     protected String setToolbarTitle() {
-        return "可以显示嘛";
+        if (mBottomItems==null){
+            mBottomItems = getResources().getStringArray(R.array.bottomMenu);
+        }
+        return mBottomItems[0];
     }
 
     @Override
@@ -81,12 +107,29 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 
     @Override
     protected void initEventAndData() {
+        if (mBottomItems==null){ //这里估计不会走 因为 在 setToolbarTitle 已经获取一次了
+            mBottomItems = getResources().getStringArray(R.array.bottomMenu);
+        }
+
         initMainPage();
         initBottomNav();
         initBottomListener();
         initMenuListener();
         initDrawerMenu();
 
+        initViewListener();
+    }
+
+    private void initViewListener() {
+        menu_left_agenda.setOnClickListener(this);
+        menu_left_birthday.setOnClickListener(this);
+        menu_left_account.setOnClickListener(this);
+        menu_left_footprint.setOnClickListener(this);
+        menu_left_photo.setOnClickListener(this);
+        menu_left_collection.setOnClickListener(this);
+        menu_left_setting.setOnClickListener(this);
+        menu_left_about.setOnClickListener(this);
+        menu_left_fadeback.setOnClickListener(this);
     }
 
     /**
@@ -137,6 +180,8 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
                         // transaction.commit();
                         transaction.commitAllowingStateLoss();
                     }
+
+                    changeToolbarTitle(position);
                 }
             }
 
@@ -161,6 +206,10 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
             }
         });
 
+    }
+
+    private void changeToolbarTitle(int position){
+        setToolbarTitle(mBottomItems[position]);
     }
 
     /**
@@ -224,21 +273,38 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
         bottom_main
                 .setActiveColor(R.color.colorAccent)
                 .setInActiveColor(R.color.colorGray)
-                .addItem(new BottomNavigationItem(R.mipmap.test_menu_home_white, R.string.menu_home)
+                .addItem(new BottomNavigationItem(R.mipmap.test_menu_home_white, mBottomItems[0])
                         .setActiveColor("#00776a"))
-                .addItem(new BottomNavigationItem(R.mipmap.test_menu_time_white, R.string.menu_news)
+                .addItem(new BottomNavigationItem(R.mipmap.test_menu_time_white, mBottomItems[1] )
                         .setActiveColor("#8d6b63")
                         .setBadgeItem(numberBadgeItem))
-                .addItem(new BottomNavigationItem(R.mipmap.test_menu_love_white, R.string.menu_guizhou)
+                .addItem(new BottomNavigationItem(R.mipmap.test_menu_love_white, mBottomItems[2])
                         .setActiveColor("#2293f4"))
-                .addItem(new BottomNavigationItem(R.mipmap.test_menu_music_white, R.string.menu_leisure)
+                .addItem(new BottomNavigationItem(R.mipmap.test_menu_music_white,mBottomItems[3])
                         .setActiveColor("#ff4081"))
-                .addItem(new BottomNavigationItem(R.mipmap.test_menu_chat_white, R.string.menu_chat)
+                .addItem(new BottomNavigationItem(R.mipmap.test_menu_chat_white, mBottomItems[4] )
                         .setActiveColor("#9966cc"))
                 .setFirstSelectedPosition(0)
                 .initialise();
     }
 
+
+    @Override
+    protected String setToolbarMoreTxt() {
+        setToolbarMoreClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtil.Error("天气界面?");
+            }
+        });
+        return "32℃";
+        // TODO: 2017/7/11 得请求网络天气
+    }
+
+//    @Override
+//    protected void setToolbarMoreClickListener(View.OnClickListener clickListener) {
+//        super.setToolbarMoreClickListener(clickListener);
+//    }
 
     @Override
     protected boolean setSwipeEnabled() {
@@ -276,7 +342,38 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
     public void stateSuccess() {
 
     }
-
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.menu_left_agenda:
+                ToastUtil.Success(menu_left_agenda.getText().toString());
+                break;
+            case R.id.menu_left_birthday:
+                ToastUtil.Success(menu_left_birthday.getText().toString());
+                break;
+            case R.id.menu_left_account:
+                ToastUtil.Success(menu_left_account.getText().toString());
+                break;
+            case R.id.menu_left_footprint:
+                ToastUtil.Success(menu_left_footprint.getText().toString());
+                break;
+            case R.id.menu_left_photo:
+                ToastUtil.Success(menu_left_photo.getText().toString());
+                break;
+            case R.id.menu_left_collection:
+                ToastUtil.Success(menu_left_collection.getText().toString());
+                break;
+            case R.id.menu_left_setting:
+                ToastUtil.Success(menu_left_setting.getText().toString());
+                break;
+            case R.id.menu_left_about:
+                ToastUtil.Success(menu_left_about.getText().toString());
+                break;
+            case R.id.menu_left_fadeback:
+                ToastUtil.Success(menu_left_fadeback.getText().toString());
+                break;
+        }
+    }
 
     @Override
     public void onBackPressed() {
@@ -294,4 +391,6 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
             }
         }
     }
+
+
 }

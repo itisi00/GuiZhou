@@ -1,0 +1,21 @@
+
+来源:https://github.com/wasabeef/glide-transformations
+Transformations
+
+Crop
+
+CropTransformation, CropCircleTransformation, CropSquareTransformation, RoundedCornersTransformation
+
+Color
+
+ColorFilterTransformation, GrayscaleTransformation
+
+Blur
+
+BlurTransformation
+
+Mask
+
+MaskTransformation
+
+GPU Filter (use GP

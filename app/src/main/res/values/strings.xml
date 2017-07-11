@@ -1,11 +1,19 @@
 <resources>
     <string name="app_name">abcdefg</string>
 
-    <string name="menu_home">主页</string>
-    <string name="menu_news">新闻</string>
-    <string name="menu_guizhou">贵州</string>
-    <string name="menu_leisure">休闲</string>
-    <string name="menu_chat">聊天</string>
+    <string-array name="bottomMenu">
+        <item name="menu_home">主页</item>
+        <item name="menu_news">新闻</item>
+        <item name="menu_guizhou">大贵州</item>
+        <item name="menu_leisure">休闲</item>
+        <item name="menu_chat">会话</item>
+    </string-array>
+
+    <!--<string name="menu_home">主页</string>-->
+    <!--<string name="menu_news">新闻</string>-->
+    <!--<string name="menu_guizhou">贵州</string>-->
+    <!--<string name="menu_leisure">休闲</string>-->
+    <!--<string name="menu_chat">聊天</string>-->
 
     <string name="left_menu_agenda">日程安排</string>
     <string name="left_menu_birthday">生日提醒</string>
@@ -13,7 +21,9 @@
     <string name="left_menu_footprint">我的足迹</string>
     <string name="left_menu_album">我的相册</string>
     <string name="left_menu_collection">我的收藏</string>
+    <string name="left_menu_setting">系统设置</string>
     <string name="left_menu_about">关于我们</string>
+    <string name="left_menu_feedback">意见反馈</string>
 
 
     <string name="icon_more">更多</string>
@@ -24,12 +34,18 @@
     <string name="home_menu_recuit">招聘</string>
     <string name="home_menu_rental">租房</string>
     <string name="home_menu_read">阅读</string>
-    <string name="home_menu_select">精选</string>
+    <string name="home_menu_jingxuan">精选</string>
 
-    <string name="guizhou_nation">民族</string>
-    <string name="guizhou_scenic">景点</string>
-    <string name="guizhou_speciality">特产</string>
-    <string name="guizhou_blacklist">黑名单</string>
+    <string name="home_menu_more">更多</string>
+    <string name="home_menu_blacknum">黑名单</string>
+    <string name="home_menu_websit">推荐网站</string>
+    <string name="home_menu_ittool">IT工具</string>
+
+
+    <string name="guizhou_menu_university">贵州大学</string>
+    <string name="guizhou_menu_scenic">贵州景点</string>
+    <string name="guizhou_menu_speciality">贵州特产</string>
+    <string name="guizhou_menu_shiwuzhapling">失物招领</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -40,5 +56,6 @@
 
     <!--icon font-->
     <string name="icon_test">&#xe60c; &#xe627;\r\n名称?</string>
+
     <!--icon font-->
 </resources>
