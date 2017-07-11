@@ -33,6 +33,7 @@ public interface FragmentComponent {
     void inject(NewsFragment fragment);
     void inject(GuiZhouFragment fragment);
     void inject(LeisureFragment fragment);
+;
 
     //
 }

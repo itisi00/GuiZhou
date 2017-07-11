@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.ui.main;
+package com.itisi.guizhou.mvp.ui.user.register;
 
 import com.itisi.guizhou.base.RxPresenter;
 import com.itisi.guizhou.mvp.model.DataManager;
@@ -10,37 +10,35 @@ import javax.inject.Inject;
  * 功 能:必填必填必填必填必填必填
  * 创建人:itisi
  * 邮  箱:itisivip@qq.com
- * 创建时间:2017/7/6 11:09
+ * 创建时间:2017/7/11 17:58
  * 修改人:itisi
- * 修改时间: 2017/7/6 11:09
+ * 修改时间: 2017/7/11 17:58
  * 修改内容:itisi
  * *********************
  */
 
-public class MainPresenter extends RxPresenter<MainContract.View> implements MainContract.Presenter {
+public class RegistPresenter extends RxPresenter<RegistContract.View> implements RegistContract.Presenter {
     private DataManager mDataManager;
 
     @Inject
-    public MainPresenter(DataManager dataManager) {
+    public RegistPresenter(DataManager dataManager) {
         mDataManager = dataManager;
     }
 
     @Override
-    public void attachView(MainContract.View view) {
+    public void attachView(RegistContract.View view) {
         super.attachView(view);
         retisterEvent();
     }
-
     /**
      * 对retrofit 发情的请求 进行订阅?
      */
     private void retisterEvent() {
-    // TODO: 2017/7/6  托管订阅???
 
     }
 
     @Override
     public void testShowPresenter(boolean isShow) {
-        mView.testShowView("itisi:"+isShow);
+
     }
 }

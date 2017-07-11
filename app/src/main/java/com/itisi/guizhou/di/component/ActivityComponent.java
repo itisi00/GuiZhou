@@ -6,6 +6,8 @@ import com.itisi.guizhou.mvp.ui.main.MainActivity;
 import com.itisi.guizhou.di.module.ActivityModule;
 import com.itisi.guizhou.di.scope.ActivityScope;
 import com.itisi.guizhou.mvp.ui.main.temp.TestRxBusActivity;
+import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
+import com.itisi.guizhou.mvp.ui.user.register.RegistActivity;
 
 import dagger.Component;
 
@@ -26,5 +28,7 @@ public interface ActivityComponent {
     Activity getActivity();
     void inject(MainActivity activity);
     void inject(TestRxBusActivity activity );
+    void inject(LoginActivity activity );
+    void inject(RegistActivity activity );
     //h后续创建的activity 接着往下写
 }

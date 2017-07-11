@@ -81,6 +81,7 @@ dependencies {
     compile rootProject.ext.dependencies["statusbarutil"]
     compile rootProject.ext.dependencies["tastytoast"]
     compile rootProject.ext.dependencies["banner"]
+    compile rootProject.ext.dependencies["sweetsheet"]
 
 
 
@@ -121,10 +122,12 @@ dependencies {
     releaseCompile rootProject.ext.dependencies["leakcanary-android-no-op"]
 
     //    compile 'com.android.support:support-v4:26.+' //我坚信其他库引用了
+    // support v4 新增文件的时候 自己会恢复
+//    compile 'com.android.support:support-v4:26.+'
+    //    compile 'com.android.support:support-v4:26.+'
+    //    compile 'com.android.support:support-v4:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'cn.finalteam.rxgalleryfinal:library:1.0.8'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
-    // support v4 新增文件的时候 自己会恢复
-//    compile 'com.android.support:support-v4:26.+'
     testCompile 'junit:junit:4.12'
 }

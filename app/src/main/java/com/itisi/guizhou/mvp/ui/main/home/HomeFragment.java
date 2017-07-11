@@ -10,6 +10,7 @@ import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.App;
 import com.itisi.guizhou.base.RootFragment;
 import com.itisi.guizhou.mvp.ui.main.temp.TestRxBusActivity;
+import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.imageload.ImageLoadConfiguration;
@@ -216,6 +217,7 @@ public class HomeFragment extends RootFragment<HomePresenter> implements HomeCon
                 break;
             case R.id.tv_home_websit:
                 ToastUtil.Success(tv_home_websit.getText().toString());
+                ActivityUtil.getInstance().openActivity(getActivity(), LoginActivity.class);
                 break;
             case R.id.tv_home_blacknum:
 //                ToastUtil.Success(tv_home_blacknum.getText().toString());

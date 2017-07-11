@@ -187,7 +187,12 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
         return null;
     }
 
-
+    /**
+     * 隐藏toolbar
+     */
+    protected void setToolbarHide(){
+        mToolbar.setVisibility(View.GONE);
+    }
 
     /**
      * 禁止滑动关闭 主页可用

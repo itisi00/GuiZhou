@@ -297,7 +297,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
                 ToastUtil.Error("天气界面?");
             }
         });
-        return "32℃";
+        return "18℃";
         // TODO: 2017/7/11 得请求网络天气
     }
 
