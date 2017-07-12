@@ -54,6 +54,9 @@
 
     <!--icon font-->
     <string name="icon_test">&#xe60c; &#xe627;\r\n名称?</string>
+    <string name="login_weibo">微博</string>
+    <string name="login_qq">QQ</string>
+    <string name="login_weixin">微信</string>
 
     <!--icon font-->
 </resources>

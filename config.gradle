@@ -38,6 +38,10 @@ ext{
             "tastytoast"                : "com.sdsmdg.tastytoast:tastytoast:0.1.1",
             "banner"                    : "com.youth.banner:banner:1.4.9",
             "sweetsheet"                : "com.github.zzz40500:AndroidSweetSheet:1.1.0",
+            "htextview"                 : "com.hanks:htextview-base:0.1.1",
+            "htextview-rainbow"         : "com.hanks:htextview-rainbow:0.1.1",
+            "htextview-fall"            : "com.hanks:htextview-fall:0.1.1",
+
 
             //主页菜单
             "flowingdrawer"             : "com.mxn.soul:flowingdrawer-core:2.0.0",

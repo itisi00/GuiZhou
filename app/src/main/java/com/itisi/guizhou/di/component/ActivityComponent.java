@@ -8,6 +8,7 @@ import com.itisi.guizhou.di.scope.ActivityScope;
 import com.itisi.guizhou.mvp.ui.main.temp.TestRxBusActivity;
 import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
 import com.itisi.guizhou.mvp.ui.user.register.RegistActivity;
+import com.itisi.guizhou.mvp.ui.user.register.RegistConfirmActivity;
 
 import dagger.Component;
 
@@ -30,5 +31,6 @@ public interface ActivityComponent {
     void inject(TestRxBusActivity activity );
     void inject(LoginActivity activity );
     void inject(RegistActivity activity );
+    void inject(RegistConfirmActivity activity );
     //h后续创建的activity 接着往下写
 }

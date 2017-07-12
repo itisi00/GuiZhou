@@ -1,17 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/test_left_menu_back"
+    android:orientation="vertical"
 
     tools:context="com.itisi.guizhou.mvp.ui.user.register.RegistActivity">
     <include layout="@layout/toolbar" android:visibility="gone"/>
-    <TextView
+
+    <com.hanks.htextview.rainbow.RainbowTextView
+        android:id="@+id/tv_regist_wellcom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_60"
+        android:text="欢迎注册大贵州"
+        android:textSize="@dimen/txt_25"
+        android:textColor="@color/colorWhite"
+        android:textColorLink="@color/colorAccent"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        style="@style/TextBorderLess"
+        />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_regist_phone_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_30"
+        >
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/tie_regist_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:hint="手机号"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/d_15"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_regist_validate_wrapper"
+            android:layout_width="@dimen/d_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d_10"
+            android:layout_weight="2"
+            >
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tie_regist_validate"
+
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:hint="验证码"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/d_15"
+
+                />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/tv_regist_getcode"
+            android:layout_width="@dimen/d_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/d_15"
+            android:paddingBottom="@dimen/d_15"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/d_5"
+            android:text="获取验证码"
+            android:textColor="@color/colorAccent"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            style="@style/TextBorderLess"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/d_20"
+        >
+        <CheckBox
+            android:id="@+id/cb_regist_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d_8"
+            android:text="同意"
+            />
+        <TextView
+            android:id="@+id/tv_regist_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大贵州用户注册协议"
+            android:textColor="@color/colorAccent"
+            android:layout_marginLeft="@dimen/d_20"
+            android:textStyle="italic"
+            android:autoLink="all"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            style="@style/TextBorderLess"
+
+            />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_regist_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="regist"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/d_30"
+        android:background="#33ffffff"
+        android:gravity="center"
+        android:paddingBottom="@dimen/d_10"
+        android:paddingLeft="@dimen/d_100"
+        android:paddingRight="@dimen/d_100"
+        android:paddingTop="@dimen/d_10"
+        android:text="下一步"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/txt_15"
         />
-</android.support.constraint.ConstraintLayout>
+
+
+</LinearLayout>

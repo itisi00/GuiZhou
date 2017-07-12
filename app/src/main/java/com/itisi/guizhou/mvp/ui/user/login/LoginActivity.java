@@ -1,19 +1,25 @@
 package com.itisi.guizhou.mvp.ui.user.login;
 
+import android.content.Context;
+import android.os.SystemClock;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hanks.htextview.rainbow.RainbowTextView;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.ui.user.register.RegistActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
+import com.itisi.guizhou.utils.SceneAnim;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 import com.jaeger.library.StatusBarUtil;
@@ -34,28 +40,27 @@ import butterknife.BindView;
 public class LoginActivity extends RootActivity<LoginPresenter> implements LoginContract.View
         , View.OnClickListener {
     @BindView(R.id.iv_login_header)
-    ImageView iv_login_header;
+    ImageView iv_login_header;//头像 登陆过是用户头像,第一次是默认都行
     @BindView(R.id.tv_login_nick)
-    TextView tv_login_nick;
+    RainbowTextView tv_login_nick;//用户昵称
     @BindView(R.id.til_name_wrapper)
-    TextInputLayout til_name_wrapper;
+    TextInputLayout til_name_wrapper;//账号 父布局
     @BindView(R.id.til_password_wrapper)
-    TextInputLayout til_password_wrapper;
+    TextInputLayout til_password_wrapper;//密码 父布局
     @BindView(R.id.btn_login)
-    Button btn_login;
+    Button btn_login;//登陆按钮
     @BindView(R.id.tv_login_forget_password)
-    TextView tv_login_forget_password;
+    TextView tv_login_forget_password;//忘记密码
     @BindView(R.id.tv_login_regist)
-    TextView tv_login_regist;
+    TextView tv_login_regist;//注册
     @BindView(R.id.tv_login_other_account)
-    TextView tv_login_other_account;
+    TextView tv_login_other_account;//第三方合作账号
     @BindView(R.id.tie_name)
-    TextInputEditText tie_name;
+    TextInputEditText tie_name;//账号输入框 用来监听焦点事件
     @BindView(R.id.tie_password)
-    TextInputEditText tie_password;
-
+    TextInputEditText tie_password;//密码输入框 用来监听焦点事件
     @BindView(R.id.rl_login_account)
-    RelativeLayout rl_login_account;
+    RelativeLayout rl_login_account;//最外层父布局 为 底部 sheet 加上的
 
     SweetSheet mSweetSheet;
 
@@ -82,11 +87,30 @@ public class LoginActivity extends RootActivity<LoginPresenter> implements Login
         tv_login_forget_password.setOnClickListener(this);
         tv_login_regist.setOnClickListener(this);
         tv_login_other_account.setOnClickListener(this);
+
+        openSoftKeyBoard();
     }
+
+    private void openSoftKeyBoard() {
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        //imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+        SystemClock.sleep(200);
+        tie_name.setFocusable(true);
+        tie_name.setFocusableInTouchMode(true);
+        tie_name.requestFocus();
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+
+
+    }
+
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.tv_login_nick:
+                //这么设置没用
+//                tv_login_nick.setColors(R.color.colorAccent,R.color.colorPrimary,R.color.colorWhite,R.color.colorBlack);
+                break;
             case R.id.btn_login:
                 virfyUserInput();
                 break;
@@ -94,17 +118,31 @@ public class LoginActivity extends RootActivity<LoginPresenter> implements Login
                 ToastUtil.Success(tv_login_forget_password.getText().toString());
                 break;
             case R.id.tv_login_regist:
-                ActivityUtil.getInstance().openActivity(LoginActivity.this, RegistActivity.class);
+                ActivityUtil.getInstance().openActivity(LoginActivity.this, RegistActivity.class, SceneAnim.AnimType.TOP_IN);
                 break;
             case R.id.tv_login_other_account:
 //                openOtherAccountSheet();
                 setupCustomView();
                 break;
+            case R.id.tv_weixin:
+                ToastUtil.Success("微信登陆");
+                mSweetSheet.toggle();
+                break;
+            case R.id.tv_qq:
+                ToastUtil.Success("QQ登陆");
+                mSweetSheet.toggle();
+                break;
+            case R.id.tv_weibo:
+                ToastUtil.Success("微博登陆");
+                mSweetSheet.toggle();
+                break;
         }
     }
 
+
     /**
      * 打开地方合作账号的 sheet
+     * 自定义布局
      */
     private void openOtherAccountSheet() {
         if (mSweetSheet == null) {
@@ -129,7 +167,9 @@ public class LoginActivity extends RootActivity<LoginPresenter> implements Login
             mSweetSheet.setMenuList(list);
 
             //根据设置不同的 Delegate 来显示不同的风格.
-            mSweetSheet.setDelegate(new ViewPagerDelegate());
+            ViewPagerDelegate viewPagerDelegate = new ViewPagerDelegate();
+            viewPagerDelegate.setContentHeight(200);
+            mSweetSheet.setDelegate(viewPagerDelegate);
             //根据设置不同Effect来设置背景效果:BlurEffect 模糊效果.DimEffect 变暗效果,NoneEffect 没有效果.
             mSweetSheet.setBackgroundEffect(new BlurEffect(50));//背景模糊
             mSweetSheet.setBackgroundEffect(new DimEffect(0.5F));//背景透明度
@@ -158,16 +198,21 @@ public class LoginActivity extends RootActivity<LoginPresenter> implements Login
                     CustomDelegate.AnimationType.DuangLayoutAnimation);//DuangAnimation AlphaAnimation
             View view = LayoutInflater.from(this).inflate(R.layout.custom_other_account, null, false);
             customDelegate.setCustomView(view);
+            customDelegate.setContentHeight(300);//自定义高度
             mSweetSheet.setDelegate(customDelegate);
+
+            TextView tv_weixin = view.findViewById(R.id.tv_weixin);
+            TextView tv_qq = view.findViewById(R.id.tv_qq);
+            TextView tv_weibo = view.findViewById(R.id.tv_weibo);
+
+            tv_weixin.setOnClickListener(this);
+            tv_qq.setOnClickListener(this);
+            tv_weibo.setOnClickListener(this);
+
         }
 
         mSweetSheet.show();
-//        view.findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mSweetSheet.dismiss();
-//            }
-//        });
+
     }
 
     /**
@@ -230,9 +275,11 @@ public class LoginActivity extends RootActivity<LoginPresenter> implements Login
         getActivityComponent().inject(this);
     }
 
+
+
     @Override
     public void onBackPressed() {
-        if (mSweetSheet.isShow()) {
+        if (mSweetSheet!=null&&mSweetSheet.isShow()) {
             if (mSweetSheet.isShow()) {
                 mSweetSheet.dismiss();
             }
@@ -240,7 +287,7 @@ public class LoginActivity extends RootActivity<LoginPresenter> implements Login
             mSweetSheet = null;
             super.onBackPressed();
         }
-
-
     }
+
+
 }

@@ -110,36 +110,54 @@ public class ActivityUtil {
 	/**
 	 * 不带bundle的Activity跳转-带有转场动画的
 	 * @param activity
-	 * @param pClass
+	 * @param clazz
 	 */
-	public void openActivity(Activity activity,Class<?> pClass) {
-		openActivity(activity,pClass, null);
+	public void openActivity(Activity activity,Class<?> clazz) {
+		openActivity(activity,clazz, null,SceneAnim.AnimType.ZOOM_IN);
 	}
 
 	/**
-	 * 带bundle的Activity跳转-带有转场动画的
+	 * 带bundle的Activity跳转-带有转场动画的 默认是缩放进入
 	 * @param activity
-	 * @param pClass
-	 * @param pBundle
+	 * @param clazz
+	 * @param bundle
 	 */
-	public void openActivity(Activity activity,Class<?> pClass, Bundle pBundle) {
-
-		Intent intent = new Intent(activity, pClass);
-		if (pBundle != null) {
-			intent.putExtras(pBundle);
-		}
-		activity.startActivity(intent);
-		SceneAnim.openActivityByScaleAlpha(activity);
-
+	public void openActivity(Activity activity,Class<?> clazz, Bundle bundle) {
+        openActivity(activity,clazz, bundle,SceneAnim.AnimType.ZOOM_IN);
 	}
 
+    /**
+     * 不带bundle的Activity跳转-带有转场动画的 可指定转场动画
+     * @param activity
+     * @param clazz
+     * @param animInType
+     */
+    public void openActivity(Activity activity,Class<?> clazz, SceneAnim.AnimType animInType) {
+        openActivity(activity,clazz, null,animInType);
+    }
+
+    /**
+     * 带bundle的Activity跳转-带有转场动画的 可指定转场动画
+     * @param activity
+     * @param clazz
+     * @param bundle
+     * @param animInType
+     */
+    public void openActivity(Activity activity, Class<?> clazz, Bundle bundle, SceneAnim.AnimType animInType){
+        Intent intent = new Intent(activity, clazz);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        activity.startActivity(intent);
+        SceneAnim.openActivityWithAnim(activity,animInType);
+    }
 	/**
 	 * 关闭当前界面--带有转场动画的
 	 * @param activity
 	 */
 	public void closeActivity(Activity activity) {
 		activity.finish();
-		SceneAnim.closeActivityByScaleAlpha(activity);
+		SceneAnim.closeActivityWithAnim(activity);
 
 	}
 

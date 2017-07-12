@@ -14,7 +14,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
 
-        >
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,19 +33,20 @@
                 android:layout_width="@dimen/d_60"
                 android:layout_height="@dimen/d_60"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/d_60"
+                android:layout_marginTop="@dimen/d_50"
                 android:src="@mipmap/test_userheader"
                 />
-
-            <TextView
+            <com.hanks.htextview.rainbow.RainbowTextView
                 android:id="@+id/tv_login_nick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:text="itisi"
+                android:textSize="@dimen/txt_15"
                 android:layout_marginBottom="@dimen/d_10"
                 android:layout_marginTop="@dimen/d_10"
-                android:text="itisi"
                 />
+
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/til_name_wrapper"
@@ -89,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/d_20"
-                android:background="#bc0094ff"
+                android:background="#33ffffff"
                 android:gravity="center"
                 android:paddingBottom="@dimen/d_10"
                 android:paddingLeft="@dimen/d_100"
@@ -107,6 +109,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/d_20"
                 android:text="忘记密码"
+                style="@style/TextBorderLess"
                 />
 
             <TextView
@@ -116,6 +119,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/d_35"
                 android:text="注册"
+                style="@style/TextBorderLess"
+
                 />
         </LinearLayout>
 
@@ -127,6 +132,8 @@
             android:layout_gravity="center|bottom"
             android:layout_marginBottom="@dimen/d_50"
             android:text="社交账号登陆"
+            style="@style/TextBorderLess"
+
             />
 
 

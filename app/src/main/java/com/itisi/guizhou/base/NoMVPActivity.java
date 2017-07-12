@@ -247,7 +247,7 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
     public void onBackPressed() {
         super.onBackPressed();
 //        finish();
-//        SceneAnim.closeActivityByScaleAlpha(this);
+//        SceneAnim.closeActivityWithAnim(this);
         ActivityUtil.getInstance().closeActivity(this);
     }
 }

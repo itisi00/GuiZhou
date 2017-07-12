@@ -52,10 +52,15 @@
             android:name=".mvp.ui.main.temp.TestRxBusActivity"
             android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.user.login.LoginActivity"
-                  android:theme="@style/AppThemeBack">
+        <activity
+            android:name=".mvp.ui.user.login.LoginActivity"
+            android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.user.register.RegistActivity"
+        <activity
+            android:name=".mvp.ui.user.register.RegistActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity android:name=".mvp.ui.user.register.RegistConfirmActivity"
                   android:theme="@style/AppThemeBack">
         </activity>
     </application>
