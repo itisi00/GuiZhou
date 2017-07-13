@@ -19,7 +19,5 @@ public interface LeisureContract {
     interface Presenter extends BasePresenter<View> {
         //定义自己特有的方法
         void loadData();
-
-
     }
 }

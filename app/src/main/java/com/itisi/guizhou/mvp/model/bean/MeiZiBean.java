@@ -35,6 +35,15 @@ public class MeiZiBean {
     private String url;
     private boolean used;
     private String who;
+    private int height; //自定义的属性 图片的高度
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
 
     public String get_id() {
         return _id;

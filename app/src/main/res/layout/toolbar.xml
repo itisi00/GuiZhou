@@ -32,7 +32,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:maxLines="1"
-            tools:text="放大委屈的氛围"
+            tools:text="@string/app_name"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/txt_16"
 

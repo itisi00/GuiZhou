@@ -60,7 +60,11 @@
             android:name=".mvp.ui.user.register.RegistActivity"
             android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.user.register.RegistConfirmActivity"
+        <activity
+            android:name=".mvp.ui.user.register.RegistConfirmActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity android:name=".mvp.ui.blacknum.BlackNumActivity"
                   android:theme="@style/AppThemeBack">
         </activity>
     </application>

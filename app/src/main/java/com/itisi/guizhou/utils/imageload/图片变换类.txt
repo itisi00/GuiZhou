@@ -1,4 +1,12 @@
 
+使用:
+ ImageLoadProxy.getInstance()
+                        .load(new ImageLoadConfiguration.Builder(App.getInstance())
+                                .url(o)
+                                .defaultImageResId(R.mipmap.test_menu_love_white)
+                                .imageView(imageView).build());
+
+
 来源:https://github.com/wasabeef/glide-transformations
 Transformations
 

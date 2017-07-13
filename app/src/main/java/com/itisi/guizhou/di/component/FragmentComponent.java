@@ -8,6 +8,8 @@ import com.itisi.guizhou.mvp.ui.main.guizhou.GuiZhouFragment;
 import com.itisi.guizhou.mvp.ui.main.home.HomeFragment;
 import com.itisi.guizhou.mvp.ui.main.chat.ChatSessionFragment;
 import com.itisi.guizhou.mvp.ui.main.leisure.LeisureFragment;
+import com.itisi.guizhou.mvp.ui.main.leisure.MeiZiFragment;
+import com.itisi.guizhou.mvp.ui.main.leisure.VideoFragment;
 import com.itisi.guizhou.mvp.ui.main.news.NewsFragment;
 
 import dagger.Component;
@@ -33,7 +35,8 @@ public interface FragmentComponent {
     void inject(NewsFragment fragment);
     void inject(GuiZhouFragment fragment);
     void inject(LeisureFragment fragment);
-;
+    void inject(MeiZiFragment fragment);
+    void inject(VideoFragment fragment);
 
     //
 }

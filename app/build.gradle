@@ -84,6 +84,8 @@ dependencies {
     compile rootProject.ext.dependencies["sweetsheet"]
     compile rootProject.ext.dependencies["htextview"]
     compile rootProject.ext.dependencies["htextview-rainbow"]
+    compile rootProject.ext.dependencies["recyclerview-adapter"]
+
 //    compile rootProject.ext.dependencies["htextview-fall"]
 
     //    compile rootProject.ext.dependencies["rxgalleryfinal"]
@@ -124,11 +126,9 @@ dependencies {
 
     //    compile 'com.android.support:support-v4:26.+' //我坚信其他库引用了
     // support v4 新增文件的时候 自己会恢复
-//    compile 'com.android.support:support-v4:26.+'
-    //    compile 'com.android.support:support-v4:26.+'
-    //    compile 'com.android.support:support-v4:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'cn.finalteam.rxgalleryfinal:library:1.0.8'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.android.support:support-v4:25.3.1'
     testCompile 'junit:junit:4.12'
 }

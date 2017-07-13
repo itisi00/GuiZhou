@@ -41,6 +41,7 @@ ext{
             "htextview"                 : "com.hanks:htextview-base:0.1.1",
             "htextview-rainbow"         : "com.hanks:htextview-rainbow:0.1.1",
             "htextview-fall"            : "com.hanks:htextview-fall:0.1.1",
+            "recyclerview-adapter"      : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.24",
 
 
             //主页菜单

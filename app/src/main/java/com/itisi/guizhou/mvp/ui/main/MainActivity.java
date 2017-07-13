@@ -80,6 +80,8 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
     private List<Fragment> mFragments;//main 中的几个页面的fragment集合
     private Fragment mCurrentFragment;//home中当前显示的fragment
     private boolean isShown = false;//菜单是否处于打开状态
+    private FragmentManager mFragmentManager;
+    private FragmentTransaction mTransaction;
 
 
     @Override
@@ -110,7 +112,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
         if (mBottomItems==null){ //这里估计不会走 因为 在 setToolbarTitle 已经获取一次了
             mBottomItems = getResources().getStringArray(R.array.bottomMenu);
         }
-
+        mFragmentManager = getSupportFragmentManager();
         initMainPage();
         initBottomNav();
         initBottomListener();
@@ -139,7 +141,12 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
         mDrawer.setTouchMode(ElasticDrawer.TOUCH_MODE_FULLSCREEN);
     }
 
-
+    public void setDrawerMenuFullscreen(){
+        mDrawer.setTouchMode(ElasticDrawer.TOUCH_MODE_FULLSCREEN);
+    }
+    public void setDrawerMenuLeftSlide(){
+        mDrawer.setTouchMode(ElasticDrawer.TOUCH_MODE_BEZEL);
+    }
     private void initMenuListener() {
         //侧滑菜单 滑动监听
         mDrawer.setOnDrawerStateChangeListener(new ElasticDrawer.OnDrawerStateChangeListener() {
@@ -151,7 +158,6 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
                     isShown = true;
                 }
             }
-
             @Override
             public void onDrawerSlide(float openRatio, int offsetPixels) {
                 Log.i("MainActivity", "openRatio=" + openRatio + " ,offsetPixels=" + offsetPixels);
@@ -169,18 +175,16 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
             public void onTabSelected(int position) {
                 if (mFragments != null) {
                     if (position < mFragments.size()) {
-                        FragmentManager fm = getSupportFragmentManager();
-                        FragmentTransaction transaction = fm.beginTransaction();
+                        mTransaction = mFragmentManager.beginTransaction();
                         mCurrentFragment = mFragments.get(position);
                         if (mCurrentFragment.isAdded()) {
-                            transaction.replace(R.id.fl_main, mCurrentFragment);
+                            mTransaction.replace(R.id.fl_main, mCurrentFragment);
                         } else {
-                            transaction.add(R.id.fl_main, mCurrentFragment);
+                            mTransaction.add(R.id.fl_main, mCurrentFragment);
                         }
                         // transaction.commit();
-                        transaction.commitAllowingStateLoss();
+                        mTransaction.commitAllowingStateLoss();
                     }
-
                     changeToolbarTitle(position);
                 }
             }
@@ -190,10 +194,9 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 //                Logger.i("unselected:" + position);
                 if (mFragments != null) {
                     if (position < mFragments.size()) {
-                        FragmentManager fm = getSupportFragmentManager();
-                        FragmentTransaction transaction = fm.beginTransaction();
-                        transaction.remove(mFragments.get(position));
-                        transaction.commitAllowingStateLoss();
+                        mTransaction = mFragmentManager.beginTransaction();
+                        mTransaction.remove(mFragments.get(position));
+                        mTransaction.commitAllowingStateLoss();
 
                     }
                 }
@@ -224,10 +227,9 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
      * 设置默认页面
      */
     private void setDefaultFragment() {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction transaction = fm.beginTransaction();
-        transaction.replace(R.id.fl_main, mHomeFragment);
-        transaction.commit();
+        mTransaction= mFragmentManager.beginTransaction();
+        mTransaction.replace(R.id.fl_main, mHomeFragment);
+        mTransaction.commit();
     }
 
     /**

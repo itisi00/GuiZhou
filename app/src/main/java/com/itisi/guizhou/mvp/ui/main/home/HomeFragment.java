@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.App;
 import com.itisi.guizhou.base.RootFragment;
+import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
 import com.itisi.guizhou.mvp.ui.main.temp.TestRxBusActivity;
 import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
@@ -213,15 +214,17 @@ public class HomeFragment extends RootFragment<HomePresenter> implements HomeCon
                 ToastUtil.Success(tv_home_jingxuan.getText().toString());
                 break;
             case R.id.tv_home_ittool:
-                ToastUtil.Success(tv_home_ittool.getText().toString());
+//                ToastUtil.Success(tv_home_ittool.getText().toString());
+                ActivityUtil.getInstance().openActivity(getActivity(), TestRxBusActivity.class);
+
                 break;
             case R.id.tv_home_websit:
-                ToastUtil.Success(tv_home_websit.getText().toString());
+//                ToastUtil.Success(tv_home_websit.getText().toString());
                 ActivityUtil.getInstance().openActivity(getActivity(), LoginActivity.class);
                 break;
             case R.id.tv_home_blacknum:
 //                ToastUtil.Success(tv_home_blacknum.getText().toString());
-                ActivityUtil.getInstance().openActivity(getActivity(), TestRxBusActivity.class);
+                ActivityUtil.getInstance().openActivity(getActivity(), BlackNumActivity.class);
                 break;
             case R.id.tv_home_more:
                 ToastUtil.Success(tv_home_more.getText().toString());

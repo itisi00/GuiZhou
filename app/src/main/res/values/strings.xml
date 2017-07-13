@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">abcdefg</string>
+    <string name="app_name">大贵州</string>
 
     <string-array name="bottomMenu">
         <item name="menu_home">主页</item>
