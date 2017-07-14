@@ -2,7 +2,6 @@ package com.itisi.guizhou.mvp.ui.adapter;
 
 import android.graphics.Bitmap;
 import android.support.annotation.LayoutRes;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
@@ -15,7 +14,6 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.App;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
-import com.itisi.guizhou.utils.ToastUtil;
 
 /**
  * **********************
@@ -45,7 +43,7 @@ public class MeiZiAdapter extends BaseQuickAdapter<MeiZiBean, BaseViewHolder>
 //                        .imageView((ImageView) helper.getView(R.id.iv_meizi)).build());
 
         final ImageView view = helper.getView(R.id.iv_meizi);
-
+        helper.addOnClickListener(R.id.iv_meizi);
         //存在记录的高度时先Layout再异步加载图片
         if (item.getHeight() > 0) {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();

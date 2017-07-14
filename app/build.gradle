@@ -26,6 +26,10 @@ android {
         ndk {
 
         }
+        dexOptions {
+            preDexLibraries true
+            maxProcessCount 8
+        }
     }
 //    compileOptions{
 //        sourceCompatibility = JavaVersion.VERSION_1_8

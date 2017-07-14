@@ -2,11 +2,12 @@ package com.itisi.guizhou.di.component;
 
 import android.app.Activity;
 
-import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
-import com.itisi.guizhou.mvp.ui.main.MainActivity;
 import com.itisi.guizhou.di.module.ActivityModule;
 import com.itisi.guizhou.di.scope.ActivityScope;
-import com.itisi.guizhou.mvp.ui.main.temp.TestRxBusActivity;
+import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
+import com.itisi.guizhou.mvp.ui.main.MainActivity;
+import com.itisi.guizhou.mvp.ui.splash.SplashActivity;
+import com.itisi.guizhou.mvp.ui.test.TestRxBusActivity;
 import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
 import com.itisi.guizhou.mvp.ui.user.register.RegistActivity;
 import com.itisi.guizhou.mvp.ui.user.register.RegistConfirmActivity;
@@ -34,5 +35,6 @@ public interface ActivityComponent {
     void inject(RegistActivity activity );
     void inject(RegistConfirmActivity activity );
     void inject(BlackNumActivity activity );
+    void inject(SplashActivity activity );
     //h后续创建的activity 接着往下写
 }

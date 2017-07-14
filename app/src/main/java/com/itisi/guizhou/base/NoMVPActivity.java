@@ -49,6 +49,10 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        //将window的背景图设置为空
+        // TODO: 2017/7/14  以后会在splash 里面做  清空背景
+        getWindow().setBackgroundDrawable(null);
+
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         mUnbinder = ButterKnife.bind(this);

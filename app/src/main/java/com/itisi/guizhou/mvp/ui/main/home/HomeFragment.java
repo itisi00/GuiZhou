@@ -10,7 +10,8 @@ import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.App;
 import com.itisi.guizhou.base.RootFragment;
 import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
-import com.itisi.guizhou.mvp.ui.main.temp.TestRxBusActivity;
+import com.itisi.guizhou.mvp.ui.test.CoordinateLayoutActivity;
+import com.itisi.guizhou.mvp.ui.test.TestRxBusActivity;
 import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
@@ -211,7 +212,9 @@ public class HomeFragment extends RootFragment<HomePresenter> implements HomeCon
                 ToastUtil.Success(tv_home_read.getText().toString());
                 break;
             case R.id.tv_home_jingxuan:
-                ToastUtil.Success(tv_home_jingxuan.getText().toString());
+//                ToastUtil.Success(tv_home_jingxuan.getText().toString());
+                ActivityUtil.getInstance().openActivity(getActivity(), CoordinateLayoutActivity.class);
+
                 break;
             case R.id.tv_home_ittool:
 //                ToastUtil.Success(tv_home_ittool.getText().toString());

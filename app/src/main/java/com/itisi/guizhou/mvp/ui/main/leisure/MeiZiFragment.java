@@ -21,9 +21,12 @@ import butterknife.BindView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MeiZiFragment extends RootFragment<MeiZiPresenter> implements MeiZiContract.View
+public class MeiZiFragment extends RootFragment<MeiZiPresenter>
+            implements MeiZiContract.View
             , SwipeRefreshLayout.OnRefreshListener
-            ,BaseQuickAdapter.RequestLoadMoreListener, BaseQuickAdapter.OnItemClickListener {
+            ,BaseQuickAdapter.RequestLoadMoreListener
+            , BaseQuickAdapter.OnItemClickListener
+           , BaseQuickAdapter.OnItemLongClickListener {
 
     @BindView(R.id.swipe_refresh)
     SwipeRefreshLayout mSwipeRefreshLayout;
@@ -74,6 +77,8 @@ public class MeiZiFragment extends RootFragment<MeiZiPresenter> implements MeiZi
         layoutManager.setItemPrefetchEnabled(false);
 
         mAdapter=new MeiZiAdapter(R.layout.item_meizi);
+//        mAdapter.setOnItemClickListener(this);
+//        mAdapter.setOnItemLongClickListener(this);
         mAdapter.setOnLoadMoreListener(this, mRecyclerView);
         mAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_RIGHT);
         mRecyclerView.setLayoutManager(layoutManager);
@@ -88,7 +93,13 @@ public class MeiZiFragment extends RootFragment<MeiZiPresenter> implements MeiZi
 //                ToastUtil.Success("pos:"+position);
 //            }
 //        });
-        mAdapter.setOnItemClickListener(this);
+
+        mAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                ToastUtil.Success("333");
+            }
+        });
 
     }
 
@@ -170,10 +181,19 @@ public class MeiZiFragment extends RootFragment<MeiZiPresenter> implements MeiZi
         isRefreshing=false;//标明 此次是加载的
         loadData();
         mSwipeRefreshLayout.setEnabled(true);//加载更多完成 开启下来刷新
+
     }
+
+    // TODO: 2017/7/13  点击事件  不行
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
         ToastUtil.Success(position+"");
+    }
+
+    @Override
+    public boolean onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
+        ToastUtil.Success(position+":long");
+        return true;
     }
 }

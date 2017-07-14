@@ -86,6 +86,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 
     @Override
     protected int getLayoutId() {
+
         return R.layout.activity_main;
     }
 
@@ -109,6 +110,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 
     @Override
     protected void initEventAndData() {
+//        StatusBarUtil.setTranslucent(this, 0);//不加0 是半透明效果
         if (mBottomItems==null){ //这里估计不会走 因为 在 setToolbarTitle 已经获取一次了
             mBottomItems = getResources().getStringArray(R.array.bottomMenu);
         }

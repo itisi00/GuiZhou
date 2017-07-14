@@ -41,7 +41,8 @@
 
 
         <!-- </meta-data> -->
-        <activity android:name=".mvp.ui.main.MainActivity">
+        <activity android:name=".mvp.ui.splash.SplashActivity"
+                  android:theme="@style/Theme.Center"          >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -49,7 +50,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".mvp.ui.main.temp.TestRxBusActivity"
+            android:name=".mvp.ui.main.MainActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity
+            android:name=".mvp.ui.test.TestRxBusActivity"
             android:theme="@style/AppThemeBack">
         </activity>
         <activity
@@ -64,9 +69,16 @@
             android:name=".mvp.ui.user.register.RegistConfirmActivity"
             android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.blacknum.BlackNumActivity"
-                  android:theme="@style/AppThemeBack">
+        <activity
+            android:name=".mvp.ui.blacknum.BlackNumActivity"
+            android:theme="@style/AppThemeBack">
         </activity>
+        <activity
+            android:name=".mvp.ui.test.CoordinateLayoutActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <!--<activity android:name=".mvp.ui.splash.SplashActivity">-->
+        <!--</activity>-->
     </application>
 
 </manifest>
