@@ -26,10 +26,26 @@ android {
         ndk {
 
         }
-        dexOptions {
-            preDexLibraries true
-            maxProcessCount 8
+
+    }
+
+    signingConfigs{
+        release {
+//            storeFile file(keystore.path)
+//            storePassword keystore.password
+//            keyAlias keystore.alias
+//            keyPassword keystore.alias_password
+//            shrinkResources true
         }
+
+
+    }
+    dexOptions {
+        preDexLibraries true
+        maxProcessCount 8
+    }
+    configurations {
+        all*.exclude module: 'PhotoView'  //去除重复依赖库
     }
 //    compileOptions{
 //        sourceCompatibility = JavaVersion.VERSION_1_8

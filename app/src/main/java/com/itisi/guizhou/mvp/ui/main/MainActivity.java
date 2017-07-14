@@ -1,5 +1,6 @@
 package com.itisi.guizhou.mvp.ui.main;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -11,7 +12,6 @@ import com.ashokvarma.bottomnavigation.BadgeItem;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.itisi.guizhou.R;
-import com.itisi.guizhou.app.App;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.ui.main.chat.ChatSessionFragment;
 import com.itisi.guizhou.mvp.ui.main.guizhou.GuiZhouFragment;
@@ -388,7 +388,14 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
             boolean clickResult = mClickTree.completeClickCount();
             if (clickResult) {
 //                System.exit(0);//直接杀死进程???? 是不是不妥
-                App.getInstance().exitApp();
+//                App.getInstance().exitApp();
+
+//                https://juejin.im/post/58c407ee44d90400698757d8
+                //来自上面链接
+                Intent launcherIntent = new Intent(Intent.ACTION_MAIN);
+                launcherIntent.addCategory(Intent.CATEGORY_HOME);
+                startActivity(launcherIntent);
+
             } else {
                 ToastUtil.Info("双击退出程序");
 
