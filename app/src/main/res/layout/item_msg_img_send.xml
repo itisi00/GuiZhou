@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MsgParent">
+
+    <TextView
+        android:id="@+id/tv_chat_box_img_send_time"
+        style="@style/MsgTime"
+        android:text="2017年6月20日10:37:00"
+        />
+
+    <LinearLayout
+        style="@style/MsgItemParent"
+        >
+
+        <LinearLayout
+            style="@style/MsgItemContentParentSend"
+            >
+
+            <TextView
+                android:id="@+id/tv_chat_box_img_send_nick"
+                style="@style/MsgItemNickSend"
+                android:text="itisi"
+                />
+
+            <LinearLayout
+                style="@style/MsgItemChildParentSend"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_chat_box_img_send_resend"
+                    style="@style/MsgItemErrorTip"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_chat_box_img_send_content"
+                    style="@style/MsgItemImgSend"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_chat_box_img_send_header"
+            android:layout_width="@dimen/d_40"
+            android:layout_height="@dimen/d_40"
+            android:src="@mipmap/logo"
+            />
+
+    </LinearLayout>
+</LinearLayout>

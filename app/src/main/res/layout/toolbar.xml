@@ -13,7 +13,12 @@
     app:titleTextColor="@color/colorWhite"
 
     >
+
     <!--
+        android:background="?attr/colorPrimary"
+
+        android:background="@drawable/bg_toolbar"
+
         需要用代码控制
     app:navigationIcon="@mipmap/menu_back"-->
     <LinearLayout

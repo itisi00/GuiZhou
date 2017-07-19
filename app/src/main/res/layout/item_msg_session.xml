@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/d_10">
+
+    <RelativeLayout
+        android:layout_width="@dimen/d_50"
+        android:layout_height="@dimen/d_50">
+
+        <ImageView
+            android:id="@+id/iv_chat_session_header"
+            style="@style/MsgItemHeader"
+            android:layout_centerInParent="true"
+            />
+
+        <View
+            android:id="@+id/v_chat_session_unread_tip"
+            style="@style/MsgItemSessionUnReadTip"
+            android:layout_alignParentRight="true"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_chat_session_content"
+        android:layout_width="@dimen/d_0"
+        android:layout_height="@dimen/d_50"
+        android:layout_marginLeft="@dimen/d_10"
+        android:layout_marginRight="@dimen/d_10"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tv_chat_session_nick"
+           style="@style/MsgItemSessionNick"
+            android:text="好长的昵称"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_chat_session_lastmsg"
+           style="@style/MsgItemSessionLastMsg"
+            android:text="最近一次对话,文字表情图片视频语音连接等等"
+
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/d_60"
+        android:layout_height="@dimen/d_50"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tv_chat_session_lasttime"
+          style="@style/MsgItemSessionTime"
+            android:text="12月12日"
+            android:textSize="@dimen/txt_13"
+            />
+
+        <ImageView
+            android:id="@+id/iv_chat_session_bell"
+            android:layout_width="wrap_content"
+         style="@style/MsgItemSessionBell"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+</LinearLayout>

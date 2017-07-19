@@ -106,4 +106,214 @@
         <item name="android:drawablePadding">@dimen/d_10</item>
         <item name="android:gravity">center</item>
     </style>
+
+    <!--即时通讯相关-->
+    <style name="MsgParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/d_15</item>
+
+    </style>
+
+    <style name="MsgItemParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+
+    </style>
+
+    <style name="MsgItemContentParentReceive">
+        <item name="android:layout_width">@dimen/d_0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginLeft">@dimen/d_10</item>
+        <item name="android:layout_marginRight">@dimen/d_50</item>
+    </style>
+
+    <style name="MsgItemContentParentSend" parent="MsgItemContentParentReceive">
+        <item name="android:layout_marginLeft">@dimen/d_50</item>
+        <item name="android:layout_marginRight">@dimen/d_10</item>
+    </style>
+
+    <style name="MsgItemChildParentReceive">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="MsgItemChildParentSend" parent="MsgItemChildParentReceive">
+        <item name="android:layout_gravity">right</item>
+    </style>
+
+    <style name="MsgTime">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/bg_message_system_shape</item>
+        <item name="android:paddingLeft">@dimen/d_3</item>
+        <item name="android:paddingTop">@dimen/d_5</item>
+        <item name="android:paddingRight">@dimen/d_5</item>
+        <item name="android:paddingBottom">@dimen/d_3</item>
+        <item name="android:textSize">@dimen/txt_13</item>
+    </style>
+
+    <style name="MsgItemHeader">
+        <item name="android:layout_width">@dimen/d_40</item>
+        <item name="android:layout_height">@dimen/d_40</item>
+        <item name="android:src">@mipmap/logo</item>
+    </style>
+
+    <style name="MsgItemNickReceive">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="MsgItemNickSend" parent="MsgItemNickReceive">
+        <item name="android:gravity">right</item>
+    </style>
+
+
+    <style name="MsgItemErrorTip">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/d_10</item>
+        <item name="android:layout_marginRight">@dimen/d_10</item>
+        <item name="android:src">@mipmap/message_send_error</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="MsgItemTxtReceive">
+        <item name="android:layout_width">@dimen/d_0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/aurora_receivetxt_bubble</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:textSize">@dimen/txt_13</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_gravity">left</item>
+    </style>
+
+    <style name="MsgItemTxtSend" parent="MsgItemTxtReceive">
+        <item name="android:background">@drawable/aurora_sendtxt_bubble</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="MsgItemImgReceive">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxWidth">@dimen/d_150</item>
+        <item name="android:maxHeight">@dimen/d_150</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:src">@mipmap/logo</item>
+    </style>
+
+    <style name="MsgItemImgSend" parent="MsgItemImgReceive">
+
+    </style>
+
+    <style name="MsgItemVoiceUnRead">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:src">@mipmap/message_voice_unread</item>
+    </style>
+
+    <style name="MsgItemVoiceTime">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/d_10</item>
+        <item name="android:layout_marginRight">@dimen/d_10</item>
+        <item name="android:textSize">@dimen/txt_15</item>
+    </style>
+
+    <style name="MsgItemVoiceIconReceive">
+
+        <item name="android:layout_width">@dimen/d_50</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/aurora_receivetxt_bubble</item>
+        <item name="android:drawableLeft">@mipmap/message_voice_receive</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="MsgItemVoiceIconSend" parent="MsgItemVoiceIconReceive">
+        <item name="android:background">@drawable/aurora_sendtxt_bubble</item>
+        <item name="android:drawableLeft">@mipmap/message_voice_send</item>
+    </style>
+
+    <style name="MsgItemVideoPlay">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:src">@mipmap/play</item>
+    </style>
+
+    <style name="MsgItemLocReceive">
+        <item name="android:layout_width">@dimen/d_150</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@mipmap/test_map</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="MsgItemLocSend" parent="MsgItemLocReceive">
+        <item name="android:layout_marginRight">@dimen/d_10</item>
+    </style>
+
+    <style name="MsgItemLocAddress">
+        <item name="android:layout_width">@dimen/d_150</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="MsgItemSessionUnReadTip">
+        <item name="android:layout_width">@dimen/d_10</item>
+        <item name="android:layout_height">@dimen/d_10</item>
+        <item name="android:background">@drawable/bg_text_shape</item>
+    </style>
+
+    <style name="MsgItemSessionNick">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">@dimen/txt_15</item>
+        <item name="android:layout_marginTop">@dimen/d_5</item>
+    </style>
+    <style name="MsgItemSessionLastMsg">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_marginBottom">@dimen/d_5</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">@dimen/txt_13</item>
+
+    </style>
+    <style name="MsgItemSessionTime">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/d_5</item>
+        <item name="android:textSize">@dimen/txt_13</item>
+    </style>
+
+    <style name="MsgItemSessionBell">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:src">@mipmap/message_bell</item>
+        <item name="android:layout_marginBottom">@dimen/d_5</item>
+
+    </style>
+
+    <!--即时通讯 结束-->
 </resources>

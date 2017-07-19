@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MsgParent">
+
+    <TextView
+        style="@style/MsgTime"
+        android:text="2017年6月20日10:37:00"
+        />
+
+    <LinearLayout
+        style="@style/MsgItemParent"
+        >
+
+        <LinearLayout
+            style="@style/MsgItemContentParentSend"
+            >
+
+            <TextView
+                style="@style/MsgItemNickSend"
+                android:text="itisi"
+                />
+
+            <LinearLayout
+                style="@style/MsgItemChildParentSend"
+                >
+
+                <ImageView
+                    style="@style/MsgItemErrorTip"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        style="@style/MsgItemLocAddress"
+                        android:text="丰泽区海丝国际中心(丰海路北)南威软件大厦"
+                        />
+                    <ImageView
+                        style="@style/MsgItemLocSend"
+
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            style="@style/MsgItemHeader"
+            />
+
+    </LinearLayout>
+</LinearLayout>

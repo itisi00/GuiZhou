@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <color name="colorPrimary">#9c27b0</color>
+    <color name="colorPrimaryDark">#9c27b0</color>
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
     <color name="colorAccent">#FF4081</color>
 
     <color name="color0094ff">#0094ff</color>
@@ -11,6 +13,24 @@
     <color name="colorBlack">#000000</color>
     <color name="colorGreen">#00ff00</color>
     <color name="colorGray">#ccc</color>
+
+    <color name="bg_message_item">#ffDDDDDD</color>
+    <color name="filter_reset_bg_color">#69AFF5</color>
+
+    <!--聊天界面-->
+    <color name="reply_button_text">#dfFFFFFF</color>
+    <color name="reply_button_text_disable">#b8b8b8</color>
+    <color name="text_primary">#df000000</color>
+
+    <color name="bg_edittext_color">#00000000</color>
+
+    <color name="bg_horizontal_line_color">#80a3a4a7</color>
+    <color name="bg_horizontal_btn_normal">#eeeeee</color>
+    <color name="bg_horizontal_btn_selected">#70a3a4a7</color>
+
+    <color name="bg_indicator_point_normal">#D8D8D8</color>
+    <color name="bg_indicator_point_selected">#A6A6A6</color>
+    <!--聊天界面-->
 
 
 </resources>

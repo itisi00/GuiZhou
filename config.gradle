@@ -42,6 +42,14 @@ ext{
             "htextview-rainbow"         : "com.hanks:htextview-rainbow:0.1.1",
             "htextview-fall"            : "com.hanks:htextview-fall:0.1.1",
             "recyclerview-adapter"      : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.24",
+            "flexbox"                   : "com.google.android:flexbox:0.3.0",
+            "datetimepicker"            : "com.wdullaer:materialdatetimepicker:3.3.2",
+            "circleimageview"           : "de.hdodenhof:circleimageview:2.1.0",
+
+
+            //即时通讯 环信
+            "hyphenate"                 : "com.hyphenate:hyphenate-sdk:3.3.0",
+
 
 
             //主页菜单

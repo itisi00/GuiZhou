@@ -66,7 +66,7 @@ public class SceneAnim {
                 break;
 
         }
-        activity.overridePendingTransition(animinId,animoutId);
+        activity.overridePendingTransition(animinId,R.anim.right_out);
     }
 
     /**
@@ -74,7 +74,7 @@ public class SceneAnim {
      * @param activity
      */
     public static void closeActivityWithAnim(Activity activity){
-        activity.overridePendingTransition(0,R.anim.fade_out);
+        activity.overridePendingTransition(0,R.anim.right_out);
     }
 
 

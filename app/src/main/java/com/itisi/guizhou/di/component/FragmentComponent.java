@@ -6,7 +6,7 @@ import com.itisi.guizhou.di.module.FragmentModule;
 import com.itisi.guizhou.di.scope.FragmentScope;
 import com.itisi.guizhou.mvp.ui.main.guizhou.GuiZhouFragment;
 import com.itisi.guizhou.mvp.ui.main.home.HomeFragment;
-import com.itisi.guizhou.mvp.ui.main.chat.ChatSessionFragment;
+import com.itisi.guizhou.mvp.ui.main.chatsession.ChatSessionFragment;
 import com.itisi.guizhou.mvp.ui.main.leisure.LeisureFragment;
 import com.itisi.guizhou.mvp.ui.main.leisure.MeiZiFragment;
 import com.itisi.guizhou.mvp.ui.main.leisure.VideoFragment;

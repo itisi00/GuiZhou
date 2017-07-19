@@ -24,7 +24,7 @@ public class SplashActivity extends RootActivity<SplashPresenter> implements Spl
         public void animate(View view) {
             view.setAlpha(0f);
             ObjectAnimator objAnimator=ObjectAnimator.ofFloat(view,"alpha",0f,1f);
-            objAnimator.setDuration(1500);
+            objAnimator.setDuration(2000);
             objAnimator.start();
         }
     };
@@ -61,8 +61,10 @@ public class SplashActivity extends RootActivity<SplashPresenter> implements Spl
         ImgMark.post(new Runnable() {
             @Override
             public void run() {
-                Glide.with(SplashActivity.this).load(R.drawable.benbenla)
-                        .animate(animator).into(img);
+                Glide.with(SplashActivity.this)
+                        .load(R.mipmap.splash_back4) //benbenla
+                        .animate(animator)
+                        .into(img);
                 startAnimat();
             }
         });
@@ -82,7 +84,7 @@ public class SplashActivity extends RootActivity<SplashPresenter> implements Spl
         ObjectAnimator animatorAlpha=ObjectAnimator.ofFloat(ImgMark,"alpha",1f,0.5f);
         set.play(animatorTranslate)
                 .with(animatorScaleX).with(animatorScaleY).with(animatorAlpha);
-        set.setDuration(1000);
+        set.setDuration(2000);
         set.setInterpolator(new AccelerateInterpolator());
         set.start();
         set.addListener(new Animator.AnimatorListener() {
@@ -100,7 +102,7 @@ public class SplashActivity extends RootActivity<SplashPresenter> implements Spl
                         startActivity(new Intent(SplashActivity.this,MainActivity.class));
                         SplashActivity.this.finish();
                     }
-                },1000);
+                },2000);
             }
 
             @Override

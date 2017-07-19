@@ -13,7 +13,7 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
-import com.itisi.guizhou.mvp.ui.main.chat.ChatSessionFragment;
+import com.itisi.guizhou.mvp.ui.main.chatsession.ChatSessionFragment;
 import com.itisi.guizhou.mvp.ui.main.guizhou.GuiZhouFragment;
 import com.itisi.guizhou.mvp.ui.main.home.HomeFragment;
 import com.itisi.guizhou.mvp.ui.main.leisure.LeisureFragment;
@@ -110,7 +110,10 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 
     @Override
     protected void initEventAndData() {
+//        StatusBarUtil.setTranslucent(this);
+//        StatusBarUtil.hideFakeStatusBarView(this);
 //        StatusBarUtil.setTranslucent(this, 0);//不加0 是半透明效果
+//        StatusBarUtil.setColor(this,getResources().getColor(R.color.colorAccent));
         if (mBottomItems==null){ //这里估计不会走 因为 在 setToolbarTitle 已经获取一次了
             mBottomItems = getResources().getStringArray(R.array.bottomMenu);
         }
@@ -278,12 +281,12 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
                 .setActiveColor(R.color.colorAccent)
                 .setInActiveColor(R.color.colorGray)
                 .addItem(new BottomNavigationItem(R.mipmap.test_menu_home_white, mBottomItems[0])
-                        .setActiveColor("#00776a"))
+                        .setActiveColor("#aa00ff"))
                 .addItem(new BottomNavigationItem(R.mipmap.test_menu_time_white, mBottomItems[1] )
-                        .setActiveColor("#8d6b63")
-                        .setBadgeItem(numberBadgeItem))
+                        .setActiveColor("#00776a"))
+//                        .setBadgeItem(numberBadgeItem)) //多一个括号 少一个括号的问题
                 .addItem(new BottomNavigationItem(R.mipmap.test_menu_love_white, mBottomItems[2])
-                        .setActiveColor("#2293f4"))
+                        .setActiveColor("#4a148c"))
                 .addItem(new BottomNavigationItem(R.mipmap.test_menu_music_white,mBottomItems[3])
                         .setActiveColor("#ff4081"))
                 .addItem(new BottomNavigationItem(R.mipmap.test_menu_chat_white, mBottomItems[4] )
@@ -403,5 +406,11 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
         }
     }
 
+    /**
+     * 聊天布局 滚动方法
+     */
+    public void recyclerSmoothScrollToBottom(){
+
+    }
 
 }

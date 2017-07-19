@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:padding="@dimen/d_15"
+              android:clickable="true"
+              android:foreground="?attr/selectableItemBackground"
+              android:layout_marginTop="@dimen/d_5"
+              android:layout_marginBottom="@dimen/d_5"
+              android:background="@color/theme_gray"
+    >
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_message_index_header"
+        android:layout_width="@dimen/d_45"
+        android:layout_height="@dimen/d_45"
+        android:src="@mipmap/logo"
+
+        />
+
+    <LinearLayout
+        android:layout_width="@dimen/d_0"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d_1"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/tv_message_index_nick"
+                android:layout_width="@dimen/d_0"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/d_10"
+                android:layout_marginRight="@dimen/d_10"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="itisi"
+                android:textSize="@dimen/txt_13"
+                />
+
+            <TextView
+                android:id="@+id/tv_message_index_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="05-05"
+                android:textSize="@dimen/txt_12"
+                />
+        </LinearLayout>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:gravity="center_vertical"
+           >
+           <TextView
+               android:id="@+id/tv_message_index_msg"
+               android:layout_width="@dimen/d_0"
+               android:layout_weight="1"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/d_2"
+               android:layout_marginBottom="@dimen/d_2"
+               android:ellipsize="end"
+               android:maxLines="1"
+               android:text="您好,惺惺惜惺惺想寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻"
+               android:textSize="@dimen/txt_14"
+               android:layout_marginLeft="@dimen/d_10"
+               android:paddingTop="@dimen/d_2"
+               android:paddingBottom="@dimen/d_2"
+               android:paddingRight="@dimen/d_30"
+               />
+           <TextView
+               android:layout_width="@dimen/d_20"
+               android:layout_height="@dimen/d_20"
+               android:text="99"
+               android:textSize="@dimen/txt_12"
+               android:textColor="@color/white"
+               android:background="@drawable/bg_badgeview"
+               android:visibility="visible"
+               android:gravity="center"
+               android:layout_marginTop="@dimen/d_2"
+               android:layout_marginBottom="@dimen/d_2"
+               />
+       </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

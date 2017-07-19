@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MsgParent">
+    <TextView
+        style="@style/MsgTime"
+        android:id="@+id/tv_chat_box_txt_send_time"
+        android:text="2017年6月20日10:37:00"
+
+        />
+    <LinearLayout
+        style="@style/MsgItemParent"
+        >
+
+    <LinearLayout
+       style="@style/MsgItemContentParentSend"
+        >
+
+        <TextView
+            android:id="@+id/tv_chat_box_txt_send_nick"
+            style="@style/MsgItemNickSend"
+            android:text="itisi"
+            />
+
+        <LinearLayout
+            style="@style/MsgItemChildParentSend"
+            >
+            <ImageView
+                android:id="@+id/iv_chat_box_txt_send_resend"
+                style="@style/MsgItemErrorTip"
+                />
+            <TextView
+                android:id="@+id/tv_chat_txt_box_send_content"
+                style="@style/MsgItemTxtSend"
+                android:text="使用图片资源时，如果出现拉伸，上左定义可拉伸区域"
+
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_chat_box_txt_send_header"
+        style="@style/MsgItemHeader"
+        />
+    </LinearLayout>
+
+</LinearLayout>

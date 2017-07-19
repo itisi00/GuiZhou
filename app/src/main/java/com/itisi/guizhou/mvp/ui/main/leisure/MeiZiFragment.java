@@ -30,8 +30,6 @@ public class MeiZiFragment extends RootFragment<MeiZiPresenter>
 
     @BindView(R.id.swipe_refresh)
     SwipeRefreshLayout mSwipeRefreshLayout;
-
-
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
     MeiZiAdapter mAdapter;
@@ -41,7 +39,7 @@ public class MeiZiFragment extends RootFragment<MeiZiPresenter>
     private boolean isRefreshing=true;//刷新 还是 加载更多 加载成功以后 是追加还是替换
 
     public MeiZiFragment() {
-        // Required empty public constructor
+
     }
 
     @Override

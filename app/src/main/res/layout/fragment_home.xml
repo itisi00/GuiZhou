@@ -22,8 +22,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="@dimen/d_5"
-            android:background="@color/color0094ff"
+            android:paddingTop="@dimen/d_10"
+            android:paddingBottom="@dimen/d_5"
+            android:background="#ab47bc"
             >
 
             <TextView
@@ -60,7 +61,7 @@
             android:orientation="horizontal"
             android:paddingTop="@dimen/d_10"
             android:paddingBottom="@dimen/d_5"
-            android:background="@color/color0094ff"
+            android:background="#ba68c8"
             >
             <TextView
                 android:id="@+id/tv_home_ittool"

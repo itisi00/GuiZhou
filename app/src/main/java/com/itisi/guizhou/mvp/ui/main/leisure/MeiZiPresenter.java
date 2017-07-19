@@ -45,6 +45,5 @@ public class MeiZiPresenter extends RxPresenter<MeiZiContract.View> implements M
                             }
                         })
         );
-
     }
 }

@@ -5,7 +5,9 @@ import android.app.Activity;
 import com.itisi.guizhou.di.module.ActivityModule;
 import com.itisi.guizhou.di.scope.ActivityScope;
 import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
+import com.itisi.guizhou.mvp.ui.chat.ChatActivity;
 import com.itisi.guizhou.mvp.ui.main.MainActivity;
+import com.itisi.guizhou.mvp.ui.recuit.RecuitActivity;
 import com.itisi.guizhou.mvp.ui.splash.SplashActivity;
 import com.itisi.guizhou.mvp.ui.test.TestRxBusActivity;
 import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
@@ -36,5 +38,7 @@ public interface ActivityComponent {
     void inject(RegistConfirmActivity activity );
     void inject(BlackNumActivity activity );
     void inject(SplashActivity activity );
+    void inject(RecuitActivity activity );
+    void inject(ChatActivity activity );
     //h后续创建的activity 接着往下写
 }

@@ -27,9 +27,9 @@
     <application
         android:name=".app.App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
@@ -41,8 +41,9 @@
 
 
         <!-- </meta-data> -->
-        <activity android:name=".mvp.ui.splash.SplashActivity"
-                  android:theme="@style/Theme.Center"          >
+        <activity
+            android:name=".mvp.ui.splash.SplashActivity"
+            android:theme="@style/Theme.Center">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -77,8 +78,19 @@
             android:name=".mvp.ui.test.CoordinateLayoutActivity"
             android:theme="@style/AppThemeBack">
         </activity>
-        <!--<activity android:name=".mvp.ui.splash.SplashActivity">-->
-        <!--</activity>-->
+        <!-- <activity android:name=".mvp.ui.splash.SplashActivity"> -->
+        <!-- </activity> -->
+        <activity
+            android:name=".mvp.ui.test.TestToolbarActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity
+            android:name=".mvp.ui.recuit.RecuitActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity android:name=".mvp.ui.chat.ChatActivity"
+                  android:theme="@style/AppThemeBack">
+        </activity>
     </application>
 
 </manifest>

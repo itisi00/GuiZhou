@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MsgParent"
+    >
+
+    <TextView
+        android:id="@+id/tv_chat_box_txt_receive_time"
+        style="@style/MsgTime"
+        android:text="2017年6月20日10:37:00"
+        />
+
+    <LinearLayout
+      style="@style/MsgItemParent"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_chat_box_txt_receive_header"
+           style="@style/MsgItemHeader"
+            />
+
+        <LinearLayout
+           style="@style/MsgItemContentParentReceive"
+            >
+
+            <TextView
+                android:id="@+id/tv_chat_box_txt_receive_nick"
+              style="@style/MsgItemNickReceive"
+                android:text="itisi"
+                />
+
+            <LinearLayout
+                style="@style/MsgItemChildParentReceive"
+                >
+
+                <TextView
+                    android:id="@+id/tv_chat_box_txt_receive_content"
+                    style="@style/MsgItemTxtReceive"
+                    android:text="收到的文本消息"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_chat_box_txt_receive_resend"
+                 style="@style/MsgItemErrorTip"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

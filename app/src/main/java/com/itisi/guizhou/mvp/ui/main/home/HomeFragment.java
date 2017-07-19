@@ -10,8 +10,10 @@ import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.App;
 import com.itisi.guizhou.base.RootFragment;
 import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
+import com.itisi.guizhou.mvp.ui.recuit.RecuitActivity;
 import com.itisi.guizhou.mvp.ui.test.CoordinateLayoutActivity;
 import com.itisi.guizhou.mvp.ui.test.TestRxBusActivity;
+import com.itisi.guizhou.mvp.ui.test.TestToolbarActivity;
 import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
@@ -33,7 +35,8 @@ import butterknife.BindView;
 /**
  * 首页-主页
  */
-public class HomeFragment extends RootFragment<HomePresenter> implements HomeContract.View
+public class HomeFragment extends RootFragment<HomePresenter>
+        implements HomeContract.View
         , View.OnClickListener {
 
 //    @BindView(R.id.tv_test1)
@@ -45,8 +48,9 @@ public class HomeFragment extends RootFragment<HomePresenter> implements HomeCon
 
     @BindView(R.id.pullrefresh)
     PullToRefreshView mPullToRefreshView;
-    private int pageSize = 10;
-    private int pageIndex = 1;
+    private int pageSize = 10;//每页多少条数据
+    private int pageIndex = 1;//第几页
+    private int totalCount=0;//总的数据条数 有些接口会返回
 
     @BindView(R.id.tv_home_rental)
     TextView tv_home_rental;//租房
@@ -121,7 +125,7 @@ public class HomeFragment extends RootFragment<HomePresenter> implements HomeCon
                 ImageLoadProxy.getInstance()
                         .load(new ImageLoadConfiguration.Builder(App.getInstance())
                                 .url(o)
-                                .defaultImageResId(R.mipmap.test_menu_love_white)
+                                .defaultImageResId(R.mipmap.splash_back4)
                                 .imageView(imageView).build());
 
             }
@@ -206,10 +210,14 @@ public class HomeFragment extends RootFragment<HomePresenter> implements HomeCon
                 ToastUtil.Success(tv_home_rental.getText().toString());
                 break;
             case R.id.tv_home_recuit:
-                ToastUtil.Success(tv_home_recuit.getText().toString());
+//                ToastUtil.Success(tv_home_recuit.getText().toString());
+                ActivityUtil.getInstance().openActivity(getActivity(), RecuitActivity.class);
+
                 break;
             case R.id.tv_home_read:
-                ToastUtil.Success(tv_home_read.getText().toString());
+//                ToastUtil.Success(tv_home_read.getText().toString());
+                ActivityUtil.getInstance().openActivity(getActivity(), TestToolbarActivity.class);
+
                 break;
             case R.id.tv_home_jingxuan:
 //                ToastUtil.Success(tv_home_jingxuan.getText().toString());
