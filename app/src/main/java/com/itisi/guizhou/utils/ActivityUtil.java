@@ -7,6 +7,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.orhanobut.logger.Logger;
+
 
 /**
  * **********************
@@ -166,6 +168,7 @@ public class ActivityUtil {
      * @param activity
      */
     public void closeActivity(Activity activity) {
+        Logger.i("closeActivity");
         activity.finish();
         //加上动画的时候  侧滑关闭之后 还有一小段动画
 		SceneAnim.closeActivityWithAnim(activity);

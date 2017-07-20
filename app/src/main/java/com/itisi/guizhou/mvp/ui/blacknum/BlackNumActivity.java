@@ -5,10 +5,11 @@ import android.view.View;
 
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
+import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 import com.yalantis.phoenix.PullToRefreshView;
 
 import butterknife.BindView;
-
+@UseRxBus
 public class BlackNumActivity extends RootActivity<BlackNumPresenter> implements BlackNumContract.View
         , View.OnClickListener {
 

@@ -3,6 +3,7 @@ package com.itisi.guizhou.utils;
 import android.app.Activity;
 
 import com.itisi.guizhou.R;
+import com.orhanobut.logger.Logger;
 
 
 /**
@@ -66,7 +67,7 @@ public class SceneAnim {
                 break;
 
         }
-        activity.overridePendingTransition(animinId,R.anim.right_out);
+        activity.overridePendingTransition(animinId,0);
     }
 
     /**

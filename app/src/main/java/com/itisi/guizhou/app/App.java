@@ -100,6 +100,10 @@ public class App extends Application {
             allActivities.remove(activity);
         }
     }
+
+    /**
+     * 获得屏幕尺寸
+     */
     public void getScreenSize() {
         WindowManager windowManager = (WindowManager)this.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics dm = new DisplayMetrics();

@@ -13,8 +13,9 @@ import com.bumptech.glide.request.animation.ViewPropertyAnimation;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.ui.main.MainActivity;
+import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 import com.jaeger.library.StatusBarUtil;
-
+@UseRxBus
 public class SplashActivity extends RootActivity<SplashPresenter> implements SplashContract.View {
     private ImageView img;
     private ImageView ImgMark;
