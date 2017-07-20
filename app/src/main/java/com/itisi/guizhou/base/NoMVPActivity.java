@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.App;
 import com.itisi.guizhou.utils.ActivityUtil;
-import com.orhanobut.logger.Logger;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
