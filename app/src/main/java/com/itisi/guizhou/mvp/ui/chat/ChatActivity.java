@@ -1,5 +1,6 @@
 package com.itisi.guizhou.mvp.ui.chat;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -15,24 +17,33 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.hyphenate.EMMessageListener;
+import com.hyphenate.chat.EMMessage;
 import com.itisi.guizhou.R;
+import com.itisi.guizhou.app.Constants;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.ui.adapter.ChatAdapter;
 import com.itisi.guizhou.mvp.ui.chat.chatfragment.EmotionMainFragment;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
+import com.orhanobut.logger.Logger;
 
 import java.util.List;
 
 import butterknife.BindView;
+import cn.finalteam.rxgalleryfinal.RxGalleryFinalApi;
+import cn.finalteam.rxgalleryfinal.rxbus.RxBusResultSubscriber;
+import cn.finalteam.rxgalleryfinal.rxbus.event.ImageMultipleResultEvent;
+
 @UseRxBus
 public class ChatActivity extends RootActivity<ChatPresenter>
         implements ChatContract.View
         , View.OnClickListener
         , BaseQuickAdapter.OnItemClickListener
-        , BaseQuickAdapter.OnItemLongClickListener,
-        BaseQuickAdapter.UpFetchListener {
+        , BaseQuickAdapter.OnItemLongClickListener
+        , BaseQuickAdapter.OnItemChildClickListener
+        , BaseQuickAdapter.UpFetchListener {
 
     public String toid;//对方的id
     public String tonick;//对方的昵称
@@ -49,6 +60,10 @@ public class ChatActivity extends RootActivity<ChatPresenter>
     private ImageView mIvExtend;//扩展菜单按钮
     private EditText mEditText;//内容输入框
     private View mInputView;
+
+    private InputMethodManager mInputMethodManager;//软键盘管理
+    private MessageReceiveLisener mReceiveLisener;//环信消息监听器
+
 
     @BindView(R.id.ll_parent)
     LinearLayout mLinearLayout;
@@ -72,10 +87,14 @@ public class ChatActivity extends RootActivity<ChatPresenter>
         initView();
         initAdapter();
         initViewListener();
+        initGalleryListener();
     }
 
-    private void initView() {
 
+
+    private void initView() {
+        mInputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        setPath();
     }
 
     private void initAdapter() {
@@ -86,6 +105,53 @@ public class ChatActivity extends RootActivity<ChatPresenter>
 
     private void initViewListener() {
         initEmotionMainFragment();
+        mReceiveLisener = new MessageReceiveLisener();
+        EaseMobUtil.addReceiveMessageListener(mReceiveLisener);
+    }
+    /**
+     * 设置 照片路径 和 裁剪路径
+     * //裁剪会自动生成路径；也可以手动设置裁剪的路径；
+     */
+    private void setPath() {
+        RxGalleryFinalApi.setImgSaveRxSDCard(Constants.PATH_GALLERY);
+        RxGalleryFinalApi.setImgSaveRxCropSDCard(Constants.PATH_GALLERY_CROP);
+    }
+
+    /**
+     * 初始化 rxgallery 的相关事件
+     */
+    private void initGalleryListener() {
+        //多选事件的回调
+//        RxGalleryListener
+//                .getInstance()
+//                .setMultiImageCheckedListener(
+//                        new IMultiImageCheckedListener() {
+//                            @Override
+//                            public void selectedImg(Object t, boolean isChecked) {
+//                                Toast.makeText(getBaseContext(), isChecked ? "itisi选中" : "itisi取消选中", Toast.LENGTH_SHORT).show();
+//                            }
+//
+//                            @Override
+//                            public void selectedImgMax(Object t, boolean isChecked, int maxSize) {
+//                                Toast.makeText(getBaseContext(), "itisi你最多只能选择" + maxSize + "张图片", Toast.LENGTH_SHORT).show();
+//                            }
+//                        });
+        //裁剪图片的回调
+//        RxGalleryListener
+//                .getInstance()
+//                .setRadioImageCheckedListener(
+//                        new IRadioImageCheckedListener() {
+//                            @Override
+//                            public void cropAfter(Object t) {
+//                                Toast.makeText(getBaseContext(), "itisi"+t.toString(), Toast.LENGTH_SHORT).show();
+//                            }
+//
+//                            @Override
+//                            public boolean isActivityFinish() {
+//                                return false;
+//                            }
+//                        });
+
     }
 
     @Override
@@ -101,38 +167,125 @@ public class ChatActivity extends RootActivity<ChatPresenter>
             mEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                 @Override
                 public void onFocusChange(View v, boolean hasFocus) {
-                    if (hasFocus) {
-//                        recyclerSmoothScrollToBottom();
-                    }
+                    //暂时不需要 因为QQ 也没有在输入框获取焦点的时候 进行滚动
+//                    if (hasFocus) {
+//                       recyclerSmoothScrollToBottom();
+//                    }
                 }
             });
             mBtnSend.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 //                    sendTxtMessage();
-
+                    ToastUtil.Success(mEditText.getText().toString());
                 }
             });
 
             TextView tv_extend_picture = (TextView) mInputView.findViewById(R.id.tv_extend_picture);//照片
             TextView tv_extend_camera = (TextView) mInputView.findViewById(R.id.tv_extend_camera);//拍照
 
-//            tv_extend_picture.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    openPhoto();
-//                }
-//            });
-//
-//            tv_extend_camera.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    openCamera();
-//                }
-//            });
+            tv_extend_picture.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openPhoto();
+                }
+            });
+
+            tv_extend_camera.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openCamera();
+                }
+            });
         }
     }
 
+    /**
+     * 打开相册 选择照片
+     */
+    private void openPhoto() {
+        //打开相册
+        // 自定义多选 不能运行
+//        RxGalleryFinal
+//               .with(ChatActivity.this)
+//                .image()
+//                .multiple()
+//                .maxSize(8)
+//                .imageLoader(ImageLoaderType.FRESCO)
+//                .subscribe(new RxBusResultSubscriber<ImageMultipleResultEvent>() {
+//
+//                    @Override
+//                    protected void onEvent(ImageMultipleResultEvent imageMultipleResultEvent) throws Exception {
+//                        Toast.makeText(getBaseContext(), "已选择" + imageMultipleResultEvent.getResult().size() + "张图片", Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//                        super.onComplete();
+//                        Toast.makeText(getBaseContext(), "OVER", Toast.LENGTH_SHORT).show();
+//                    }
+//                })
+//                .openGallery();
+
+
+//        RxGalleryFinal
+//                .with(ChatActivity.this)
+//                .image()
+//                .radio()
+//                .cropAspectRatioOptions(0, new AspectRatio("3:3", 30, 10))
+//                .crop()
+//                .imageLoader(ImageLoaderType.FRESCO)
+//                .subscribe(new RxBusResultSubscriber<ImageRadioResultEvent>() {
+//                    @Override
+//                    protected void onEvent(ImageRadioResultEvent imageRadioResultEvent) throws Exception {
+//                        Toast.makeText(getBaseContext(), "选中了图片路径：" + imageRadioResultEvent.getResult().getOriginalPath(), Toast.LENGTH_SHORT).show();
+//                    }
+//                })
+//                .openGallery();
+
+        //自定义方法的单选
+//        RxGalleryFinal
+//                .with(this)
+//                .image()
+//                .radio()
+//                .crop()
+//                .imageLoader(ImageLoaderType.GLIDE)
+//                .subscribe(new RxBusResultSubscriber<ImageRadioResultEvent>() {
+//                    @Override
+//                    protected void onEvent(ImageRadioResultEvent imageRadioResultEvent) throws Exception {
+//                        //图片选择结果
+//                        ToastUtil.Success(imageRadioResultEvent.getResult().getOriginalPath());
+//                    }
+//                })
+//                .openGallery();
+
+//        //使用默认的参数
+        RxGalleryFinalApi
+                .getInstance(ChatActivity.this)
+                .setImageMultipleResultEvent(
+                        new RxBusResultSubscriber<ImageMultipleResultEvent>() {
+                            @Override
+                            protected void onEvent(ImageMultipleResultEvent imageMultipleResultEvent) throws Exception {
+                                Logger.i("多选图片的回调");
+                                Logger.i(imageMultipleResultEvent.getResult().size()+"");
+                            }
+                        }).open();
+
+
+
+    }
+
+    /**
+     * 打开相机-拍照
+     */
+    private void openCamera() {
+//        //调用相机
+        ToastUtil.Success("调用相机");
+
+//        Intent intent = new Intent(ChatBoxActivity.this, ImageGridActivity.class);
+//        intent.putExtra(ImageGridActivity.EXTRAS_TAKE_PICKERS, true); // 是否是直接打开相机
+//        startActivityForResult(intent, REQUEST_CODE_PHOTO);
+    }
 
     @Override
     public void onClick(View view) {
@@ -154,10 +307,12 @@ public class ChatActivity extends RootActivity<ChatPresenter>
             mAdapter = new ChatAdapter(beanList);
             mAdapter.setOnItemClickListener(this);
             mAdapter.setOnItemLongClickListener(this);
+            mAdapter.setOnItemChildClickListener(this);
             mAdapter.setUpFetchListener(this);
-            mAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_RIGHT);
+            mAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
             mRecyclerView.setLayoutManager(layoutManager);
             mRecyclerView.setAdapter(mAdapter);
+            recyclerSmoothScrollToBottom();
         }
         if (isRefreshing) {
 //            mAdapter.setNewData(beanList);
@@ -200,12 +355,14 @@ public class ChatActivity extends RootActivity<ChatPresenter>
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
         ToastUtil.Success(position + ":click");
+        closeSoftInput();
 
     }
 
     @Override
     public boolean onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
         ToastUtil.Success(position + ":long");
+        closeSoftInput();
         return true;
     }
 
@@ -221,27 +378,45 @@ public class ChatActivity extends RootActivity<ChatPresenter>
 //        mAdapter.setStartUpFetchPosition(1);
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        super.onBackPressed();
-//          /* 判断是否拦截返回键操作
-//                */
-//        if (!emotionMainFragment.isInterceptBackPress()) {
-//            super.onBackPressed();
-//        }
-//    }
+    /**
+     * 关`闭软键盘
+     */
+    private void closeSoftInput() {
+        mEditText.clearFocus();
+        mInputMethodManager.hideSoftInputFromWindow(mEditText.getWindowToken(), 0);
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+          /* 判断是否拦截返回键操作
+                */
+        if (!emotionMainFragment.isInterceptBackPress()) {
+            super.onBackPressed();
+        }
+    }
 
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-//        EaseMobUtil.removeReceiveMessageListener(mReceiveLisener);
+        EaseMobUtil.removeReceiveMessageListener(mReceiveLisener);
     }
 
-
-    public void recyclerSmoothScrollToBottom(){
-
+    /**
+     * 聊天布局 滚动方法
+     */
+    public void recyclerSmoothScrollToBottom() {
+        Logger.i("滚动到底部");
+        mRecyclerView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mRecyclerView.smoothScrollToPosition(mAdapter.getItemCount());
+            }
+        }, 100);
     }
+
     /**
      * 初始化表情面板
      */
@@ -263,6 +438,50 @@ public class ChatActivity extends RootActivity<ChatPresenter>
 
     }
 
+    @Override
+    public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+        ToastUtil.Success("child:" + position);
+    }
+
+    /**
+     * 环信--收到的监听器
+     */
+    class MessageReceiveLisener implements EMMessageListener {
+        //收到消息
+        @Override
+        public void onMessageReceived(List<EMMessage> list) {
+//            Message obtainMessage = mHandler.obtainMessage();
+//            obtainMessage.what = MESSAGE_RECEVIE;
+//            obtainMessage.obj = list;
+//            mHandler.sendMessage(obtainMessage);
+            Logger.i("收到消息:" + list.size() + "===" + list.get(0));
+
+        }
+
+        //收到透传消息
+        @Override
+        public void onCmdMessageReceived(List<EMMessage> list) {
+            Logger.i("收到透传消息:" + list.get(0).toString());
+        }
+
+        //收到已读回执
+        @Override
+        public void onMessageRead(List<EMMessage> list) {
+            Logger.i("收到已读回执:" + list.get(0).toString());
+        }
+
+        //收到已送达回执---在这里判断 发送成功与失败?
+        @Override
+        public void onMessageDelivered(List<EMMessage> list) {
+            Logger.i("收到已送达回执:" + list.get(0).toString());
+        }
+
+        //消息变动---这是什么意思?
+        @Override
+        public void onMessageChanged(EMMessage emMessage, Object o) {
+            Logger.i("消息变动");
+        }
+    }
 
     /**
      * 输入框内容变化监听器

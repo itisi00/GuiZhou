@@ -112,8 +112,8 @@ public class EmotionKeyboard {
         emotionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mActivity.recyclerSmoothScrollToBottom();//内容布局滚动到底部
-                // TODO: 2017/7/19  滚动方法
+                // TODO: 2017/7/20  qq 都没有滚动 暂时注释
+//                mActivity.recyclerSmoothScrollToBottom();//内容布局滚动到底部
                 if (mExtendLayout.isShown()){
                     mExtendLayout.setVisibility(View.GONE);
                 }
@@ -139,7 +139,8 @@ public class EmotionKeyboard {
         extendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mActivity.recyclerSmoothScrollToBottom();//内容布局滚动到底部
+                // TODO: 2017/7/20  qq 都没有滚动 暂时注释
+//                mActivity.recyclerSmoothScrollToBottom();//内容布局滚动到底部
                 if (mEmotionLayout.isShown()){
                     mEmotionLayout.setVisibility(View.GONE);
                 }

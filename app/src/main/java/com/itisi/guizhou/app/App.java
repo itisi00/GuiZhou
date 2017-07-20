@@ -13,6 +13,7 @@ import com.itisi.guizhou.di.component.AppComponent;
 import com.itisi.guizhou.di.component.DaggerAppComponent;
 import com.itisi.guizhou.di.module.AppModule;
 import com.itisi.guizhou.di.module.HttpModule;
+import com.itisi.guizhou.mvp.ui.chat.EaseMobUtil;
 import com.orhanobut.logger.Logger;
 
 import java.util.HashSet;
@@ -64,6 +65,8 @@ public class App extends Application {
 //        InitializeService.start(this);
         Logger.init();//初始化日志信息
 //        RxBus.getInstance().init(this); //不能在这里初始化
+
+        EaseMobUtil.init(this);//初始化环信
     }
 
     /**

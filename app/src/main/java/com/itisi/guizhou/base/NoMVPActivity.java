@@ -108,7 +108,7 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
             mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    finish();
+                    ActivityUtil.getInstance().closeActivity(mActivity);
                 }
             });
         }
@@ -250,7 +250,6 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
         ActivityUtil.getInstance().closeActivity(this);
     }
 }

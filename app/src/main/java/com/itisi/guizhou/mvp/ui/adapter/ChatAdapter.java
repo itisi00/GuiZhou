@@ -52,6 +52,8 @@ public class ChatAdapter extends BaseQuickAdapter<MeiZiBean, BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder helper, MeiZiBean item) {
+        //这是给item中的子控件添加监听事件
+        helper.addOnClickListener(R.id.tv_chat_box_txt_receive_content);
         //3.根据不同的类型 填充数据
         switch (helper.getItemViewType()){
 //            case 0:

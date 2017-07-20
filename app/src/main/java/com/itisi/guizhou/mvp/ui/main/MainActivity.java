@@ -11,8 +11,10 @@ import android.widget.TextView;
 import com.ashokvarma.bottomnavigation.BadgeItem;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.hyphenate.EMCallBack;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
+import com.itisi.guizhou.mvp.ui.chat.EaseMobUtil;
 import com.itisi.guizhou.mvp.ui.main.chatsession.ChatSessionFragment;
 import com.itisi.guizhou.mvp.ui.main.guizhou.GuiZhouFragment;
 import com.itisi.guizhou.mvp.ui.main.home.HomeFragment;
@@ -27,6 +29,7 @@ import com.itisi.guizhou.utils.rxbus.event.EventThread;
 import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
 import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
 import com.mxn.soul.flowingdrawer_core.FlowingMenuLayout;
+import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +38,7 @@ import butterknife.BindView;
 
 @UseRxBus
 public class MainActivity extends RootActivity<MainPresenter> implements MainContract.View
-        ,View.OnClickListener{
+        , View.OnClickListener {
 
     //    @BindView(R.id.tv_test)
 //    TextView tv_test;
@@ -97,7 +100,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 
     @Override
     protected String setToolbarTitle() {
-        if (mBottomItems==null){
+        if (mBottomItems == null) {
             mBottomItems = getResources().getStringArray(R.array.bottomMenu);
         }
         return mBottomItems[0];
@@ -114,7 +117,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 //        StatusBarUtil.hideFakeStatusBarView(this);
 //        StatusBarUtil.setTranslucent(this, 0);//不加0 是半透明效果
 //        StatusBarUtil.setColor(this,getResources().getColor(R.color.colorAccent));
-        if (mBottomItems==null){ //这里估计不会走 因为 在 setToolbarTitle 已经获取一次了
+        if (mBottomItems == null) { //这里估计不会走 因为 在 setToolbarTitle 已经获取一次了
             mBottomItems = getResources().getStringArray(R.array.bottomMenu);
         }
         mFragmentManager = getSupportFragmentManager();
@@ -125,6 +128,23 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
         initDrawerMenu();
 
         initViewListener();
+// TODO: 2017/7/20  环信临时登陆 将来肯定要挪地方的
+        EaseMobUtil.login("itisi", "itisi", new EMCallBack() {
+            @Override
+            public void onSuccess() {
+                Logger.i("onSuccess");
+            }
+
+            @Override
+            public void onError(int code, String error) {
+                Logger.i("onError:" + error);
+            }
+
+            @Override
+            public void onProgress(int progress, String status) {
+            }
+        });
+
     }
 
     private void initViewListener() {
@@ -146,12 +166,14 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
         mDrawer.setTouchMode(ElasticDrawer.TOUCH_MODE_FULLSCREEN);
     }
 
-    public void setDrawerMenuFullscreen(){
+    public void setDrawerMenuFullscreen() {
         mDrawer.setTouchMode(ElasticDrawer.TOUCH_MODE_FULLSCREEN);
     }
-    public void setDrawerMenuLeftSlide(){
+
+    public void setDrawerMenuLeftSlide() {
         mDrawer.setTouchMode(ElasticDrawer.TOUCH_MODE_BEZEL);
     }
+
     private void initMenuListener() {
         //侧滑菜单 滑动监听
         mDrawer.setOnDrawerStateChangeListener(new ElasticDrawer.OnDrawerStateChangeListener() {
@@ -163,6 +185,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
                     isShown = true;
                 }
             }
+
             @Override
             public void onDrawerSlide(float openRatio, int offsetPixels) {
                 Log.i("MainActivity", "openRatio=" + openRatio + " ,offsetPixels=" + offsetPixels);
@@ -216,7 +239,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 
     }
 
-    private void changeToolbarTitle(int position){
+    private void changeToolbarTitle(int position) {
         setToolbarTitle(mBottomItems[position]);
     }
 
@@ -232,7 +255,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
      * 设置默认页面
      */
     private void setDefaultFragment() {
-        mTransaction= mFragmentManager.beginTransaction();
+        mTransaction = mFragmentManager.beginTransaction();
         mTransaction.replace(R.id.fl_main, mHomeFragment);
         mTransaction.commit();
     }
@@ -282,14 +305,14 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
                 .setInActiveColor(R.color.colorGray)
                 .addItem(new BottomNavigationItem(R.mipmap.test_menu_home_white, mBottomItems[0])
                         .setActiveColor("#aa00ff"))
-                .addItem(new BottomNavigationItem(R.mipmap.test_menu_time_white, mBottomItems[1] )
+                .addItem(new BottomNavigationItem(R.mipmap.test_menu_time_white, mBottomItems[1])
                         .setActiveColor("#00776a"))
 //                        .setBadgeItem(numberBadgeItem)) //多一个括号 少一个括号的问题
                 .addItem(new BottomNavigationItem(R.mipmap.test_menu_love_white, mBottomItems[2])
                         .setActiveColor("#4a148c"))
-                .addItem(new BottomNavigationItem(R.mipmap.test_menu_music_white,mBottomItems[3])
+                .addItem(new BottomNavigationItem(R.mipmap.test_menu_music_white, mBottomItems[3])
                         .setActiveColor("#ff4081"))
-                .addItem(new BottomNavigationItem(R.mipmap.test_menu_chat_white, mBottomItems[4] )
+                .addItem(new BottomNavigationItem(R.mipmap.test_menu_chat_white, mBottomItems[4])
                         .setActiveColor("#9966cc"))
                 .setFirstSelectedPosition(0)
                 .initialise();
@@ -349,9 +372,10 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
     public void stateSuccess() {
 
     }
+
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.menu_left_agenda:
                 ToastUtil.Success(menu_left_agenda.getText().toString());
                 break;
@@ -404,13 +428,6 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 
             }
         }
-    }
-
-    /**
-     * 聊天布局 滚动方法
-     */
-    public void recyclerSmoothScrollToBottom(){
-
     }
 
 }

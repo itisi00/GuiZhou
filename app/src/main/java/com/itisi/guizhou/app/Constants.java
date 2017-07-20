@@ -17,9 +17,13 @@ import java.io.File;
  */
 
 public class Constants {
-
+    //搞什么的 已经搞忘了
     public static final String IT_GANK_TYPE = "gank_type";
-
+    //福利缓存路径
     public static final String PATH_SDCARD = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "daguizhou" + File.separator + "fuli";
+    //相册的路径
+    public static final String PATH_GALLERY = "daguizhou";
+    //相册的裁剪路径
+    public static final String PATH_GALLERY_CROP = "daguizhou/crop";
 
 }

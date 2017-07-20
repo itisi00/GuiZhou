@@ -41,6 +41,47 @@
 
 
         <!-- </meta-data> -->
+
+        <!-- 环信start -->
+        <!-- 设置环信应用的appkey -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="1107170720115752#daguizhou" />
+        <!-- 声明sdk所需的service -->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+        <!-- 声明sdk所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <!--环信end-->
+        <!--相册 start-->
+        <activity
+            android:name="cn.finalteam.rxgalleryfinal.ui.activity.MediaActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/Theme_Light_Gallery"
+
+            />
+        <!--android:theme="@style/Theme_Light.Default"-->
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme_Light_Gallery"
+           />
+        <!--android:theme="@style/Theme_Light.Default"-->
+        <!--相册 end-->
+
         <activity
             android:name=".mvp.ui.splash.SplashActivity"
             android:theme="@style/Theme.Center">
@@ -89,7 +130,9 @@
             android:theme="@style/AppThemeBack">
         </activity>
         <activity android:name=".mvp.ui.chat.ChatActivity"
-                  android:theme="@style/AppThemeBack">
+                  android:theme="@style/AppThemeBack"
+                 android:windowSoftInputMode="adjustResize"
+            >
         </activity>
     </application>
 
