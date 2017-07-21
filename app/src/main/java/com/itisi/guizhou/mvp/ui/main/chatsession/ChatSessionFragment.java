@@ -28,9 +28,10 @@ public class ChatSessionFragment extends RootFragment<ChatSessionPresenter>
 //        , SwipeRefreshLayout.OnRefreshListener
         , BaseQuickAdapter.RequestLoadMoreListener
         , BaseQuickAdapter.OnItemClickListener
-        , BaseQuickAdapter.OnItemLongClickListener, PullToRefreshView.OnRefreshListener
+        , BaseQuickAdapter.OnItemLongClickListener
+        ,PullToRefreshView.OnRefreshListener
 //        BaseQuickAdapter.UpFetchListener
-{
+        {
 
 
     @BindView(R.id.pullrefresh)
