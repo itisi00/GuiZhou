@@ -8,8 +8,12 @@ import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
 import com.itisi.guizhou.mvp.ui.chat.ChatActivity;
 import com.itisi.guizhou.mvp.ui.main.MainActivity;
 import com.itisi.guizhou.mvp.ui.recuit.RecuitActivity;
+import com.itisi.guizhou.mvp.ui.scenic.ScenicActivity;
+import com.itisi.guizhou.mvp.ui.shiwuzhaoling.ShiWuZhaoLingActivity;
 import com.itisi.guizhou.mvp.ui.splash.SplashActivity;
+import com.itisi.guizhou.mvp.ui.techan.TeChanActivity;
 import com.itisi.guizhou.mvp.ui.test.TestRxBusActivity;
+import com.itisi.guizhou.mvp.ui.university.UniversityActivity;
 import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
 import com.itisi.guizhou.mvp.ui.user.register.RegistActivity;
 import com.itisi.guizhou.mvp.ui.user.register.RegistConfirmActivity;
@@ -40,5 +44,9 @@ public interface ActivityComponent {
     void inject(SplashActivity activity );
     void inject(RecuitActivity activity );
     void inject(ChatActivity activity );
+    void inject(UniversityActivity activity );
+    void inject(ShiWuZhaoLingActivity activity );
+    void inject(TeChanActivity activity );
+    void inject(ScenicActivity activity );
     //h后续创建的activity 接着往下写
 }

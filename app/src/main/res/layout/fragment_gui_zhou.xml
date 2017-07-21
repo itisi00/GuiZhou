@@ -28,24 +28,28 @@
             >
 
             <TextView
+                android:id="@+id/tv_home_menu_shiwuzhaoling"
                 style="@style/HomeMenu"
                 android:drawableTop="@mipmap/home_menu_shiwuzhaoling"
                 android:text="@string/guizhou_menu_shiwuzhapling"
                 />
 
             <TextView
+                android:id="@+id/tv_home_menu_techan"
                 style="@style/HomeMenu"
                 android:drawableTop="@mipmap/home_menu_techan"
                 android:text="@string/guizhou_menu_speciality"
                 />
 
             <TextView
+                android:id="@+id/tv_home_menu_university"
                 style="@style/HomeMenu"
                 android:drawableTop="@mipmap/home_menu_university"
                 android:text="@string/guizhou_menu_university"
                 />
 
             <TextView
+                android:id="@+id/tv_home_menu_scenic"
                 style="@style/HomeMenu"
                 android:drawableTop="@mipmap/home_menu_scenic"
                 android:text="@string/guizhou_menu_scenic"

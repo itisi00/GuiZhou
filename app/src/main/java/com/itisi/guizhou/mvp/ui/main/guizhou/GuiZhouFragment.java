@@ -4,10 +4,16 @@ package com.itisi.guizhou.mvp.ui.main.guizhou;
 import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.App;
 import com.itisi.guizhou.base.RootFragment;
+import com.itisi.guizhou.mvp.ui.scenic.ScenicActivity;
+import com.itisi.guizhou.mvp.ui.shiwuzhaoling.ShiWuZhaoLingActivity;
+import com.itisi.guizhou.mvp.ui.techan.TeChanActivity;
+import com.itisi.guizhou.mvp.ui.university.UniversityActivity;
+import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.imageload.ImageLoadConfiguration;
 import com.itisi.guizhou.utils.imageload.ImageLoadProxy;
@@ -26,15 +32,23 @@ import butterknife.BindView;
 /**
  * 大贵州-主页
  */
-public class GuiZhouFragment extends RootFragment<GuiZhouPresenter> implements GuiZhouContract.View,View.OnClickListener {
+public class GuiZhouFragment extends RootFragment<GuiZhouPresenter> implements GuiZhouContract.View, View.OnClickListener {
 
     @BindView(R.id.banner_guizhou)
     Banner mBanner;
 
     @BindView(R.id.pullrefresh)
     PullToRefreshView mPullToRefreshView;
-    private int pageSize=10;
-    private int pageIndex=1;
+    private int pageSize = 10;
+    private int pageIndex = 1;
+    @BindView(R.id.tv_home_menu_shiwuzhaoling)
+    TextView tv_home_menu_shiwuzhaoling;
+    @BindView(R.id.tv_home_menu_techan)
+    TextView tv_home_menu_techan;
+    @BindView(R.id.tv_home_menu_university)
+    TextView tv_home_menu_university;
+    @BindView(R.id.tv_home_menu_scenic)
+    TextView tv_home_menu_scenic;
 
 
     @Override
@@ -47,19 +61,28 @@ public class GuiZhouFragment extends RootFragment<GuiZhouPresenter> implements G
         initRepresh();
         initBannerListener();
         initBannerData();
+        initViewListener();
+    }
+
+    private void initViewListener() {
+        tv_home_menu_shiwuzhaoling.setOnClickListener(this);
+        tv_home_menu_techan.setOnClickListener(this);
+        tv_home_menu_university.setOnClickListener(this);
+        tv_home_menu_scenic.setOnClickListener(this);
+
     }
 
     private void initRepresh() {
-        mPullToRefreshView .setOnRefreshListener(new PullToRefreshView.OnRefreshListener() {
+        mPullToRefreshView.setOnRefreshListener(new PullToRefreshView.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                mPullToRefreshView .postDelayed(new Runnable() {
+                mPullToRefreshView.postDelayed(new Runnable() {
                     @Override
                     public void run() {
 //                        Logger.i("刷新数据");
-                        mPullToRefreshView .setRefreshing(false);
+                        mPullToRefreshView.setRefreshing(false);
                     }
-                },3000);
+                }, 3000);
 //                mPresenter.loadData(pageSize,pageIndex);
             }
         });
@@ -69,8 +92,8 @@ public class GuiZhouFragment extends RootFragment<GuiZhouPresenter> implements G
     private void initBannerData() {
         mBanner.setBannerAnimation(Transformer.DepthPage);
         //事实上  这个数据 应该在presenter 里面获取 临时征用了
-        List<String> images=new ArrayList<>();
-        List<String>titles=new ArrayList<>();
+        List<String> images = new ArrayList<>();
+        List<String> titles = new ArrayList<>();
         titles.add("风景1");
         titles.add("风景2");
         titles.add("风景3");
@@ -102,7 +125,7 @@ public class GuiZhouFragment extends RootFragment<GuiZhouPresenter> implements G
         mBanner.setOnBannerListener(new OnBannerListener() {
             @Override
             public void OnBannerClick(int i) {
-                ToastUtil.Success("轮播图 点击位置 :"+i);
+                ToastUtil.Success("轮播图 点击位置 :" + i);
             }
         });
     }
@@ -115,7 +138,24 @@ public class GuiZhouFragment extends RootFragment<GuiZhouPresenter> implements G
 
     @Override
     public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.tv_home_menu_shiwuzhaoling: //失物招领
+                ActivityUtil.getInstance().openActivity(mActivity, ShiWuZhaoLingActivity.class);
+                break;
+            case R.id.tv_home_menu_techan://特产
+                ActivityUtil.getInstance().openActivity(mActivity, TeChanActivity.class);
 
+                break;
+            case R.id.tv_home_menu_university://贵州大学
+                ActivityUtil.getInstance().openActivity(mActivity, UniversityActivity.class);
+
+                break;
+            case R.id.tv_home_menu_scenic://旅游景区
+                ActivityUtil.getInstance().openActivity(mActivity, ScenicActivity.class);
+
+                break;
+
+        }
     }
 
     @Override
@@ -152,7 +192,7 @@ public class GuiZhouFragment extends RootFragment<GuiZhouPresenter> implements G
     @Override
     public void onStart() {
         super.onStart();
-        if (mBanner!=null){
+        if (mBanner != null) {
             mBanner.start();
         }
     }
@@ -160,7 +200,7 @@ public class GuiZhouFragment extends RootFragment<GuiZhouPresenter> implements G
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mBanner!=null){
+        if (mBanner != null) {
             mBanner.stopAutoPlay();
         }
     }

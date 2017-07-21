@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/d_8"
+    app:cardElevation="@dimen/d_3"
+    app:contentPadding="@dimen/d_8"
+    android:layout_margin="@dimen/d_5"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/d_60"
+            android:layout_height="@dimen/d_60"
+            android:src="@mipmap/test_university_logo"
+            />
+        <LinearLayout
+            android:layout_width="@dimen/d_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/d_16"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="贵州师范大学[成立于1941年,211,985]"
+                android:maxLines="1"
+                android:ellipsize="end"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="校训:慎思笃行,博学致新"
+                android:maxLines="1"
+                android:ellipsize="end"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="校区:宝山,大学城,白云区"
+                android:maxLines="1"
+                android:ellipsize="end"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="招生办电话:0852-8888888"
+                android:maxLines="1"
+                android:ellipsize="end"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
