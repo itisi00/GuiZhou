@@ -87,7 +87,7 @@ public class GuiZhouFragment extends RootFragment<GuiZhouPresenter> implements G
                 ImageLoadProxy.getInstance()
                         .load(new ImageLoadConfiguration.Builder(App.getInstance())
                                 .url(o)
-                                .defaultImageResId(R.mipmap.test_menu_love_white)
+                                .defaultImageResId(R.mipmap.bottom_menu_love_white)
                                 .imageView(imageView).build());
 
             }

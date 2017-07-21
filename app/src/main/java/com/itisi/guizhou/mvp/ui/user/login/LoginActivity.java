@@ -149,17 +149,17 @@ public class LoginActivity extends RootActivity<LoginPresenter> implements Login
             mSweetSheet = new SweetSheet(rl_login_account);
             List<MenuEntity> list = new ArrayList<>();
             MenuEntity menuEntity1 = new MenuEntity();
-            menuEntity1.iconId = R.mipmap.test_menu_love_white;
+            menuEntity1.iconId = R.mipmap.bottom_menu_love_white;
             menuEntity1.title = "QQ";
             list.add(menuEntity1);
 
             MenuEntity menuEntity2 = new MenuEntity();
-            menuEntity2.iconId = R.mipmap.test_menu_music_white;
+            menuEntity2.iconId = R.mipmap.bottom_menu_music_white;
             menuEntity2.title = "微信";
             list.add(menuEntity2);
 
             MenuEntity menuEntity3 = new MenuEntity();
-            menuEntity3.iconId = R.mipmap.test_menu_chat_white;
+            menuEntity3.iconId = R.mipmap.bottom_menu_chat_white;
             menuEntity3.title = "微博";
             list.add(menuEntity3);
 

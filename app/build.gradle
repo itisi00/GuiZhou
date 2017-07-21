@@ -12,7 +12,7 @@ android {
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
 
-        resConfigs "zh"
+        resConfigs "zh-rCN"//配置 只使用简体中文
         multiDexEnabled true
         renderscriptTargetApi 23 //高斯模糊?
         renderscriptSupportModeEnabled true //高斯模糊?
@@ -24,7 +24,8 @@ android {
 //            enabled true
 //        }
         ndk {
-
+            //指定所用cpu架构 可有效降低apk体积,但是就适用其他cpu了
+            abiFilters 'armeabi-v7a'
         }
 
     }
@@ -87,7 +88,8 @@ android {
             ndk {
                 abiFilters = ["armeabi"]
             }
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true//去掉不用资源
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
             //Other parameters
@@ -96,8 +98,6 @@ android {
             renderscriptDebuggable false
             pseudoLocalesEnabled false
             zipAlignEnabled true
-            //“shrinkResources” 属性将会移除所有在工程中没有用到的资源
-            shrinkResources false
 
         }
         debug {

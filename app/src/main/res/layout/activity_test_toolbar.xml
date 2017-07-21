@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/test_left_menu_back"
+    android:background="@mipmap/splash_back4"
     android:orientation="vertical"
     >
     <View

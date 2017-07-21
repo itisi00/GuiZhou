@@ -13,15 +13,15 @@
           app:showAsAction="always"/>
 
     <item android:id="@+id/test_menu_collect1"
-          android:icon="@mipmap/test_menu_love_white"
+          android:icon="@mipmap/bottom_menu_love_white"
           android:title="分享"
           app:showAsAction="never"/>
     <item android:id="@+id/test_menu_collect2"
-          android:icon="@mipmap/test_menu_love_white"
+          android:icon="@mipmap/bottom_menu_love_white"
           android:title="设置"
           app:showAsAction="never"/>
     <item android:id="@+id/test_menu_collect3"
-          android:icon="@mipmap/test_menu_love_white"
+          android:icon="@mipmap/bottom_menu_love_white"
           android:title="设置2"
           app:showAsAction="never"/>
 </menu>

@@ -128,7 +128,7 @@
 
     <!--自定义相册 主题-->
     <style name="Theme_Light_Gallery"  parent="AppTheme">
-        <item name="gallery_toolbar_bg">@color/colorPrimary </item>
+        <item name="gallery_toolbar_bg">@color/colorPrimary</item>
         <!--<item name="gallery_toolbar_close_image">@mipmap/ic_launcher</item>-->
         <!--<item name="gallery_toolbar_close_color">#223</item>-->
         <!--<item name="gallery_toolbar_widget_color">#2A2A2F</item>-->
@@ -139,26 +139,36 @@
         <!--<item name="gallery_toolbar_bottom_margin">@dimen/column_width</item>-->
         <!--<item name="gallery_toolbar_text_gravity">right</item>-->
         <!--<item name="gallery_toolbar_height">@dimen/activity_horizontal_margin</item>-->
+
+        <!--猜测 按钮颜色 没测试 -->
         <!--<item name="gallery_toolbar_over_button_bg">@mipmap/ic_launcher</item>-->
         <!--<item name="gallery_toolbar_over_button_text_size">@dimen/column_width</item>-->
         <!--<item name="gallery_toolbar_over_button_text_color">#446</item>-->
         <!--<item name="gallery_toolbar_over_button_pressed_color">@color/theme_blue_dark</item>-->
         <!--<item name="gallery_toolbar_over_button_normal_color">@color/theme_blue_dark</item>-->
+        <!--相册浏览界面 状态栏的颜色 -->
         <item name="gallery_color_statusbar">@color/colorPrimary</item>
-        <!--<item name="gallery_color_active_widget">@color/theme_blue_dark</item>-->
+        <!--<item name="gallery_color_active_widget">@color/colorAccent</item>-->
+        <!--多选的时候的复选框的颜色-->
         <item name="gallery_checkbox_button_tint_color">@color/colorPrimary</item>
         <item name="gallery_checkbox_text_color">@color/colorPrimary</item>
         <!--<item name="gallery_page_bg">#FFFFFF</item>-->
         <!--<item name="gallery_default_image">@mipmap/ic_launcher</item>-->
         <!--<item name="gallery_camera_image">@mipmap/ic_launcher</item>-->
-        <!--<item name="gallery_camera_bg">@color/theme_blue_dark</item>-->
+
+        <!--相册中 相机选项的背景颜色-->
+        <!--<item name="gallery_camera_bg">@color/colorPrimary</item>-->
         <!--<item name="gallery_take_image_text_color">@color/theme_blue_dark</item>-->
+        <!--然后可能就是图标了 相册中的相机选项的-->
         <!--<item name="gallery_default_image">@mipmap/ic_launcher</item>-->
         <!--<item name="gallery_default_image">@mipmap/ic_launcher</item>-->
         <!--<item name="gallery_default_image">@mipmap/ic_launcher</item>-->
         <!--<item name="gallery_default_image">@mipmap/ic_launcher</item>-->
+
+        <!--从相册到裁剪 的 toolbar 和status 的颜色-->
         <item name="gallery_ucrop_status_bar_color">@color/colorPrimary</item>
         <item name="gallery_ucrop_toolbar_color">@color/colorPrimary</item>
+        <!--从相册到裁剪 的 toolbar上的文字的颜色-->
         <!--<item name="gallery_ucrop_toolbar_widget_color">@color/theme_blue_dark</item>-->
         <!--<item name="gallery_ucrop_activity_widget_color">@color/theme_blue_dark</item>-->
         <!--<item name="gallery_ucrop_toolbar_title">@string/app_name</item>-->

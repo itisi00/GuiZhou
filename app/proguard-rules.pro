@@ -34,6 +34,7 @@
 #-assumenosideeffects class_specification 假设调用不产生任何影响，在proguard代码优化时会将该调用remove掉。如system.out.println和Log.v等等
 #-dontwarn [class_filter] 不提示warnning
 
+
 -keepattributes Signature
 -keepattributes EnclosingMethod
 -assumenosideeffects class android.util.Log {
@@ -45,6 +46,11 @@
 }
 
 #RxGalleryFinal start
+#itisi 2017年7月21日11:43:49 add start
+-dontwarn   cn.finalteam.rxgalleryfinal.**
+-dontwarn   jp.wasabeef.glide.transformations.**
+#itisi 2017年7月21日11:43:49 add end
+
 #1.support-v7-appcompat
 -keep public class android.support.v7.widget.** { *; }
 -keep public class android.support.v7.internal.widget.** { *; }
@@ -56,7 +62,7 @@
 
 #2.rx
 -dontwarn io.reactivex.**
-#-keep io.reactivex.**
+-keep class io.reactivex.**
 -keepclassmembers class io.reactivex.** { *; }
 
 #3.retrolambda
@@ -76,6 +82,8 @@
 -keep interface uk.co.senab.photoview** { *; }
 
 #7.rxgalleryfinal
+#-keep class cn.finalteam.rxgalleryfinal{*;}
+
 -keep class cn.finalteam.rxgalleryfinal.ui.widget** { *; }
 
 -keepclassmembers class * extends android.app.Activity {
@@ -134,6 +142,7 @@
 -keepattributes Exceptions
 
 #RxJava RxAndroid
+
 -dontwarn sun.misc.**
 -keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
    long producerIndex;
@@ -150,6 +159,7 @@
 #-keepattributes Signature-keepattributes *Annotation*
 -keep class sun.misc.Unsafe { *; }
 -keep class com.google.gson.stream.** { *; }
+
 # Application classes that will be serialized/deserialized over Gson 下面替换成自己的实体类
 -keep class com.example.bean.** { *; }
 
@@ -164,6 +174,10 @@
   **[] $VALUES;
   public *;
 }
+
+#环信
+-keep class com.hyphenate.** {*;}
+-dontwarn  com.hyphenate.**
 
 
 

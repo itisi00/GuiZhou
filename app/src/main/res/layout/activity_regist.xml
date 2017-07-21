@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/test_left_menu_back"
+    android:background="@mipmap/splash_back4"
     android:orientation="vertical"
 
     tools:context="com.itisi.guizhou.mvp.ui.user.register.RegistActivity">
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/d_60"
-        android:text="欢迎注册大贵州"
+        android:text="@string/welcome"
         android:textSize="@dimen/txt_25"
         android:textColor="@color/colorWhite"
         android:textColorLink="@color/colorAccent"

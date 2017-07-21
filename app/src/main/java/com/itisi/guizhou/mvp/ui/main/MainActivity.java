@@ -303,16 +303,16 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
         bottom_main
                 .setActiveColor(R.color.colorAccent)
                 .setInActiveColor(R.color.colorGray)
-                .addItem(new BottomNavigationItem(R.mipmap.test_menu_home_white, mBottomItems[0])
+                .addItem(new BottomNavigationItem(R.mipmap.bottom_menu_home_white, mBottomItems[0])
                         .setActiveColor("#aa00ff"))
-                .addItem(new BottomNavigationItem(R.mipmap.test_menu_time_white, mBottomItems[1])
+                .addItem(new BottomNavigationItem(R.mipmap.bottom_menu_time_white, mBottomItems[1])
                         .setActiveColor("#00776a"))
 //                        .setBadgeItem(numberBadgeItem)) //多一个括号 少一个括号的问题
-                .addItem(new BottomNavigationItem(R.mipmap.test_menu_love_white, mBottomItems[2])
+                .addItem(new BottomNavigationItem(R.mipmap.bottom_menu_love_white, mBottomItems[2])
                         .setActiveColor("#4a148c"))
-                .addItem(new BottomNavigationItem(R.mipmap.test_menu_music_white, mBottomItems[3])
+                .addItem(new BottomNavigationItem(R.mipmap.bottom_menu_music_white, mBottomItems[3])
                         .setActiveColor("#ff4081"))
-                .addItem(new BottomNavigationItem(R.mipmap.test_menu_chat_white, mBottomItems[4])
+                .addItem(new BottomNavigationItem(R.mipmap.bottom_menu_chat_white, mBottomItems[4])
                         .setActiveColor("#9966cc"))
                 .setFirstSelectedPosition(0)
                 .initialise();

@@ -58,6 +58,7 @@
     <string name="login_qq">QQ</string>
     <string name="login_weixin">微信</string>
     <string name="btn_send">发送</string>
+    <string name="welcome">欢迎注册大贵州</string>
 
     <!--icon font-->
 </resources>

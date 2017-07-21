@@ -1,6 +1,8 @@
 package com.itisi.guizhou.mvp.ui.chat;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +17,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.hyphenate.EMMessageListener;
@@ -32,9 +35,15 @@ import com.orhanobut.logger.Logger;
 import java.util.List;
 
 import butterknife.BindView;
+import cn.finalteam.rxgalleryfinal.RxGalleryFinal;
 import cn.finalteam.rxgalleryfinal.RxGalleryFinalApi;
+import cn.finalteam.rxgalleryfinal.imageloader.ImageLoaderType;
 import cn.finalteam.rxgalleryfinal.rxbus.RxBusResultSubscriber;
-import cn.finalteam.rxgalleryfinal.rxbus.event.ImageMultipleResultEvent;
+import cn.finalteam.rxgalleryfinal.rxbus.event.ImageRadioResultEvent;
+import cn.finalteam.rxgalleryfinal.ui.RxGalleryListener;
+import cn.finalteam.rxgalleryfinal.ui.base.IMultiImageCheckedListener;
+import cn.finalteam.rxgalleryfinal.ui.base.IRadioImageCheckedListener;
+import cn.finalteam.rxgalleryfinal.utils.MediaScanner;
 
 @UseRxBus
 public class ChatActivity extends RootActivity<ChatPresenter>
@@ -91,7 +100,6 @@ public class ChatActivity extends RootActivity<ChatPresenter>
     }
 
 
-
     private void initView() {
         mInputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         setPath();
@@ -108,6 +116,7 @@ public class ChatActivity extends RootActivity<ChatPresenter>
         mReceiveLisener = new MessageReceiveLisener();
         EaseMobUtil.addReceiveMessageListener(mReceiveLisener);
     }
+
     /**
      * 设置 照片路径 和 裁剪路径
      * //裁剪会自动生成路径；也可以手动设置裁剪的路径；
@@ -121,36 +130,36 @@ public class ChatActivity extends RootActivity<ChatPresenter>
      * 初始化 rxgallery 的相关事件
      */
     private void initGalleryListener() {
-        //多选事件的回调
-//        RxGalleryListener
-//                .getInstance()
-//                .setMultiImageCheckedListener(
-//                        new IMultiImageCheckedListener() {
-//                            @Override
-//                            public void selectedImg(Object t, boolean isChecked) {
-//                                Toast.makeText(getBaseContext(), isChecked ? "itisi选中" : "itisi取消选中", Toast.LENGTH_SHORT).show();
-//                            }
-//
-//                            @Override
-//                            public void selectedImgMax(Object t, boolean isChecked, int maxSize) {
-//                                Toast.makeText(getBaseContext(), "itisi你最多只能选择" + maxSize + "张图片", Toast.LENGTH_SHORT).show();
-//                            }
-//                        });
-        //裁剪图片的回调
-//        RxGalleryListener
-//                .getInstance()
-//                .setRadioImageCheckedListener(
-//                        new IRadioImageCheckedListener() {
-//                            @Override
-//                            public void cropAfter(Object t) {
-//                                Toast.makeText(getBaseContext(), "itisi"+t.toString(), Toast.LENGTH_SHORT).show();
-//                            }
-//
-//                            @Override
-//                            public boolean isActivityFinish() {
-//                                return false;
-//                            }
-//                        });
+//        多选事件的回调
+        RxGalleryListener
+                .getInstance()
+                .setMultiImageCheckedListener(
+                        new IMultiImageCheckedListener() {
+                            @Override
+                            public void selectedImg(Object t, boolean isChecked) {
+                                Toast.makeText(getBaseContext(), isChecked ? "itisi选中" : "itisi取消选中", Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void selectedImgMax(Object t, boolean isChecked, int maxSize) {
+                                Toast.makeText(getBaseContext(), "itisi你最多只能选择" + maxSize + "张图片", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+//        裁剪图片的回调
+        RxGalleryListener
+                .getInstance()
+                .setRadioImageCheckedListener(
+                        new IRadioImageCheckedListener() {
+                            @Override
+                            public void cropAfter(Object t) {
+                                Toast.makeText(getBaseContext(), "itisi"+t.toString(), Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public boolean isActivityFinish() {
+                                return false;
+                            }
+                        });
 
     }
 
@@ -205,28 +214,6 @@ public class ChatActivity extends RootActivity<ChatPresenter>
      */
     private void openPhoto() {
         //打开相册
-        // 自定义多选 不能运行
-//        RxGalleryFinal
-//               .with(ChatActivity.this)
-//                .image()
-//                .multiple()
-//                .maxSize(8)
-//                .imageLoader(ImageLoaderType.FRESCO)
-//                .subscribe(new RxBusResultSubscriber<ImageMultipleResultEvent>() {
-//
-//                    @Override
-//                    protected void onEvent(ImageMultipleResultEvent imageMultipleResultEvent) throws Exception {
-//                        Toast.makeText(getBaseContext(), "已选择" + imageMultipleResultEvent.getResult().size() + "张图片", Toast.LENGTH_SHORT).show();
-//                    }
-//
-//                    @Override
-//                    public void onComplete() {
-//                        super.onComplete();
-//                        Toast.makeText(getBaseContext(), "OVER", Toast.LENGTH_SHORT).show();
-//                    }
-//                })
-//                .openGallery();
-
 
 //        RxGalleryFinal
 //                .with(ChatActivity.this)
@@ -260,18 +247,92 @@ public class ChatActivity extends RootActivity<ChatPresenter>
 //                .openGallery();
 
 //        //使用默认的参数
-        RxGalleryFinalApi
-                .getInstance(ChatActivity.this)
-                .setImageMultipleResultEvent(
-                        new RxBusResultSubscriber<ImageMultipleResultEvent>() {
-                            @Override
-                            protected void onEvent(ImageMultipleResultEvent imageMultipleResultEvent) throws Exception {
-                                Logger.i("多选图片的回调");
-                                Logger.i(imageMultipleResultEvent.getResult().size()+"");
-                            }
-                        }).open();
+//        RxGalleryFinalApi
+//                .getInstance(ChatActivity.this)
+//                .setType(RxGalleryFinalApi.SelectRXType.TYPE_IMAGE,3) // 好像没用 这个设置多选 两个参数的
+//                .setImageMultipleResultEvent(
+//                        new RxBusResultSubscriber<ImageMultipleResultEvent>() {
+//                            @Override
+//                            protected void onEvent(ImageMultipleResultEvent imageMultipleResultEvent) throws Exception {
+//                                Logger.i("多选图片的回调");
+//                                Logger.i(imageMultipleResultEvent.getResult().size()+"");
+//                            }
+//                        }).open();
 
 
+//        //使用自定义的参数
+//        RxGalleryFinalApi
+//                .getInstance(ChatActivity.this)
+//                .setType(RxGalleryFinalApi.SelectRXType.TYPE_IMAGE, RxGalleryFinalApi.SelectRXType.TYPE_SELECT_MULTI)
+//
+//                .setImageMultipleResultEvent(new RxBusResultSubscriber<ImageMultipleResultEvent>() {
+//                    @Override
+//                    protected void onEvent(ImageMultipleResultEvent imageMultipleResultEvent) throws Exception {
+//                        Logger.i("多选图片的回调:"+imageMultipleResultEvent.getResult().size());
+//
+//                    }
+//                }).open();
+
+        //多选图片
+//        RxGalleryFinal
+//                .with(ChatActivity.this)
+//                .image()
+//                .multiple()
+//                .maxSize(5)
+//                .imageLoader(ImageLoaderType.GLIDE)
+//                .subscribe(new RxBusResultSubscriber<ImageMultipleResultEvent>() {
+//
+//                    @Override
+//                    protected void onEvent(ImageMultipleResultEvent imageMultipleResultEvent) throws Exception {
+//                        Toast.makeText(getBaseContext(), "已选择" + imageMultipleResultEvent.getResult().size() + "张图片", Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//                        super.onComplete();
+//                        Toast.makeText(getBaseContext(), "OVER", Toast.LENGTH_SHORT).show();
+//                    }
+//                })
+//               .openGallery();
+
+        //单选，使用RxGalleryFinal默认设置，并且带有裁剪
+//        RxGalleryFinalApi.getInstance(ChatActivity.this)
+//                .openGalleryRadioImgDefault(
+//                        new RxBusResultSubscriber<ImageRadioResultEvent>() {
+//                            @Override
+//                            protected void onEvent(ImageRadioResultEvent imageRadioResultEvent) throws Exception {
+//                                Logger.i("只要选择图片就会触发");
+//                            }
+//                        })
+//                .onCropImageResult(
+//                        new IRadioImageCheckedListener() {
+//                            @Override
+//                            public void cropAfter(Object t) {
+//                                Logger.i("裁剪完成;"+t);
+//                            }
+//
+//                            @Override
+//                            public boolean isActivityFinish() {
+//                                Logger.i("返回false不关闭，返回true则为关闭");
+//                                return true;
+//                            }
+//                        });
+
+        //自定义单选
+        RxGalleryFinal
+                .with(ChatActivity.this)
+                .image()
+                .radio()
+//                .cropAspectRatioOptions(0, new AspectRatio("3:3", 30, 10))
+                .crop(false)
+                .imageLoader(ImageLoaderType.GLIDE)
+                .subscribe(new RxBusResultSubscriber<ImageRadioResultEvent>() {
+                    @Override
+                    protected void onEvent(ImageRadioResultEvent imageRadioResultEvent) throws Exception {
+                        Toast.makeText(getBaseContext(), "选中了图片路径：" + imageRadioResultEvent.getResult().getOriginalPath(), Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .openGallery();
 
     }
 
@@ -279,12 +340,33 @@ public class ChatActivity extends RootActivity<ChatPresenter>
      * 打开相机-拍照
      */
     private void openCamera() {
-//        //调用相机
-        ToastUtil.Success("调用相机");
+        RxGalleryFinalApi.openZKCameraForResult(this, new MediaScanner.ScanCallback() {
+            @Override
+            public void onScanCompleted(String[] images) {
 
-//        Intent intent = new Intent(ChatBoxActivity.this, ImageGridActivity.class);
-//        intent.putExtra(ImageGridActivity.EXTRAS_TAKE_PICKERS, true); // 是否是直接打开相机
-//        startActivityForResult(intent, REQUEST_CODE_PHOTO);
+            }
+        });
+//        RxGalleryFinalApi.openZKCamera(ChatActivity.this);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Logger.i("onActivityResult: requestCode=" + requestCode + ", resultCode=" + resultCode + " data:" + data);
+        if (requestCode == RxGalleryFinalApi.TAKE_IMAGE_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            Logger.i("拍照OK，图片路径:" + RxGalleryFinalApi.fileImagePath.getPath().toString());
+            //刷新相册数据库
+            RxGalleryFinalApi.openZKCameraForResult(ChatActivity.this, new MediaScanner.ScanCallback() {
+                @Override
+                public void onScanCompleted(String[] strings) {
+                    Logger.i(String.format("拍照成功,图片存储路径:%s", strings[0]));
+                        RxGalleryFinalApi.cropScannerForResult(ChatActivity.this, RxGalleryFinalApi.getModelPath(), strings[0]);
+                    //调用裁剪.RxGalleryFinalApi.getModelPath()为默认的输出路径
+                }
+            });
+        } else {
+            Logger.i("失敗");
+        }
     }
 
     @Override

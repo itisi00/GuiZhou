@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@mipmap/test_left_menu_back"
+    android:background="@mipmap/splash_back4"
     tools:context="com.itisi.guizhou.mvp.ui.user.register.RegistConfirmActivity">
 
     <include layout="@layout/toolbar" android:visibility="gone"/>

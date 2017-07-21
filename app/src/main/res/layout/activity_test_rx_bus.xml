@@ -109,7 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitStart"
-                android:src="@mipmap/test_left_menu_back"/>
+                android:src="@mipmap/splash_back4"/>
 
 
             <Button

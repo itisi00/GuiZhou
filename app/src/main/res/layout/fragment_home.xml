@@ -86,7 +86,7 @@
             <TextView
                 android:id="@+id/tv_home_more"
                 style="@style/HomeMenu"
-                android:drawableTop="@mipmap/test_menu_love_white"
+                android:drawableTop="@mipmap/bottom_menu_love_white"
                 android:text="@string/home_menu_more"
                 android:visibility="invisible"
                 />
