@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.ui.adapter;
+package com.itisi.guizhou.mvp.adapter;
 
 import android.support.annotation.LayoutRes;
 

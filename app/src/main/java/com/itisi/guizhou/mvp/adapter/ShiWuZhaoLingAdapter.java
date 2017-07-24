@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.ui.adapter;
+package com.itisi.guizhou.mvp.adapter;
 
 import android.support.annotation.LayoutRes;
 
@@ -8,19 +8,19 @@ import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 
 /**
  * **********************
- * 功 能:聊天会话的界面的适配器
+ * 功 能:必填必填必填必填必填必填
  * 创建人:itisi
  * 邮  箱:itisivip@qq.com
- * 创建时间:2017/7/19 18:02
+ * 创建时间:2017/7/21 18:02
  * 修改人:itisi
- * 修改时间: 2017/7/19 18:02
+ * 修改时间: 2017/7/21 18:02
  * 修改内容:itisi
  * *********************
  */
 
-public class ChatSessionAdapter  extends BaseQuickAdapter<MeiZiBean, BaseViewHolder> {
+public class ShiWuZhaoLingAdapter extends BaseQuickAdapter<MeiZiBean, BaseViewHolder> {
 
-    public ChatSessionAdapter(@LayoutRes int layoutResId) {
+    public ShiWuZhaoLingAdapter(@LayoutRes int layoutResId) {
         super(layoutResId);
     }
 

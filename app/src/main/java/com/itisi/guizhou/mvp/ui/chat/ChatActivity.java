@@ -25,7 +25,7 @@ import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.Constants;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
-import com.itisi.guizhou.mvp.ui.adapter.ChatAdapter;
+import com.itisi.guizhou.mvp.adapter.ChatAdapter;
 import com.itisi.guizhou.mvp.ui.chat.chatfragment.EmotionMainFragment;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;

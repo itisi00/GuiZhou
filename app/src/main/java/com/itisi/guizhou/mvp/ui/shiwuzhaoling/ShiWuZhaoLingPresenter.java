@@ -1,7 +1,7 @@
 package com.itisi.guizhou.mvp.ui.shiwuzhaoling;
 
 import com.itisi.guizhou.base.RxPresenter;
-import com.itisi.guizhou.common.CommonSubscriber;
+import com.itisi.guizhou.mvp.model.CommonSubscriber;
 import com.itisi.guizhou.common.RxUtil;
 import com.itisi.guizhou.mvp.model.DataManager;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;

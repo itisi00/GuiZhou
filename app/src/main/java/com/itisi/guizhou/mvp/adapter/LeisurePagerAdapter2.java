@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.ui.adapter;
+package com.itisi.guizhou.mvp.adapter;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -9,28 +9,26 @@ import java.util.List;
 
 /**
  * **********************
- * 功 能:休闲主页 适配器
+ * 功 能:测试
  * 创建人:itisi
  * 邮  箱:itisivip@qq.com
- * 创建时间:2017/7/12 16:43
+ * 创建时间:2017/7/13 14:21
  * 修改人:itisi
- * 修改时间: 2017/7/12 16:43
+ * 修改时间: 2017/7/13 14:21
  * 修改内容:itisi
  * *********************
  */
 
-public class LeisurePagerAdapter extends FragmentPagerAdapter { //FragmentStatePagerAdapter
-
+public class LeisurePagerAdapter2 extends FragmentPagerAdapter {
     List<Fragment> mFragmentList;
-    List<String>mTitleList;
+    List<String> mTitleList;
     Context mContext;
 
-
-    public LeisurePagerAdapter(FragmentManager fm) {
-        this(fm,null,null,null);
+    public LeisurePagerAdapter2(FragmentManager fm) {
+        super(fm);
     }
 
-    public LeisurePagerAdapter(FragmentManager fm, List<Fragment> fragmentList, List<String> titleList, Context context) {
+    public LeisurePagerAdapter2(FragmentManager fm, List<Fragment> fragmentList, List<String> titleList, Context context) {
         super(fm);
         mFragmentList = fragmentList;
         mTitleList = titleList;
@@ -46,11 +44,4 @@ public class LeisurePagerAdapter extends FragmentPagerAdapter { //FragmentStateP
     public int getCount() {
         return mFragmentList.size();
     }
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return mTitleList.get(position);
-    }
-
-
 }

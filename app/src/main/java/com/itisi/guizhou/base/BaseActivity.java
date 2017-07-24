@@ -2,7 +2,6 @@ package com.itisi.guizhou.base;
 
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatDelegate;
-import android.support.v7.widget.Toolbar;
 import android.view.ViewGroup;
 
 import com.itisi.guizhou.app.App;
@@ -91,6 +90,7 @@ public abstract class BaseActivity <T extends BasePresenter>extends NoMVPActivit
 //        SnackbarUtil.show(((ViewGroup) findViewById(android.R.id.content)).getChildAt(0), msg);
         Snackbar.make(((ViewGroup) findViewById(android.R.id.content)).getChildAt(0), msg, Snackbar.LENGTH_LONG).show();
         // TODO: 2017/7/5 显示错误信息 以后在封装
+        stateError(); //重写这个方法 处理即可
     }
 
 }

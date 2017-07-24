@@ -8,7 +8,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
-import com.itisi.guizhou.mvp.ui.adapter.TeChanAdapter;
+import com.itisi.guizhou.mvp.adapter.TeChanAdapter;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 import com.yalantis.phoenix.PullToRefreshView;
@@ -106,9 +106,15 @@ public class TeChanActivity extends RootActivity<TeChanPresenter>
 
     }
 
+//    @Override
+//    public void showErrorMsg(String msg) {
+//        super.showErrorMsg(msg);
+//        stateError();
+//    }
+
     @Override
     public void stateError() {
-
+        ToastUtil.Error("停止");//没有已加载数据,空布局.有则提示.然后 停止刷新 或者加重动作
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.itisi.guizhou.common;
+package com.itisi.guizhou.mvp.model;
 
 import android.text.TextUtils;
 
