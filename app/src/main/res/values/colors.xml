@@ -13,6 +13,7 @@
     <color name="colorBlack">#000000</color>
     <color name="colorGreen">#00ff00</color>
     <color name="colorGray">#ccc</color>
+    <color name="colorTransparent">#00ffffff</color>
 
     <color name="bg_message_item">#ffDDDDDD</color>
     <color name="filter_reset_bg_color">#69AFF5</color>

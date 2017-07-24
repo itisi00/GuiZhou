@@ -30,7 +30,7 @@ public class TestRxBusActivity extends RootActivity<MainPresenter> implements Ma
     }
 
     @Override
-    protected String setToolbarTitle() {
+    protected String setToolbarTvTitle() {
         return "测试页面测试标题测试页面测试标题测试页面测试标题";
     }
 

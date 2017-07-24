@@ -1,8 +1,8 @@
-package com.itisi.guizhou.mvp.ui.scenic;
+package com.itisi.guizhou.mvp.ui.scenic.detail;
 
 import com.itisi.guizhou.base.RxPresenter;
-import com.itisi.guizhou.mvp.model.CommonSubscriber;
 import com.itisi.guizhou.common.RxUtil;
+import com.itisi.guizhou.mvp.model.CommonSubscriber;
 import com.itisi.guizhou.mvp.model.DataManager;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.model.http.response.GankResponse;
@@ -16,19 +16,19 @@ import javax.inject.Inject;
  * 功 能:必填必填必填必填必填必填
  * 创建人:itisi
  * 邮  箱:itisivip@qq.com
- * 创建时间:2017/7/21 16:36
+ * 创建时间:2017/7/24 9:46
  * 修改人:itisi
- * 修改时间: 2017/7/21 16:36
+ * 修改时间: 2017/7/24 9:46
  * 修改内容:itisi
  * *********************
  */
 
-public class ScenicPresenter extends RxPresenter<ScenicContract.View> implements ScenicContract.Presenter {
+public class ScenicDetailPresenter extends RxPresenter<ScenicDetailContract.View> implements ScenicDetailContract.Presenter {
 
     private DataManager mDataManager;
 
     @Inject
-    public ScenicPresenter(DataManager dataManager) {
+    public ScenicDetailPresenter(DataManager dataManager) {
         mDataManager = dataManager;
     }
 

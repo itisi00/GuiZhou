@@ -99,7 +99,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
     }
 
     @Override
-    protected String setToolbarTitle() {
+    protected String setToolbarTvTitle() {
         if (mBottomItems == null) {
             mBottomItems = getResources().getStringArray(R.array.bottomMenu);
         }
@@ -117,7 +117,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 //        StatusBarUtil.hideFakeStatusBarView(this);
 //        StatusBarUtil.setTranslucent(this, 0);//不加0 是半透明效果
 //        StatusBarUtil.setColor(this,getResources().getColor(R.color.colorAccent));
-        if (mBottomItems == null) { //这里估计不会走 因为 在 setToolbarTitle 已经获取一次了
+        if (mBottomItems == null) { //这里估计不会走 因为 在 setToolbarTvTitle 已经获取一次了
             mBottomItems = getResources().getStringArray(R.array.bottomMenu);
         }
         mFragmentManager = getSupportFragmentManager();
@@ -240,7 +240,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
     }
 
     private void changeToolbarTitle(int position) {
-        setToolbarTitle(mBottomItems[position]);
+        setToolbarTvTitle(mBottomItems[position]);
     }
 
     /**

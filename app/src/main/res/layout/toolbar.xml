@@ -5,20 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/toolbar_all"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="?attr/actionBarSize"
     android:background="?attr/colorPrimary"
     android:gravity="center"
     android:theme="@style/ToolbarTheme"
     app:subtitleTextColor="@color/colorWhite"
     app:titleTextColor="@color/colorWhite"
-
+    app:layout_collapseMode="pin"
     >
+    <!--android:background="@android:color/transparent"-->
 
     <!--
         android:background="?attr/colorPrimary"
-
         android:background="@drawable/bg_toolbar"
-
         需要用代码控制
     app:navigationIcon="@mipmap/menu_back"-->
     <LinearLayout

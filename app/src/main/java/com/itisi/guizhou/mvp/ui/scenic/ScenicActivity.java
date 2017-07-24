@@ -9,6 +9,8 @@ import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.adapter.ScenicAdapter;
+import com.itisi.guizhou.mvp.ui.scenic.detail.ScenicDetailActivity;
+import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 import com.yalantis.phoenix.PullToRefreshView;
@@ -120,7 +122,8 @@ public class ScenicActivity extends RootActivity<ScenicPresenter>
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        ToastUtil.Success(position+":click");
+//        ToastUtil.Success(position+":click");
+        ActivityUtil.getInstance().openActivity(this, ScenicDetailActivity.class);
 
     }
 

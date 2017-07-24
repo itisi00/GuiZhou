@@ -148,6 +148,14 @@
             android:name=".mvp.ui.shiwuzhaoling.ShiWuZhaoLingActivity"
             android:theme="@style/AppThemeBack">
         </activity>
+        <activity
+            android:name=".mvp.ui.scenic.detail.ScenicDetailActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity android:name=".mvp.ui.scenic.onedetail.ScenicOneActivity"
+                  android:theme="@style/AppThemeBack"
+            >
+        </activity>
     </application>
 
 </manifest>

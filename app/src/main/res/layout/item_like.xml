@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_1"
+        android:layout_marginBottom="@dimen/d_10"
+        android:background="@color/colorGray"
+        />
+
+    <com.google.android.flexbox.FlexboxLayout
+        app:flexWrap="wrap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/d_15"
+            android:layout_margin="@dimen/d_5"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/like_activity"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/d_5"
+            android:lineSpacingExtra="@dimen/d_10"
+            android:lineSpacingMultiplier="2"
+            android:text="itisi"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_14"
+            android:textStyle="italic"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/d_5"
+            android:text="同一个世界同一个梦想"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_14"
+            android:textStyle="italic"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/d_5"
+            android:text="my love"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_14"
+            android:textStyle="italic"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/d_5"
+            android:text="虞美人"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_14"
+            android:textStyle="italic"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/d_5"
+            android:paddingRight="@dimen/d_5"
+            android:text="zl"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_14"
+            android:textStyle="italic"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/d_5"
+            android:text="江山如画-美人多娇"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_14"
+            android:textStyle="italic"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/d_5"
+            android:text="看窗外,那是朕留给你的江山"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_14"
+            android:textStyle="italic"
+
+            />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+</LinearLayout>

@@ -46,7 +46,6 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
 
 
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         //将window的背景图设置为空
@@ -98,7 +97,7 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
     private void initToolbar() {
 
          boolean isShowNavigationIcon = setIsNavigationIconShow();//是否显示返回图标
-         String title=setToolbarTitle();//标题
+         String title= setToolbarTvTitle();//标题
          String moreTxt= setToolbarMoreTxt();//更多-文字--可能会换成 字体图标
          int menuLayoutId=setMenuLayoutId();//溢出菜单布局id
          Toolbar.OnMenuItemClickListener onMenuItemClickListener=setMenuItemClickListener();//溢出菜单点击事件
@@ -146,7 +145,7 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
      * 设置标题--此方法一般在进入页面的时候调用,且标题不会常变
      * @return
      */
-    protected String setToolbarTitle() {
+    protected String setToolbarTvTitle() {
         return "";
     }
 
@@ -154,10 +153,12 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
      * 设置标题--此方法一般用于动态改变title
      * @param title
      */
-    protected void setToolbarTitle(String title){
+    protected void setToolbarTvTitle(String title){
         mToolbarTitle.setText(title);
     }
-
+    protected void setToolbarTitle(String title){
+        mToolbar.setTitle(title);
+    }
 
     /**
      * 设置更多---右边的文字 将来可换成子图图标
@@ -196,6 +197,14 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
      */
     protected void setToolbarHide(){
         mToolbar.setVisibility(View.GONE);
+    }
+
+    /**
+     * 设置toolbar的背景颜色
+     * @param color
+     */
+    protected void setToolbarBackground(int color){
+        mToolbar.setBackgroundColor(color);
     }
 
     /**
@@ -246,6 +255,8 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
         App.getInstance().removeActivity(this);
         mUnbinder.unbind();
     }
+
+
 
     @Override
     public void onBackPressed() {
