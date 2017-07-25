@@ -51,7 +51,7 @@ public class PhotoViewActivity extends RootActivity<PhotoViewPresenter> implemen
         mPhotoView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                ToastUtil.Info("长安");
+                ToastUtil.Info("长按事件");
                 return true;
             }
         });

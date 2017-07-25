@@ -15,6 +15,7 @@ import com.itisi.guizhou.di.module.AppModule;
 import com.itisi.guizhou.di.module.HttpModule;
 import com.itisi.guizhou.mvp.ui.chat.EaseMobUtil;
 import com.orhanobut.logger.Logger;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -67,6 +68,16 @@ public class App extends Application {
 //        RxBus.getInstance().init(this); //不能在这里初始化
 
         EaseMobUtil.init(this);//初始化环信
+
+        // TODO: 2017/7/25  第三个参数为SDK调试模式开关，调试模式的行为特性如下：
+        /*
+            输出详细的Bugly SDK的Log；
+            每一条Crash都会被立即上报；
+            自定义日志将会在Logcat中输出
+            建议在测试阶段建议设置成true，发布时设置为false。
+
+         */
+        CrashReport.initCrashReport(getApplicationContext(), "c049fb9b8f", false);
     }
 
     /**

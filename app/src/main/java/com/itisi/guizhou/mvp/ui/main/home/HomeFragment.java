@@ -225,7 +225,6 @@ public class HomeFragment extends RootFragment<HomePresenter>
 //                bundle.putString("url","http://static10.photo.sina.com.cn/middle/5a3ab1b1x9961016a8699&690");
 //                ActivityUtil.getInstance().openActivity(getActivity(), PhotoViewActivity.class,bundle);
 
-
                 ArrayList<String>urls=new ArrayList<>();
                 urls.add("http://inews.gtimg.com/newsapp_bt/0/1834185779/641");
                 urls.add("http://inews.gtimg.com/newsapp_bt/0/1834185236/641");

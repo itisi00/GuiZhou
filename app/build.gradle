@@ -25,7 +25,7 @@ android {
 //        }
         ndk {
             //指定所用cpu架构 可有效降低apk体积,但是就适用其他cpu了
-            abiFilters 'armeabi-v7a'
+//            abiFilters 'armeabi-v7a'
         }
 
     }
@@ -86,7 +86,7 @@ android {
     buildTypes {
         release {
             ndk {
-                abiFilters = ["armeabi"]
+                abiFilters = ["armeabi-v7a"]
             }
             minifyEnabled true
             shrinkResources true//去掉不用资源
@@ -102,7 +102,7 @@ android {
         }
         debug {
             ndk {
-                abiFilters = ["armeabi"]
+                abiFilters = ["armeabi-v7a"]
             }
             signingConfig signingConfigs.config
         }
@@ -201,6 +201,11 @@ dependencies {
     debugCompile rootProject.ext.dependencies["leakcanary-android"]
     releaseCompile rootProject.ext.dependencies["leakcanary-android-no-op"]
     //    compile 'com.android.support:support-v4:26.+' //我坚信其他库引用了
+
+    //bug 收集 测试
+    compile rootProject.ext.dependencies["crashreport"]
+    compile rootProject.ext.dependencies["nativecrashreport"]
+
 
     // support v4 新增文件的时候 自己会恢复
     compile 'com.android.support.constraint:constraint-layout:1.0.2'

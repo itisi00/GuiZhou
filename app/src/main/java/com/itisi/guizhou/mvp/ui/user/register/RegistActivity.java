@@ -44,6 +44,7 @@ public class RegistActivity extends RootActivity<RegistPresenter> implements Reg
     TextInputEditText tie_regist_validate;//电话号码 输入框 用来监听焦点事件
     @BindView(R.id.tie_regist_phone)
     TextInputEditText tie_regist_phone;//验证码 输入框 用来监听焦点事件
+    private Timer mTimer;
 
     @Override
     protected int getLayoutId() {
@@ -84,7 +85,7 @@ public class RegistActivity extends RootActivity<RegistPresenter> implements Reg
                 openAgreement();
                 break;
             case R.id.btn_regist_next:
-                ActivityUtil.getInstance().openActivity(RegistActivity.this,RegistConfirmActivity.class);
+                ActivityUtil.getInstance().openActivity(RegistActivity.this, RegistConfirmActivity.class);
                 break;
         }
     }
@@ -108,7 +109,7 @@ public class RegistActivity extends RootActivity<RegistPresenter> implements Reg
         } else {
             tv_regist_getcode.setTextColor(getResources().getColor(R.color.colorGray));
             isWaiting = true;
-            final Timer timer = new Timer();
+            mTimer = new Timer();
             final int[] temp = {10};//10s
             TimerTask timerTask = new TimerTask() {
                 @Override
@@ -119,7 +120,7 @@ public class RegistActivity extends RootActivity<RegistPresenter> implements Reg
                             temp[0]--;
                             tv_regist_getcode.setText(temp[0] + "秒后重新获取");
                             if (temp[0] == 0) {
-                                timer.cancel();
+                                mTimer.cancel();
                                 isWaiting = false;
                                 tv_regist_getcode.setTextColor(getResources().getColor(R.color.colorAccent));
                                 tv_regist_getcode.setText("获取验证码");
@@ -129,7 +130,7 @@ public class RegistActivity extends RootActivity<RegistPresenter> implements Reg
 
                 }
             };
-            timer.schedule(timerTask, 1000, 1000);
+            mTimer.schedule(timerTask, 1000, 1000);
 
         }
     }
@@ -175,6 +176,22 @@ public class RegistActivity extends RootActivity<RegistPresenter> implements Reg
 
                 }
                 break;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mTimer != null) {
+            mTimer.cancel();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if (mTimer != null) {
+            mTimer.cancel();
         }
     }
 }

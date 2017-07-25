@@ -91,7 +91,12 @@ ext{
             "blockcanary-android"       : "com.github.moduth:blockcanary-android:${dependVersion.blockcanary}",
             "blockcanary-no-op"         : "com.github.moduth:blockcanary-no-op:${dependVersion.blockcanary}",
             "leakcanary-android"        : "com.squareup.leakcanary:leakcanary-android:${dependVersion.leakcanary}",
-            "leakcanary-android-no-op"  : "com.squareup.leakcanary:leakcanary-android-no-op:${dependVersion.leakcanary}"
+            "leakcanary-android-no-op"  : "com.squareup.leakcanary:leakcanary-android-no-op:${dependVersion.leakcanary}",
+
+            // 测试 bug 收集
+            "crashreport"               : "com.tencent.bugly:crashreport:latest.release",
+            "nativecrashreport"         : "com.tencent.bugly:nativecrashreport:latest.release",
+
 
     ]
 }

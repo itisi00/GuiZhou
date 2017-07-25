@@ -81,51 +81,97 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#f5f6f8"
-                android:padding="@dimen/d_3"
+                android:background="@drawable/bg_tag_recuit"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/txt_13"
+                android:text="游戏"
                 android:layout_marginRight="@dimen/d_10"
                 android:layout_marginTop="@dimen/d_5"
                 android:layout_marginBottom="@dimen/d_5"
-                android:textColor="#bfc0c2"
-                android:textSize="@dimen/txt_13"
-                android:text="游戏"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#f5f6f8"
-                android:padding="@dimen/d_3"
+                android:background="@drawable/bg_tag_recuit"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/txt_13"
+                android:text="游戏"
                 android:layout_marginRight="@dimen/d_10"
                 android:layout_marginTop="@dimen/d_5"
                 android:layout_marginBottom="@dimen/d_5"
-                android:textColor="#bfc0c2"
-                android:textSize="@dimen/txt_13"
-                android:text="高级"
                 />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#f5f6f8"
-                android:padding="@dimen/d_3"
+                android:background="@drawable/bg_tag_recuit"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/txt_13"
+                android:text="游戏"
                 android:layout_marginRight="@dimen/d_10"
                 android:layout_marginTop="@dimen/d_5"
                 android:layout_marginBottom="@dimen/d_5"
-                android:textColor="#bfc0c2"
-                android:textSize="@dimen/txt_13"
-                android:text="中级"
                 />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#f5f6f8"
-                android:padding="@dimen/d_3"
+                android:background="@drawable/bg_tag_recuit"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/txt_13"
+                android:text="游戏"
                 android:layout_marginRight="@dimen/d_10"
                 android:layout_marginTop="@dimen/d_5"
                 android:layout_marginBottom="@dimen/d_5"
-                android:textColor="#bfc0c2"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tag_recuit"
+                android:textColor="@color/colorWhite"
                 android:textSize="@dimen/txt_13"
-                android:text="初级"
+                android:text="游戏"
+                android:layout_marginRight="@dimen/d_10"
+                android:layout_marginTop="@dimen/d_5"
+                android:layout_marginBottom="@dimen/d_5"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tag_recuit"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/txt_13"
+                android:text="游戏"
+                android:layout_marginRight="@dimen/d_10"
+                android:layout_marginTop="@dimen/d_5"
+                android:layout_marginBottom="@dimen/d_5"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tag_recuit"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/txt_13"
+                android:text="游戏"
+                android:layout_marginRight="@dimen/d_10"
+                android:layout_marginTop="@dimen/d_5"
+                android:layout_marginBottom="@dimen/d_5"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tag_recuit"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/txt_13"
+                android:text="游戏"
+                android:layout_marginRight="@dimen/d_10"
+                android:layout_marginTop="@dimen/d_5"
+                android:layout_marginBottom="@dimen/d_5"
                 />
 
         </com.google.android.flexbox.FlexboxLayout>

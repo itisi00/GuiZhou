@@ -18,6 +18,9 @@
     <color name="bg_message_item">#ffDDDDDD</color>
     <color name="filter_reset_bg_color">#69AFF5</color>
 
+    <color name="tag_cover">#66000000</color>
+
+
     <!--聊天界面-->
     <color name="reply_button_text">#dfFFFFFF</color>
     <color name="reply_button_text_disable">#b8b8b8</color>
