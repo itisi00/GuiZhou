@@ -11,6 +11,7 @@
     app:subtitleTextColor="@color/colorWhite"
     app:titleTextColor="@color/colorWhite"
     app:layout_collapseMode="pin"
+
     >
     <!--
         android:background="?attr/colorPrimary"
@@ -40,21 +41,18 @@
             />
         <!--android:background="?android:attr/selectableItemBackgroundBorderless"-->
 
-
         <TextView
             android:id="@+id/toolbar_more"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/d_70"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
+            android:visibility="visible"
+            android:gravity="center"
             android:textSize="@dimen/txt_13"
             android:paddingRight="@dimen/d_15"
             tools:text="更多"
             />
 
-
         <!--android:background="?android:attr/selectableItemBackgroundBorderless"-->
-
-
         <!--<android.support.v7.widget.SearchView-->
         <!--android:id="@+id/toolbar_search"-->
         <!--android:layout_width="match_parent"-->

@@ -35,6 +35,11 @@ public class ScenicInfoActivity extends RootActivity<ScenicPresenter>
     }
 
     @Override
+    protected String setToolbarTvTitle() {
+        return "黄果树瀑布-国家5A级景区国家5A级景区";
+    }
+
+    @Override
     public void loadSuccess(List<MeiZiBean> beanList) {
 
     }
