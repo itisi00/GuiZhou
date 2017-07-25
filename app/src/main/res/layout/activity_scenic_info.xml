@@ -26,56 +26,56 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
@@ -83,146 +83,146 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"/>
+                android:text="@string/test_str_scnic"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/d_20"
-                android:text="@string/app_name"
+                android:text="@string/test_str_scnic"
                 />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
