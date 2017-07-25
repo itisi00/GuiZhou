@@ -408,7 +408,7 @@ public class ChatActivity extends RootActivity<ChatPresenter>
             mAdapter.setOnItemLongClickListener(this);
             mAdapter.setOnItemChildClickListener(this);
             mAdapter.setUpFetchListener(this);
-            mAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
+            mAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
             mRecyclerView.setLayoutManager(layoutManager);
             mRecyclerView.setAdapter(mAdapter);
             recyclerSmoothScrollToBottom();

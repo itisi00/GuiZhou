@@ -74,7 +74,7 @@ public class ChatSessionFragment extends RootFragment<ChatSessionPresenter>
         mAdapter.setOnItemClickListener(this);
         mAdapter.setOnItemLongClickListener(this);
         mAdapter.setOnLoadMoreListener(this, mRecyclerView);
-        mAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_RIGHT);
+        mAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         mRecyclerView.setLayoutManager(layoutManager);
 //        mRecyclerView.addItemDecoration();
         mRecyclerView.setAdapter(mAdapter);
