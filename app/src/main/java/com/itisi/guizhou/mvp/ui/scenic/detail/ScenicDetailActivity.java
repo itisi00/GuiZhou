@@ -15,12 +15,14 @@ import com.itisi.guizhou.mvp.ui.scenic.ScenicPresenter;
 import com.itisi.guizhou.mvp.ui.scenic.onedetail.ScenicOneActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
+import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 import com.jaeger.library.StatusBarUtil;
 
 import java.util.List;
 
 import butterknife.BindView;
 
+@UseRxBus
 public class ScenicDetailActivity extends RootActivity<ScenicPresenter>
         implements ScenicContract.View
         , BaseQuickAdapter.RequestLoadMoreListener

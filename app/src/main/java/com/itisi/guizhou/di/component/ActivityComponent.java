@@ -6,6 +6,8 @@ import com.itisi.guizhou.di.module.ActivityModule;
 import com.itisi.guizhou.di.scope.ActivityScope;
 import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
 import com.itisi.guizhou.mvp.ui.chat.ChatActivity;
+import com.itisi.guizhou.mvp.ui.common.photoview.PhotoViewActivity;
+import com.itisi.guizhou.mvp.ui.common.photoview.PhotoViewPagerActivity;
 import com.itisi.guizhou.mvp.ui.main.MainActivity;
 import com.itisi.guizhou.mvp.ui.recuit.RecuitActivity;
 import com.itisi.guizhou.mvp.ui.scenic.ScenicActivity;
@@ -52,5 +54,7 @@ public interface ActivityComponent {
     void inject(ScenicActivity activity );
     void inject(ScenicDetailActivity activity );
     void inject(ScenicOneActivity activity );
+    void inject(PhotoViewActivity activity );
+    void inject(PhotoViewPagerActivity activity );
     //h后续创建的activity 接着往下写
 }

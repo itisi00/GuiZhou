@@ -2,6 +2,7 @@ package com.itisi.guizhou.mvp.ui.main.home;
 
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -10,10 +11,9 @@ import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.App;
 import com.itisi.guizhou.base.RootFragment;
 import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
+import com.itisi.guizhou.mvp.ui.common.photoview.PhotoViewPagerActivity;
 import com.itisi.guizhou.mvp.ui.recuit.RecuitActivity;
-import com.itisi.guizhou.mvp.ui.test.CoordinateLayoutActivity;
 import com.itisi.guizhou.mvp.ui.test.TestRxBusActivity;
-import com.itisi.guizhou.mvp.ui.test.TestToolbarActivity;
 import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
@@ -215,15 +215,28 @@ public class HomeFragment extends RootFragment<HomePresenter>
 
                 break;
             case R.id.tv_home_read:
-//                ToastUtil.Success(tv_home_read.getText().toString());
-                ActivityUtil.getInstance().openActivity(getActivity(), TestToolbarActivity.class);
+                ToastUtil.Success(tv_home_read.getText().toString());
+//                ActivityUtil.getInstance().openActivity(getActivity(), TestToolbarActivity.class);
 
                 break;
             case R.id.tv_home_jingxuan:
 //                ToastUtil.Success(tv_home_jingxuan.getText().toString());
-                ActivityUtil.getInstance().openActivity(getActivity(), CoordinateLayoutActivity.class);
+                Bundle bundle=new Bundle();
+//                bundle.putString("url","http://static10.photo.sina.com.cn/middle/5a3ab1b1x9961016a8699&690");
+//                ActivityUtil.getInstance().openActivity(getActivity(), PhotoViewActivity.class,bundle);
 
-                break;
+
+                ArrayList<String>urls=new ArrayList<>();
+                urls.add("http://inews.gtimg.com/newsapp_bt/0/1834185779/641");
+                urls.add("http://inews.gtimg.com/newsapp_bt/0/1834185236/641");
+                urls.add("http://inews.gtimg.com/newsapp_bt/0/1834186365/641");
+                urls.add("http://inews.gtimg.com/newsapp_bt/0/1834187785/641");
+
+                bundle.putStringArrayList("urls", urls);
+
+                ActivityUtil.getInstance().openActivity(getActivity(), PhotoViewPagerActivity.class,bundle);
+
+               break;
             case R.id.tv_home_ittool:
 //                ToastUtil.Success(tv_home_ittool.getText().toString());
                 ActivityUtil.getInstance().openActivity(getActivity(), TestRxBusActivity.class);

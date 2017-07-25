@@ -19,72 +19,19 @@
         android:padding="@dimen/d_5"
         >
 
-        <include layout="@layout/item_user_header_normal"/>
+        <include layout="@layout/partial_user_header_normal"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/d_1"
-            android:layout_marginTop="@dimen/d_5"
-            android:background="@color/colorGray"
-            />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/d_13"
-            android:layout_marginTop="@dimen/d_13"
-            android:lineSpacingMultiplier="1.2"
-            android:text="一大段内容,或者一小段内容,可能要用展开的方式或者干脆一次性展示完全可能要用展开的方式或者干脆一次性展示完全,因为大部分人不会输入过多的内容"
-            android:textSize="@dimen/txt_14"/>
+        <include layout="@layout/partial_scenic_one_content"/>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+        <include layout="@layout/partial_like_comment_forward" />
 
-            <ImageView
-                android:layout_width="@dimen/d_0"
-                android:layout_height="@dimen/d_66"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/splash_back4"
-                />
-
-            <ImageView
-                android:layout_width="@dimen/d_0"
-                android:layout_height="@dimen/d_66"
-                android:layout_marginLeft="@dimen/d_5"
-                android:layout_marginRight="@dimen/d_5"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/splash_back4"
-                android:visibility="visible"
-
-                />
-
-            <ImageView
-                android:layout_width="@dimen/d_0"
-                android:layout_height="@dimen/d_66"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/splash_back4"
-                android:visibility="invisible"
-
-
-                />
-        </LinearLayout>
-
-        <include layout="@layout/item_like_comment_forward" />
-
-        <include layout="@layout/item_like"/>
+        <include layout="@layout/partial_like_container"/>
         <!--性能更好-->
         <!--<ViewStub-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
-        <!--android:layout="@layout/item_like"-->
+        <!--android:layout="@layout/partial_like_container"-->
         <!--android:visibility="visible"-->
         <!--/>-->
         <!--<LinearLayout-->

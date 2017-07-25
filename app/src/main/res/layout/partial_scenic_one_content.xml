@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+    >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_1"
+        android:layout_marginTop="@dimen/d_5"
+        android:background="@color/colorGray"
+        />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/d_13"
+        android:layout_marginTop="@dimen/d_13"
+        android:lineSpacingMultiplier="1.2"
+        android:text="一大段内容,或者一小段内容,可能要用展开的方式或者干脆一次性展示完全可能要用展开的方式或者干脆一次性展示完全,因为大部分人不会输入过多的内容"
+        android:textSize="@dimen/txt_14"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/d_0"
+            android:layout_height="@dimen/d_66"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/splash_back4"
+            />
+
+        <ImageView
+            android:layout_width="@dimen/d_0"
+            android:layout_height="@dimen/d_66"
+            android:layout_marginLeft="@dimen/d_5"
+            android:layout_marginRight="@dimen/d_5"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/splash_back4"
+            android:visibility="visible"
+
+            />
+
+        <ImageView
+            android:layout_width="@dimen/d_0"
+            android:layout_height="@dimen/d_66"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/splash_back4"
+            android:visibility="invisible"
+
+
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -13,11 +13,12 @@ import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.ui.scenic.ScenicContract;
 import com.itisi.guizhou.mvp.ui.scenic.ScenicPresenter;
 import com.itisi.guizhou.utils.ToastUtil;
+import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 
 import java.util.List;
 
 import butterknife.BindView;
-
+@UseRxBus
 public class ScenicOneActivity extends RootActivity<ScenicPresenter>
         implements ScenicContract.View
         , BaseQuickAdapter.RequestLoadMoreListener
@@ -36,6 +37,7 @@ public class ScenicOneActivity extends RootActivity<ScenicPresenter>
     private int totalCount = 0;//服务器返回的总的数量 有些接口可能没有
     private boolean isRefreshing = true;//刷新 还是 加载更多 加载成功以后 是追加还是替换
 
+    private View mHeaderView;//头布局
 
     @Override
     protected int getLayoutId() {
@@ -49,10 +51,15 @@ public class ScenicOneActivity extends RootActivity<ScenicPresenter>
 //        StatusBarUtil.setTranslucent(this, 0);//不加0 是半透明效果
 
         initView();
+        initHeaderView();
         initAdapter();
         initViewListener();
         setToolbarTvTitle();
         setToolbarMoreTxt();
+    }
+
+    private void initHeaderView() {
+        mHeaderView = View.inflate(this, R.layout.partial_header_scenic_one, null);
     }
 
     @Override
@@ -78,6 +85,9 @@ public class ScenicOneActivity extends RootActivity<ScenicPresenter>
         layoutManager.setItemPrefetchEnabled(false);
 
         mAdapter = new CommentAdapter(R.layout.item_comment);
+
+        mAdapter.addHeaderView(mHeaderView);//添加头部
+
         mAdapter.setOnItemClickListener(this);
         mAdapter.setOnItemLongClickListener(this);
         mAdapter.setOnLoadMoreListener(this, mRecyclerView);
@@ -88,6 +98,7 @@ public class ScenicOneActivity extends RootActivity<ScenicPresenter>
 
         //这里可能要开启 下拉动画
         loadData();
+
 
     }
 
