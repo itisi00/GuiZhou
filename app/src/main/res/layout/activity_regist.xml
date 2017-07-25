@@ -23,7 +23,7 @@
         android:gravity="center"
         android:clickable="true"
         android:focusableInTouchMode="true"
-        style="@style/TextBorderLess"
+        style="@style/BorderLess"
         />
 
     <android.support.design.widget.TextInputLayout
@@ -87,7 +87,7 @@
             android:textColor="@color/colorAccent"
             android:clickable="true"
             android:focusableInTouchMode="true"
-            style="@style/TextBorderLess"
+            style="@style/BorderLess"
 
             />
     </LinearLayout>
@@ -116,7 +116,7 @@
             android:autoLink="all"
             android:clickable="true"
             android:focusableInTouchMode="true"
-            style="@style/TextBorderLess"
+            style="@style/BorderLess"
 
             />
     </LinearLayout>

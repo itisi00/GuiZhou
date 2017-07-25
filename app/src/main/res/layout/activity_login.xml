@@ -109,7 +109,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/d_20"
                 android:text="忘记密码"
-                style="@style/TextBorderLess"
+                style="@style/BorderLess"
                 />
 
             <TextView
@@ -119,7 +119,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/d_35"
                 android:text="注册"
-                style="@style/TextBorderLess"
+                style="@style/BorderLess"
 
                 />
         </LinearLayout>
@@ -132,7 +132,7 @@
             android:layout_gravity="center|bottom"
             android:layout_marginBottom="@dimen/d_50"
             android:text="社交账号登陆"
-            style="@style/TextBorderLess"
+            style="@style/BorderLess"
 
             />
 

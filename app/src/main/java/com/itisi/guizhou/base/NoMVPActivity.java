@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.itisi.guizhou.R;
@@ -44,6 +45,8 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
     TextView mToolbalMore;
     protected SwipeBackLayout mSwipeBackLayout;
 
+    @BindView(R.id.iv_back)
+    ImageView mImageViewBack;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -104,11 +107,23 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
             setToolbarBackground(R.color.colorPrimary);
         }
         if (isShowNavigationIcon) {
-            mToolbar.setNavigationIcon(R.mipmap.menu_back);
-            mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            mToolbar.setNavigationIcon(R.mipmap.menu_back);
+//            mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    ActivityUtil.getInstance().closeActivity(mActivity);
+//                }
+//            });
+            mImageViewBack.setVisibility(View.VISIBLE);
+            mImageViewBack.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    ActivityUtil.getInstance().closeActivity(mActivity);
+                    mImageViewBack.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            ActivityUtil.getInstance().closeActivity(mActivity);
+                        }
+                    },100);
                 }
             });
         }

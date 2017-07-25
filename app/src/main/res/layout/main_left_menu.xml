@@ -40,7 +40,7 @@
             android:layout_centerVertical="true"
             android:clickable="true"
             android:focusableInTouchMode="true"
-            style="@style/TextBorderLess"
+            style="@style/BorderLess"
             />
 
 

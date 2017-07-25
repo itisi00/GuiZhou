@@ -8,10 +8,8 @@
     android:layout_height="?attr/actionBarSize"
     android:gravity="center"
     android:theme="@style/ToolbarTheme"
-    app:subtitleTextColor="@color/colorWhite"
-    app:titleTextColor="@color/colorWhite"
+    app:contentInsetStart="@dimen/d_0"
     app:layout_collapseMode="pin"
-
     >
     <!--
         android:background="?attr/colorPrimary"
@@ -20,36 +18,56 @@
     app:navigationIcon="@mipmap/menu_back"-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="?attr/actionBarSize"
         android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/d_10"
+        android:paddingRight="@dimen/d_10"
         >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/d_50"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:src="@mipmap/menu_back"
+            android:visibility="invisible"
+            style="@style/BorderLess"
+            />
 
         <TextView
             android:id="@+id/toolbar_title"
             android:layout_width="@dimen/d_0"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/d_5"
+            android:layout_marginRight="@dimen/d_5"
             android:layout_weight="1"
             android:ellipsize="end"
-            android:layout_gravity="center"
             android:gravity="center"
             android:maxLines="1"
-            tools:text="@string/app_name"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/txt_16"
+            android:textSize="@dimen/txt_18"
+            tools:text="@string/app_name"
+            style="@style/BorderLess"
+             android:clickable="true"
+            android:focusableInTouchMode="true"
 
             />
         <!--android:background="?android:attr/selectableItemBackgroundBorderless"-->
 
         <TextView
             android:id="@+id/toolbar_more"
-            android:layout_width="@dimen/d_70"
+            android:layout_width="@dimen/d_50"
             android:layout_height="wrap_content"
-            android:visibility="visible"
             android:gravity="center"
             android:textSize="@dimen/txt_13"
-            android:paddingRight="@dimen/d_15"
+            android:visibility="invisible"
             tools:text="更多"
+            style="@style/BorderLess"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+
             />
 
         <!--android:background="?android:attr/selectableItemBackgroundBorderless"-->
