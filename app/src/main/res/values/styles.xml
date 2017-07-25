@@ -46,8 +46,9 @@
         <item name="android:windowTranslucentStatus">true</item>
     </style>
 
+    <!--ThemeOverlay.AppCompat.Light-->
     <!-- parent="Theme.AppCompat.Light.NoActionBar" -->
-    <style name="ToolbarTheme" >
+    <style name="ToolbarTheme">
         <!-- 更换Toolbar OVerFlow menu icon -->
         <!--<item name="actionOverflowButtonStyle">@style/OverFlowIcon</item>-->
         <!-- 设置 toolbar 溢出菜单的文字的颜色 -->

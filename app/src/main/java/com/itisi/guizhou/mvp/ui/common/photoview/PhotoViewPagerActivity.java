@@ -31,7 +31,7 @@ public class PhotoViewPagerActivity extends RootActivity<PhotoViewPresenter> imp
 
     @Override
     protected void initEventAndData() {
-//        StatusBarUtil.setTranslucent(this);
+//        StatusBarUtil.setTranslucent(this,0);
         ArrayList<String> urls = getIntent().getExtras().getStringArrayList("urls");
         if (urls.size()>0){
             mViewPager.setAdapter(new SamplePagerAdapter(urls));
@@ -42,6 +42,11 @@ public class PhotoViewPagerActivity extends RootActivity<PhotoViewPresenter> imp
     public void testShowView(String smg) {
 
     }
+
+//    @Override
+//    protected boolean isToolbarTransparent() {
+//        return true;
+//    }
 
     @Override
     public void stateEmpty() {
@@ -99,6 +104,7 @@ public class PhotoViewPagerActivity extends RootActivity<PhotoViewPresenter> imp
                             .url(mUrlList.get(position))
                             .defaultImageResId(R.mipmap.splash_back4)
                             .imageView(mPhotoView).build());
+            mPhotoView.setFitsSystemWindows(true);
             container.addView(mPhotoView);
             mPhotoView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override

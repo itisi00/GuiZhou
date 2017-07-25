@@ -13,6 +13,7 @@ import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.ui.scenic.ScenicContract;
 import com.itisi.guizhou.mvp.ui.scenic.ScenicPresenter;
 import com.itisi.guizhou.mvp.ui.scenic.onedetail.ScenicOneActivity;
+import com.itisi.guizhou.mvp.ui.scenic.scenicinfo.ScenicInfoActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
@@ -49,7 +50,6 @@ public class ScenicDetailActivity extends RootActivity<ScenicPresenter>
 
     @Override
     protected void initEventAndData() {
-        setToolbarBackground(getResources().getColor(R.color.colorTransparent));
         StatusBarUtil.setTranslucent(this, 0);//不加0 是半透明效果
 
         initView();
@@ -57,6 +57,17 @@ public class ScenicDetailActivity extends RootActivity<ScenicPresenter>
         initViewListener();
         setToolbarTvTitle();
         setToolbarMoreTxt();
+        setToolbarMoreClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ActivityUtil.getInstance().openActivity(ScenicDetailActivity.this, ScenicInfoActivity.class);
+            }
+        });
+    }
+
+    @Override
+    protected boolean isToolbarTransparent() {
+        return true;
     }
 
     @Override
@@ -68,6 +79,8 @@ public class ScenicDetailActivity extends RootActivity<ScenicPresenter>
     protected String setToolbarMoreTxt() {
         return "景区";
     }
+
+
 
     private void initView() {
         mSwipeRefreshLayout.setProgressBackgroundColorSchemeResource(android.R.color.white);

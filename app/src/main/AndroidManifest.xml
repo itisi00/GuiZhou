@@ -162,6 +162,8 @@
         </activity>
         <activity android:name=".mvp.ui.common.photoview.PhotoViewPagerActivity">
         </activity>
+        <activity android:name=".mvp.ui.scenic.scenicinfo.ScenicInfoActivity">
+        </activity>
     </application>
 
 </manifest>

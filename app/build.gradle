@@ -206,7 +206,6 @@ dependencies {
     compile rootProject.ext.dependencies["crashreport"]
     compile rootProject.ext.dependencies["nativecrashreport"]
 
-
     // support v4 新增文件的时候 自己会恢复
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'cn.finalteam.rxgalleryfinal:library:1.0.8'

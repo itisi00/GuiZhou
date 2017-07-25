@@ -45,7 +45,6 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
     protected SwipeBackLayout mSwipeBackLayout;
 
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         //将window的背景图设置为空
@@ -95,13 +94,15 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
      * 初始化 toolbar
      */
     private void initToolbar() {
+        boolean isShowNavigationIcon = setIsNavigationIconShow();//是否显示返回图标
+        String title = setToolbarTvTitle();//标题
+        String moreTxt = setToolbarMoreTxt();//更多-文字--可能会换成 字体图标
+        int menuLayoutId = setMenuLayoutId();//溢出菜单布局id
+        Toolbar.OnMenuItemClickListener onMenuItemClickListener = setMenuItemClickListener();//溢出菜单点击事件
 
-         boolean isShowNavigationIcon = setIsNavigationIconShow();//是否显示返回图标
-         String title= setToolbarTvTitle();//标题
-         String moreTxt= setToolbarMoreTxt();//更多-文字--可能会换成 字体图标
-         int menuLayoutId=setMenuLayoutId();//溢出菜单布局id
-         Toolbar.OnMenuItemClickListener onMenuItemClickListener=setMenuItemClickListener();//溢出菜单点击事件
-
+        if (!isToolbarTransparent()) {
+            setToolbarBackground(R.color.colorPrimary);
+        }
         if (isShowNavigationIcon) {
             mToolbar.setNavigationIcon(R.mipmap.menu_back);
             mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -135,14 +136,16 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
 
     /**
      * 是否显示返回按钮
+     *
      * @return
      */
-    protected boolean setIsNavigationIconShow(){
+    protected boolean setIsNavigationIconShow() {
         return true;
     }
 
     /**
      * 设置标题--此方法一般在进入页面的时候调用,且标题不会常变
+     *
      * @return
      */
     protected String setToolbarTvTitle() {
@@ -151,17 +154,20 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
 
     /**
      * 设置标题--此方法一般用于动态改变title
+     *
      * @param title
      */
-    protected void setToolbarTvTitle(String title){
+    protected void setToolbarTvTitle(String title) {
         mToolbarTitle.setText(title);
     }
-    protected void setToolbarTitle(String title){
+
+    protected void setToolbarTitle(String title) {
         mToolbar.setTitle(title);
     }
 
     /**
      * 设置更多---右边的文字 将来可换成子图图标
+     *
      * @return
      */
     protected String setToolbarMoreTxt() {
@@ -170,41 +176,54 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
 
     /**
      * 给更多---设置单击事件--必须设置文本内容 菜单才会显示-才有点击效果
+     *
      * @param clickListener
      */
-    protected void setToolbarMoreClickListener(View.OnClickListener clickListener){
+    protected void setToolbarMoreClickListener(View.OnClickListener clickListener) {
         mToolbalMore.setOnClickListener(clickListener);
     }
 
     /**
      * 设置溢出菜单布局---还需设置溢出菜单的点击事件
+     *
      * @return
      */
-    protected int setMenuLayoutId(){
+    protected int setMenuLayoutId() {
         return 0;
     }
 
     /**
      * 设置溢出菜单的点击事件---还需设置溢出菜单布局
+     *
      * @return
      */
-    protected Toolbar.OnMenuItemClickListener setMenuItemClickListener(){
+    protected Toolbar.OnMenuItemClickListener setMenuItemClickListener() {
         return null;
     }
 
     /**
      * 隐藏toolbar
      */
-    protected void setToolbarHide(){
+    protected void setToolbarHide() {
         mToolbar.setVisibility(View.GONE);
     }
 
     /**
      * 设置toolbar的背景颜色
+     *
      * @param color
      */
-    protected void setToolbarBackground(int color){
-        mToolbar.setBackgroundColor(color);
+    protected void setToolbarBackground(int color) {
+        mToolbar.setBackgroundColor(getResources().getColor(color));
+    }
+
+    /**
+     * 是否是透明 即不设置颜色
+     *
+     * @return
+     */
+    protected boolean isToolbarTransparent() {
+        return false;
     }
 
     /**
@@ -255,7 +274,6 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
         App.getInstance().removeActivity(this);
         mUnbinder.unbind();
     }
-
 
 
     @Override

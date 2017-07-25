@@ -13,6 +13,7 @@ import com.itisi.guizhou.mvp.ui.recuit.RecuitActivity;
 import com.itisi.guizhou.mvp.ui.scenic.ScenicActivity;
 import com.itisi.guizhou.mvp.ui.scenic.detail.ScenicDetailActivity;
 import com.itisi.guizhou.mvp.ui.scenic.onedetail.ScenicOneActivity;
+import com.itisi.guizhou.mvp.ui.scenic.scenicinfo.ScenicInfoActivity;
 import com.itisi.guizhou.mvp.ui.shiwuzhaoling.ShiWuZhaoLingActivity;
 import com.itisi.guizhou.mvp.ui.splash.SplashActivity;
 import com.itisi.guizhou.mvp.ui.techan.TeChanActivity;
@@ -54,6 +55,7 @@ public interface ActivityComponent {
     void inject(ScenicActivity activity );
     void inject(ScenicDetailActivity activity );
     void inject(ScenicOneActivity activity );
+    void inject(ScenicInfoActivity activity );
     void inject(PhotoViewActivity activity );
     void inject(PhotoViewPagerActivity activity );
     //h后续创建的activity 接着往下写
