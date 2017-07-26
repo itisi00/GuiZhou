@@ -113,7 +113,9 @@
         <item name="android:textSize">@dimen/d_10</item>
         <item name="android:textColor">@color/colorWhite</item>
         <item name="android:clickable">true</item>
-        <item name="android:focusableInTouchMode">true</item>
+        <!--这个属性会带来黄色背景,或者是在与上面那个属性一起使用的时候-->
+        <!--<item name="android:focusableInTouchMode">true</item>-->
+
         <!--<item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>-->
 
 

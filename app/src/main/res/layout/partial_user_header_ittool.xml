@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="@dimen/d_45"
+        android:layout_height="@dimen/d_45"
+        android:src="@mipmap/test_userheader"
+        />
+
+    <RelativeLayout
+        android:layout_width="@dimen/d_0"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/d_10"
+        android:layout_marginRight="@dimen/d_10"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            android:id="@+id/tv_weburl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d_2"
+            android:text="ps cc 2017"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/txt_16"
+            />
+
+        <TextView
+            android:id="@+id/tv_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_weburl"
+            android:layout_marginTop="@dimen/d_2"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="地址:https://pan.baidu.com/gv3466j4j3h3b4k"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_temp"
+            android:layout_marginTop="@dimen/d_2"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="密码:abcedfg"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -11,10 +11,12 @@ import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.App;
 import com.itisi.guizhou.base.RootFragment;
 import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
-import com.itisi.guizhou.mvp.ui.common.photoview.PhotoViewPagerActivity;
+import com.itisi.guizhou.mvp.ui.ittool.ItToolActivity;
+import com.itisi.guizhou.mvp.ui.jingxuan.JingXuanActivity;
+import com.itisi.guizhou.mvp.ui.read.ReadActivity;
 import com.itisi.guizhou.mvp.ui.recuit.RecuitActivity;
-import com.itisi.guizhou.mvp.ui.test.TestRxBusActivity;
-import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
+import com.itisi.guizhou.mvp.ui.rental.RentalActivity;
+import com.itisi.guizhou.mvp.ui.websit.WebsitActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.imageload.ImageLoadConfiguration;
@@ -206,18 +208,13 @@ public class HomeFragment extends RootFragment<HomePresenter>
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.tv_home_rental:
-
-                ToastUtil.Success(tv_home_rental.getText().toString());
+                ActivityUtil.getInstance().openActivity(getActivity(), RentalActivity.class);
                 break;
             case R.id.tv_home_recuit:
-//                ToastUtil.Success(tv_home_recuit.getText().toString());
                 ActivityUtil.getInstance().openActivity(getActivity(), RecuitActivity.class);
-
                 break;
             case R.id.tv_home_read:
-                ToastUtil.Success(tv_home_read.getText().toString());
-//                ActivityUtil.getInstance().openActivity(getActivity(), TestToolbarActivity.class);
-
+                ActivityUtil.getInstance().openActivity(getActivity(), ReadActivity.class);
                 break;
             case R.id.tv_home_jingxuan:
 //                ToastUtil.Success(tv_home_jingxuan.getText().toString());
@@ -233,23 +230,24 @@ public class HomeFragment extends RootFragment<HomePresenter>
 
                 bundle.putStringArrayList("urls", urls);
 
-                ActivityUtil.getInstance().openActivity(getActivity(), PhotoViewPagerActivity.class,bundle);
+//                ActivityUtil.getInstance().openActivity(getActivity(), PhotoViewPagerActivity.class,bundle);
+                ActivityUtil.getInstance().openActivity(getActivity(), JingXuanActivity.class);
 
                break;
             case R.id.tv_home_ittool:
-//                ToastUtil.Success(tv_home_ittool.getText().toString());
-                ActivityUtil.getInstance().openActivity(getActivity(), TestRxBusActivity.class);
+                ActivityUtil.getInstance().openActivity(getActivity(), ItToolActivity.class);
 
                 break;
             case R.id.tv_home_websit:
-//                ToastUtil.Success(tv_home_websit.getText().toString());
-                ActivityUtil.getInstance().openActivity(getActivity(), LoginActivity.class);
+//                ActivityUtil.getInstance().openActivity(getActivity(), LoginActivity.class);
+                ActivityUtil.getInstance().openActivity(getActivity(), WebsitActivity.class);
                 break;
             case R.id.tv_home_blacknum:
 //                ToastUtil.Success(tv_home_blacknum.getText().toString());
                 ActivityUtil.getInstance().openActivity(getActivity(), BlackNumActivity.class);
                 break;
             case R.id.tv_home_more:
+                //暂无
                 ToastUtil.Success(tv_home_more.getText().toString());
                 break;
 

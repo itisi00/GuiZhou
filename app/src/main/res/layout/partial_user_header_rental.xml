@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/d_10"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="@dimen/d_45"
+        android:layout_height="@dimen/d_45"
+        android:src="@mipmap/test_userheader"
+        />
+
+    <RelativeLayout
+        android:layout_width="@dimen/d_0"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/d_10"
+        android:layout_marginRight="@dimen/d_10"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            android:id="@+id/tv_weburl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d_5"
+            android:text="很长的昵称"
+            android:maxLines="1"
+            android:ellipsize="end"
+            />
+
+        <TextView
+            android:id="@+id/tv_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_weburl"
+            android:layout_marginTop="@dimen/d_5"
+            android:text="2017-7-26 17:39:44"
+
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

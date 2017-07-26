@@ -26,7 +26,7 @@
             android:layout_height="@dimen/d_15"
             android:layout_margin="@dimen/d_5"
             android:scaleType="centerCrop"
-            android:src="@mipmap/like_activity"
+            android:src="@mipmap/hongbao_activity"
 
             />
 
@@ -111,7 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/d_5"
-            android:text="等18人点了赞"
+            android:text="等18人赏了红包"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/txt_14"
             android:textStyle="italic"

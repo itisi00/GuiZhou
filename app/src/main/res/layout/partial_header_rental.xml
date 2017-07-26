@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/d_5"
+    >
+
+    <include layout="@layout/partial_user_header_rental"/>
+
+    <include layout="@layout/partial_flower_tag_rental"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_5"
+        android:text="户型:一室一厅一厨一卫"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_5"
+        android:text="装修:豪华装修"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_5"
+        android:text="楼层:5/18"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_5"
+
+        android:text="面积:30m²"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_1"
+        android:layout_marginBottom="@dimen/d_10"
+        android:layout_marginTop="@dimen/d_10"
+        android:background="@color/colorPrimary"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/d_10"
+        android:textSize="@dimen/txt_15"
+        android:text="配套设施"
+        />
+
+    <include layout="@layout/partial_flower_tag_rental_detail"/>
+
+</LinearLayout>

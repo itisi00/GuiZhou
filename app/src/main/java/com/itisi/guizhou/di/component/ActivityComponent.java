@@ -8,8 +8,16 @@ import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
 import com.itisi.guizhou.mvp.ui.chat.ChatActivity;
 import com.itisi.guizhou.mvp.ui.common.photoview.PhotoViewActivity;
 import com.itisi.guizhou.mvp.ui.common.photoview.PhotoViewPagerActivity;
+import com.itisi.guizhou.mvp.ui.ittool.ItToolActivity;
+import com.itisi.guizhou.mvp.ui.ittool.detail.ItToolAddActivity;
+import com.itisi.guizhou.mvp.ui.ittool.detail.ItToolDetailActivity;
+import com.itisi.guizhou.mvp.ui.jingxuan.JingXuanActivity;
 import com.itisi.guizhou.mvp.ui.main.MainActivity;
+import com.itisi.guizhou.mvp.ui.read.ReadActivity;
 import com.itisi.guizhou.mvp.ui.recuit.RecuitActivity;
+import com.itisi.guizhou.mvp.ui.rental.RentalActivity;
+import com.itisi.guizhou.mvp.ui.rental.detail.RentalAddActivity;
+import com.itisi.guizhou.mvp.ui.rental.detail.RentalDetailActivity;
 import com.itisi.guizhou.mvp.ui.scenic.ScenicActivity;
 import com.itisi.guizhou.mvp.ui.scenic.footprint.ScenicFootprintActivity;
 import com.itisi.guizhou.mvp.ui.scenic.footprint.ScenicFootprintAddActivity;
@@ -25,6 +33,9 @@ import com.itisi.guizhou.mvp.ui.university.style.UniversityStyleAddActivity;
 import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
 import com.itisi.guizhou.mvp.ui.user.register.RegistActivity;
 import com.itisi.guizhou.mvp.ui.user.register.RegistConfirmActivity;
+import com.itisi.guizhou.mvp.ui.websit.WebsitActivity;
+import com.itisi.guizhou.mvp.ui.websit.detail.WebsitAddActivity;
+import com.itisi.guizhou.mvp.ui.websit.detail.WebsitDetailActivity;
 
 import dagger.Component;
 
@@ -67,5 +78,22 @@ public interface ActivityComponent {
 
     void inject(UniversityStyleActivity activity );
     void inject(UniversityStyleAddActivity activity );
+
+    void inject(ItToolActivity activity );
+    void inject(JingXuanActivity activity );
+    void inject(ReadActivity activity );
+    void inject(RentalActivity activity );
+    void inject(WebsitActivity activity );
+
+    void inject(WebsitDetailActivity activity );
+    void inject(WebsitAddActivity activity );
+
+    void inject(ItToolDetailActivity activity );
+    void inject(ItToolAddActivity activity );
+
+    void inject(RentalDetailActivity activity );
+    void inject(RentalAddActivity activity );
+
+
     //h后续创建的activity 接着往下写
 }

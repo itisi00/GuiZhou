@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/d_5"
+    >
+
+    <include layout="@layout/partial_user_header_websit"/>
+
+    <include layout="@layout/partial_flower_tag"/>
+
+    <include layout="@layout/partial_like_comment_forward_rating"/>
+
+    <include layout="@layout/partial_hongbao_container"/>
+
+    <include layout="@layout/partial_like_container"/>
+</LinearLayout>

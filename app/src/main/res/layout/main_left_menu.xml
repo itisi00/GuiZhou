@@ -26,7 +26,7 @@
 
 
         <com.hanks.htextview.rainbow.RainbowTextView
-            android:id="@+id/tv_username"
+            android:id="@+id/tv_left_username"
             android:layout_width="@dimen/d_180"
             android:layout_height="@dimen/d_40"
             android:layout_marginLeft="@dimen/d_10"

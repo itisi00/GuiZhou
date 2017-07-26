@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ashokvarma.bottomnavigation.BadgeItem;
@@ -20,6 +21,8 @@ import com.itisi.guizhou.mvp.ui.main.guizhou.GuiZhouFragment;
 import com.itisi.guizhou.mvp.ui.main.home.HomeFragment;
 import com.itisi.guizhou.mvp.ui.main.leisure.LeisureFragment;
 import com.itisi.guizhou.mvp.ui.main.news.NewsFragment;
+import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
+import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ClickTree;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.RxBus;
@@ -68,6 +71,11 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
     TextView menu_left_about;
     @BindView(R.id.menu_left_fadeback)
     TextView menu_left_fadeback;
+
+    @BindView(R.id.iv_left_header)
+    ImageView iv_left_header;
+    @BindView(R.id.tv_left_username)
+    TextView tv_left_username;
 
 
     //5个主界面
@@ -157,6 +165,8 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
         menu_left_setting.setOnClickListener(this);
         menu_left_about.setOnClickListener(this);
         menu_left_fadeback.setOnClickListener(this);
+        iv_left_header.setOnClickListener(this);
+        tv_left_username.setOnClickListener(this);
     }
 
     /**
@@ -376,6 +386,9 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.iv_left_header:
+                ActivityUtil.getInstance().openActivity(mActivity, LoginActivity.class);
+                break;
             case R.id.menu_left_agenda:
                 ToastUtil.Success(menu_left_agenda.getText().toString());
                 break;

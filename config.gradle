@@ -45,7 +45,7 @@ ext{
             "flexbox"                   : "com.google.android:flexbox:0.3.0",
             "datetimepicker"            : "com.wdullaer:materialdatetimepicker:3.3.2",
             "circleimageview"           : "de.hdodenhof:circleimageview:2.1.0",
-
+//            "dropbownmenu"              : "com.github.dongjunkun:DropDownMenu:1.0.4",
 
             //即时通讯 环信
             "hyphenate"                 : "com.hyphenate:hyphenate-sdk:3.3.0",

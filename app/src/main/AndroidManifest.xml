@@ -156,19 +156,75 @@
             android:name=".mvp.ui.scenic.onedetail.ScenicOneActivity"
             android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.test.TestPhotoViewActivity">
+        <activity
+            android:name=".mvp.ui.test.TestPhotoViewActivity"
+            android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.common.photoview.PhotoViewActivity">
+        <activity
+            android:name=".mvp.ui.common.photoview.PhotoViewActivity"
+            android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.common.photoview.PhotoViewPagerActivity">
+        <activity
+            android:name=".mvp.ui.common.photoview.PhotoViewPagerActivity"
+            android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.scenic.scenicinfo.ScenicInfoActivity">
+        <activity
+            android:name=".mvp.ui.scenic.scenicinfo.ScenicInfoActivity"
+            android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.university.style.UniversityStyleActivity">
+        <activity
+            android:name=".mvp.ui.university.style.UniversityStyleActivity"
+            android:theme="@style/AppThemeBack">
         </activity>
         <activity android:name=".mvp.ui.university.style.UniversityStyleAddActivity">
         </activity>
-        <activity android:name=".mvp.ui.scenic.footprint.ScenicFootprintAddActivity">
+        <activity
+            android:name=".mvp.ui.scenic.footprint.ScenicFootprintAddActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity
+            android:name=".mvp.ui.read.ReadActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity
+            android:name=".mvp.ui.ittool.ItToolActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity
+            android:name=".mvp.ui.jingxuan.JingXuanActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity
+            android:name=".mvp.ui.rental.RentalActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity
+            android:name=".mvp.ui.websit.WebsitActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity
+            android:name=".mvp.ui.websit.detail.WebsitDetailActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity
+            android:name=".mvp.ui.websit.detail.WebsitAddActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity
+            android:name=".mvp.ui.ittool.detail.ItToolDetailActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity
+            android:name=".mvp.ui.ittool.detail.ItToolAddActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity
+            android:name=".mvp.ui.rental.detail.RentalDetailActivity"
+            android:theme="@style/AppThemeBack">
+        </activity>
+        <activity
+            android:name=".mvp.ui.rental.detail.RentalAddActivity"
+            android:theme="@style/AppThemeBack">
         </activity>
     </application>
 
