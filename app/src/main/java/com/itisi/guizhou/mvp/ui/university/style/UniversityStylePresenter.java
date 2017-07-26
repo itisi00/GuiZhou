@@ -1,8 +1,8 @@
-package com.itisi.guizhou.mvp.ui.university;
+package com.itisi.guizhou.mvp.ui.university.style;
 
 import com.itisi.guizhou.base.RxPresenter;
-import com.itisi.guizhou.mvp.model.CommonSubscriber;
 import com.itisi.guizhou.common.RxUtil;
+import com.itisi.guizhou.mvp.model.CommonSubscriber;
 import com.itisi.guizhou.mvp.model.DataManager;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.model.http.response.GankResponse;
@@ -16,19 +16,19 @@ import javax.inject.Inject;
  * 功 能:必填必填必填必填必填必填
  * 创建人:itisi
  * 邮  箱:itisivip@qq.com
- * 创建时间:2017/7/21 16:37
+ * 创建时间:2017/7/25 17:18
  * 修改人:itisi
- * 修改时间: 2017/7/21 16:37
+ * 修改时间: 2017/7/25 17:18
  * 修改内容:itisi
  * *********************
  */
 
-public class UniversityPresenter extends RxPresenter<UniversityContract.View> implements UniversityContract.Presenter {
+public class UniversityStylePresenter extends RxPresenter<UniversityStyleContract.View> implements UniversityStyleContract.Presenter {
 
     private DataManager mDataManager;
 
     @Inject
-    public UniversityPresenter(DataManager dataManager) {
+    public UniversityStylePresenter(DataManager dataManager) {
         mDataManager = dataManager;
     }
 

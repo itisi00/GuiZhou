@@ -1,8 +1,10 @@
-package com.itisi.guizhou.mvp.ui.scenic.detail;
+package com.itisi.guizhou.mvp.ui.scenic.footprint;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -10,8 +12,6 @@ import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.adapter.ScenicDetailAdapter;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
-import com.itisi.guizhou.mvp.ui.scenic.ScenicContract;
-import com.itisi.guizhou.mvp.ui.scenic.ScenicPresenter;
 import com.itisi.guizhou.mvp.ui.scenic.onedetail.ScenicOneActivity;
 import com.itisi.guizhou.mvp.ui.scenic.scenicinfo.ScenicInfoActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
@@ -24,8 +24,8 @@ import java.util.List;
 import butterknife.BindView;
 
 @UseRxBus
-public class ScenicDetailActivity extends RootActivity<ScenicPresenter>
-        implements ScenicContract.View
+public class ScenicFootprintActivity extends RootActivity<ScenicFootprintPresenter>
+        implements ScenicFootprintContract.View
         , BaseQuickAdapter.RequestLoadMoreListener
         , BaseQuickAdapter.OnItemClickListener
         , BaseQuickAdapter.OnItemLongClickListener
@@ -45,7 +45,7 @@ public class ScenicDetailActivity extends RootActivity<ScenicPresenter>
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_scenic_detail;
+        return R.layout.activity_scenic_footprint;
     }
 
     @Override
@@ -57,12 +57,12 @@ public class ScenicDetailActivity extends RootActivity<ScenicPresenter>
         initViewListener();
         setToolbarTvTitle();
         setToolbarMoreTxt();
-        setToolbarMoreClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ActivityUtil.getInstance().openActivity(ScenicDetailActivity.this, ScenicInfoActivity.class);
-            }
-        });
+//        setToolbarMoreClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ActivityUtil.getInstance().openActivity(ScenicFootprintActivity.this, ScenicInfoActivity.class);
+//            }
+//        });
     }
 
     @Override
@@ -75,12 +75,34 @@ public class ScenicDetailActivity extends RootActivity<ScenicPresenter>
         return "黄果树瀑布-国家5A级景区国家5A级景区2";
     }
 
+//    @Override
+//    protected String setToolbarMoreTxt() {
+//        return "详情";
+//    }
+
+
     @Override
-    protected String setToolbarMoreTxt() {
-        return "景区";
+    protected int setMenuLayoutId() {
+        return R.menu.menu_scenic;
     }
 
-
+    @Override
+    protected Toolbar.OnMenuItemClickListener setMenuItemClickListener() {
+        return new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.menu_scenic_add:
+                        ActivityUtil.getInstance().openActivity(ScenicFootprintActivity.this, ScenicFootprintAddActivity.class);
+                        break;
+                    case R.id.menu_scenic_info:
+                        ActivityUtil.getInstance().openActivity(ScenicFootprintActivity.this, ScenicInfoActivity.class);
+                        break;
+                }
+                return true;
+            }
+        };
+    }
 
     private void initView() {
         mSwipeRefreshLayout.setProgressBackgroundColorSchemeResource(android.R.color.white);

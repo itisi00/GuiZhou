@@ -9,7 +9,7 @@ import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.adapter.ScenicAdapter;
-import com.itisi.guizhou.mvp.ui.scenic.detail.ScenicDetailActivity;
+import com.itisi.guizhou.mvp.ui.scenic.footprint.ScenicFootprintActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
@@ -123,7 +123,7 @@ public class ScenicActivity extends RootActivity<ScenicPresenter>
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
 //        ToastUtil.Success(position+":click");
-        ActivityUtil.getInstance().openActivity(this, ScenicDetailActivity.class);
+        ActivityUtil.getInstance().openActivity(this, ScenicFootprintActivity.class);
 
     }
 

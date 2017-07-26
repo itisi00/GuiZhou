@@ -80,6 +80,7 @@
         <item name="android:dropDownVerticalOffset">@dimen/d_4</item>
         <!-- 弹出层水平方向上的偏移，即距离屏幕左边的距离，负值会导致右边出现空隙 -->
         <item name="android:dropDownHorizontalOffset">@dimen/d_0</item>
+        <item name="android:gravity">center</item>
     </style>
 
 

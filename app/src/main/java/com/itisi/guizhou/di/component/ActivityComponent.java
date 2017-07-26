@@ -11,7 +11,8 @@ import com.itisi.guizhou.mvp.ui.common.photoview.PhotoViewPagerActivity;
 import com.itisi.guizhou.mvp.ui.main.MainActivity;
 import com.itisi.guizhou.mvp.ui.recuit.RecuitActivity;
 import com.itisi.guizhou.mvp.ui.scenic.ScenicActivity;
-import com.itisi.guizhou.mvp.ui.scenic.detail.ScenicDetailActivity;
+import com.itisi.guizhou.mvp.ui.scenic.footprint.ScenicFootprintActivity;
+import com.itisi.guizhou.mvp.ui.scenic.footprint.ScenicFootprintAddActivity;
 import com.itisi.guizhou.mvp.ui.scenic.onedetail.ScenicOneActivity;
 import com.itisi.guizhou.mvp.ui.scenic.scenicinfo.ScenicInfoActivity;
 import com.itisi.guizhou.mvp.ui.shiwuzhaoling.ShiWuZhaoLingActivity;
@@ -19,6 +20,8 @@ import com.itisi.guizhou.mvp.ui.splash.SplashActivity;
 import com.itisi.guizhou.mvp.ui.techan.TeChanActivity;
 import com.itisi.guizhou.mvp.ui.test.TestRxBusActivity;
 import com.itisi.guizhou.mvp.ui.university.UniversityActivity;
+import com.itisi.guizhou.mvp.ui.university.style.UniversityStyleActivity;
+import com.itisi.guizhou.mvp.ui.university.style.UniversityStyleAddActivity;
 import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
 import com.itisi.guizhou.mvp.ui.user.register.RegistActivity;
 import com.itisi.guizhou.mvp.ui.user.register.RegistConfirmActivity;
@@ -52,11 +55,17 @@ public interface ActivityComponent {
     void inject(UniversityActivity activity );
     void inject(ShiWuZhaoLingActivity activity );
     void inject(TeChanActivity activity );
+
     void inject(ScenicActivity activity );
-    void inject(ScenicDetailActivity activity );
+    void inject(ScenicFootprintActivity activity );
+    void inject(ScenicFootprintAddActivity activity );
     void inject(ScenicOneActivity activity );
     void inject(ScenicInfoActivity activity );
+
     void inject(PhotoViewActivity activity );
     void inject(PhotoViewPagerActivity activity );
+
+    void inject(UniversityStyleActivity activity );
+    void inject(UniversityStyleAddActivity activity );
     //h后续创建的activity 接着往下写
 }

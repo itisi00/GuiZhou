@@ -149,7 +149,7 @@
             android:theme="@style/AppThemeBack">
         </activity>
         <activity
-            android:name=".mvp.ui.scenic.detail.ScenicDetailActivity"
+            android:name=".mvp.ui.scenic.footprint.ScenicFootprintActivity"
             android:theme="@style/AppThemeBack">
         </activity>
         <activity
@@ -163,6 +163,12 @@
         <activity android:name=".mvp.ui.common.photoview.PhotoViewPagerActivity">
         </activity>
         <activity android:name=".mvp.ui.scenic.scenicinfo.ScenicInfoActivity">
+        </activity>
+        <activity android:name=".mvp.ui.university.style.UniversityStyleActivity">
+        </activity>
+        <activity android:name=".mvp.ui.university.style.UniversityStyleAddActivity">
+        </activity>
+        <activity android:name=".mvp.ui.scenic.footprint.ScenicFootprintAddActivity">
         </activity>
     </application>
 

@@ -14,7 +14,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
 
         <ImageView
             android:layout_width="@dimen/d_60"
@@ -52,9 +54,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="招生办电话:0852-8888888"
+                android:text="招生办电话: 0852-8888888"
                 android:maxLines="1"
                 android:ellipsize="end"
+                android:autoLink="phone"
                 />
         </LinearLayout>
 

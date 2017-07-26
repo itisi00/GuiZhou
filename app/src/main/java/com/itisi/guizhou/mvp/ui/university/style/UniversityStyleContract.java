@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.ui.scenic.detail;
+package com.itisi.guizhou.mvp.ui.university.style;
 
 import com.itisi.guizhou.base.BasePresenter;
 import com.itisi.guizhou.base.BaseView;
@@ -11,14 +11,14 @@ import java.util.List;
  * 功 能:必填必填必填必填必填必填
  * 创建人:itisi
  * 邮  箱:itisivip@qq.com
- * 创建时间:2017/7/24 9:46
+ * 创建时间:2017/7/25 17:18
  * 修改人:itisi
- * 修改时间: 2017/7/24 9:46
+ * 修改时间: 2017/7/25 17:18
  * 修改内容:itisi
  * *********************
  */
 
-public interface ScenicDetailContract {
+public interface UniversityStyleContract {
     interface View extends BaseView {
         //定义自己特有的方法
         void showContent(String msg);

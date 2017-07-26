@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.ui.scenic.detail;
+package com.itisi.guizhou.mvp.ui.scenic.footprint;
 
 import com.itisi.guizhou.base.RxPresenter;
 import com.itisi.guizhou.common.RxUtil;
@@ -23,12 +23,12 @@ import javax.inject.Inject;
  * *********************
  */
 
-public class ScenicDetailPresenter extends RxPresenter<ScenicDetailContract.View> implements ScenicDetailContract.Presenter {
+public class ScenicFootprintPresenter extends RxPresenter<ScenicFootprintContract.View> implements ScenicFootprintContract.Presenter {
 
     private DataManager mDataManager;
 
     @Inject
-    public ScenicDetailPresenter(DataManager dataManager) {
+    public ScenicFootprintPresenter(DataManager dataManager) {
         mDataManager = dataManager;
     }
 
