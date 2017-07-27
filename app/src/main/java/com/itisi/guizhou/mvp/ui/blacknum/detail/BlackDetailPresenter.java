@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.ui.blacknum;
+package com.itisi.guizhou.mvp.ui.blacknum.detail;
 
 import com.itisi.guizhou.base.RxPresenter;
 import com.itisi.guizhou.common.RxUtil;
@@ -16,19 +16,19 @@ import javax.inject.Inject;
  * 功 能:必填必填必填必填必填必填
  * 创建人:itisi
  * 邮  箱:itisivip@qq.com
- * 创建时间:2017/7/12 15:57
+ * 创建时间:2017/7/27 17:07
  * 修改人:itisi
- * 修改时间: 2017/7/12 15:57
+ * 修改时间: 2017/7/27 17:07
  * 修改内容:itisi
  * *********************
  */
 
-public class BlackNumPresenter extends RxPresenter<BlackNumContract.View> implements BlackNumContract.Presenter {
+public class BlackDetailPresenter extends RxPresenter<BlackDetailContract.View> implements BlackDetailContract.Presenter {
 
     private DataManager mDataManager;
 
     @Inject
-    public BlackNumPresenter(DataManager dataManager) {
+    public BlackDetailPresenter(DataManager dataManager) {
         mDataManager = dataManager;
     }
 

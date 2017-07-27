@@ -5,6 +5,8 @@ import android.app.Activity;
 import com.itisi.guizhou.di.module.ActivityModule;
 import com.itisi.guizhou.di.scope.ActivityScope;
 import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
+import com.itisi.guizhou.mvp.ui.blacknum.detail.BlackAddActivity;
+import com.itisi.guizhou.mvp.ui.blacknum.detail.BlackDetailActivity;
 import com.itisi.guizhou.mvp.ui.chat.ChatActivity;
 import com.itisi.guizhou.mvp.ui.common.photoview.PhotoViewActivity;
 import com.itisi.guizhou.mvp.ui.common.photoview.PhotoViewPagerActivity;
@@ -94,6 +96,7 @@ public interface ActivityComponent {
     void inject(RentalDetailActivity activity );
     void inject(RentalAddActivity activity );
 
-
+    void inject(BlackDetailActivity activity );
+    void inject(BlackAddActivity activity );
     //h后续创建的activity 接着往下写
 }

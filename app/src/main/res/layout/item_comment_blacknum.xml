@@ -36,7 +36,6 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="昵称昵称昵称昵称昵称昵称昵称昵称"
-                android:textSize="@dimen/txt_15"
                 />
 
             <TextView
@@ -46,7 +45,6 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="2017-7-24 14:16:30"
-                android:textSize="@dimen/txt_13"
 
                 />
         </LinearLayout>
@@ -86,6 +84,6 @@
         android:layout_marginRight="@dimen/d_10"
         android:layout_marginTop="@dimen/d_8"
         android:lineSpacingMultiplier="1.2"
-        android:text="评论的内容评论的内容评论的内容评论的内容评论的内容评论的内容评论的内容评论的内容评论的内容评论的内容评论的内容评论的内容"/>
+        android:text="老板不是人,拖欠工资三个月,天天带着秘书飞,天天带着秘书飞,天天带着秘书飞"/>
 
 </LinearLayout>

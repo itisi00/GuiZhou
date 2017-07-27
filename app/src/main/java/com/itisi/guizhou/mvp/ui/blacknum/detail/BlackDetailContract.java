@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.ui.blacknum;
+package com.itisi.guizhou.mvp.ui.blacknum.detail;
 
 import com.itisi.guizhou.base.BasePresenter;
 import com.itisi.guizhou.base.BaseView;
@@ -11,14 +11,14 @@ import java.util.List;
  * 功 能:必填必填必填必填必填必填
  * 创建人:itisi
  * 邮  箱:itisivip@qq.com
- * 创建时间:2017/7/12 15:56
+ * 创建时间:2017/7/27 17:07
  * 修改人:itisi
- * 修改时间: 2017/7/12 15:56
+ * 修改时间: 2017/7/27 17:07
  * 修改内容:itisi
  * *********************
  */
 
-public interface BlackNumContract {
+public interface BlackDetailContract {
     interface View extends BaseView {
         //定义自己特有的方法
         void showContent(String msg);
@@ -26,14 +26,16 @@ public interface BlackNumContract {
         void loadSuccess(List<MeiZiBean> beanList);
 
     }
+
     interface Presenter extends BasePresenter<View> {
         //定义自己特有的方法
 
         /**
          * 从服务器加载数据
-         * @param num 每页的数据量 10条
+         *
+         * @param num  每页的数据量 10条
          * @param page 第几页
          */
-        void loadData(int num,int page);
+        void loadData(int num, int page);
     }
 }

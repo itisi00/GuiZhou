@@ -171,7 +171,6 @@ dependencies {
     //动态权限
     compile rootProject.ext.dependencies["rxpermissions"]
 
-
     //即时通讯 环信
     compile rootProject.ext.dependencies["hyphenate"]
 

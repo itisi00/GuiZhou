@@ -226,6 +226,10 @@
             android:name=".mvp.ui.rental.detail.RentalAddActivity"
             android:theme="@style/AppThemeBack">
         </activity>
+        <activity android:name=".mvp.ui.blacknum.detail.BlackDetailActivity">
+        </activity>
+        <activity android:name=".mvp.ui.blacknum.detail.BlackAddActivity">
+        </activity>
     </application>
 
 </manifest>
