@@ -230,6 +230,8 @@
         </activity>
         <activity android:name=".mvp.ui.blacknum.detail.BlackAddActivity">
         </activity>
+        <activity android:name=".mvp.ui.jingxuan.JingXuanDetailActivity">
+        </activity>
     </application>
 
 </manifest>

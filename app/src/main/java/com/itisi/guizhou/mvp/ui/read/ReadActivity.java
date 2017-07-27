@@ -9,7 +9,7 @@ import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.adapter.ReadAdapter;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
-import com.itisi.guizhou.mvp.ui.university.style.UniversityStyleActivity;
+import com.itisi.guizhou.mvp.ui.jingxuan.JingXuanDetailActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
@@ -59,7 +59,7 @@ public class ReadActivity extends RootActivity<ReadPresenter>
                 new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         layoutManager.setItemPrefetchEnabled(false);
 
-        mAdapter = new ReadAdapter(R.layout.item_university);
+        mAdapter= new ReadAdapter(R.layout.item_read);
         mAdapter.setOnItemClickListener(this);
         mAdapter.setOnItemLongClickListener(this);
         mAdapter.setOnLoadMoreListener(this, mRecyclerView);
@@ -132,7 +132,7 @@ public class ReadActivity extends RootActivity<ReadPresenter>
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        ActivityUtil.getInstance().openActivity(this, UniversityStyleActivity.class);
+        ActivityUtil.getInstance().openActivity(this, JingXuanDetailActivity.class);
     }
 
     @Override

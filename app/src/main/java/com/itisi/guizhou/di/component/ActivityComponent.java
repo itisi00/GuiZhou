@@ -14,6 +14,7 @@ import com.itisi.guizhou.mvp.ui.ittool.ItToolActivity;
 import com.itisi.guizhou.mvp.ui.ittool.detail.ItToolAddActivity;
 import com.itisi.guizhou.mvp.ui.ittool.detail.ItToolDetailActivity;
 import com.itisi.guizhou.mvp.ui.jingxuan.JingXuanActivity;
+import com.itisi.guizhou.mvp.ui.jingxuan.JingXuanDetailActivity;
 import com.itisi.guizhou.mvp.ui.main.MainActivity;
 import com.itisi.guizhou.mvp.ui.read.ReadActivity;
 import com.itisi.guizhou.mvp.ui.recuit.RecuitActivity;
@@ -98,5 +99,8 @@ public interface ActivityComponent {
 
     void inject(BlackDetailActivity activity );
     void inject(BlackAddActivity activity );
+
+    void inject(JingXuanDetailActivity activity );
+
     //h后续创建的activity 接着往下写
 }

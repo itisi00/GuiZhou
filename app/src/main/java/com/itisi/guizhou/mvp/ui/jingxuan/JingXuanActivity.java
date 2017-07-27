@@ -59,7 +59,7 @@ public class JingXuanActivity extends RootActivity<JingXuanPresenter>
                 new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         layoutManager.setItemPrefetchEnabled(false);
 
-        mAdapter = new JingXuanAdapter(R.layout.item_university);
+        mAdapter = new JingXuanAdapter(R.layout.item_jingxuan);
         mAdapter.setOnItemClickListener(this);
         mAdapter.setOnItemLongClickListener(this);
         mAdapter.setOnLoadMoreListener(this, mRecyclerView);
@@ -132,7 +132,7 @@ public class JingXuanActivity extends RootActivity<JingXuanPresenter>
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        ActivityUtil.getInstance().openActivity(this, UniversityStyleActivity.class);
+        ActivityUtil.getInstance().openActivity(this, JingXuanDetailActivity.class);
     }
 
     @Override
