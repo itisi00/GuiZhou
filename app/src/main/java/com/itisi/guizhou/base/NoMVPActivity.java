@@ -102,7 +102,9 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
         String moreTxt = setToolbarMoreTxt();//更多-文字--可能会换成 字体图标
         int menuLayoutId = setMenuLayoutId();//溢出菜单布局id
         Toolbar.OnMenuItemClickListener onMenuItemClickListener = setMenuItemClickListener();//溢出菜单点击事件
-
+        if (onMenuItemClickListener!=null){
+            mToolbalMore.setVisibility(View.GONE);
+        }
         if (!isToolbarTransparent()) {
             setToolbarBackground(R.color.colorPrimary);
         }
@@ -196,10 +198,12 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
      */
     protected void setToolbarMoreClickListener(View.OnClickListener clickListener) {
         mToolbalMore.setOnClickListener(clickListener);
+
     }
 
     /**
-     * 设置溢出菜单布局---还需设置溢出菜单的点击事件
+     * 设置溢出菜单布局---
+     * 还需设置溢出菜单的点击事件
      *
      * @return
      */
