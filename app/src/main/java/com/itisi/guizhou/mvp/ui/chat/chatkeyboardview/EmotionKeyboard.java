@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 
 import com.itisi.guizhou.mvp.ui.chat.ChatActivity;
 import com.itisi.guizhou.mvp.ui.chat.chatutils.LogUtils;
+import com.orhanobut.logger.Logger;
 
 
 /**
@@ -196,13 +197,17 @@ public class EmotionKeyboard {
             hideEmotionLayout(false);
             return true;
         }
+        if (mExtendLayout.isShown()){
+            hideExtionLayout(false);
+            return true;
+        }
         return false;
     }
 
     /**
      * 显示表情布局
      */
-    private void showEmotionLayout() {
+    public void showEmotionLayout() {
         int softInputHeight = getSupportSoftInputHeight();
         if (softInputHeight == 0) {
             softInputHeight = getKeyBoardHeight();
@@ -216,7 +221,7 @@ public class EmotionKeyboard {
      * 隐藏表情布局
      * @param showSoftInput  是否显示软件盘
      */
-    private void hideEmotionLayout(boolean showSoftInput) {
+    public void hideEmotionLayout(boolean showSoftInput) {
         if (mEmotionLayout.isShown()){
             mEmotionLayout.setVisibility(View.GONE);
             if (showSoftInput){
@@ -228,7 +233,7 @@ public class EmotionKeyboard {
     /**
      * 显示扩展菜单布局
      */
-    private void showExtendLayout() {
+    public void showExtendLayout() {
         int softInputHeight = getSupportSoftInputHeight();
         if (softInputHeight == 0) {
             softInputHeight = getKeyBoardHeight();
@@ -242,7 +247,7 @@ public class EmotionKeyboard {
      * 隐藏表情布局
      * @param showSoftInput  是否显示软件盘
      */
-    private void hideExtionLayout(boolean showSoftInput) {
+    public void hideExtionLayout(boolean showSoftInput) {
         if (mExtendLayout.isShown()){
             mExtendLayout.setVisibility(View.GONE);
             if (showSoftInput){
@@ -251,6 +256,10 @@ public class EmotionKeyboard {
         }
     }
 
+    public boolean isAtLeastShow(){
+        return mExtendLayout.isShown()||mEmotionLayout.isShown();
+//        return mExtendLayout.getHeight();
+    }
 
     /**
      * 锁定内容高度，防止跳闪
@@ -331,8 +340,11 @@ public class EmotionKeyboard {
         if (softInputHeight > 0) {
             sp.edit().putInt(SHARE_PREFERENCE_SOFT_INPUT_HEIGHT, softInputHeight).apply();
         }
-        Log.i(TAG, "getSupportSoftInputHeight: "+softInputHeight);
-        Log.i(TAG, "getSupportSoftInputHeight: itisi");
+//        if (softInputHeight==0){
+//            softInputHeight=554;
+//            sp.edit().putInt(SHARE_PREFERENCE_SOFT_INPUT_HEIGHT, softInputHeight).apply();
+//        }
+        Logger.i("softInputHeight:"+softInputHeight);
         return softInputHeight;
     }
 
@@ -355,6 +367,7 @@ public class EmotionKeyboard {
         } else {
             return 0;
         }
+
     }
 
     /**
@@ -363,7 +376,7 @@ public class EmotionKeyboard {
      * @return
      */
     public int getKeyBoardHeight() {
-        return sp.getInt(SHARE_PREFERENCE_SOFT_INPUT_HEIGHT, 787);
+        return sp.getInt(SHARE_PREFERENCE_SOFT_INPUT_HEIGHT, 554);
     }
 
 }

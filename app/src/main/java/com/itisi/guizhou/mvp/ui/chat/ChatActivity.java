@@ -24,8 +24,8 @@ import com.hyphenate.chat.EMMessage;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.Constants;
 import com.itisi.guizhou.base.RootActivity;
-import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.adapter.ChatAdapter;
+import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.ui.chat.chatfragment.EmotionMainFragment;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
@@ -118,6 +118,19 @@ public class ChatActivity extends RootActivity<ChatPresenter>
             mIvExtend = (ImageView) mInputView.findViewById(R.id.bar_iv_extend);
             mEditText = (EditText) mInputView.findViewById(R.id.bar_edit_text);
             mEditText.addTextChangedListener(new EditTextChangeListener());//文本变化监听器
+
+            //只为获取高度 软键盘
+//            mEditText.postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    mEditText.setFocusable(true);
+//                    mEditText.setFocusableInTouchMode(true);
+//                    mEditText.requestFocus();
+//                    mInputMethodManager.showSoftInput(mEditText,InputMethodManager.SHOW_FORCED);
+//
+//                    mInputMethodManager.hideSoftInputFromWindow(mEditText.getWindowToken(), 0); //强制隐藏键盘
+//                }
+//            },200);
             mEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                 @Override
                 public void onFocusChange(View v, boolean hasFocus) {
@@ -164,6 +177,14 @@ public class ChatActivity extends RootActivity<ChatPresenter>
         initEmotionMainFragment();
         mReceiveLisener = new MessageReceiveLisener();
         EaseMobUtil.addReceiveMessageListener(mReceiveLisener);
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                closeSoftInput();
+                emotionMainFragment.hideEmotionLayoutoOrExtenLayout();
+            }
+        });
     }
 
     /**
@@ -453,18 +474,27 @@ public class ChatActivity extends RootActivity<ChatPresenter>
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        ToastUtil.Success(position + ":click");
+//        ToastUtil.Success(emotionMainFragment.isAtLeastShow()+"");
+//        ToastUtil.Info(getSoftButtonsBarHeight()+"");
         closeSoftInput();
-
+        emotionMainFragment.hideEmotionLayoutoOrExtenLayout();
     }
 
     @Override
     public boolean onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
-        ToastUtil.Success(position + ":long");
         closeSoftInput();
+        emotionMainFragment.hideEmotionLayoutoOrExtenLayout();
+
         return true;
     }
 
+    @Override
+    public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+        closeSoftInput();
+        emotionMainFragment.hideEmotionLayoutoOrExtenLayout();
+        // TODO: 2017/7/27  还要处理 消息的点击事件
+        ToastUtil.Success("child:" + position);
+    }
 
     private void loadData() {
         mPresenter.loadData(pageSize, pageIndex);
@@ -488,7 +518,7 @@ public class ChatActivity extends RootActivity<ChatPresenter>
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+//        super.onBackPressed();
           /* 判断是否拦截返回键操作
                 */
         if (!emotionMainFragment.isInterceptBackPress()) {
@@ -537,10 +567,6 @@ public class ChatActivity extends RootActivity<ChatPresenter>
 
     }
 
-    @Override
-    public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-        ToastUtil.Success("child:" + position);
-    }
 
     /**
      * 环信--收到的监听器

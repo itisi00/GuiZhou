@@ -240,4 +240,18 @@ public class EmotionMainFragment extends BaseFragment  {
         return mEmotionKeyboard.interceptBackPress();
     }
 
+    /**
+     * 关闭表情布局
+     * 关闭扩展菜单
+     */
+    public void hideEmotionLayoutoOrExtenLayout(){
+        mEmotionKeyboard.hideEmotionLayout(false);
+        mEmotionKeyboard.hideExtionLayout(false);
+
+    }
+
+    public boolean isAtLeastShow(){
+        return mEmotionKeyboard.isAtLeastShow();
+    }
+
 }
