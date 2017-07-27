@@ -63,7 +63,7 @@ public abstract class CommonSubscriber<T> extends ResourceObserver<T> { //Resour
         }else if(e instanceof HttpException){
             mView.showErrorMsg("数据加载失败ヽ(≧Д≦)ノ");
         }else{
-            mView.showErrorMsg("未知错误ヽ(≧Д≦)ノ");
+            mView.showErrorMsg("未知错误ヽ(≧Д≦)ノ"+e.getMessage());
             Logger.i(e.toString());
         }
         if (isShowErrorState){

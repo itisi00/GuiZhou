@@ -138,7 +138,7 @@
 #Retrofit
 -dontwarn retrofit2.**
 -keep class retrofit2.** { *; }
--keepattributes Signature
+-keepattributes Signature-keepattributes
 -keepattributes Exceptions
 
 #RxJava RxAndroid
@@ -157,13 +157,27 @@
 
 #Gson
 #-keepattributes Signature-keepattributes *Annotation*
+-keepattributes Signature
+-keepattributes *Annotation*
 -keep class sun.misc.Unsafe { *; }
--keep class com.google.gson.stream.** { *; }
 
 # Application classes that will be serialized/deserialized over Gson 下面替换成自己的实体类
--keep class com.example.bean.** { *; }
+#-keep class com.example.bean.** { *; }
+
+-keep class com.itisi.guizhou.mvp.model.**{*;}#这是你定义的实体类
+-keepclassmembers class * implements java.io.Serializable {
+    static final long serialVersionUID;
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+
 
 #OkHttp3
+-dontwarn okhttp3.logging.**
+-keep class okhttp3.internal.**{*;}
 -dontwarn com.squareup.okhttp3.**
 -keep class com.squareup.okhttp3.** { *;}
 -dontwarn okio.**
@@ -178,7 +192,7 @@
 #环信
 -keep class com.hyphenate.** {*;}
 -dontwarn  com.hyphenate.**
-
+-keep class com.superrtc.** {*;} #安装成功 启动不了 百度加上的 坑人啊啊啊啊啊
 
 #bugly
 -dontwarn com.tencent.bugly.**

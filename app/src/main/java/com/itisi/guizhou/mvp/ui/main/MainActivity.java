@@ -1,5 +1,6 @@
 package com.itisi.guizhou.mvp.ui.main;
 
+import android.Manifest;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -33,11 +34,15 @@ import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
 import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
 import com.mxn.soul.flowingdrawer_core.FlowingMenuLayout;
 import com.orhanobut.logger.Logger;
+import com.tbruyelle.rxpermissions2.Permission;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Consumer;
 
 @UseRxBus
 public class MainActivity extends RootActivity<MainPresenter> implements MainContract.View
@@ -97,7 +102,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 
     @Override
     protected int getLayoutId() {
-
+        initPermission();
         return R.layout.activity_main;
     }
 
@@ -125,6 +130,11 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 //        StatusBarUtil.hideFakeStatusBarView(this);
 //        StatusBarUtil.setTranslucent(this, 0);//不加0 是半透明效果
 //        StatusBarUtil.setColor(this,getResources().getColor(R.color.colorAccent));
+
+
+
+
+
         if (mBottomItems == null) { //这里估计不会走 因为 在 setToolbarTvTitle 已经获取一次了
             mBottomItems = getResources().getStringArray(R.array.bottomMenu);
         }
@@ -152,6 +162,31 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
             public void onProgress(int progress, String status) {
             }
         });
+
+    }
+
+    /**
+     * 申请权限
+     */
+    private void initPermission() {
+        RxPermissions rxPermissions=new RxPermissions(this);
+        // TODO: 2017/7/27 权限申请日志 发布需关闭
+        rxPermissions.setLogging(true);
+        rxPermissions.requestEach(
+//                Manifest.permission.CAMERA,
+                Manifest.permission.READ_CALENDAR,
+                Manifest.permission.READ_CONTACTS,
+//                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.RECORD_AUDIO,
+                Manifest.permission.CALL_PHONE,
+                Manifest.permission.SEND_SMS,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .subscribe(new Consumer<Permission>() {
+                    @Override
+                    public void accept(@NonNull Permission permission) throws Exception {
+                        String name = permission.name;
+                    }
+                });
 
     }
 

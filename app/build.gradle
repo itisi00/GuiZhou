@@ -25,7 +25,8 @@ android {
 //        }
         ndk {
             //指定所用cpu架构 可有效降低apk体积,但是就适用其他cpu了
-//            abiFilters 'armeabi-v7a'
+            abiFilters 'armeabi-v7a'
+
         }
 
     }
@@ -37,19 +38,13 @@ android {
             enable true
             reset()
             include 'armeabi-v7a'
-            universalApk false
-//            include  'armeabi //'x86', 'armeabi', 'armeabi-v7a', 'mips'
+            universalApk false //打包一个通用版本
+//            include  'armeabi ,'x86', 'armeabi', 'armeabi-v7a'
         }
     }
     signingConfigs {
+
         release {
-//            storeFile file(keystore.path)
-//            storePassword keystore.password
-//            keyAlias keystore.alias
-//            keyPassword keystore.alias_password
-//            shrinkResources true
-        }
-        config {
             //加载资源
             Properties properties = new Properties()
             InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream();
@@ -88,10 +83,12 @@ android {
             ndk {
                 abiFilters = ["armeabi-v7a"]
             }
+            signingConfig signingConfigs.release
+
             minifyEnabled true
             shrinkResources true//去掉不用资源
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
+
             //Other parameters
             debuggable false
             jniDebuggable false
@@ -104,7 +101,20 @@ android {
             ndk {
                 abiFilters = ["armeabi-v7a"]
             }
-            signingConfig signingConfigs.config
+            signingConfig signingConfigs.release
+
+            //调试 临时 测试  模拟发布 环境
+//            minifyEnabled true
+//            shrinkResources true//去掉不用资源
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//
+//            //Other parameters
+//            debuggable false
+//            jniDebuggable false
+//            renderscriptDebuggable false
+//            pseudoLocalesEnabled false
+//            zipAlignEnabled true
+
         }
     }
     productFlavors {
@@ -157,6 +167,10 @@ dependencies {
     compile rootProject.ext.dependencies["recyclerview-adapter"]
     compile rootProject.ext.dependencies["flexbox"]
     compile rootProject.ext.dependencies["circleimageview"]
+
+    //动态权限
+    compile rootProject.ext.dependencies["rxpermissions"]
+
 
     //即时通讯 环信
     compile rootProject.ext.dependencies["hyphenate"]

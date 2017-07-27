@@ -6,6 +6,7 @@ import com.itisi.guizhou.common.RxUtil;
 import com.itisi.guizhou.mvp.model.DataManager;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.model.http.response.GankResponse;
+import com.itisi.guizhou.utils.ToastUtil;
 
 import java.util.List;
 
@@ -42,7 +43,12 @@ public class ChatPresenter  extends RxPresenter<ChatContract.View>
                         .subscribeWith(new CommonSubscriber<List<MeiZiBean>>(mView, false) {
                             @Override
                             public void onNext(List<MeiZiBean> meiZiBeen) {
-                                mView.loadSuccess(meiZiBeen);
+                                if (meiZiBeen==null){
+                                    ToastUtil.Info("数据是空的");
+                                }else{
+                                    mView.loadSuccess(meiZiBeen);
+
+                                }
                             }
                         })
         );
