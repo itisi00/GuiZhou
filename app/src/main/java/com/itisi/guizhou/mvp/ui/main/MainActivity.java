@@ -376,11 +376,6 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
         // TODO: 2017/7/11 得请求网络天气
     }
 
-//    @Override
-//    protected void setToolbarMoreClickListener(View.OnClickListener clickListener) {
-//        super.setToolbarMoreClickListener(clickListener);
-//    }
-
     @Override
     protected boolean setSwipeEnabled() {
         return false;
@@ -388,7 +383,6 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 
     @Override
     public void testShowView(String smg) {
-//        tv_test.setText(smg);
     }
 
     @Subscribe(tag = RxBus.TAG_UPDATE, thread = EventThread.MAIN_THREAD)
@@ -420,6 +414,9 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 
     @Override
     public void onClick(View view) {
+        if (mDrawer.isShown()){
+            mDrawer.closeMenu(false);
+        }
         switch (view.getId()) {
             case R.id.iv_left_header:
                 ActivityUtil.getInstance().openActivity(mActivity, LoginActivity.class);
