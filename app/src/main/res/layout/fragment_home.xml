@@ -24,7 +24,7 @@
             android:orientation="horizontal"
             android:paddingTop="@dimen/d_10"
             android:paddingBottom="@dimen/d_5"
-            android:background="#ab47bc"
+            android:background="@color/colorChat"
             >
 
             <TextView
@@ -61,7 +61,7 @@
             android:orientation="horizontal"
             android:paddingTop="@dimen/d_10"
             android:paddingBottom="@dimen/d_5"
-            android:background="#ba68c8"
+            android:background="@color/colorChat"
             >
             <TextView
                 android:id="@+id/tv_home_ittool"

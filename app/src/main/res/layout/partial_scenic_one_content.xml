@@ -21,7 +21,9 @@
         android:layout_marginTop="@dimen/d_13"
         android:lineSpacingMultiplier="1.2"
         android:text="一大段内容,或者一小段内容,可能要用展开的方式或者干脆一次性展示完全可能要用展开的方式或者干脆一次性展示完全,因为大部分人不会输入过多的内容"
-        android:textSize="@dimen/txt_14"/>
+        android:textSize="@dimen/txt_15"
+        android:textColor="@color/colorImportent"
+        />
 
 
     <LinearLayout

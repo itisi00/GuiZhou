@@ -340,25 +340,27 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
      */
     private void initBottomNav() {
 //主页底部导航栏
+        //角标
         BadgeItem numberBadgeItem = new BadgeItem()
                 .setBorderWidth(4)
                 .setBackgroundColorResource(R.color.colorAccent)
                 .setText("66")
                 .setHideOnSelect(false);
+//00695c  00776a  4a148c aa00ff  9966cc
         bottom_main
                 .setActiveColor(R.color.colorAccent)
                 .setInActiveColor(R.color.colorGray)
                 .addItem(new BottomNavigationItem(R.mipmap.bottom_menu_home_white, mBottomItems[0])
-                        .setActiveColor("#aa00ff"))
+                        .setActiveColor("#009688"))
                 .addItem(new BottomNavigationItem(R.mipmap.bottom_menu_time_white, mBottomItems[1])
-                        .setActiveColor("#00776a"))
+                        .setActiveColor("#00695c"))
 //                        .setBadgeItem(numberBadgeItem)) //多一个括号 少一个括号的问题
                 .addItem(new BottomNavigationItem(R.mipmap.bottom_menu_love_white, mBottomItems[2])
-                        .setActiveColor("#4a148c"))
+                        .setActiveColor("#00796b"))
                 .addItem(new BottomNavigationItem(R.mipmap.bottom_menu_music_white, mBottomItems[3])
-                        .setActiveColor("#ff4081"))
+                        .setActiveColor("#00897b"))
                 .addItem(new BottomNavigationItem(R.mipmap.bottom_menu_chat_white, mBottomItems[4])
-                        .setActiveColor("#9966cc"))
+                        .setActiveColor("#009688"))
                 .setFirstSelectedPosition(0)
                 .initialise();
     }

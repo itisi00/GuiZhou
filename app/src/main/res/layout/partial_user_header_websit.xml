@@ -29,6 +29,7 @@
             android:layout_marginTop="@dimen/d_5"
             android:autoLink="web"
             android:text="http://www.baidu.com"
+            android:textSize="@dimen/txt_15"
             />
 
         <TextView
@@ -38,7 +39,8 @@
             android:layout_below="@id/tv_weburl"
             android:layout_marginTop="@dimen/d_5"
             android:text="推荐者指数:"
-
+            android:textSize="@dimen/txt_13"
+            android:textColor="@color/colorSecondary"
             />
 
         <RatingBar

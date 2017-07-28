@@ -22,7 +22,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ab47bc"
+            android:background="@color/colorChat"
             android:orientation="horizontal"
             android:paddingTop="@dimen/d_5"
             >

@@ -110,15 +110,11 @@
         <item name="android:drawablePadding">@dimen/d_5</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_margin">@dimen/d_5</item>
-        <item name="android:textSize">@dimen/d_10</item>
-        <item name="android:textColor">@color/colorWhite</item>
-        <item name="android:clickable">true</item>
+        <item name="android:textSize">@dimen/txt_12</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <!--<item name="android:clickable">true</item>-->
         <!--这个属性会带来黄色背景,或者是在与上面那个属性一起使用的时候-->
         <!--<item name="android:focusableInTouchMode">true</item>-->
-
-        <!--<item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>-->
-
-
     </style>
 
     <style name="BorderLess">
@@ -128,6 +124,7 @@
           无界 selectableItemBackgroundBorderless
        -->
     </style>
+
     <style name="OtherAccount">
         <item name="android:layout_width">@dimen/d_0</item>
         <item name="android:layout_height">wrap_content</item>
@@ -136,8 +133,17 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <!--parent="BorderLess" 集成这个 一不小心就会激起千层浪 -->
+    <style name="Comment">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/txt_12</item>
+        <item name="android:textColor">@color/colorComment</item>
+        <item name="android:layout_margin">@dimen/d_2</item>
+    </style>
+
     <!--自定义相册 主题-->
-    <style name="Theme_Light_Gallery"  parent="AppTheme">
+    <style name="Theme_Light_Gallery" parent="AppTheme">
         <item name="gallery_toolbar_bg">@color/colorPrimary</item>
         <!--<item name="gallery_toolbar_close_image">@mipmap/ic_launcher</item>-->
         <!--<item name="gallery_toolbar_close_color">#223</item>-->
@@ -366,6 +372,7 @@
         <item name="android:textSize">@dimen/txt_15</item>
         <item name="android:layout_marginTop">@dimen/d_5</item>
     </style>
+
     <style name="MsgItemSessionLastMsg">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -376,6 +383,7 @@
         <item name="android:textSize">@dimen/txt_13</item>
 
     </style>
+
     <style name="MsgItemSessionTime">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

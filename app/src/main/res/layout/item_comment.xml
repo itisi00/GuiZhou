@@ -36,7 +36,8 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="昵称昵称昵称昵称昵称昵称昵称昵称"
-                android:textSize="@dimen/txt_15"
+                android:textSize="@dimen/txt_14"
+                android:textColor="@color/colorImportent"
                 />
 
             <TextView
@@ -46,7 +47,8 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="2017-7-24 14:16:30"
-                android:textSize="@dimen/txt_13"
+                android:textSize="@dimen/txt_12"
+                android:textColor="@color/colorSecondary"
 
                 />
         </LinearLayout>
@@ -61,7 +63,7 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/d_20"
+                android:layout_height="@dimen/d_18"
                 android:layout_marginRight="@dimen/d_20"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/like_default"
@@ -69,7 +71,7 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/d_20"
+                android:layout_height="@dimen/d_18"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/comment"
                 />
@@ -85,7 +87,8 @@
         android:layout_marginLeft="@dimen/d_45"
         android:layout_marginRight="@dimen/d_10"
         android:layout_marginTop="@dimen/d_8"
-        android:lineSpacingMultiplier="1.2"
+        android:lineSpacingMultiplier="1.1"
+        android:textSize="@dimen/txt_13"
         android:text="评论的内容评论的内容评论的内容评论的内容评论的内容评论的内容评论的内容评论的内容评论的内容评论的内容评论的内容评论的内容"/>
 
 </LinearLayout>

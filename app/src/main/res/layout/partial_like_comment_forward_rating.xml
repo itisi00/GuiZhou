@@ -22,7 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/d_5"
             android:text="围观者指数:"
-
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/txt_13"
             />
 
         <RatingBar

@@ -29,6 +29,7 @@
             android:maxLines="1"
             android:text="昵称昵称昵称昵称昵称昵称昵称昵称"
             android:textSize="@dimen/txt_15"
+            android:textColor="@color/colorImportent"
             />
 
         <TextView
@@ -39,6 +40,7 @@
             android:maxLines="1"
             android:text="2017-7-24 14:16:30"
             android:textSize="@dimen/txt_13"
+            android:textColor="@color/colorSecondary"
 
             />
     </LinearLayout>

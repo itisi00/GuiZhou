@@ -30,6 +30,8 @@
             android:text="很长的昵称"
             android:maxLines="1"
             android:ellipsize="end"
+            android:textSize="@dimen/txt_15"
+            android:textColor="@color/colorImportent"
             />
 
         <TextView
@@ -39,6 +41,8 @@
             android:layout_below="@id/tv_weburl"
             android:layout_marginTop="@dimen/d_5"
             android:text="2017-7-26 17:39:44"
+            android:textSize="@dimen/txt_13"
+            android:textColor="@color/colorSecondary"
 
             />
 

@@ -25,7 +25,24 @@
             />
 
 
-        <com.hanks.htextview.rainbow.RainbowTextView
+        <!--<com.hanks.htextview.rainbow.RainbowTextView-->
+            <!--android:id="@+id/tv_left_username"-->
+            <!--android:layout_width="@dimen/d_180"-->
+            <!--android:layout_height="@dimen/d_40"-->
+            <!--android:layout_marginLeft="@dimen/d_10"-->
+            <!--android:layout_toRightOf="@id/iv_left_header"-->
+            <!--android:ellipsize="end"-->
+            <!--android:gravity="center"-->
+            <!--android:maxLines="1"-->
+            <!--android:text="itisiitisiitisi"-->
+            <!--android:textColor="@color/colorAccent"-->
+            <!--android:textSize="@dimen/txt_30"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:clickable="true"-->
+            <!--android:focusableInTouchMode="true"-->
+            <!--style="@style/BorderLess"-->
+            <!--/>-->
+        <TextView
             android:id="@+id/tv_left_username"
             android:layout_width="@dimen/d_180"
             android:layout_height="@dimen/d_40"
@@ -35,14 +52,13 @@
             android:gravity="center"
             android:maxLines="1"
             android:text="itisiitisiitisi"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/txt_30"
             android:layout_centerVertical="true"
             android:clickable="true"
             android:focusableInTouchMode="true"
             style="@style/BorderLess"
             />
-
 
     </RelativeLayout>
 

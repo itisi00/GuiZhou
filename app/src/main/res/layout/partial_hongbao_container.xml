@@ -26,95 +26,56 @@
             android:layout_height="@dimen/d_15"
             android:layout_margin="@dimen/d_5"
             android:scaleType="centerCrop"
-            android:src="@mipmap/hongbao_activity"
+            android:src="@mipmap/hongbao_tag"
 
             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/d_5"
-            android:lineSpacingExtra="@dimen/d_10"
-            android:lineSpacingMultiplier="2"
+            style="@style/Comment"
             android:text="itisi"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/txt_14"
-            android:textStyle="italic"
+
             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/d_5"
+            style="@style/Comment"
             android:text="同一个世界同一个梦想"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/txt_14"
-            android:textStyle="italic"
+
             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/d_5"
+            style="@style/Comment"
             android:text="my love"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/txt_14"
-            android:textStyle="italic"
 
             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/d_5"
+            style="@style/Comment"
             android:text="虞美人"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/txt_14"
-            android:textStyle="italic"
 
             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/d_5"
-            android:paddingRight="@dimen/d_5"
+            style="@style/Comment"
             android:text="zl"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/txt_14"
-            android:textStyle="italic"
+
             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/d_5"
+            style="@style/Comment"
             android:text="江山如画-美人多娇"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/txt_14"
-            android:textStyle="italic"
+
 
             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/d_5"
+            style="@style/Comment"
             android:text="看窗外,那是朕留给你的江山"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/txt_14"
-            android:textStyle="italic"
 
             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/d_5"
+            style="@style/Comment"
             android:text="等18人赏了红包"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/txt_14"
-            android:textStyle="italic"
 
             />
     </com.google.android.flexbox.FlexboxLayout>

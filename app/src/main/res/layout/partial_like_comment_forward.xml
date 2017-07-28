@@ -14,6 +14,7 @@
         android:layout_weight="1"
         android:text="浏览/点赞 12306次"
         android:textSize="@dimen/txt_13"
+        android:textColor="@color/colorSecondary"
         />
 
     <ImageView

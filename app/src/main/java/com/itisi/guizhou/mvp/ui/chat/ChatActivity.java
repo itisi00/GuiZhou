@@ -110,6 +110,11 @@ public class ChatActivity extends RootActivity<ChatPresenter>
         setPath();
     }
 
+    @Override
+    protected String setToolbarTvTitle() {
+        return "itisi";
+    }
+
     private void initEmotionViewAndListener() {
         if (mInputView == null) {
             mInputView = getSupportFragmentManager().findFragmentById(R.id.fl_pannel).getView();

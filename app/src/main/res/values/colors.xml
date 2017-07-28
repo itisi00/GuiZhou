@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--<color name="colorPrimary">#3F51B5</color>-->
-    <color name="colorPrimary">#9c27b0</color>
-    <color name="colorPrimaryDark">#9c27b0</color>
+    <!--<color name="colorPrimary">#3F51B5 9c27b0</color>-->
+    <color name="colorPrimary">#06c1ae</color>
+    <color name="colorPrimaryDark">#06c1ae</color>
     <!--<color name="colorPrimaryDark">#303F9F</color>-->
     <color name="colorAccent">#FF4081</color>
+    <!--小面积使用,用于突出的文字,按钮和icon-->
+    <color name="colorProminent">#f62d59</color>
+    <!--用于重要文字和普通段落文字,标签栏-->
+    <color name="colorImportent">#333333</color>
+    <!--辅助色 小面积使用,引导文字等-->
+    <color name="colorAuxiliary">#444d5c</color>
+    <!--用于次要文字,文字说明和一般按钮描边-->
+    <color name="colorSecondary">#999999</color>
+
+    <color name="colorDivider">#dadada</color>
+    <color name="colorChat">#f3f3f3</color>
+
+    <color name="colorComment">#3F51B5</color>
+
+    <!--底部导航 不起用 -->
+    <color name="colorNav1">#aa00ff</color>
+    <color name="colorNav2">#00776a</color>
+    <color name="colorNav3">#4a148c</color>
+    <color name="colorNav4">#ff4081</color>
+    <color name="colorNav5">#9966cc</color>
+    <!--底部导航-->
+    <color name="colorTabSelected">#ff5722</color>
+
 
     <color name="color0094ff">#0094ff</color>
 
