@@ -109,7 +109,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:drawablePadding">@dimen/d_5</item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_margin">@dimen/d_5</item>
+        <item name= "android:layout_margin">@dimen/d_5</item>
         <item name="android:textSize">@dimen/txt_12</item>
         <item name="android:textColor">@color/colorPrimary</item>
         <!--<item name="android:clickable">true</item>-->
