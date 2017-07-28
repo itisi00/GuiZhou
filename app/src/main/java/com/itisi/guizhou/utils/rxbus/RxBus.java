@@ -5,6 +5,7 @@ import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 import com.itisi.guizhou.utils.rxbus.event.EventThread;
 import com.itisi.guizhou.utils.rxbus.pojo.RxMessage;
 import com.itisi.guizhou.utils.rxbus.util.RxSchedulerHelper;
+import com.itisi.guizhou.utils.update.DownloadProgress;
 import com.orhanobut.logger.Logger;
 
 import org.reactivestreams.Publisher;
@@ -17,6 +18,7 @@ import java.util.Map;
 
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
@@ -116,6 +118,10 @@ public class RxBus {
     //    =======================似有方法===============================
     public <T> Disposable toDefaultObservable(Class<T> eventType, Consumer<T> consumer) {
         return bus.ofType(eventType).compose(RxSchedulerHelper.io_main()).subscribe();
+    }
+
+    public Observable<DownloadProgress> getDownloadObservable() {
+        return getInstance().toObservable().ofType(DownloadProgress.class).observeOn(AndroidSchedulers.mainThread());
     }
 
     public void init(@NonNull final Object object) {

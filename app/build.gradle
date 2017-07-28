@@ -167,6 +167,7 @@ dependencies {
     compile rootProject.ext.dependencies["recyclerview-adapter"]
     compile rootProject.ext.dependencies["flexbox"]
     compile rootProject.ext.dependencies["circleimageview"]
+    compile rootProject.ext.dependencies["flycodialog"]
 
     //动态权限
     compile rootProject.ext.dependencies["rxpermissions"]

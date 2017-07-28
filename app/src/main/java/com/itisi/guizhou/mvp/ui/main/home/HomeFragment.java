@@ -1,16 +1,17 @@
 package com.itisi.guizhou.mvp.ui.main.home;
 
 
+import android.Manifest;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.flyco.dialog.widget.ActionSheetDialog;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.App;
 import com.itisi.guizhou.base.RootFragment;
-import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
 import com.itisi.guizhou.mvp.ui.ittool.ItToolActivity;
 import com.itisi.guizhou.mvp.ui.jingxuan.JingXuanActivity;
 import com.itisi.guizhou.mvp.ui.read.ReadActivity;
@@ -21,6 +22,9 @@ import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.imageload.ImageLoadConfiguration;
 import com.itisi.guizhou.utils.imageload.ImageLoadProxy;
+import com.itisi.guizhou.utils.update.DownloadProgress;
+import com.itisi.guizhou.utils.update.RxUpdateUtil;
+import com.orhanobut.logger.Logger;
 import com.yalantis.phoenix.PullToRefreshView;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -32,6 +36,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Consumer;
 
 
 /**
@@ -52,7 +58,7 @@ public class HomeFragment extends RootFragment<HomePresenter>
     PullToRefreshView mPullToRefreshView;
     private int pageSize = 10;//每页多少条数据
     private int pageIndex = 1;//第几页
-    private int totalCount=0;//总的数据条数 有些接口会返回
+    private int totalCount = 0;//总的数据条数 有些接口会返回
 
     @BindView(R.id.tv_home_rental)
     TextView tv_home_rental;//租房
@@ -145,6 +151,16 @@ public class HomeFragment extends RootFragment<HomePresenter>
                 ToastUtil.Success("轮播图 点击位置 :" + i);
             }
         });
+
+        // 监听下载进度
+        RxUpdateUtil.getDownloadProgressObservable()
+                .subscribe(new Consumer<DownloadProgress>() {
+                    @Override
+                    public void accept(@NonNull DownloadProgress downloadProgress) throws Exception {
+                        Logger.i("下载进度:" + downloadProgress.getTotal() + "==" + downloadProgress.getProgress());
+                    }
+                });
+
     }
 
     /**
@@ -204,9 +220,14 @@ public class HomeFragment extends RootFragment<HomePresenter>
 
     }
 
+    //临时变量
+    private String mNewVersion = "1.0.1";
+    private String mApkUrl = "http://7xk9dj.com1.z0.glb.clouddn.com/BGAUpdateSample_v1.0.1_debug.apk";
+
+
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.tv_home_rental:
                 ActivityUtil.getInstance().openActivity(getActivity(), RentalActivity.class);
                 break;
@@ -218,11 +239,11 @@ public class HomeFragment extends RootFragment<HomePresenter>
                 break;
             case R.id.tv_home_jingxuan:
 //                ToastUtil.Success(tv_home_jingxuan.getText().toString());
-                Bundle bundle=new Bundle();
+                Bundle bundle = new Bundle();
 //                bundle.putString("url","http://static10.photo.sina.com.cn/middle/5a3ab1b1x9961016a8699&690");
 //                ActivityUtil.getInstance().openActivity(getActivity(), PhotoViewActivity.class,bundle);
 
-                ArrayList<String>urls=new ArrayList<>();
+                ArrayList<String> urls = new ArrayList<>();
                 urls.add("http://inews.gtimg.com/newsapp_bt/0/1834185779/641");
                 urls.add("http://inews.gtimg.com/newsapp_bt/0/1834185236/641");
                 urls.add("http://inews.gtimg.com/newsapp_bt/0/1834186365/641");
@@ -233,7 +254,7 @@ public class HomeFragment extends RootFragment<HomePresenter>
 //                ActivityUtil.getInstance().openActivity(getActivity(), PhotoViewPagerActivity.class,bundle);
                 ActivityUtil.getInstance().openActivity(getActivity(), JingXuanActivity.class);
 
-               break;
+                break;
             case R.id.tv_home_ittool:
                 ActivityUtil.getInstance().openActivity(getActivity(), ItToolActivity.class);
 
@@ -243,8 +264,9 @@ public class HomeFragment extends RootFragment<HomePresenter>
                 ActivityUtil.getInstance().openActivity(getActivity(), WebsitActivity.class);
                 break;
             case R.id.tv_home_blacknum:
-//                ToastUtil.Success(tv_home_blacknum.getText().toString());
-                ActivityUtil.getInstance().openActivity(getActivity(), BlackNumActivity.class);
+                ToastUtil.Success(tv_home_blacknum.getText().toString());
+                downloadApkFile();
+//                ActivityUtil.getInstance().openActivity(getActivity(), BlackNumActivity.class);
                 break;
             case R.id.tv_home_more:
                 //暂无
@@ -252,6 +274,47 @@ public class HomeFragment extends RootFragment<HomePresenter>
                 break;
 
         }
+    }
+
+    public void downloadApkFile() {
+//        NormalDialog normalDialog = new NormalDialog(mActivity);
+//        normalDialog.show();
+
+        ActionSheetDialog sheetDialog = new ActionSheetDialog(mActivity, new String[]{"相册", "相机"}, mRootView);
+        sheetDialog.setTitle("修改头像");
+        sheetDialog.show();
+        String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        // 如果新版 apk 文件已经下载过了，直接 return，此时不需要开发者调用安装 apk 文件的方法，在 isApkFileDownloaded 里已经调用了安装」
+        // TODO: 2017/7/28  测试进度  临时注释
+//        if (RxUpdateUtil.isApkDownloaded(mNewVersion)) {
+//            Logger.i("不下载,取缓存");
+//            return;
+//        }
+        // 下载新版 apk 文件
+//        RxUpdateUtil.downloadApkFile(mApkUrl, mNewVersion)
+//                .subscribe(new Observer<File>() {
+//                    @Override
+//                    public void onSubscribe(@NonNull Disposable d) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onNext(@NonNull File file) {
+//                        if (file != null) {
+//                            RxUpdateUtil.installApp(file);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onError(@NonNull Throwable e) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//
+//                    }
+//                });
     }
 
     @Override
