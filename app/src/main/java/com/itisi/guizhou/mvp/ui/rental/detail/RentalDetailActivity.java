@@ -10,6 +10,8 @@ import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.adapter.CommentAdapter;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
+import com.itisi.guizhou.mvp.ui.chat.ChatActivity;
+import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 import com.jaeger.library.StatusBarUtil;
@@ -60,7 +62,8 @@ public class RentalDetailActivity extends RootActivity<RentalDetailPresenter>
         setToolbarMoreClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ToastUtil.Info("聊天界面?");
+                // TODO: 2017/8/1  还需要携带参数
+                ActivityUtil.getInstance().openActivity(RentalDetailActivity.this, ChatActivity.class);
             }
         });
     }

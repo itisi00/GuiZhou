@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        >
+        <TextView
+            android:id="@+id/tv_job"
+            android:layout_width="@dimen/d_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginRight="@dimen/d_10"
+            android:textColor="@color/colorBlack"
+            android:text="大数据开发工程师"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3k-25k"
+            android:textColor="@color/color0094ff"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/d_5"
+        android:layout_marginBottom="@dimen/d_5"
+        >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="@dimen/d_0"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/d_10"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/txt_12"
+            android:text="金阳|世纪城|1-3年|本科"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/txt_12"
+            android:text="07月17日"
+            />
+    </LinearLayout>
+</merge>

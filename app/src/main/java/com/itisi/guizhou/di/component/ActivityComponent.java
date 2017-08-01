@@ -4,20 +4,31 @@ import android.app.Activity;
 
 import com.itisi.guizhou.di.module.ActivityModule;
 import com.itisi.guizhou.di.scope.ActivityScope;
+import com.itisi.guizhou.mvp.about.AboutActivity;
+import com.itisi.guizhou.mvp.ui.account.AccountActivity;
+import com.itisi.guizhou.mvp.ui.album.AlbumActivity;
+import com.itisi.guizhou.mvp.ui.birthday.BirthdayActivity;
 import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
 import com.itisi.guizhou.mvp.ui.blacknum.detail.BlackAddActivity;
 import com.itisi.guizhou.mvp.ui.blacknum.detail.BlackDetailActivity;
+import com.itisi.guizhou.mvp.ui.agenda.AgendaActivity;
 import com.itisi.guizhou.mvp.ui.chat.ChatActivity;
+import com.itisi.guizhou.mvp.ui.collection.CollectionActivity;
 import com.itisi.guizhou.mvp.ui.common.photoview.PhotoViewActivity;
 import com.itisi.guizhou.mvp.ui.common.photoview.PhotoViewPagerActivity;
+import com.itisi.guizhou.mvp.ui.fadeback.FadebackActivity;
+import com.itisi.guizhou.mvp.ui.footprint.FootprintActivity;
 import com.itisi.guizhou.mvp.ui.ittool.ItToolActivity;
 import com.itisi.guizhou.mvp.ui.ittool.detail.ItToolAddActivity;
 import com.itisi.guizhou.mvp.ui.ittool.detail.ItToolDetailActivity;
 import com.itisi.guizhou.mvp.ui.jingxuan.JingXuanActivity;
 import com.itisi.guizhou.mvp.ui.jingxuan.JingXuanDetailActivity;
 import com.itisi.guizhou.mvp.ui.main.MainActivity;
+import com.itisi.guizhou.mvp.ui.mingyan.MingYanActivity;
 import com.itisi.guizhou.mvp.ui.read.ReadActivity;
 import com.itisi.guizhou.mvp.ui.recuit.RecuitActivity;
+import com.itisi.guizhou.mvp.ui.recuit.detail.RecuitAddActivity;
+import com.itisi.guizhou.mvp.ui.recuit.detail.RecuitDetailActivity;
 import com.itisi.guizhou.mvp.ui.rental.RentalActivity;
 import com.itisi.guizhou.mvp.ui.rental.detail.RentalAddActivity;
 import com.itisi.guizhou.mvp.ui.rental.detail.RentalDetailActivity;
@@ -26,6 +37,7 @@ import com.itisi.guizhou.mvp.ui.scenic.footprint.ScenicFootprintActivity;
 import com.itisi.guizhou.mvp.ui.scenic.footprint.ScenicFootprintAddActivity;
 import com.itisi.guizhou.mvp.ui.scenic.onedetail.ScenicOneActivity;
 import com.itisi.guizhou.mvp.ui.scenic.scenicinfo.ScenicInfoActivity;
+import com.itisi.guizhou.mvp.ui.setting.SettingActivity;
 import com.itisi.guizhou.mvp.ui.shiwuzhaoling.ShiWuZhaoLingActivity;
 import com.itisi.guizhou.mvp.ui.splash.SplashActivity;
 import com.itisi.guizhou.mvp.ui.techan.TeChanActivity;
@@ -101,6 +113,23 @@ public interface ActivityComponent {
     void inject(BlackAddActivity activity );
 
     void inject(JingXuanDetailActivity activity );
+
+    void inject(RecuitDetailActivity activity );
+    void inject(RecuitAddActivity activity );
+
+    void inject(MingYanActivity activity );
+
+
+    void inject(AccountActivity activity );
+    void inject(AlbumActivity activity );
+    void inject(BirthdayActivity activity );
+    void inject(AgendaActivity activity );
+    void inject(CollectionActivity activity );
+    void inject(FadebackActivity activity );
+    void inject(FootprintActivity activity );
+    void inject(SettingActivity activity );
+    void inject(AboutActivity activity );
+
 
     //h后续创建的activity 接着往下写
 }

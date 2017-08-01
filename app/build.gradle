@@ -168,6 +168,7 @@ dependencies {
     compile rootProject.ext.dependencies["flexbox"]
     compile rootProject.ext.dependencies["circleimageview"]
     compile rootProject.ext.dependencies["flycodialog"]
+    compile rootProject.ext.dependencies["datetimepicker"]
 
     //动态权限
     compile rootProject.ext.dependencies["rxpermissions"]

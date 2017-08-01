@@ -9,6 +9,8 @@ import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.adapter.RecuitAdapter;
+import com.itisi.guizhou.mvp.ui.recuit.detail.RecuitDetailActivity;
+import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 import com.yalantis.phoenix.PullToRefreshView;
@@ -16,6 +18,17 @@ import com.yalantis.phoenix.PullToRefreshView;
 import java.util.List;
 
 import butterknife.BindView;
+/**
+ ***********************
+ * 功 能:招聘主页
+ * 创建人:itisi
+ * 邮  箱:itisivip@qq.com
+ * 创建时间:2017/8/1 9:09
+ * 修改人:itisi
+ * 修改时间: 2017/8/1 9:09
+ * 修改内容:itisi
+ * *********************
+ */
 @UseRxBus
 public class RecuitActivity extends RootActivity<RecuitPresenter>
         implements RecuitContract.View
@@ -173,7 +186,7 @@ public class RecuitActivity extends RootActivity<RecuitPresenter>
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        ToastUtil.Success(position+"");
+        ActivityUtil.getInstance().openActivity(RecuitActivity.this,RecuitDetailActivity.class);
     }
 
     @Override

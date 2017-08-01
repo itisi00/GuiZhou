@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/d_5"
+    android:paddingRight="@dimen/d_5"
+    android:paddingBottom="@dimen/d_5"
+    >
+
+    <include layout="@layout/partial_recuit_content"/>
+
+    <include layout="@layout/partial_flower_tag"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_1"
+        android:layout_marginBottom="@dimen/d_10"
+        android:layout_marginTop="@dimen/d_10"
+        android:background="@color/colorPrimary"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        >
+        <TextView
+            android:layout_width="@dimen/d_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="花溪区长江路 长江路与珠江路交汇处"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/icon_location"
+            android:background="@color/colorPrimary"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_1"
+        android:layout_marginBottom="@dimen/d_10"
+        android:layout_marginTop="@dimen/d_10"
+        android:background="@color/colorPrimary"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/d_10"
+        android:textSize="@dimen/txt_15"
+        android:textColor="@color/colorPrimary"
+        android:text="职位详情"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_5"
+        android:text="负责移动版HTML5开发，迭代
+负责H5移动端内核开发
+职位要求
+具有良好的Javascript基础，1-3年以上开发经验
+有HTML5/CSS3方面的具体实践
+具备良好的代码风格和编程习惯，掌握模块化编程思想，合理使用各类设计模式
+熟悉构建工具相关知识优先
+有DCloud-HBuilder、APPCAN、WEX5等开发经验优先
+了解W3C、Native.js、NODE.JS 等相关知识优先
+"
+        />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_1"
+        android:layout_marginBottom="@dimen/d_10"
+        android:layout_marginTop="@dimen/d_10"
+        android:background="@color/colorPrimary"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/d_10"
+        android:textSize="@dimen/txt_15"
+        android:textColor="@color/colorPrimary"
+        android:text="技能要求"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_5"
+        android:text="HTML5 Nodejs 前端开发"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_1"
+        android:layout_marginBottom="@dimen/d_10"
+        android:layout_marginTop="@dimen/d_10"
+        android:background="@color/colorPrimary"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/d_10"
+        android:textSize="@dimen/txt_15"
+        android:textColor="@color/colorPrimary"
+        android:text="团队介绍"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_5"
+        android:text="技术团队,气氛和睦"
+        />
+
+
+</LinearLayout>

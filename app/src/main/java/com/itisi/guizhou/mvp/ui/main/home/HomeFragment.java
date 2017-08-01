@@ -12,8 +12,10 @@ import com.flyco.dialog.widget.ActionSheetDialog;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.App;
 import com.itisi.guizhou.base.RootFragment;
+import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
 import com.itisi.guizhou.mvp.ui.ittool.ItToolActivity;
 import com.itisi.guizhou.mvp.ui.jingxuan.JingXuanActivity;
+import com.itisi.guizhou.mvp.ui.mingyan.MingYanActivity;
 import com.itisi.guizhou.mvp.ui.read.ReadActivity;
 import com.itisi.guizhou.mvp.ui.recuit.RecuitActivity;
 import com.itisi.guizhou.mvp.ui.rental.RentalActivity;
@@ -68,6 +70,8 @@ public class HomeFragment extends RootFragment<HomePresenter>
     TextView tv_home_read;//阅读
     @BindView(R.id.tv_home_jingxuan)
     TextView tv_home_jingxuan;//精选
+    @BindView(R.id.tv_home_mingyan)
+    TextView tv_home_mingyan;//名言警句
     @BindView(R.id.tv_home_ittool)
     TextView tv_home_ittool;//it工具
     @BindView(R.id.tv_home_websit)
@@ -106,6 +110,7 @@ public class HomeFragment extends RootFragment<HomePresenter>
         tv_home_recuit.setOnClickListener(this);
         tv_home_read.setOnClickListener(this);
         tv_home_jingxuan.setOnClickListener(this);
+        tv_home_mingyan.setOnClickListener(this);
         tv_home_ittool.setOnClickListener(this);
         tv_home_websit.setOnClickListener(this);
         tv_home_blacknum.setOnClickListener(this);
@@ -255,6 +260,10 @@ public class HomeFragment extends RootFragment<HomePresenter>
                 ActivityUtil.getInstance().openActivity(getActivity(), JingXuanActivity.class);
 
                 break;
+            case R.id.tv_home_mingyan:
+                ActivityUtil.getInstance().openActivity(getActivity(), MingYanActivity.class);
+
+                break;
             case R.id.tv_home_ittool:
                 ActivityUtil.getInstance().openActivity(getActivity(), ItToolActivity.class);
 
@@ -265,8 +274,8 @@ public class HomeFragment extends RootFragment<HomePresenter>
                 break;
             case R.id.tv_home_blacknum:
                 ToastUtil.Success(tv_home_blacknum.getText().toString());
-                downloadApkFile();
-//                ActivityUtil.getInstance().openActivity(getActivity(), BlackNumActivity.class);
+//                downloadApkFile();
+                ActivityUtil.getInstance().openActivity(getActivity(), BlackNumActivity.class);
                 break;
             case R.id.tv_home_more:
                 //暂无

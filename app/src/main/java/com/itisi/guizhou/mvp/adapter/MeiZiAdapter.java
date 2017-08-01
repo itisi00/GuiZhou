@@ -27,8 +27,7 @@ import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
  * *********************
  */
 
-public class MeiZiAdapter extends BaseQuickAdapter<MeiZiBean, BaseViewHolder>
-        {
+public class MeiZiAdapter extends BaseQuickAdapter<MeiZiBean, BaseViewHolder> {
 
     public MeiZiAdapter(@LayoutRes int layoutResId) {
         super(layoutResId);
@@ -42,8 +41,8 @@ public class MeiZiAdapter extends BaseQuickAdapter<MeiZiBean, BaseViewHolder>
 //                        .defaultImageResId(R.mipmap.test_menu_love_white)
 //                        .imageView((ImageView) helper.getView(R.id.iv_meizi)).build());
 
-        final ImageView view = helper.getView(R.id.iv_meizi);
-        helper.addOnClickListener(R.id.iv_meizi);
+        final ImageView view = helper.getView(R.id.iv_selected_img);
+        helper.addOnClickListener(R.id.iv_selected_img);
         //存在记录的高度时先Layout再异步加载图片
         if (item.getHeight() > 0) {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();

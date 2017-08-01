@@ -4,12 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/d_5"
+    android:paddingBottom="@dimen/d_5"
+    android:paddingLeft="@dimen/d_5"
+    android:paddingRight="@dimen/d_5"
     >
 
     <include layout="@layout/partial_user_header_rental"/>
 
     <include layout="@layout/partial_flower_tag_rental"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_1"
+        android:layout_marginBottom="@dimen/d_10"
+        android:layout_marginTop="@dimen/d_10"
+        android:background="@color/colorPrimary"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/d_10"
+        android:text="房屋信息"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/txt_15"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,10 +73,75 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/d_10"
-        android:textSize="@dimen/txt_15"
         android:text="配套设施"
+        android:textColor="@color/colorPrimary"
+
+        android:textSize="@dimen/txt_15"
         />
 
     <include layout="@layout/partial_flower_tag_rental_detail"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_1"
+        android:layout_marginBottom="@dimen/d_10"
+        android:layout_marginTop="@dimen/d_10"
+        android:background="@color/colorPrimary"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/d_10"
+        android:text="交通描述"
+        android:textColor="@color/colorPrimary"
+
+        android:textSize="@dimen/txt_15"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingMultiplier="1.2"
+        android:text="交通便利,四通八达,临地铁,有主要公交站有主要公交站有主要公交站有主要公交站有主要公交站"
+        android:textColor="@color/colorSecondary"
+        android:textSize="@dimen/txt_15"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_1"
+        android:layout_marginBottom="@dimen/d_10"
+        android:layout_marginTop="@dimen/d_10"
+        android:background="@color/colorPrimary"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/d_10"
+        android:text="周边描述"
+        android:textColor="@color/colorPrimary"
+
+        android:textSize="@dimen/txt_15"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_1"
+        android:layout_marginBottom="@dimen/d_10"
+        android:layout_marginTop="@dimen/d_10"
+        android:background="@color/colorPrimary"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/d_10"
+        android:text="配套设施"
+        android:textColor="@color/colorPrimary"
+
+        android:textSize="@dimen/txt_15"
+        />
 
 </LinearLayout>

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,12 +15,21 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.hyphenate.EMCallBack;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
+import com.itisi.guizhou.mvp.about.AboutActivity;
+import com.itisi.guizhou.mvp.ui.account.AccountActivity;
+import com.itisi.guizhou.mvp.ui.agenda.AgendaActivity;
+import com.itisi.guizhou.mvp.ui.album.AlbumActivity;
+import com.itisi.guizhou.mvp.ui.birthday.BirthdayActivity;
 import com.itisi.guizhou.mvp.ui.chat.EaseMobUtil;
+import com.itisi.guizhou.mvp.ui.collection.CollectionActivity;
+import com.itisi.guizhou.mvp.ui.fadeback.FadebackActivity;
+import com.itisi.guizhou.mvp.ui.footprint.FootprintActivity;
 import com.itisi.guizhou.mvp.ui.main.chatsession.ChatSessionFragment;
 import com.itisi.guizhou.mvp.ui.main.guizhou.GuiZhouFragment;
 import com.itisi.guizhou.mvp.ui.main.home.HomeFragment;
 import com.itisi.guizhou.mvp.ui.main.leisure.LeisureFragment;
 import com.itisi.guizhou.mvp.ui.main.news.NewsFragment;
+import com.itisi.guizhou.mvp.ui.setting.SettingActivity;
 import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ClickTree;
@@ -66,7 +74,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
     TextView menu_left_account;
     @BindView(R.id.menu_left_footprint)
     TextView menu_left_footprint;
-    @BindView(R.id.menu_left_photo)
+    @BindView(R.id.menu_left_album)
     TextView menu_left_photo;
     @BindView(R.id.menu_left_collection)
     TextView menu_left_collection;
@@ -233,7 +241,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 
             @Override
             public void onDrawerSlide(float openRatio, int offsetPixels) {
-                Log.i("MainActivity", "openRatio=" + openRatio + " ,offsetPixels=" + offsetPixels);
+//                Log.i("MainActivity", "openRatio=" + openRatio + " ,offsetPixels=" + offsetPixels);
             }
         });
     }
@@ -424,31 +432,39 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
                 ActivityUtil.getInstance().openActivity(mActivity, LoginActivity.class);
                 break;
             case R.id.menu_left_agenda:
-                ToastUtil.Success(menu_left_agenda.getText().toString());
+                ActivityUtil.getInstance().openActivity(mActivity, AgendaActivity.class);
+
                 break;
             case R.id.menu_left_birthday:
-                ToastUtil.Success(menu_left_birthday.getText().toString());
+                ActivityUtil.getInstance().openActivity(mActivity, BirthdayActivity.class);
+
                 break;
             case R.id.menu_left_account:
-                ToastUtil.Success(menu_left_account.getText().toString());
+                ActivityUtil.getInstance().openActivity(mActivity, AccountActivity.class);
+
                 break;
             case R.id.menu_left_footprint:
-                ToastUtil.Success(menu_left_footprint.getText().toString());
+                ActivityUtil.getInstance().openActivity(mActivity, FootprintActivity.class);
+
                 break;
-            case R.id.menu_left_photo:
-                ToastUtil.Success(menu_left_photo.getText().toString());
+            case R.id.menu_left_album:
+                ActivityUtil.getInstance().openActivity(mActivity, AlbumActivity.class);
+
                 break;
             case R.id.menu_left_collection:
-                ToastUtil.Success(menu_left_collection.getText().toString());
+                ActivityUtil.getInstance().openActivity(mActivity, CollectionActivity.class);
+
                 break;
             case R.id.menu_left_setting:
-                ToastUtil.Success(menu_left_setting.getText().toString());
+                ActivityUtil.getInstance().openActivity(mActivity, SettingActivity.class);
+
                 break;
             case R.id.menu_left_about:
-                ToastUtil.Success(menu_left_about.getText().toString());
+                ActivityUtil.getInstance().openActivity(mActivity, AboutActivity.class);
+
                 break;
             case R.id.menu_left_fadeback:
-                ToastUtil.Success(menu_left_fadeback.getText().toString());
+                ActivityUtil.getInstance().openActivity(mActivity, FadebackActivity.class);
                 break;
         }
     }

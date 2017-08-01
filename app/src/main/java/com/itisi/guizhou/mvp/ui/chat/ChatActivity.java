@@ -159,7 +159,7 @@ public class ChatActivity extends RootActivity<ChatPresenter>
             tv_extend_picture.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    openPhoto();
+                    openAlbum();
                 }
             });
 
@@ -257,7 +257,7 @@ public class ChatActivity extends RootActivity<ChatPresenter>
     /**
      * 打开相册 选择照片
      */
-    private void openPhoto() {
+    private void openAlbum() {
         //打开相册
 
 //        RxGalleryFinal

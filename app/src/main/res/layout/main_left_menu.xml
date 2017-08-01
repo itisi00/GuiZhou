@@ -98,13 +98,13 @@
                 android:id="@+id/menu_left_footprint"
                 style="@style/MenuLeft"
                 android:text="@string/left_menu_footprint"
-                android:drawableLeft="@mipmap/menu_left_zuji"
+                android:drawableLeft="@mipmap/menu_left_footprint"
                 />
             <TextView
-                android:id="@+id/menu_left_photo"
+                android:id="@+id/menu_left_album"
                 style="@style/MenuLeft"
                 android:text="@string/left_menu_album"
-                android:drawableLeft="@mipmap/menu_left_photo"
+                android:drawableLeft="@mipmap/menu_left_album"
                 />
             <TextView
                 android:id="@+id/menu_left_collection"
