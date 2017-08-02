@@ -4,7 +4,9 @@ import android.app.Activity;
 
 import com.itisi.guizhou.di.module.ActivityModule;
 import com.itisi.guizhou.di.scope.ActivityScope;
-import com.itisi.guizhou.mvp.about.AboutActivity;
+import com.itisi.guizhou.mvp.ui.about.AboutActivity;
+import com.itisi.guizhou.mvp.ui.about.AboutUsActivity;
+import com.itisi.guizhou.mvp.ui.about.AgreementActivity;
 import com.itisi.guizhou.mvp.ui.account.AccountActivity;
 import com.itisi.guizhou.mvp.ui.album.AlbumActivity;
 import com.itisi.guizhou.mvp.ui.birthday.BirthdayActivity;
@@ -129,6 +131,8 @@ public interface ActivityComponent {
     void inject(FootprintActivity activity );
     void inject(SettingActivity activity );
     void inject(AboutActivity activity );
+    void inject(AboutUsActivity activity );
+    void inject(AgreementActivity activity );
 
 
     //h后续创建的activity 接着往下写

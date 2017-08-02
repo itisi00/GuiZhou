@@ -15,7 +15,7 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.hyphenate.EMCallBack;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
-import com.itisi.guizhou.mvp.about.AboutActivity;
+import com.itisi.guizhou.mvp.ui.about.AboutActivity;
 import com.itisi.guizhou.mvp.ui.account.AccountActivity;
 import com.itisi.guizhou.mvp.ui.agenda.AgendaActivity;
 import com.itisi.guizhou.mvp.ui.album.AlbumActivity;

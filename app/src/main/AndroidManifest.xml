@@ -254,7 +254,11 @@
         </activity>
         <activity android:name=".mvp.ui.mingyan.MingYanActivity">
         </activity>
-        <activity android:name=".mvp.about.AboutActivity">
+        <activity android:name=".mvp.ui.about.AboutActivity">
+        </activity>
+        <activity android:name=".mvp.ui.about.AboutUsActivity">
+        </activity>
+        <activity android:name=".mvp.ui.about.AgreementActivity">
         </activity>
     </application>
 

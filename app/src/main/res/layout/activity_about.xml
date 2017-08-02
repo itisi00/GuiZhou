@@ -3,27 +3,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     >
 
     <include layout="@layout/toolbar"/>
-    <com.yalantis.phoenix.PullToRefreshView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/pullrefresh"
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/logo"
+        android:layout_marginTop="@dimen/d_30"
+        />
+
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/d_10"
+        android:layout_marginTop="@dimen/d_20"
+        android:text="版本号:1.0.0"
+        />
+
+    <TextView
+        android:id="@+id/tv_agreement"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/d_0"
-        android:layout_weight="1"
-        >
+        android:layout_height="wrap_content"
+        android:drawableRight="@mipmap/icon_right_arrow"
+       android:padding="@dimen/d_10"
+        android:text="@string/agreement_title"
+        android:textColor="@color/colorImportent"
+        style="@style/BorderLess"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:textSize="@dimen/txt_15"
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-        </android.support.v7.widget.RecyclerView>
+        />
 
-    </com.yalantis.phoenix.PullToRefreshView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_1"
+        android:layout_marginLeft="@dimen/d_10"
+        android:layout_marginRight="@dimen/d_10"
+        android:background="@color/colorDivider"
+        />
+    <TextView
+        android:id="@+id/tv_aboutus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@mipmap/icon_right_arrow"
+        android:padding="@dimen/d_10"
+        android:text="@string/about_title"
+        android:textColor="@color/colorImportent"
+        style="@style/BorderLess"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:textSize="@dimen/txt_15"
 
+        />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_1"
+        android:layout_marginLeft="@dimen/d_10"
+        android:layout_marginRight="@dimen/d_10"
+        android:background="@color/colorDivider"
+        />
+    <TextView
+        android:id="@+id/tv_call_us"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@mipmap/icon_right_arrow"
+        android:padding="@dimen/d_10"
+        android:text="@string/call_us"
+        android:textColor="@color/colorImportent"
+        style="@style/BorderLess"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:textSize="@dimen/txt_15"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_1"
+        android:layout_marginLeft="@dimen/d_10"
+        android:layout_marginRight="@dimen/d_10"
+        android:background="@color/colorDivider"
+        />
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.about;
+package com.itisi.guizhou.mvp.ui.about;
 
 import com.itisi.guizhou.base.BasePresenter;
 import com.itisi.guizhou.base.BaseView;

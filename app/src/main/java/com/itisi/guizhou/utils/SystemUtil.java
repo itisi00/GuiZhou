@@ -36,6 +36,7 @@ public class SystemUtil {
                 .getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         return wifiInfo != null;
     }
+
     /**
      * 检查手机网络(4G/3G/2G)是否连接
      */
@@ -45,6 +46,7 @@ public class SystemUtil {
                 .getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
         return mobileNetworkInfo != null;
     }
+
     /**
      * 检查是否有可用网络
      */
@@ -55,6 +57,7 @@ public class SystemUtil {
 
     /**
      * 保存文字到剪贴板
+     *
      * @param context
      * @param text
      */
@@ -67,17 +70,18 @@ public class SystemUtil {
 
     /**
      * 保存图片到本地
+     *
      * @param context
      * @param url
      * @param bitmap
      */
-    public static Uri saveBitmapToFile(Context context, String url, Bitmap bitmap, View container, boolean isShare){
-        String fileName = url.substring(url.lastIndexOf("/"),url.lastIndexOf(".")) + ".png";
+    public static Uri saveBitmapToFile(Context context, String url, Bitmap bitmap, View container, boolean isShare) {
+        String fileName = url.substring(url.lastIndexOf("/"), url.lastIndexOf(".")) + ".png";
         File fileDir = new File(Constants.PATH_SDCARD);
-        if (!fileDir.exists()){
+        if (!fileDir.exists()) {
             fileDir.mkdirs();
         }
-        File imageFile = new File(fileDir,fileName);
+        File imageFile = new File(fileDir, fileName);
         Uri uri = Uri.fromFile(imageFile);
         if (isShare && imageFile.exists()) {
             return uri;
@@ -101,7 +105,7 @@ public class SystemUtil {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,uri));
+        context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri));
         return uri;
     }
 
@@ -158,5 +162,17 @@ public class SystemUtil {
             }
         }
         return null;
+    }
+
+    /**
+     * 拨号
+     *
+     * @param context
+     * @param phone
+     */
+    public static void callPhone(Context context, String phone) {
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:" + phone));
+        context.startActivity(intent); //这个界面就不需要放进集合了
     }
 }
