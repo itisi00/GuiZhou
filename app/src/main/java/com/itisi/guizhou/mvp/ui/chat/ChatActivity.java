@@ -320,7 +320,7 @@ public class ChatActivity extends RootActivity<ChatPresenter>
 
         //多选图片
         RxGalleryFinal
-                .with(ChatActivity.this)
+                .with(mActivity)
                 .image()
                 .multiple()
                 .maxSize(5)
@@ -388,7 +388,7 @@ public class ChatActivity extends RootActivity<ChatPresenter>
      * 打开相机-拍照
      */
     private void openCamera() {
-        RxGalleryFinalApi.openZKCamera(ChatActivity.this);
+        RxGalleryFinalApi.openZKCamera(mActivity);
     }
 
     @Override

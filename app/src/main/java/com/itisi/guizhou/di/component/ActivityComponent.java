@@ -48,8 +48,10 @@ import com.itisi.guizhou.mvp.ui.university.UniversityActivity;
 import com.itisi.guizhou.mvp.ui.university.style.UniversityStyleActivity;
 import com.itisi.guizhou.mvp.ui.university.style.UniversityStyleAddActivity;
 import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
+import com.itisi.guizhou.mvp.ui.user.personal.PersonalActivity;
 import com.itisi.guizhou.mvp.ui.user.register.RegistActivity;
 import com.itisi.guizhou.mvp.ui.user.register.RegistConfirmActivity;
+import com.itisi.guizhou.mvp.ui.user.safe.SafeActivity;
 import com.itisi.guizhou.mvp.ui.websit.WebsitActivity;
 import com.itisi.guizhou.mvp.ui.websit.detail.WebsitAddActivity;
 import com.itisi.guizhou.mvp.ui.websit.detail.WebsitDetailActivity;
@@ -134,6 +136,8 @@ public interface ActivityComponent {
     void inject(AboutUsActivity activity );
     void inject(AgreementActivity activity );
 
+    void inject(PersonalActivity activity );
+    void inject(SafeActivity activity );
 
     //h后续创建的activity 接着往下写
 }

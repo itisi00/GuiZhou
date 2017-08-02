@@ -1,69 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorGrayBack"
-    android:gravity="center_horizontal"
     android:orientation="vertical"
     >
 
     <include layout="@layout/toolbar"/>
 
-    <ImageView
-        android:id="@+id/iv_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/d_30"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/logo"
-        />
-
-    <TextView
-        android:id="@+id/tv_version"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/d_10"
-        android:layout_marginTop="@dimen/d_20"
-        android:text="版本号:1.0.0"
-        />
-
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_30"/>
 
     <LinearLayout
         style="@style/LineItemParent"
         >
 
         <TextView
-            android:id="@+id/tv_agreement"
             style="@style/LineItem"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableRight="@mipmap/icon_right_arrow"
-            android:text="服务协议"
+            android:text="收获地址"
             />
-
-    </LinearLayout>
-
-    <LinearLayout
-        style="@style/LineItemParent"
-        >
-
-        <View
-            style="@style/LineDivider"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        style="@style/LineItemParent"
-        >
 
         <TextView
-            android:id="@+id/tv_aboutus"
+            android:id="@+id/tv_address"
             style="@style/LineItem"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/d_0"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/d_10"
             android:drawableRight="@mipmap/icon_right_arrow"
-            android:text="@string/about_title"
+            android:ellipsize="end"
+            android:gravity="right|center_vertical"
+            android:maxLines="1"
+            android:text="贵州省贵阳市金阳高新区启林创客小镇B座505"
             />
 
     </LinearLayout>
@@ -85,19 +58,21 @@
             style="@style/LineItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/call_title"
+            android:text="个人签名"
             />
 
         <TextView
-            android:id="@+id/tv_call_us"
+            android:id="@+id/tv_autograph"
             style="@style/LineItem"
             android:layout_width="@dimen/d_0"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawablePadding="@dimen/d_10"
             android:drawableRight="@mipmap/icon_right_arrow"
+            android:ellipsize="end"
             android:gravity="right|center_vertical"
-            android:text="@string/call_us"
+            android:maxLines="1"
+            android:text="  永远十八岁"
             />
 
     </LinearLayout>

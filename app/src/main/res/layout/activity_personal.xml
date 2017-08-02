@@ -1,0 +1,241 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrayBack"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:id="@+id/ll_parent"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/d_30"/>
+
+
+        <LinearLayout
+            style="@style/LineItemParent"
+            android:paddingBottom="@dimen/d_5"
+            android:paddingTop="@dimen/d_5"
+            >
+
+            <TextView
+                style="@style/LineItem"
+                android:layout_width="@dimen/d_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="头像"
+                />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_header"
+                android:layout_width="@dimen/d_35"
+                android:layout_height="@dimen/d_35"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/logo"
+                />
+
+            <TextView
+                style="@style/LineItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@mipmap/icon_right_arrow"
+                android:gravity="right|center_vertical"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LineItemParent"
+            >
+
+            <View
+                style="@style/LineDivider"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LineItemParent"
+            >
+
+            <TextView
+                style="@style/LineItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="昵称"
+                />
+
+            <TextView
+                android:id="@+id/tv_nick"
+                style="@style/LineItem"
+                android:layout_width="@dimen/d_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/d_10"
+                android:drawableRight="@mipmap/icon_right_arrow"
+                android:ellipsize="end"
+                android:gravity="right|center_vertical"
+                android:maxLines="1"
+                android:text="itisi"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LineItemParent"
+            >
+
+            <View
+                style="@style/LineDivider"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LineItemParent"
+            >
+
+            <TextView
+                style="@style/LineItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="性别"
+                />
+
+            <TextView
+                android:id="@+id/tv_gender"
+                style="@style/LineItem"
+                android:layout_width="@dimen/d_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/d_10"
+                android:drawableRight="@mipmap/icon_right_arrow"
+                android:gravity="right|center_vertical"
+                android:text="♀"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <!--android:text="♂"-->
+            <!--android:textColor="@color/colorAccent"-->
+
+            <!--android:text="♀"-->
+            <!--android:textColor="@color/colorPrimary"-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LineItemParent"
+            >
+
+            <View
+                style="@style/LineDivider"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LineItemParent"
+            >
+
+            <TextView
+                style="@style/LineItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="手机"
+                />
+
+            <TextView
+                android:id="@+id/tv_phone"
+                style="@style/LineItem"
+                android:layout_width="@dimen/d_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/d_10"
+                android:drawableRight="@mipmap/icon_right_arrow"
+                android:gravity="right|center_vertical"
+                android:text="182*****567"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LineItemParent"
+            >
+
+            <View
+                style="@style/LineDivider"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LineItemParent"
+            >
+
+            <TextView
+                style="@style/LineItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收获地址"
+                />
+
+            <TextView
+                android:id="@+id/tv_address"
+                style="@style/LineItem"
+                android:layout_width="@dimen/d_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/d_10"
+                android:drawableRight="@mipmap/icon_right_arrow"
+                android:ellipsize="end"
+                android:gravity="right|center_vertical"
+                android:maxLines="1"
+                android:text="贵州省贵阳市金阳高新区启林创客小镇B座505"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LineItemParent"
+            >
+
+            <View
+                style="@style/LineDivider"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LineItemParent"
+            >
+
+            <TextView
+                style="@style/LineItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="个人签名"
+                />
+
+            <TextView
+                android:id="@+id/tv_autograph"
+                style="@style/LineItem"
+                android:layout_width="@dimen/d_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/d_10"
+                android:drawableRight="@mipmap/icon_right_arrow"
+                android:ellipsize="end"
+                android:gravity="right|center_vertical"
+                android:maxLines="1"
+                android:text="  永远十八岁"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

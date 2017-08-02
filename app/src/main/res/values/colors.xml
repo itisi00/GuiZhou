@@ -36,6 +36,9 @@
     <color name="colorBlack">#000000</color>
     <color name="colorGreen">#00ff00</color>
     <color name="colorGray">#ccc</color>
+    <color name="colorGrayBack">#EBEBEB</color>
+    <color name="colorGrayLight">#D3D3D3</color>
+
     <color name="colorTransparent">#00ffffff</color>
 
     <color name="bg_message_item">#ffDDDDDD</color>

@@ -246,7 +246,7 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
     }
 
     /**
-     * 禁止滑动关闭 主页可用
+     * 禁止滑动关闭 主页用 Splash页面用
      */
     protected boolean setSwipeEnabled() {
         return true;

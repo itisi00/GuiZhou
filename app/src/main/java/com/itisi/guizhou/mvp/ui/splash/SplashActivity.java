@@ -118,6 +118,14 @@ public class SplashActivity extends RootActivity<SplashPresenter> implements Spl
         });
     }
 
+    /**
+     * 禁止滑动关闭
+     * @return
+     */
+    @Override
+    protected boolean setSwipeEnabled() {
+        return false;
+    }
     @Override
     public void testShowView(String smg) {
 

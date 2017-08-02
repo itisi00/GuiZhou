@@ -3,27 +3,168 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorGrayBack"
     android:orientation="vertical"
     >
 
     <include layout="@layout/toolbar"/>
-    <com.yalantis.phoenix.PullToRefreshView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/pullrefresh"
+
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/d_0"
-        android:layout_weight="1"
+        android:layout_height="@dimen/d_30"/>
+
+    <LinearLayout
+        style="@style/LineItemParent"
         >
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view"
+        <TextView
+            android:id="@+id/tv_personal"
+            style="@style/LineItem"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-        </android.support.v7.widget.RecyclerView>
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/icon_right_arrow"
+            android:text="@string/personal_title"
+            />
 
-    </com.yalantis.phoenix.PullToRefreshView>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LineItemParent"
+        >
+
+        <View
+            style="@style/LineDivider"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LineItemParent"
+        >
+
+        <TextView
+            android:id="@+id/tv_safe"
+            style="@style/LineItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/icon_right_arrow"
+            android:text="@string/account_safe_title"
+            />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_15"/>
+
+    <LinearLayout
+        style="@style/LineItemParent"
+
+        >
+
+        <TextView
+            android:id="@+id/tv_checkupdate"
+            style="@style/LineItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/icon_right_arrow"
+            android:text="@string/check_update_title"
+            />
 
 
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LineItemParent"
+        >
+
+        <View
+            style="@style/LineDivider"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LineItemParent"
+        >
+
+        <TextView
+            style="@style/LineItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cacht_title"
+            />
+
+        <TextView
+            android:id="@+id/tv_cache"
+            style="@style/LineItem"
+            android:layout_width="@dimen/d_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/d_10"
+            android:drawableRight="@mipmap/icon_right_arrow"
+            android:gravity="right|center_vertical"
+            android:text="18.8M"
+            />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_15"/>
+
+    <LinearLayout
+        style="@style/LineItemParent"
+        >
+
+        <TextView
+            android:id="@+id/tv_fadeback"
+            style="@style/LineItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/icon_right_arrow"
+            android:text="@string/left_menu_feedback"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LineItemParent"
+        >
+
+        <View
+            style="@style/LineDivider"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LineItemParent"
+        >
+
+        <TextView
+            android:id="@+id/tv_aboutus"
+            style="@style/LineItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/icon_right_arrow"
+            android:text="@string/about_title"
+            />
+
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_20"/>
+
+    <Button
+        android:id="@+id/btn_logout"
+        style="@style/BorderLess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/d_30"
+        android:background="@color/colorPrimary"
+        android:text="退出"
+        android:textColor="@color/colorWhite"
+
+        />
 </LinearLayout>

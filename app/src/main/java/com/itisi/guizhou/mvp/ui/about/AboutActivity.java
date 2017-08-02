@@ -130,8 +130,7 @@ public class AboutActivity extends RootActivity<AboutPresenter>
                 ActivityUtil.getInstance().openActivity(AboutActivity.this, AboutUsActivity.class);
                 break;
             case R.id.tv_call_us:
-                String str = tv_call_us.getText().toString();
-                final String number = str.substring(4).trim();
+                final String number = tv_call_us.getText().toString();
                 final NormalDialog dialog = new NormalDialog(mActivity);
 
 //                dialog.title("");
@@ -149,6 +148,7 @@ public class AboutActivity extends RootActivity<AboutPresenter>
                 }, new OnBtnClickL() {
                     @Override
                     public void onBtnClick() {
+                        dialog.dismiss();
                         SystemUtil.callPhone(mActivity, number);
                     }
                 });

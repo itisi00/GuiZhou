@@ -164,7 +164,8 @@
         <!--<item name="gallery_toolbar_over_button_normal_color">@color/theme_blue_dark</item>-->
         <!--相册浏览界面 状态栏的颜色 -->
         <item name="gallery_color_statusbar">@color/colorPrimary</item>
-        <!--<item name="gallery_color_active_widget">@color/colorAccent</item>-->
+        <!--TMD 这里到底是改变什么的嘛 -->
+        <item name="gallery_color_active_widget">@color/colorAccent</item>
         <!--多选的时候的复选框的颜色-->
         <item name="gallery_checkbox_button_tint_color">@color/colorPrimary</item>
         <item name="gallery_checkbox_text_color">@color/colorPrimary</item>
@@ -191,6 +192,33 @@
     </style>
 
     <!--自定义相册注册 主题-->
+    <!--item 父布局-->
+    <style name="LineItemParent" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <!--item 中的textview-->
+    <style name="LineItem" parent="BorderLess" >
+        <item name="android:clickable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/d_10</item>
+        <item name="android:textSize">@dimen/txt_15</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+
+    </style>
+    <!--一条分割线-->
+    <style name="LineDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/d_1</item>
+        <item name="android:layout_marginLeft">@dimen/d_10</item>
+        <item name="android:layout_marginRight">@dimen/d_10</item>
+        <item name="android:background">@color/colorGrayLight</item>
+    </style>
+
+
     <!--即时通讯(聊天)相关-->
     <style name="MsgParent">
         <item name="android:layout_width">match_parent</item>
@@ -402,4 +430,6 @@
     </style>
 
     <!--即时通讯 结束-->
+
+
 </resources>

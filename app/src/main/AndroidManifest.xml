@@ -73,10 +73,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme_Light_Gallery"/>
         <!-- android:theme="@style/Theme_Light.Default" -->
+        <!-- 拍照以后的 裁剪界面的主题设置无效  -->
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme_Light_Gallery"/>
+            android:theme="@style/AppTheme"/>
+        <!-- Theme_Light_Gallery -->
         <!-- android:theme="@style/Theme_Light.Default" -->
         <!-- 相册 end -->
 
@@ -226,39 +228,64 @@
             android:name=".mvp.ui.rental.detail.RentalAddActivity"
             android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.blacknum.detail.BlackDetailActivity">
+        <activity android:name=".mvp.ui.blacknum.detail.BlackDetailActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.blacknum.detail.BlackAddActivity">
+        <activity android:name=".mvp.ui.blacknum.detail.BlackAddActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.jingxuan.JingXuanDetailActivity">
+        <activity android:name=".mvp.ui.jingxuan.JingXuanDetailActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.recuit.detail.RecuitDetailActivity">
+        <activity android:name=".mvp.ui.recuit.detail.RecuitDetailActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.recuit.detail.RecuitAddActivity">
+        <activity android:name=".mvp.ui.recuit.detail.RecuitAddActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.setting.SettingActivity">
+        <activity android:name=".mvp.ui.setting.SettingActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.account.AccountActivity">
+        <activity android:name=".mvp.ui.account.AccountActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.album.AlbumActivity">
+        <activity android:name=".mvp.ui.album.AlbumActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.birthday.BirthdayActivity">
+        <activity android:name=".mvp.ui.birthday.BirthdayActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.agenda.AgendaActivity">
+        <activity android:name=".mvp.ui.agenda.AgendaActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.collection.CollectionActivity">
+        <activity android:name=".mvp.ui.collection.CollectionActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.fadeback.FadebackActivity">
+        <activity android:name=".mvp.ui.fadeback.FadebackActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.footprint.FootprintActivity">
+        <activity android:name=".mvp.ui.footprint.FootprintActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.mingyan.MingYanActivity">
+        <activity android:name=".mvp.ui.mingyan.MingYanActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.about.AboutActivity">
+        <activity android:name=".mvp.ui.about.AboutActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.about.AboutUsActivity">
+        <activity android:name=".mvp.ui.about.AboutUsActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.about.AgreementActivity">
+        <activity android:name=".mvp.ui.about.AgreementActivity"
+                  android:theme="@style/AppThemeBack">
+        </activity>
+        <activity android:name=".mvp.ui.user.personal.PersonalActivity"
+                  android:theme="@style/AppThemeBack"
+            android:windowSoftInputMode="adjustResize"
+            >
+        </activity>
+        <activity android:name=".mvp.ui.user.safe.SafeActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
     </application>
 
