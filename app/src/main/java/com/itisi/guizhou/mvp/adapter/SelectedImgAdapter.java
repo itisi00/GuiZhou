@@ -49,12 +49,12 @@ public class SelectedImgAdapter extends BaseQuickAdapter<SelectedImgBean, BaseVi
 
         if (item.getThumbPath().equals("-1")) {
             Glide.with(mContext).load(R.mipmap.icon_picture_add).asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .into(new SimpleTarget<Bitmap>(App.SCREEN_WIDTH / 3, App.SCREEN_WIDTH / 2-145) {
+                    .into(new SimpleTarget<Bitmap>(App.SCREEN_WIDTH / 3, 220) {// App.SCREEN_WIDTH / 2-145
                         @Override
                         public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                             int width = resource.getWidth();
                             int height = resource.getHeight();
-                            int realHeight = (App.SCREEN_WIDTH / 2) * height / width-145;
+                            int realHeight =220;// (App.SCREEN_WIDTH / 2) * height / width-145;
                             item.setHeight(realHeight);
                             ViewGroup.LayoutParams lp = view.getLayoutParams();
                             lp.height = realHeight;
@@ -65,12 +65,12 @@ public class SelectedImgAdapter extends BaseQuickAdapter<SelectedImgBean, BaseVi
         } else {
 
             Glide.with(mContext).load(new File(item.getOriginalPath())).asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .into(new SimpleTarget<Bitmap>(App.SCREEN_WIDTH / 3, App.SCREEN_WIDTH / 2-145) {
+                    .into(new SimpleTarget<Bitmap>(App.SCREEN_WIDTH / 3, 220) {//App.SCREEN_WIDTH / 2-145
                         @Override
                         public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                             int width = resource.getWidth();
                             int height = resource.getHeight();
-                            int realHeight = (App.SCREEN_WIDTH / 2) * height / width-145;
+                            int realHeight = 220;//(App.SCREEN_WIDTH / 2) * height / width-145;
                             item.setHeight(realHeight);
                             ViewGroup.LayoutParams lp = view.getLayoutParams();
                             lp.height = realHeight;

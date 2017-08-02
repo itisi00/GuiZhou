@@ -43,13 +43,14 @@ import cn.finalteam.rxgalleryfinal.ui.base.IRadioImageCheckedListener;
 public class FadebackActivity extends RootActivity<FadebackPresenter>
         implements FadebackContract.View
         , BaseQuickAdapter.OnItemChildClickListener
-        , BaseQuickAdapter.OnItemChildLongClickListener{
+        , BaseQuickAdapter.OnItemChildLongClickListener {
 
-    private int maxPhotoCount =9;//最多能选择的图片数量
+    private int maxPhotoCount = 19;//最多能选择的图片数量
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
 
     SelectedImgAdapter mAdapter;
+    private SelectedImgBean mSelectedImgBean;
 
     @Override
     protected int getLayoutId() {
@@ -67,22 +68,18 @@ public class FadebackActivity extends RootActivity<FadebackPresenter>
                 ToastUtil.Success("提交成功");
             }
         });
+        mSelectedImgBean = new SelectedImgBean();
+        mSelectedImgBean.setThumbPath("-1");
+        mSelectedImgBean.setOriginalPath("-1");
         loadData();
     }
 
+    /**
+     * 初始化数据
+     * 初始化 选择图片按钮
+     */
     private void loadData() {
-//        SelectedImgBean imgBean = new SelectedImgBean();
-//        imgBean.setOriginalPath("http://v1.qzone.cc/avatar/201409/24/19/58/5422b1ff86ed0232.jpg%21200x200.jpg");
-//        imgBean.setThumbPath("http://v1.qzone.cc/avatar/201409/24/19/58/5422b1ff86ed0232.jpg%21200x200.jpg");
-//        mAdapter.addData(imgBean);
-//        mAdapter.addData(imgBean);
-//        mAdapter.addData(imgBean);
-//        mAdapter.addData(imgBean);
-
-        SelectedImgBean imgBean1 = new SelectedImgBean();
-        imgBean1.setThumbPath("-1");
-        imgBean1.setOriginalPath("-1");
-        mAdapter.addData(imgBean1);
+        mAdapter.addData(mSelectedImgBean);
     }
 
     private void initView() {
@@ -170,18 +167,23 @@ public class FadebackActivity extends RootActivity<FadebackPresenter>
                     @Override
                     protected void onEvent(ImageMultipleResultEvent imageMultipleResultEvent) throws Exception {
                         int size = imageMultipleResultEvent.getResult().size();
-                        maxPhotoCount = maxPhotoCount -size;
-                        List<SelectedImgBean>tempList=new ArrayList<>();
+                        maxPhotoCount = maxPhotoCount - size;
+                        if (maxPhotoCount == 0) {
+                            mAdapter.remove(0);//删除添加按钮那个图标
+                        }
+                        List<SelectedImgBean> tempList = new ArrayList<>();
                         SelectedImgBean temp;
                         for (int i = 0; i < size; i++) {
-                            temp=new SelectedImgBean();
+                            temp = new SelectedImgBean();
                             temp.setOriginalPath(imageMultipleResultEvent.getResult().get(i).getOriginalPath());
                             temp.setThumbPath(imageMultipleResultEvent.getResult().get(i).getThumbnailSmallPath());
-                            Logger.i("original:"+temp.getOriginalPath());
-                            Logger.i("thumb:"+temp.getThumbPath());
+                            Logger.i("original:" + temp.getOriginalPath());
+                            Logger.i("thumb:" + temp.getThumbPath());
                             tempList.add(temp);
                         }
-                        mAdapter.addData(tempList);
+                        List<SelectedImgBean> data = mAdapter.getData();
+                        data.addAll(tempList);
+                        mAdapter.setNewData(data);
 
                     }
 
@@ -244,11 +246,19 @@ public class FadebackActivity extends RootActivity<FadebackPresenter>
 
     @Override
     public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                SelectedImgBean bean = mAdapter.getItem(position);
-        if (bean.getOriginalPath().equals("-1")){
+        SelectedImgBean bean = mAdapter.getItem(position);
+        if (bean.getOriginalPath().equals("-1")) {
             openAlbum();
-        }else {
-            ToastUtil.Info("可能要做删除效果");
+        } else {
+            maxPhotoCount=maxPhotoCount+1;
+            mAdapter.remove(position);
+            SelectedImgBean item = mAdapter.getItem(0);
+            if (!item.getOriginalPath().equals("-1")) {
+                List<SelectedImgBean> data = mAdapter.getData();
+                data.add(0,mSelectedImgBean);
+                mAdapter.setNewData(data);
+            }
+
         }
 
     }
