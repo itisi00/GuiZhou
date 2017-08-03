@@ -2,6 +2,7 @@ package com.itisi.guizhou.mvp.ui.user.personal;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.text.InputType;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -16,6 +17,8 @@ import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.Constants;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
+import com.itisi.guizhou.mvp.ui.address.AddressActivity;
+import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 import com.itisi.guizhou.widget.dialog.SignleInputDialog;
@@ -86,61 +89,135 @@ public class PersonalActivity extends RootActivity<PersonalPresenter>
     }
 
     @Override
+    protected String setToolbarTvTitle() {
+        return "个人信息";
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_header:
-                final String[] menus = getResources().getStringArray(R.array.menu_normal);
-                final ActionSheetDialog sheetDialog = new ActionSheetDialog(mActivity, menus, ll_parent);
-                sheetDialog.isTitleShow(false)
-                        .showAnim(new ZoomInBottomEnter())
-                        .itemTextColor(getResources().getColor(R.color.colorPrimary))
-                        .show();
-                sheetDialog.setOnOperItemClickL(new OnOperItemClickL() {
-                    @Override
-                    public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        if (position == 0) {//相册
-                            openAlbum();
-                            isFromCamera=false;
-                        } else {//相机
-                            openCamera();
-                            isFromCamera=true;
-                        }
-                        sheetDialog.dismiss();
-                    }
-                });
+                modifyHeader();
 
                 break;
             case R.id.tv_nick:
-                final SignleInputDialog dialog=new SignleInputDialog(mActivity);
+                modifyNick();
 
+                break;
+            case R.id.tv_gender:
+                modifyGender();
+                break;
+            case R.id.tv_phone:
+                modifyPhone();
+                break;
+            case R.id.tv_address:
+                ActivityUtil.getInstance().openActivity(mActivity,AddressActivity.class);
+
+                break;
+            case R.id.tv_autograph:
+                ActivityUtil.getInstance().openActivity(mActivity,AutographAddActivity.class);
+                break;
+        }
+    }
+
+    private void modifyGender() {
+        final String[] menus = getResources().getStringArray(R.array.menu_gender);
+        final ActionSheetDialog sheetDialog = new ActionSheetDialog(mActivity, menus, ll_parent);
+        sheetDialog.isTitleShow(false)
+                .showAnim(new ZoomInBottomEnter())
+                .itemTextColor(getResources().getColor(R.color.colorPrimary))
+                .show();
+        sheetDialog.setOnOperItemClickL(new OnOperItemClickL() {
+            @Override
+            public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {//男 ♂
+                    tv_gender.setText("男(♂)");
+                    tv_gender.setTextColor(getResources().getColor(R.color.colorPrimary));
+                } else if (position == 1) {//女♀
+                    tv_gender.setText("女(♀)");
+                    tv_gender.setTextColor(getResources().getColor(R.color.colorAccent));
+                } else {//未知
+                    tv_gender.setText("保密(~)");
+                    tv_gender.setTextColor(getResources().getColor(R.color.colorGray));
+                }
+
+                sheetDialog.dismiss();
+            }
+        });
+    }
+
+    private void modifyHeader() {
+        final String[] menus = getResources().getStringArray(R.array.menu_normal);
+        final ActionSheetDialog sheetDialog = new ActionSheetDialog(mActivity, menus, ll_parent);
+        sheetDialog.isTitleShow(false)
+                .showAnim(new ZoomInBottomEnter())
+                .itemTextColor(getResources().getColor(R.color.colorPrimary))
+                .show();
+        sheetDialog.setOnOperItemClickL(new OnOperItemClickL() {
+            @Override
+            public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {//相册
+                    openAlbum();
+                    isFromCamera = false;
+                } else {//相机
+                    openCamera();
+                    isFromCamera = true;
+                }
+                sheetDialog.dismiss();
+            }
+        });
+    }
+
+    private void modifyPhone() {
+        final SignleInputDialog dialog1 = new SignleInputDialog(mActivity, InputType.TYPE_CLASS_PHONE, "修改手机号码");
+        dialog1.show();
+        dialog1.setCancelClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtil.Info("如果已改变还需要询问是否放弃");
+            }
+        });
+        dialog1.setOKClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog1.dismiss();
+                String content = dialog1.getInputContent();
+                if (content.length() == 11) {
+                    String sub1 = content.substring(0, 4);
+                    String sub2 = content.substring(8);
+                    String str = sub1 + "****" + sub2;
+                    tv_phone.setText(str);
+
+                } else {
+                    ToastUtil.Info("长度不合法");
+                }
+
+            }
+        });
+    }
+
+    private void modifyNick() {
+        final SignleInputDialog dialog = new SignleInputDialog(mActivity, InputType.TYPE_CLASS_TEXT, "修改昵称");
 //                Window win = getWindow();
 //                WindowManager.LayoutParams params = win.getAttributes();
 //                params.y = params.y - 50;
 //                win.setSoftInputMode(params.SOFT_INPUT_ADJUST_RESIZE);
 //                win.setGravity(Gravity.BOTTOM);
-//
 //                win.setAttributes(params);
-
-                dialog.show();
-//                dialog.dismissAnim(new FlipVerticalExit());
-                dialog.setOKClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.dismiss();
-                        ToastUtil.Info(dialog.getInputContent());
-                    }
-                });
-
-                break;
-            case R.id.tv_gender:
-                break;
-            case R.id.tv_phone:
-                break;
-            case R.id.tv_address:
-                break;
-            case R.id.tv_autograph:
-                break;
-        }
+        dialog.show();
+        dialog.setCancelClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtil.Info("如果已改变还需要询问是否放弃");
+            }
+        });
+        dialog.setOKClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                tv_nick.setText(dialog.getInputContent());
+            }
+        });
     }
 
     /**
@@ -192,6 +269,7 @@ public class PersonalActivity extends RootActivity<PersonalPresenter>
                                 currentImgPath = t.toString();
                                 Glide.with(mActivity).load(new File(currentImgPath)).into(iv_header);
                             }
+
                             @Override
                             public boolean isActivityFinish() {
                                 //"返回false不关闭界面，返回true则为关闭"

@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.ui.blacknum.detail;
+package com.itisi.guizhou.mvp.ui.address;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,8 +8,9 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
-import com.itisi.guizhou.mvp.adapter.CommentAdapter;
+import com.itisi.guizhou.mvp.adapter.AddressAdapter;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
+import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 
@@ -17,9 +18,20 @@ import java.util.List;
 
 import butterknife.BindView;
 
+/**
+ * **********************
+ * 功 能:收获地址列表
+ * 创建人:itisi
+ * 邮  箱:itisivip@qq.com
+ * 创建时间:2017/8/3 17:03
+ * 修改人:itisi
+ * 修改时间: 2017/8/3 17:03
+ * 修改内容:itisi
+ * *********************
+ */
 @UseRxBus
-public class BlackDetailActivity extends RootActivity<BlackDetailPresenter>
-        implements BlackDetailContract.View
+public class AddressActivity extends RootActivity<AddressPresenter>
+        implements AddressContract.View
         , BaseQuickAdapter.RequestLoadMoreListener
         , BaseQuickAdapter.OnItemClickListener
         , BaseQuickAdapter.OnItemLongClickListener
@@ -30,17 +42,17 @@ public class BlackDetailActivity extends RootActivity<BlackDetailPresenter>
 
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
-    CommentAdapter mAdapter;
+    AddressAdapter mAdapter;
     private int pageSize = 10;//页大小
     private int pageIndex = 1;//页数
     private int totalCount = 0;//服务器返回的总的数量 有些接口可能没有
     private boolean isRefreshing = true;//刷新 还是 加载更多 加载成功以后 是追加还是替换
 
-    private View mHeaderView;//头布局
+
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_black_detail;
+        return R.layout.activity_address;
 
     }
 
@@ -54,15 +66,25 @@ public class BlackDetailActivity extends RootActivity<BlackDetailPresenter>
         initAdapter();
         initViewListener();
 
+        setToolbarMoreClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ActivityUtil.getInstance().openActivity(mActivity,AddressAddActivity.class);
+            }
+        });
     }
 
     private void initHeaderView() {
-        mHeaderView = View.inflate(this, R.layout.partial_header_blacknum, null);
     }
 
     @Override
     protected String setToolbarTvTitle() {
-        return "贵州五月科技有限公司";
+        return "地址管理";
+    }
+
+    @Override
+    protected String setToolbarMoreTxt() {
+        return "新增";
     }
 
     private void initView() {
@@ -82,9 +104,7 @@ public class BlackDetailActivity extends RootActivity<BlackDetailPresenter>
                 new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         layoutManager.setItemPrefetchEnabled(false);
 
-        mAdapter = new CommentAdapter(R.layout.item_comment_blacknum);
-
-        mAdapter.addHeaderView(mHeaderView);//添加头部
+        mAdapter = new AddressAdapter(R.layout.item_address);
 
         mAdapter.setOnItemClickListener(this);
         mAdapter.setOnItemLongClickListener(this);
@@ -187,4 +207,5 @@ public class BlackDetailActivity extends RootActivity<BlackDetailPresenter>
     private void loadData() {
         mPresenter.loadData(pageSize, pageIndex);
     }
+
 }

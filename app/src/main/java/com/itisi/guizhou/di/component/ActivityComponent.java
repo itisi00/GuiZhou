@@ -8,6 +8,8 @@ import com.itisi.guizhou.mvp.ui.about.AboutActivity;
 import com.itisi.guizhou.mvp.ui.about.AboutUsActivity;
 import com.itisi.guizhou.mvp.ui.about.AgreementActivity;
 import com.itisi.guizhou.mvp.ui.account.AccountActivity;
+import com.itisi.guizhou.mvp.ui.address.AddressActivity;
+import com.itisi.guizhou.mvp.ui.address.AddressAddActivity;
 import com.itisi.guizhou.mvp.ui.album.AlbumActivity;
 import com.itisi.guizhou.mvp.ui.birthday.BirthdayActivity;
 import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
@@ -48,6 +50,7 @@ import com.itisi.guizhou.mvp.ui.university.UniversityActivity;
 import com.itisi.guizhou.mvp.ui.university.style.UniversityStyleActivity;
 import com.itisi.guizhou.mvp.ui.university.style.UniversityStyleAddActivity;
 import com.itisi.guizhou.mvp.ui.user.login.LoginActivity;
+import com.itisi.guizhou.mvp.ui.user.personal.AutographAddActivity;
 import com.itisi.guizhou.mvp.ui.user.personal.PersonalActivity;
 import com.itisi.guizhou.mvp.ui.user.register.RegistActivity;
 import com.itisi.guizhou.mvp.ui.user.register.RegistConfirmActivity;
@@ -138,6 +141,9 @@ public interface ActivityComponent {
 
     void inject(PersonalActivity activity );
     void inject(SafeActivity activity );
+    void inject(AutographAddActivity activity );
+    void inject(AddressActivity activity );
+    void inject(AddressAddActivity activity );
 
     //h后续创建的activity 接着往下写
 }

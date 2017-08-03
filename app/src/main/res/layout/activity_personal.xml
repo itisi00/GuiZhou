@@ -120,7 +120,7 @@
                 android:drawablePadding="@dimen/d_10"
                 android:drawableRight="@mipmap/icon_right_arrow"
                 android:gravity="right|center_vertical"
-                android:text="♀"
+                android:text="男(♀)"
                 android:textColor="@color/colorPrimary"
                 />
 

@@ -13,7 +13,11 @@
         <item name="menu_camera">相册</item>
         <item name="menu_album">相机</item>
     </string-array>
-
+    <string-array name="menu_gender">
+        <item name="menu_gender_man">男</item>
+        <item name="menu_gender_woman">女</item>
+        <item name="menu_gender_none">保密</item>
+    </string-array>
     <!--<string name="menu_home">主页</string>-->
     <!--<string name="menu_news">新闻</string>-->
     <!--<string name="menu_guizhou">贵州</string>-->

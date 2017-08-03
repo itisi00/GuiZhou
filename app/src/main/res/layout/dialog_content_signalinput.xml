@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
+    android:background="@drawable/bg_dialog"
     android:layout_margin="@dimen/d_20"
     android:orientation="vertical">
 
@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:lines="1"
-        android:hint="哈哈~~"
         android:paddingLeft="@dimen/d_5"
         android:paddingRight="@dimen/d_5"
         />
@@ -29,7 +28,7 @@
             android:layout_width="@dimen/d_100"
             android:layout_height="@dimen/d_35"
             android:text="@string/cancel"
-            android:background="@drawable/bg_dialog"
+            android:background="@drawable/bg_dialog_btn"
             android:textColor="@color/colorGrayLight"
             android:gravity="center"
             android:textSize="@dimen/txt_15"
@@ -47,7 +46,7 @@
             android:gravity="center"
             android:textSize="@dimen/txt_15"
             android:textColor="@color/colorPrimary"
-            android:background="@drawable/bg_dialog"
+            android:background="@drawable/bg_dialog_btn"
             style="@style/BorderLess"
             android:clickable="true"
             android:focusableInTouchMode="true"
