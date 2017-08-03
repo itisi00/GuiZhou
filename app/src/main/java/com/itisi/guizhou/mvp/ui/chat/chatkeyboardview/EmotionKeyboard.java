@@ -1,12 +1,7 @@
 package com.itisi.guizhou.mvp.ui.chat.chatkeyboardview;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.graphics.Rect;
-import android.os.Build;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -15,15 +10,17 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import com.itisi.guizhou.app.Constants;
 import com.itisi.guizhou.mvp.ui.chat.ChatActivity;
-import com.itisi.guizhou.mvp.ui.chat.chatutils.LogUtils;
+import com.itisi.guizhou.utils.SharedPreferencedUtils;
+import com.itisi.guizhou.utils.SoftKeyboardUtil;
 import com.orhanobut.logger.Logger;
 
 
 /**
  * **********************
  * 功 能:源码来自开源项目
- *  https://github.com/dss886/Android-EmotionInputDetector
+ * https://github.com/dss886/Android-EmotionInputDetector
  * 创建人:itisi
  * 邮  箱:itisivip@qq.com
  * 创建时间:2017/6/23 15:25
@@ -35,12 +32,12 @@ import com.orhanobut.logger.Logger;
 
 public class EmotionKeyboard {
     private static final String TAG = "EmotionKeyboard";
-    private static final String SHARE_PREFERENCE_NAME = "EmotionKeyboard";
-    private static final String SHARE_PREFERENCE_SOFT_INPUT_HEIGHT = "soft_input_height";
+//    private static final String SHARE_PREFERENCE_NAME = "EmotionKeyboard";
+//    private static final String SHARE_PREFERENCE_SOFT_INPUT_HEIGHT = "soft_input_height";
 
     private ChatActivity mActivity;
     private InputMethodManager mInputManager;//软键盘管理类
-    private SharedPreferences sp;
+
     private View mEmotionLayout;//表情布局
     private View mExtendLayout;//扩展布局
     private EditText mEditText;//输入框?
@@ -51,6 +48,7 @@ public class EmotionKeyboard {
 
     /**
      * 外部静态调用
+     *
      * @param activity
      * @return
      */
@@ -58,33 +56,35 @@ public class EmotionKeyboard {
         EmotionKeyboard emotionInputDetector = new EmotionKeyboard();
         emotionInputDetector.mActivity = (ChatActivity) activity;
         emotionInputDetector.mInputManager = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
-        emotionInputDetector.sp = activity.getSharedPreferences(SHARE_PREFERENCE_NAME, Context.MODE_PRIVATE);
+
         return emotionInputDetector;
     }
 
     /**
      * 绑定内容view，此view用于固定bar的高度，防止跳闪
+     *
      * @param contentView
      * @return
      */
-    public EmotionKeyboard bindToContent(View contentView){
-        mContentView=contentView;
+    public EmotionKeyboard bindToContent(View contentView) {
+        mContentView = contentView;
         return this;
     }
 
     /**
      * 绑定编辑框
+     *
      * @param editText
      * @return
      */
-    public EmotionKeyboard bindToEditText(EditText editText){
+    public EmotionKeyboard bindToEditText(EditText editText) {
         mEditText = editText;
         mEditText.requestFocus();
         mEditText.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if (motionEvent.getAction()== MotionEvent.ACTION_UP
-                        &&(mEmotionLayout.isShown()||mExtendLayout.isShown())){
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP
+                        && (mEmotionLayout.isShown() || mExtendLayout.isShown())) {
                     lockContentHeight();//显示软件盘时，锁定内容高度，防止跳闪。
                     Log.i(TAG, "onTouch: ");
                     hideEmotionLayout(true);//隐藏表情布局，显示软件盘
@@ -95,7 +95,7 @@ public class EmotionKeyboard {
                         public void run() {
                             unlockContentHeightDelayed();
                         }
-                    },200L);
+                    }, 200L);
                 }
                 return false;
             }
@@ -106,23 +106,24 @@ public class EmotionKeyboard {
 
     /**
      * 绑定表情按钮
+     *
      * @param emotionButton
      * @return
      */
-    public EmotionKeyboard bindToEmotionButton(View emotionButton){
+    public EmotionKeyboard bindToEmotionButton(View emotionButton) {
         emotionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // TODO: 2017/7/20  qq 都没有滚动 暂时注释
 //                mActivity.recyclerSmoothScrollToBottom();//内容布局滚动到底部
-                if (mExtendLayout.isShown()){
+                if (mExtendLayout.isShown()) {
                     mExtendLayout.setVisibility(View.GONE);
                 }
-                if (mEmotionLayout.isShown()){
+                if (mEmotionLayout.isShown()) {
                     lockContentHeight();//显示软件盘时，锁定内容高度，防止跳闪。
                     hideEmotionLayout(true);//隐藏表情布局，显示软件盘
                     unlockContentHeightDelayed();//软件盘显示后，释放内容高度
-                }else{
+                } else {
                     if (isSoftInputShown()) {//同上
                         lockContentHeight();
                         showEmotionLayout();
@@ -136,20 +137,20 @@ public class EmotionKeyboard {
         return this;
     }
 
-    public EmotionKeyboard bindToExtentionButton(View extendButton){
+    public EmotionKeyboard bindToExtentionButton(View extendButton) {
         extendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // TODO: 2017/7/20  qq 都没有滚动 暂时注释
 //                mActivity.recyclerSmoothScrollToBottom();//内容布局滚动到底部
-                if (mEmotionLayout.isShown()){
+                if (mEmotionLayout.isShown()) {
                     mEmotionLayout.setVisibility(View.GONE);
                 }
-                if (mExtendLayout.isShown()){
+                if (mExtendLayout.isShown()) {
                     lockContentHeight();//显示软件盘时，锁定内容高度，防止跳闪。
                     hideExtionLayout(true);//隐藏扩展布局，显示软件盘
                     unlockContentHeightDelayed();//软件盘显示后，释放内容高度
-                }else{
+                } else {
                     if (isSoftInputShown()) {//同上
                         lockContentHeight();
                         showExtendLayout();
@@ -165,19 +166,21 @@ public class EmotionKeyboard {
 
     /**
      * 设置表情内容布局
+     *
      * @param emotionView
      * @return
      */
-    public EmotionKeyboard setEmotionView(View emotionView){
+    public EmotionKeyboard setEmotionView(View emotionView) {
         mEmotionLayout = emotionView;
         return this;
     }
 
-    public EmotionKeyboard setExtendView(View extendView){
-        mExtendLayout=extendView;
+    public EmotionKeyboard setExtendView(View extendView) {
+        mExtendLayout = extendView;
         return this;
     }
-    public EmotionKeyboard build(){
+
+    public EmotionKeyboard build() {
         //设置软件盘的模式：SOFT_INPUT_ADJUST_RESIZE
         // 这个属性表示Activity的主窗口总是会被调整大小，从而保证软键盘显示空间。
         //从而方便我们计算软件盘的高度
@@ -190,14 +193,15 @@ public class EmotionKeyboard {
 
     /**
      * 点击返回键时先隐藏表情布局
+     *
      * @return
      */
-    public boolean interceptBackPress(){
-        if (mEmotionLayout.isShown()){
+    public boolean interceptBackPress() {
+        if (mEmotionLayout.isShown()) {
             hideEmotionLayout(false);
             return true;
         }
-        if (mExtendLayout.isShown()){
+        if (mExtendLayout.isShown()) {
             hideExtionLayout(false);
             return true;
         }
@@ -219,12 +223,13 @@ public class EmotionKeyboard {
 
     /**
      * 隐藏表情布局
-     * @param showSoftInput  是否显示软件盘
+     *
+     * @param showSoftInput 是否显示软件盘
      */
     public void hideEmotionLayout(boolean showSoftInput) {
-        if (mEmotionLayout.isShown()){
+        if (mEmotionLayout.isShown()) {
             mEmotionLayout.setVisibility(View.GONE);
-            if (showSoftInput){
+            if (showSoftInput) {
                 showSoftInput();
             }
         }
@@ -243,43 +248,45 @@ public class EmotionKeyboard {
         mExtendLayout.getLayoutParams().height = softInputHeight;
         mExtendLayout.setVisibility(View.VISIBLE);
     }
+
     /**
      * 隐藏表情布局
-     * @param showSoftInput  是否显示软件盘
+     *
+     * @param showSoftInput 是否显示软件盘
      */
     public void hideExtionLayout(boolean showSoftInput) {
-        if (mExtendLayout.isShown()){
+        if (mExtendLayout.isShown()) {
             mExtendLayout.setVisibility(View.GONE);
-            if (showSoftInput){
+            if (showSoftInput) {
                 showSoftInput();
             }
         }
     }
 
-    public boolean isAtLeastShow(){
-        return mExtendLayout.isShown()||mEmotionLayout.isShown();
+    public boolean isAtLeastShow() {
+        return mExtendLayout.isShown() || mEmotionLayout.isShown();
 //        return mExtendLayout.getHeight();
     }
 
     /**
      * 锁定内容高度，防止跳闪
      */
-    private void lockContentHeight(){
-        LinearLayout.LayoutParams params= (LinearLayout.LayoutParams) mContentView.getLayoutParams();
-        params.height=mContentView.getHeight();
-        params.weight=0.0F;
+    private void lockContentHeight() {
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mContentView.getLayoutParams();
+        params.height = mContentView.getHeight();
+        params.weight = 0.0F;
     }
 
     /**
      * 释放被锁定的内容高度
      */
-    private void unlockContentHeightDelayed(){
+    private void unlockContentHeightDelayed() {
         mEditText.postDelayed(new Runnable() {
             @Override
             public void run() {
-                ((LinearLayout.LayoutParams)mContentView.getLayoutParams()).weight=1.0F;
+                ((LinearLayout.LayoutParams) mContentView.getLayoutParams()).weight = 1.0F;
             }
-        },200L);
+        }, 200L);
     }
 
     /**
@@ -307,76 +314,28 @@ public class EmotionKeyboard {
      * 是否显示软件盘
      * @return
      */
-    private boolean isSoftInputShown(){
+    private boolean isSoftInputShown() {
         return getSupportSoftInputHeight() != 0;
     }
 
     public int getSupportSoftInputHeight() {
-        Rect rect=new Rect();
-        /**
-         * decorView是window中的最顶层view，可以从window中通过getDecorView获取到decorView。
-         * 通过decorView获取到程序显示的区域，包括标题栏，但不包括状态栏。
-         */
-        mActivity.getWindow().getDecorView().getWindowVisibleDisplayFrame(rect);
-        //获取屏幕的高度
-        int screenHeight = mActivity.getWindow().getDecorView().getRootView().getHeight();
-        //计算软件盘的高度
-        int softInputHeight = screenHeight - rect.bottom;
-
-        /**
-         * 某些Android版本下，没有显示软键盘时减出来的高度总是144，而不是零，
-         * 这是因为高度是包括了虚拟按键栏的(例如华为系列)，所以在API Level高于20时，
-         * 我们需要减去底部虚拟按键栏的高度（如果有的话）
-         */
-        if (Build.VERSION.SDK_INT >= 20) {
-            // When SDK Level >= 20 (Android L), the softInputHeight will contain the height of softButtonsBar (if has)
-            softInputHeight = softInputHeight - getSoftButtonsBarHeight();
-        }
-
-        if (softInputHeight < 0) {
-            LogUtils.w("EmotionKeyboard--Warning: value of softInputHeight is below zero!");
-        }
-        //存一份到本地
-        if (softInputHeight > 0) {
-            sp.edit().putInt(SHARE_PREFERENCE_SOFT_INPUT_HEIGHT, softInputHeight).apply();
-        }
-//        if (softInputHeight==0){
-//            softInputHeight=554;
-//            sp.edit().putInt(SHARE_PREFERENCE_SOFT_INPUT_HEIGHT, softInputHeight).apply();
-//        }
-        Logger.i("softInputHeight:"+softInputHeight);
-        return softInputHeight;
+        int supportSoftInputHeight = SoftKeyboardUtil.getSupportSoftInputHeight(mActivity);
+        Logger.i("计算高度-软键盘:"+supportSoftInputHeight);
+        return supportSoftInputHeight;
     }
 
-    /**
-     * 底部虚拟按键栏的高度
-     * @return
-     */
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-    private int getSoftButtonsBarHeight() {
-        DisplayMetrics metrics = new DisplayMetrics();
-        //这个方法获取可能不是真实屏幕的高度
-        mActivity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        int usableHeight = metrics.heightPixels;
-        //获取当前屏幕的真实高度
-        mActivity.getWindowManager().getDefaultDisplay().getRealMetrics(metrics);
-        int realHeight = metrics.heightPixels;
-        if (realHeight > usableHeight) {
-            Log.i(TAG, "getSoftButtonsBarHeight: "+(realHeight - usableHeight));
-            return realHeight - usableHeight;
-        } else {
-            return 0;
-        }
 
-    }
 
     /**
      * 获取软键盘高度，由于第一次直接弹出表情时会出现小问题，
      * 787是一个均值，作为临时解决方案
+     *
      * @return
      */
     public int getKeyBoardHeight() {
-        return sp.getInt(SHARE_PREFERENCE_SOFT_INPUT_HEIGHT, 554);
+        int anInt = SharedPreferencedUtils.getInt(Constants.SOFT_INPUT_HEIGHT, 554);//554
+        Logger.i("获取缓存-软键盘:"+anInt);
+        return anInt;
     }
 
 }

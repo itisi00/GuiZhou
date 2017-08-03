@@ -17,6 +17,11 @@ import java.io.File;
  */
 
 public class Constants {
+    //sharedpreference 名称
+    public static final String SHARE_PREFERENCE_NAME = "daguizhou";
+    //软键盘高度
+    public static final String SOFT_INPUT_HEIGHT = "soft_input_height";
+
     //搞什么的 已经搞忘了
     public static final String IT_GANK_TYPE = "gank_type";
     //福利缓存路径
@@ -25,5 +30,7 @@ public class Constants {
     public static final String PATH_GALLERY = "daguizhou";
     //相册的裁剪路径
     public static final String PATH_GALLERY_CROP = "daguizhou/crop";
+
+
 
 }

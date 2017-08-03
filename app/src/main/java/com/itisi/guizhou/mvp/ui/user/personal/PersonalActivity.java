@@ -9,7 +9,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.flyco.animation.FlipExit.FlipVerticalExit;
 import com.flyco.animation.ZoomEnter.ZoomInBottomEnter;
 import com.flyco.dialog.listener.OnOperItemClickL;
 import com.flyco.dialog.widget.ActionSheetDialog;
@@ -113,8 +112,17 @@ public class PersonalActivity extends RootActivity<PersonalPresenter>
                 break;
             case R.id.tv_nick:
                 final SignleInputDialog dialog=new SignleInputDialog(mActivity);
+
+//                Window win = getWindow();
+//                WindowManager.LayoutParams params = win.getAttributes();
+//                params.y = params.y - 50;
+//                win.setSoftInputMode(params.SOFT_INPUT_ADJUST_RESIZE);
+//                win.setGravity(Gravity.BOTTOM);
+//
+//                win.setAttributes(params);
+
                 dialog.show();
-                dialog.dismissAnim(new FlipVerticalExit());
+//                dialog.dismissAnim(new FlipVerticalExit());
                 dialog.setOKClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -122,6 +130,7 @@ public class PersonalActivity extends RootActivity<PersonalPresenter>
                         ToastUtil.Info(dialog.getInputContent());
                     }
                 });
+
                 break;
             case R.id.tv_gender:
                 break;

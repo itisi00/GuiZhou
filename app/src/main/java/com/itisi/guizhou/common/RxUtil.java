@@ -83,7 +83,7 @@ public class RxUtil {
                     public ObservableSource<T> apply(@NonNull GankResponse<T> tGankResponse) throws Exception {
                         if (!tGankResponse.isError()) {
 
-                            return createObservable(tGankResponse.getResults());
+                             return createObservable(tGankResponse.getResults());
                         } else {
                             return Observable.error(new ApiException("服务器返回错误"));
                         }

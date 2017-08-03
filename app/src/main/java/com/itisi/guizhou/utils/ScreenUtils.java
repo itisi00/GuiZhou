@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.ui.chat.chatutils;
+package com.itisi.guizhou.utils;
 
 import android.app.Activity;
 import android.content.Context;

@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.mvp.ui.chat.chatmodel.ImageEmotionModel;
-import com.itisi.guizhou.mvp.ui.chat.chatutils.ScreenUtils;
+import com.itisi.guizhou.utils.ScreenUtils;
 
 import java.util.List;
 

@@ -101,7 +101,10 @@
         </activity>
         <activity
             android:name=".mvp.ui.user.login.LoginActivity"
-            android:theme="@style/AppThemeBack">
+            android:theme="@style/AppThemeBack"
+
+            >
+
         </activity>
         <activity
             android:name=".mvp.ui.user.register.RegistActivity"
@@ -281,7 +284,6 @@
         </activity>
         <activity android:name=".mvp.ui.user.personal.PersonalActivity"
                   android:theme="@style/AppThemeBack"
-            android:windowSoftInputMode="adjustResize"
             >
         </activity>
         <activity android:name=".mvp.ui.user.safe.SafeActivity"

@@ -4,6 +4,7 @@ package com.itisi.guizhou.mvp.ui.chat.chatutils;
 import android.support.v4.util.ArrayMap;
 
 import com.itisi.guizhou.R;
+import com.orhanobut.logger.Logger;
 
 
 /**
@@ -101,7 +102,7 @@ public class EmotionUtils {
 				integer = EMOTION_CLASSIC_MAP.get(imgName);
 				break;
 			default:
-				LogUtils.e("the emojiMap is null!! Handle Yourself ");
+				Logger.e("the emojiMap is null!! Handle Yourself ");
 				break;
 		}
 		return integer == null ? -1 : integer;

@@ -16,10 +16,13 @@ import android.widget.Toast;
 
 import com.hanks.htextview.rainbow.RainbowTextView;
 import com.itisi.guizhou.R;
+import com.itisi.guizhou.app.Constants;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.ui.user.register.RegistActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.SceneAnim;
+import com.itisi.guizhou.utils.SharedPreferencedUtils;
+import com.itisi.guizhou.utils.SoftKeyboardUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 import com.jaeger.library.StatusBarUtil;
@@ -100,6 +103,21 @@ public class LoginActivity extends RootActivity<LoginPresenter> implements Login
         tie_name.requestFocus();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
 
+        SoftKeyboardUtil.observeSoftKeyboard(mActivity, new SoftKeyboardUtil.OnSoftKeyboardChangeListener() {
+            @Override
+            public void onSoftKeyBoardChange(int softKeybardHeight, boolean visible) {
+//                Logger.i(softKeybardHeight+"=="+visible);
+                if (visible){
+                    //554 602 vivo x67默认高度
+                    int anInt = SharedPreferencedUtils.getInt(Constants.SOFT_INPUT_HEIGHT, 0);
+                    Logger.i(anInt+"-");
+                    Logger.i(softKeybardHeight+"=");
+                    if (anInt<=0){
+                        SharedPreferencedUtils.setInt(Constants.SOFT_INPUT_HEIGHT, softKeybardHeight);
+                    }
+                }
+            }
+        });
 
     }
 

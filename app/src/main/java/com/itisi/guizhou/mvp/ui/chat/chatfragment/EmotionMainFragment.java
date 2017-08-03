@@ -21,7 +21,7 @@ import com.itisi.guizhou.mvp.ui.chat.chatkeyboardview.NoHorizontalScrollerViewPa
 import com.itisi.guizhou.mvp.ui.chat.chatmodel.ImageEmotionModel;
 import com.itisi.guizhou.mvp.ui.chat.chatutils.EmotionUtils;
 import com.itisi.guizhou.mvp.ui.chat.chatutils.GlobalOnItemClickManagerUtils;
-import com.itisi.guizhou.mvp.ui.chat.chatutils.SharedPreferencedUtils;
+import com.itisi.guizhou.utils.SharedPreferencedUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -175,7 +175,7 @@ public class EmotionMainFragment extends BaseFragment  {
 
         //记录底部默认选中第一个
         CurrentPosition = 0;
-        SharedPreferencedUtils.setInteger(getActivity(), CURRENT_POSITION_FLAG, CurrentPosition);
+        SharedPreferencedUtils.setInt( CURRENT_POSITION_FLAG, CurrentPosition);
 
         //底部tab
         horizontalRecyclerviewAdapter = new HorizontalRecyclerviewAdapter(getActivity(), list);
@@ -187,13 +187,13 @@ public class EmotionMainFragment extends BaseFragment  {
             @Override
             public void onItemClick(View view, int position, List<ImageEmotionModel> datas) {
                 //获取先前被点击tab
-                int oldPosition = SharedPreferencedUtils.getInteger(getActivity(), CURRENT_POSITION_FLAG, 0);
+                int oldPosition = SharedPreferencedUtils.getInt( CURRENT_POSITION_FLAG, 0);
                 //修改背景颜色的标记
                 datas.get(oldPosition).isSelected = false;
                 //记录当前被选中tab下标
                 CurrentPosition = position;
                 datas.get(CurrentPosition).isSelected = true;
-                SharedPreferencedUtils.setInteger(getActivity(), CURRENT_POSITION_FLAG, CurrentPosition);
+                SharedPreferencedUtils.setInt( CURRENT_POSITION_FLAG, CurrentPosition);
                 //通知更新，这里我们选择性更新就行了
                 horizontalRecyclerviewAdapter.notifyItemChanged(oldPosition);
                 horizontalRecyclerviewAdapter.notifyItemChanged(CurrentPosition);
