@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.ui.birthday;
+package com.itisi.guizhou.mvp.ui.anniversary;
 
 import com.itisi.guizhou.base.BasePresenter;
 import com.itisi.guizhou.base.BaseView;
@@ -18,7 +18,7 @@ import java.util.List;
  * *********************
  */
 
-public interface BirthdayContract {
+public interface AnniversaryContract {
     interface View extends BaseView {
         //定义自己特有的方法
         void showContent(String msg);

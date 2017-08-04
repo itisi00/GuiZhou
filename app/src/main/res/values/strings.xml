@@ -25,7 +25,7 @@
     <!--<string name="menu_chat">聊天</string>-->
 
     <string name="left_menu_agenda">日程安排</string>
-    <string name="left_menu_birthday">生日提醒</string>
+    <string name="left_menu_anniversary">纪念日</string>
     <string name="left_menu_account">随手记帐</string>
     <string name="left_menu_footprint">我的足迹</string>
     <string name="left_menu_album">我的相册</string>

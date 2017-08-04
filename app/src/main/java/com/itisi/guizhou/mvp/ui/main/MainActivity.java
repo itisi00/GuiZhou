@@ -19,7 +19,7 @@ import com.itisi.guizhou.mvp.ui.about.AboutActivity;
 import com.itisi.guizhou.mvp.ui.account.AccountActivity;
 import com.itisi.guizhou.mvp.ui.agenda.AgendaActivity;
 import com.itisi.guizhou.mvp.ui.album.AlbumActivity;
-import com.itisi.guizhou.mvp.ui.birthday.BirthdayActivity;
+import com.itisi.guizhou.mvp.ui.anniversary.AnniversaryActivity;
 import com.itisi.guizhou.mvp.ui.chat.EaseMobUtil;
 import com.itisi.guizhou.mvp.ui.collection.CollectionActivity;
 import com.itisi.guizhou.mvp.ui.fadeback.FadebackActivity;
@@ -68,7 +68,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
     BottomNavigationBar bottom_main;
     @BindView(R.id.menu_left_agenda)
     TextView menu_left_agenda;
-    @BindView(R.id.menu_left_birthday)
+    @BindView(R.id.menu_left_anniversary)
     TextView menu_left_birthday;
     @BindView(R.id.menu_left_account)
     TextView menu_left_account;
@@ -435,8 +435,8 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
                 ActivityUtil.getInstance().openActivity(mActivity, AgendaActivity.class);
 
                 break;
-            case R.id.menu_left_birthday:
-                ActivityUtil.getInstance().openActivity(mActivity, BirthdayActivity.class);
+            case R.id.menu_left_anniversary:
+                ActivityUtil.getInstance().openActivity(mActivity, AnniversaryActivity.class);
 
                 break;
             case R.id.menu_left_account:

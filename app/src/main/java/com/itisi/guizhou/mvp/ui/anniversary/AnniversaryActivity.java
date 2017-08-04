@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.ui.agenda;
+package com.itisi.guizhou.mvp.ui.anniversary;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -6,8 +6,8 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itisi.guizhou.R;
-import com.itisi.guizhou.adapter.AgendaAdapter;
 import com.itisi.guizhou.base.RootActivity;
+import com.itisi.guizhou.adapter.RentalAdapter;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.ui.rental.detail.RentalDetailActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
@@ -21,18 +21,18 @@ import butterknife.BindView;
 
 /**
  ***********************
- * 功 能:我的账单
+ * 功 能:我的生日提醒
  * 创建人:itisi
  * 邮  箱:itisivip@qq.com
- * 创建时间:2017/8/1 15:18
+ * 创建时间:2017/8/1 15:19
  * 修改人:itisi
- * 修改时间: 2017/8/1 15:18
+ * 修改时间: 2017/8/1 15:19
  * 修改内容:itisi
  * *********************
  */
 @UseRxBus
-public class AgendaActivity extends RootActivity<AgendaPresenter>
-        implements AgendaContract.View
+public class AnniversaryActivity extends RootActivity<AnniversaryPresenter>
+        implements AnniversaryContract.View
         , BaseQuickAdapter.RequestLoadMoreListener
         , BaseQuickAdapter.OnItemClickListener
         , BaseQuickAdapter.OnItemLongClickListener
@@ -42,7 +42,7 @@ public class AgendaActivity extends RootActivity<AgendaPresenter>
     PullToRefreshView mPullToRefreshView;
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
-    AgendaAdapter mAdapter;
+    RentalAdapter mAdapter;
     private int pageSize = 10;//页大小
     private int pageIndex = 1;//页数
     private int totalCount = 0;//服务器返回的总的数量 有些接口可能没有
@@ -51,7 +51,7 @@ public class AgendaActivity extends RootActivity<AgendaPresenter>
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_agenda;
+        return R.layout.activity_anniversary;
     }
 
     @Override
@@ -62,7 +62,7 @@ public class AgendaActivity extends RootActivity<AgendaPresenter>
         setToolbarMoreClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ToastUtil.Success("日程");
+                ToastUtil.Success("新增");
             }
         });
     }
@@ -76,7 +76,7 @@ public class AgendaActivity extends RootActivity<AgendaPresenter>
                 new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         layoutManager.setItemPrefetchEnabled(false);
 
-        mAdapter = new AgendaAdapter(R.layout.item_rental);
+        mAdapter = new RentalAdapter(R.layout.item_rental);
         mAdapter.setOnItemClickListener(this);
         mAdapter.setOnItemLongClickListener(this);
         mAdapter.setOnLoadMoreListener(this, mRecyclerView);
@@ -97,12 +97,12 @@ public class AgendaActivity extends RootActivity<AgendaPresenter>
 
     @Override
     protected String setToolbarTvTitle() {
-        return "我的日程";
+        return "生日提醒";
     }
 
     @Override
     protected String setToolbarMoreTxt() {
-        return "新增";
+        return "加一个";
     }
 
     @Override

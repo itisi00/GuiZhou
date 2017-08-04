@@ -15,7 +15,7 @@ import com.itisi.guizhou.mvp.ui.album.AlbumActivity;
 import com.itisi.guizhou.mvp.ui.album.detail.AlbumAddActivity;
 import com.itisi.guizhou.mvp.ui.album.detail.AlbumDetailActivity;
 import com.itisi.guizhou.mvp.ui.album.detail.AlbumNamesActivity;
-import com.itisi.guizhou.mvp.ui.birthday.BirthdayActivity;
+import com.itisi.guizhou.mvp.ui.anniversary.AnniversaryActivity;
 import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
 import com.itisi.guizhou.mvp.ui.blacknum.detail.BlackAddActivity;
 import com.itisi.guizhou.mvp.ui.blacknum.detail.BlackDetailActivity;
@@ -132,7 +132,7 @@ public interface ActivityComponent {
 
     void inject(AccountActivity activity );
     void inject(AlbumActivity activity );
-    void inject(BirthdayActivity activity );
+    void inject(AnniversaryActivity activity );
     void inject(AgendaActivity activity );
     void inject(CollectionActivity activity );
     void inject(FadebackActivity activity );

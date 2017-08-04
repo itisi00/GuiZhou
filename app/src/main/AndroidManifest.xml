@@ -261,7 +261,7 @@
             android:theme="@style/AppThemeBack">
         </activity>
         <activity
-            android:name=".mvp.ui.birthday.BirthdayActivity"
+            android:name=".mvp.ui.anniversary.AnniversaryActivity"
             android:theme="@style/AppThemeBack">
         </activity>
         <activity

@@ -83,9 +83,9 @@
                 />
 
             <TextView
-                android:id="@+id/menu_left_birthday"
+                android:id="@+id/menu_left_anniversary"
                 style="@style/MenuLeft"
-                android:text="@string/left_menu_birthday"
+                android:text="@string/left_menu_anniversary"
                 android:drawableLeft="@mipmap/menu_left_birthday"
                 />
             <TextView
