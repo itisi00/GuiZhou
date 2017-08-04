@@ -310,6 +310,10 @@
         </activity>
         <activity android:name=".mvp.ui.address.AddressAddActivity">
         </activity>
+        <activity android:name=".mvp.ui.album.detail.AlbumDetailActivity">
+        </activity>
+        <activity android:name=".mvp.ui.album.detail.AlbumAddActivity">
+        </activity>
     </application>
 
 </manifest>

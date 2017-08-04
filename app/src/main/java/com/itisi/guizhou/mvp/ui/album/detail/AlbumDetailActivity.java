@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.ui.rental.detail;
+package com.itisi.guizhou.mvp.ui.album.detail;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,10 +7,13 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itisi.guizhou.R;
-import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.adapter.CommentAdapter;
+import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.ui.chat.ChatActivity;
+import com.itisi.guizhou.mvp.ui.rental.detail.RentalDetailActivity;
+import com.itisi.guizhou.mvp.ui.rental.detail.RentalDetailContract;
+import com.itisi.guizhou.mvp.ui.rental.detail.RentalDetailPresenter;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
@@ -20,9 +23,20 @@ import java.util.List;
 
 import butterknife.BindView;
 
+/**
+ ***********************
+ * 功 能:相册详情
+ * 创建人:itisi
+ * 邮  箱:itisivip@qq.com
+ * 创建时间:2017/8/4 14:22
+ * 修改人:itisi
+ * 修改时间: 2017/8/4 14:22
+ * 修改内容:itisi
+ * *********************
+ */
 @UseRxBus
-public class RentalDetailActivity extends RootActivity<RentalDetailPresenter>
-        implements RentalDetailContract.View
+public class AlbumDetailActivity extends RootActivity<AlbumDetailPresenter>
+        implements AlbumDetailContract.View
         , BaseQuickAdapter.RequestLoadMoreListener
         , BaseQuickAdapter.OnItemClickListener
         , BaseQuickAdapter.OnItemLongClickListener
@@ -45,7 +59,7 @@ public class RentalDetailActivity extends RootActivity<RentalDetailPresenter>
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_rental_detail;
+        return R.layout.activity_album_detail;
 
     }
 
@@ -209,6 +223,5 @@ public class RentalDetailActivity extends RootActivity<RentalDetailPresenter>
     private void loadData() {
         mPresenter.loadData(pageSize, pageIndex);
     }
-
 
 }

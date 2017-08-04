@@ -10,12 +10,14 @@ import com.itisi.guizhou.mvp.ui.about.AgreementActivity;
 import com.itisi.guizhou.mvp.ui.account.AccountActivity;
 import com.itisi.guizhou.mvp.ui.address.AddressActivity;
 import com.itisi.guizhou.mvp.ui.address.AddressAddActivity;
+import com.itisi.guizhou.mvp.ui.agenda.AgendaActivity;
 import com.itisi.guizhou.mvp.ui.album.AlbumActivity;
+import com.itisi.guizhou.mvp.ui.album.detail.AlbumAddActivity;
+import com.itisi.guizhou.mvp.ui.album.detail.AlbumDetailActivity;
 import com.itisi.guizhou.mvp.ui.birthday.BirthdayActivity;
 import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
 import com.itisi.guizhou.mvp.ui.blacknum.detail.BlackAddActivity;
 import com.itisi.guizhou.mvp.ui.blacknum.detail.BlackDetailActivity;
-import com.itisi.guizhou.mvp.ui.agenda.AgendaActivity;
 import com.itisi.guizhou.mvp.ui.chat.ChatActivity;
 import com.itisi.guizhou.mvp.ui.collection.CollectionActivity;
 import com.itisi.guizhou.mvp.ui.common.photoview.PhotoViewActivity;
@@ -144,6 +146,9 @@ public interface ActivityComponent {
     void inject(AutographAddActivity activity );
     void inject(AddressActivity activity );
     void inject(AddressAddActivity activity );
+
+    void inject(AlbumDetailActivity activity );
+    void inject(AlbumAddActivity activity );
 
     //h后续创建的activity 接着往下写
 }

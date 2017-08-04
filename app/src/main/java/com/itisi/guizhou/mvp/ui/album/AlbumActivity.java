@@ -1,7 +1,7 @@
 package com.itisi.guizhou.mvp.ui.album;
 
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -9,7 +9,7 @@ import com.itisi.guizhou.R;
 import com.itisi.guizhou.adapter.AlbumAdapter;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
-import com.itisi.guizhou.mvp.ui.rental.detail.RentalDetailActivity;
+import com.itisi.guizhou.mvp.ui.album.detail.AlbumDetailActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
@@ -36,6 +36,7 @@ public class AlbumActivity extends RootActivity<AlbumPresenter>
         , BaseQuickAdapter.RequestLoadMoreListener
         , BaseQuickAdapter.OnItemClickListener
         , BaseQuickAdapter.OnItemLongClickListener
+        ,BaseQuickAdapter.OnItemChildClickListener
         , PullToRefreshView.OnRefreshListener {
 
     @BindView(R.id.pullrefresh)
@@ -73,14 +74,16 @@ public class AlbumActivity extends RootActivity<AlbumPresenter>
     }
 
     private void initAdapter() {
-        LinearLayoutManager layoutManager =
-                new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+//        LinearLayoutManager layoutManager =
+//                new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        StaggeredGridLayoutManager layoutManager=new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         layoutManager.setItemPrefetchEnabled(false);
 
         mAdapter = new AlbumAdapter(R.layout.item_album);
         mAdapter.setOnItemClickListener(this);
         mAdapter.setOnItemLongClickListener(this);
         mAdapter.setOnLoadMoreListener(this, mRecyclerView);
+        mAdapter.setOnItemChildClickListener(this);
         mAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_RIGHT);
         mRecyclerView.setLayoutManager(layoutManager);
 //        mRecyclerView.addItemDecoration();
@@ -155,7 +158,7 @@ public class AlbumActivity extends RootActivity<AlbumPresenter>
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        ActivityUtil.getInstance().openActivity(this, RentalDetailActivity.class);
+        ActivityUtil.getInstance().openActivity(this, AlbumDetailActivity.class);
     }
 
     @Override
@@ -163,7 +166,11 @@ public class AlbumActivity extends RootActivity<AlbumPresenter>
         ToastUtil.Success(position + ":long");
         return true;
     }
+    @Override
+    public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+        ActivityUtil.getInstance().openActivity(this, AlbumDetailActivity.class);
 
+    }
     @Override
     public void onLoadMoreRequested() {
         mPullToRefreshView.setEnabled(false); //开始加载更多 进制下拉刷新
@@ -186,5 +193,6 @@ public class AlbumActivity extends RootActivity<AlbumPresenter>
     private void loadData() {
         mPresenter.loadData(pageSize, pageIndex);
     }
+
 
 }

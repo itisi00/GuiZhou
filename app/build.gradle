@@ -171,7 +171,6 @@ dependencies {
     compile rootProject.ext.dependencies["datetimepicker"]
     compile rootProject.ext.dependencies["switchbutton"]
 
-
     //动态权限
     compile rootProject.ext.dependencies["rxpermissions"]
 
