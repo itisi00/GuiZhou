@@ -304,17 +304,23 @@
             android:name=".mvp.ui.user.safe.SafeActivity"
             android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.user.personal.AutographAddActivity">
+        <activity android:name=".mvp.ui.user.personal.AutographAddActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.address.AddressActivity">
+        <activity android:name=".mvp.ui.address.AddressActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.address.AddressAddActivity">
+        <activity android:name=".mvp.ui.address.AddressAddActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.album.detail.AlbumDetailActivity">
+        <activity android:name=".mvp.ui.album.detail.AlbumDetailActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.album.detail.AlbumAddActivity">
+        <activity android:name=".mvp.ui.album.detail.AlbumAddActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
-        <activity android:name=".mvp.ui.album.detail.AlbumNamesActivity">
+        <activity android:name=".mvp.ui.album.detail.AlbumNamesActivity"
+                  android:theme="@style/AppThemeBack">
         </activity>
     </application>
 

@@ -9,8 +9,6 @@ import com.itisi.guizhou.R;
 import com.itisi.guizhou.adapter.AgendaAdapter;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
-import com.itisi.guizhou.mvp.ui.rental.detail.RentalDetailActivity;
-import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 import com.yalantis.phoenix.PullToRefreshView;
@@ -76,7 +74,7 @@ public class AgendaActivity extends RootActivity<AgendaPresenter>
                 new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         layoutManager.setItemPrefetchEnabled(false);
 
-        mAdapter = new AgendaAdapter(R.layout.item_rental);
+        mAdapter = new AgendaAdapter(R.layout.item_agenda);
         mAdapter.setOnItemClickListener(this);
         mAdapter.setOnItemLongClickListener(this);
         mAdapter.setOnLoadMoreListener(this, mRecyclerView);
@@ -154,7 +152,7 @@ public class AgendaActivity extends RootActivity<AgendaPresenter>
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        ActivityUtil.getInstance().openActivity(this, RentalDetailActivity.class);
+//        ActivityUtil.getInstance().openActivity(this, RentalDetailActivity.class);
     }
 
     @Override
