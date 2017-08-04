@@ -1,45 +1,40 @@
 package com.itisi.guizhou.mvp.ui.album.detail;
 
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itisi.guizhou.R;
-import com.itisi.guizhou.adapter.AlbumDetailAdapter;
+import com.itisi.guizhou.adapter.AlbumNamesAdapter;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
-import com.itisi.guizhou.mvp.ui.chat.ChatActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
-import com.jaeger.library.StatusBarUtil;
 
 import java.util.List;
 
 import butterknife.BindView;
 
+
 /**
  * **********************
- * 功 能:相册详情
+ * 功 能: 我的相册名称列表
  * 创建人:itisi
  * 邮  箱:itisivip@qq.com
- * 创建时间:2017/8/4 14:22
+ * 创建时间:2017/8/4 16:06
  * 修改人:itisi
- * 修改时间: 2017/8/4 14:22
+ * 修改时间: 2017/8/4 16:06
  * 修改内容:itisi
  * *********************
  */
 @UseRxBus
-public class AlbumDetailActivity extends RootActivity<AlbumDetailPresenter>
+public class AlbumNamesActivity extends RootActivity<AlbumDetailPresenter>
         implements AlbumDetailContract.View
         , BaseQuickAdapter.RequestLoadMoreListener
         , BaseQuickAdapter.OnItemClickListener
-        , BaseQuickAdapter.OnItemLongClickListener
         , BaseQuickAdapter.OnItemChildClickListener
         , SwipeRefreshLayout.OnRefreshListener, View.OnClickListener {
 
@@ -49,69 +44,46 @@ public class AlbumDetailActivity extends RootActivity<AlbumDetailPresenter>
 
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
-    AlbumDetailAdapter mAdapter;
+    AlbumNamesAdapter mAdapter;
     private int pageSize = 10;//页大小
     private int pageIndex = 1;//页数
     private int totalCount = 0;//服务器返回的总的数量 有些接口可能没有
     private boolean isRefreshing = true;//刷新 还是 加载更多 加载成功以后 是追加还是替换
 
-    private View mHeaderView;//头布局
-    private LinearLayout ll_add_photo_parent; //头布局中的 添加按钮的父布局
-    private TextView tv_desc;
-    private TextView tv_txt;
-    private ImageView iv_icon_camera;
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_album_detail;
+        return R.layout.activity_album_names;
 
     }
 
     @Override
     protected void initEventAndData() {
 //        setToolbarBackground(getResources().getColor(R.color.colorTransparent));
-        StatusBarUtil.setTranslucent(this, 0);//不加0 是半透明效果
+//        StatusBarUtil.setTranslucent(this, 0);//不加0 是半透明效果
 
         initView();
-        initHeaderView();
         initAdapter();
         initViewListener();
 
         setToolbarMoreClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: 2017/8/1  还需要携带参数
-                ActivityUtil.getInstance().openActivity(mActivity, ChatActivity.class);
+                ToastUtil.Info("新建相册");
             }
         });
+
     }
 
-    private void initHeaderView() {
-        mHeaderView = View.inflate(this, R.layout.partial_header_album, null);
-        ll_add_photo_parent = mHeaderView.findViewById(R.id.ll_add_photo_parent);
-        tv_desc = mHeaderView.findViewById(R.id.tv_desc);
-        iv_icon_camera = mHeaderView.findViewById(R.id.iv_icon_camera);
-        tv_txt = mHeaderView.findViewById(R.id.tv_txt);
-
-        ll_add_photo_parent.setOnClickListener(this);
-        iv_icon_camera.setOnClickListener(this);
-        iv_icon_camera.setOnClickListener(this);
-        tv_txt.setOnClickListener(this);
-    }
-
-    @Override
-    protected boolean isToolbarTransparent() {
-        return true;
-    }
 
     @Override
     protected String setToolbarTvTitle() {
-        return "模糊了的记忆";
+        return "上传到相册";
     }
 
     @Override
     protected String setToolbarMoreTxt() {
-        return "图标";
+        return "新建";
     }
 
     private void initView() {
@@ -127,18 +99,15 @@ public class AlbumDetailActivity extends RootActivity<AlbumDetailPresenter>
 
 
     private void initAdapter() {
-//        LinearLayoutManager layoutManager =
-//                new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-        layoutManager.setItemPrefetchEnabled(false);
+        LinearLayoutManager layoutManager =
+                new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+//        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+//        layoutManager.setItemPrefetchEnabled(false);
 
-        mAdapter = new AlbumDetailAdapter(R.layout.item_meizi);
+        mAdapter = new AlbumNamesAdapter(R.layout.item_album_names);
 
-        mAdapter.addHeaderView(mHeaderView);//添加头部
 
         mAdapter.setOnItemClickListener(this);
-        mAdapter.setOnItemLongClickListener(this);
-        mAdapter.setOnItemChildClickListener(this);
         mAdapter.setOnLoadMoreListener(this, mRecyclerView);
         mAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         mRecyclerView.setLayoutManager(layoutManager);
@@ -168,19 +137,18 @@ public class AlbumDetailActivity extends RootActivity<AlbumDetailPresenter>
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        ToastUtil.Success(position + ":click");
-
+        closeActivity(position);
     }
 
-    @Override
-    public boolean onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
-        ToastUtil.Success(position + ":long");
-        return true;
-    }
 
     @Override
     public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-        ToastUtil.Success(position + ":child");
+        closeActivity(position);
+    }
+
+    private void closeActivity(int position) {
+        // TODO: 2017/8/4 设置回传至 actionforresult
+        ActivityUtil.getInstance().closeActivity(mActivity);
 
     }
 
@@ -248,12 +216,8 @@ public class AlbumDetailActivity extends RootActivity<AlbumDetailPresenter>
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.ll_add_photo_parent:
-            case R.id.tv_txt:
-            case R.id.iv_icon_camera:
-                ActivityUtil.getInstance().openActivity(mActivity, AlbumAddActivity.class);
-                break;
-        }
+
     }
+
+
 }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/d_5"
+    android:paddingLeft="@dimen/d_5"
+    android:paddingRight="@dimen/d_5"
+    >
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingMultiplier="1.2"
+        android:padding="@dimen/d_10"
+        android:text="一些说明一些说明一些说明一些说明一些说明一些说明一些说明一些说明一些说明一些说明一些说明一些说明一些说明一些说明一些说明"
+        android:textColor="@color/colorSecondary"
+        android:textSize="@dimen/txt_12"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_add_photo_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/d_10"
+        android:layout_marginTop="@dimen/d_10"
+        android:background="@drawable/bg_album_add"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/d_10"
+        android:layout_marginLeft="@dimen/d_5"
+        android:layout_marginRight="@dimen/d_5"
+        style="@style/BorderLess"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        >
+
+        <ImageView
+            android:id="@+id/iv_icon_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_camera"
+            style="@style/BorderLess"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            />
+
+        <TextView
+            android:id="@+id/tv_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d_10"
+            android:text="上传照片/视频"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/txt_15"
+            style="@style/BorderLess"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            />
+    </LinearLayout>
+
+</LinearLayout>

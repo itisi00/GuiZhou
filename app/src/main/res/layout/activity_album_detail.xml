@@ -61,7 +61,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/d_260"
+                android:layout_height="@dimen/d_280"
                 android:layout_gravity="center"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"

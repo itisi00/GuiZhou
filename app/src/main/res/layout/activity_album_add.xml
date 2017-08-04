@@ -5,15 +5,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorGrayBack"
     android:orientation="vertical"
     tools:context="com.itisi.guizhou.mvp.ui.album.detail.AlbumAddActivity">
 
     <include layout="@layout/toolbar"/>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="上传照片"
-        android:textColor="@color/colorAccent"
-        />
+        android:background="@color/colorWhite"
+        >
+
+        <EditText
+            android:id="@+id/et_speak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="left"
+            android:hint="说点什么吧..."
+            android:minLines="3"
+            android:padding="@dimen/d_10"
+            android:textColor="@color/colorImportent"
+            android:textColorHint="@color/colorSecondary"
+            android:textSize="@dimen/txt_14"
+            />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_20"/>
+
+
+    <LinearLayout
+        style="@style/LineItemParent"
+        >
+
+        <TextView
+            style="@style/LineItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上传到"
+            />
+
+        <TextView
+            android:id="@+id/tv_select_album"
+            style="@style/LineItem"
+            android:layout_width="@dimen/d_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/d_10"
+            android:drawableRight="@mipmap/icon_right_arrow"
+            android:gravity="right|center_vertical"
+            android:text="说说和日志"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LineItemParent"
+        >
+
+        <View
+            style="@style/LineDivider"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LineItemParent"
+        >
+
+        <TextView
+            style="@style/LineItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="地点"
+            />
+
+        <TextView
+            android:id="@+id/tv_select_location"
+            style="@style/LineItem"
+            android:layout_width="@dimen/d_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/d_10"
+            android:drawableRight="@mipmap/icon_right_arrow"
+            android:gravity="right|center_vertical"
+            android:text="泉州市海斯博雅国际酒店"
+            />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_20"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorWhite"
+        android:gravity="center_vertical"
+        android:padding="@dimen/d_5"
+        >
+
+        <ImageView
+            android:id="@+id/iv_select_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_picture_add"
+            android:layout_marginRight="@dimen/d_20"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="选择后的相片就放在这里"
+            />
+
+    </LinearLayout>
 </LinearLayout>

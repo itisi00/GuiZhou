@@ -17,7 +17,7 @@ import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 
 /**
  * **********************
- * 功 能:相册
+ * 功 能:相册详情
  * 创建人:itisi
  * 邮  箱:itisivip@qq.com
  * 创建时间:2017/7/21 18:02
@@ -27,31 +27,34 @@ import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
  * *********************
  */
 
-public class AlbumAdapter extends BaseQuickAdapter<MeiZiBean, BaseViewHolder> {
+public class AlbumDetailAdapter extends BaseQuickAdapter<MeiZiBean, BaseViewHolder> {
 
-    public AlbumAdapter(@LayoutRes int layoutResId) {
+    public AlbumDetailAdapter(@LayoutRes int layoutResId) {
         super(layoutResId);
     }
 
     @Override
     protected void convert(BaseViewHolder helper, final MeiZiBean item) {
-        //iv_cover tv_title tv_extend
-        final ImageView view = helper.getView(R.id.iv_cover);
-        //子控件添加事件
-        helper.addOnClickListener(R.id.iv_cover);
-        helper.addOnLongClickListener(R.id.iv_cover);
+        final ImageView view = helper.getView(R.id.iv_selected_img);
+        helper.addOnClickListener(R.id.iv_selected_img);
         //存在记录的高度时先Layout再异步加载图片
         if (item.getHeight() > 0) {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
             layoutParams.height = item.getHeight();
         }
+
+
         Glide.with(mContext).load(item.getUrl()).asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(new SimpleTarget<Bitmap>(App.SCREEN_WIDTH / 2, App.SCREEN_WIDTH / 2) {
                     @Override
                     public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-                        item.setHeight(App.SCREEN_WIDTH / 2);
+
+                        int width = resource.getWidth();
+                        int height = resource.getHeight();
+                        int realHeight = (App.SCREEN_WIDTH / 2) * height / width;
+                        item.setHeight(realHeight);
                         ViewGroup.LayoutParams lp = view.getLayoutParams();
-                        lp.height = App.SCREEN_WIDTH / 2;
+                        lp.height = realHeight;
                         view.setImageBitmap(resource);
                     }
                 });

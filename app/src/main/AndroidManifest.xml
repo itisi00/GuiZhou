@@ -314,6 +314,8 @@
         </activity>
         <activity android:name=".mvp.ui.album.detail.AlbumAddActivity">
         </activity>
+        <activity android:name=".mvp.ui.album.detail.AlbumNamesActivity">
+        </activity>
     </application>
 
 </manifest>

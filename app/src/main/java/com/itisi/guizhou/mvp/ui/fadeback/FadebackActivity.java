@@ -158,7 +158,7 @@ public class FadebackActivity extends RootActivity<FadebackPresenter>
      */
     private void openAlbum() {
         RxGalleryFinal
-                .with(FadebackActivity.this)
+                .with(mActivity)
                 .image()
                 .multiple()
                 .maxSize(maxPhotoCount)

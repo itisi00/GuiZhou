@@ -14,6 +14,7 @@ import com.itisi.guizhou.mvp.ui.agenda.AgendaActivity;
 import com.itisi.guizhou.mvp.ui.album.AlbumActivity;
 import com.itisi.guizhou.mvp.ui.album.detail.AlbumAddActivity;
 import com.itisi.guizhou.mvp.ui.album.detail.AlbumDetailActivity;
+import com.itisi.guizhou.mvp.ui.album.detail.AlbumNamesActivity;
 import com.itisi.guizhou.mvp.ui.birthday.BirthdayActivity;
 import com.itisi.guizhou.mvp.ui.blacknum.BlackNumActivity;
 import com.itisi.guizhou.mvp.ui.blacknum.detail.BlackAddActivity;
@@ -149,6 +150,7 @@ public interface ActivityComponent {
 
     void inject(AlbumDetailActivity activity );
     void inject(AlbumAddActivity activity );
+    void inject(AlbumNamesActivity activity );
 
     //h后续创建的activity 接着往下写
 }
