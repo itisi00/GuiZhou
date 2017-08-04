@@ -37,5 +37,11 @@ public interface AddressContract {
          * @param page 第几页
          */
         void loadData(int num, int page);
+
+        int test_insert();
+        int test_delete();
+        int test_update();
+        int test_select();
+        void closeDB();
     }
 }

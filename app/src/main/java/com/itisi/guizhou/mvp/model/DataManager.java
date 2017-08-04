@@ -44,16 +44,43 @@ public class DataManager implements HttpHelper,DBHelper,PreferencesHelper{
 
     }
 
-    @Override
-    public boolean queryNewsId(int id) {
-        return false;
-    }
-
 
     @Override
     public Observable<GankResponse<List<MeiZiBean>>> getMeiZiList(int num, int page) {
         return mHttpHelper.getMeiZiList(num,page);
     }
+
+    //***************************数据库操作**********************************
+    @Override
+    public boolean queryNewsId(int id) {
+        return false;
+    }
+
+    @Override
+    public void closeDB() {
+        mDBHelper.closeDB();
+    }
+
+    @Override
+    public int test_insert() {
+        return mDBHelper.test_insert();
+    }
+
+    @Override
+    public int test_delete() {
+        return mDBHelper.test_delete();
+    }
+
+    @Override
+    public int test_update() {
+        return mDBHelper.test_update();
+    }
+
+    @Override
+    public int test_select() {
+        return  mDBHelper.test_select();
+    }
+
 }
 
 

@@ -15,10 +15,19 @@ package com.itisi.guizhou.mvp.model.db;
 public interface DBHelper {
     /**
      * 例如
-     *
      * 查询 阅读记录
      * @param id
      * @return
      */
     boolean queryNewsId(int id);
+    void closeDB();
+    int test_insert();
+    int test_delete();
+    int test_update();
+    int test_select();
+
+
+
+
+
 }

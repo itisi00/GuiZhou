@@ -1,11 +1,16 @@
 package com.itisi.guizhou.mvp.ui.address;
 
+import android.view.View;
+import android.widget.TextView;
+
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.utils.rxbus.annotation.UseRxBus;
 
 import java.util.List;
+
+import butterknife.BindView;
 
 /**
  * **********************
@@ -20,8 +25,12 @@ import java.util.List;
  */
 @UseRxBus
 public class AddressAddActivity extends RootActivity<AddressPresenter>
-        implements AddressContract.View {
+        implements AddressContract.View
+        , View.OnClickListener {
 
+
+    @BindView(R.id.tv_address_select)
+    TextView tv_address_select;
 
     @Override
     protected int getLayoutId() {
@@ -62,6 +71,7 @@ public class AddressAddActivity extends RootActivity<AddressPresenter>
 
     private void initViewListener() {
 
+        tv_address_select.setOnClickListener(this);
     }
 
 
@@ -102,5 +112,24 @@ public class AddressAddActivity extends RootActivity<AddressPresenter>
     }
 
     private void loadData() {
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.tv_address_select:
+//                int row = mPresenter.test_insert();
+//                mPresenter.test_select();
+//                mPresenter.test_update();
+                mPresenter.test_delete();
+                break;
+        }
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mPresenter.closeDB();
     }
 }

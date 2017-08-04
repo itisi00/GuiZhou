@@ -94,6 +94,8 @@
             />
 
         <TextView
+            android:id="@+id/tv_address_select"
+            style="@style/BorderLess"
             android:layout_width="@dimen/d_0"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -104,6 +106,8 @@
             android:maxLines="1"
             android:text="贵州省贵阳市金阳高新区"
             android:textSize="@dimen/txt_15"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
             />
     </LinearLayout>
 
@@ -149,8 +153,8 @@
         <TextView
             android:layout_width="@dimen/d_0"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginRight="@dimen/d_10"
+            android:layout_weight="1"
             android:text="设为默认地址"
             android:textColor="@color/colorImportent"
             android:textSize="@dimen/txt_15"

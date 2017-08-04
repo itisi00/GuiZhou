@@ -65,8 +65,6 @@ public class App extends Application {
         //在子线程中完成其他初始化 异常检测 回头再说
 //        InitializeService.start(this);
         Logger.init();//初始化日志信息
-//        RxBus.getInstance().init(this); //不能在这里初始化
-
         EaseMobUtil.init(this);//初始化环信
 
         // TODO: 2017/7/25  第三个参数为SDK调试模式开关，调试模式的行为特性如下：
@@ -157,4 +155,5 @@ public class App extends Application {
         }
         return appComponent;
     }
+
 }

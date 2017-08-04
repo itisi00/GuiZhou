@@ -46,4 +46,30 @@ public class AddressPresenter extends RxPresenter<AddressContract.View> implemen
                         })
         );
     }
+
+    @Override
+    public int test_insert() {
+        return mDataManager.test_insert();
+    }
+
+    @Override
+    public int test_delete() {
+        return mDataManager.test_delete();
+    }
+
+    @Override
+    public int test_update() {
+        return mDataManager.test_update();
+    }
+
+    @Override
+    public int test_select() {
+        return mDataManager.test_select();
+    }
+
+
+    @Override
+    public void closeDB() {
+        mDataManager.closeDB();
+    }
 }
