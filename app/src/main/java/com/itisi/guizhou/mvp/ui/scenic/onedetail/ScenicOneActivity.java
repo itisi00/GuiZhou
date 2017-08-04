@@ -8,7 +8,7 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
-import com.itisi.guizhou.mvp.adapter.CommentAdapter;
+import com.itisi.guizhou.adapter.CommentAdapter;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.ui.scenic.ScenicContract;
 import com.itisi.guizhou.mvp.ui.scenic.ScenicPresenter;

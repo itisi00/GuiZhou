@@ -24,7 +24,7 @@ import com.hyphenate.chat.EMMessage;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.Constants;
 import com.itisi.guizhou.base.RootActivity;
-import com.itisi.guizhou.mvp.adapter.ChatAdapter;
+import com.itisi.guizhou.adapter.ChatAdapter;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.ui.chat.chatfragment.EmotionMainFragment;
 import com.itisi.guizhou.utils.ToastUtil;

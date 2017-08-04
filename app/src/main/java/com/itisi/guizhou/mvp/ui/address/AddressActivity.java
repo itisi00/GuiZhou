@@ -8,7 +8,7 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
-import com.itisi.guizhou.mvp.adapter.AddressAdapter;
+import com.itisi.guizhou.adapter.AddressAdapter;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;

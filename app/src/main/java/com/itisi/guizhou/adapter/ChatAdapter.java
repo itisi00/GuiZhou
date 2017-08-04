@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.adapter;
+package com.itisi.guizhou.adapter;
 
 import android.support.annotation.Nullable;
 

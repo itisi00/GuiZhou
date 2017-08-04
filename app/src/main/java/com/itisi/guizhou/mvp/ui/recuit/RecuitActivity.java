@@ -8,7 +8,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
-import com.itisi.guizhou.mvp.adapter.RecuitAdapter;
+import com.itisi.guizhou.adapter.RecuitAdapter;
 import com.itisi.guizhou.mvp.ui.recuit.detail.RecuitDetailActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;

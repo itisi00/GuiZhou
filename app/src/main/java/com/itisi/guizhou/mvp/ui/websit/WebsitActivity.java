@@ -7,7 +7,7 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
-import com.itisi.guizhou.mvp.adapter.WebsitAdapter;
+import com.itisi.guizhou.adapter.WebsitAdapter;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.ui.websit.detail.WebsitAddActivity;
 import com.itisi.guizhou.mvp.ui.websit.detail.WebsitDetailActivity;

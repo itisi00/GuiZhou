@@ -7,7 +7,7 @@ import android.support.v4.view.ViewPager;
 
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootFragment;
-import com.itisi.guizhou.mvp.adapter.LeisurePagerAdapter;
+import com.itisi.guizhou.adapter.LeisurePagerAdapter;
 import com.itisi.guizhou.mvp.ui.main.MainActivity;
 
 import java.util.ArrayList;

@@ -8,7 +8,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
-import com.itisi.guizhou.mvp.adapter.UniversityAdapter;
+import com.itisi.guizhou.adapter.UniversityAdapter;
 import com.itisi.guizhou.mvp.ui.university.style.UniversityStyleActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
 import com.itisi.guizhou.utils.ToastUtil;

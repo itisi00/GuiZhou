@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.adapter;
+package com.itisi.guizhou.adapter;
 
 import android.support.annotation.LayoutRes;
 
@@ -18,9 +18,9 @@ import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
  * *********************
  */
 
-public class RentalAdapter extends BaseQuickAdapter<MeiZiBean, BaseViewHolder> {
+public class ShiWuZhaoLingAdapter extends BaseQuickAdapter<MeiZiBean, BaseViewHolder> {
 
-    public RentalAdapter(@LayoutRes int layoutResId) {
+    public ShiWuZhaoLingAdapter(@LayoutRes int layoutResId) {
         super(layoutResId);
     }
 

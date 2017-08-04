@@ -11,7 +11,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootFragment;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
-import com.itisi.guizhou.mvp.adapter.MeiZiAdapter;
+import com.itisi.guizhou.adapter.MeiZiAdapter;
 import com.itisi.guizhou.utils.ToastUtil;
 
 import java.util.List;

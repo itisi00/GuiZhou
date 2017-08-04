@@ -8,7 +8,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.app.Constants;
 import com.itisi.guizhou.base.RootActivity;
-import com.itisi.guizhou.mvp.adapter.SelectedImgAdapter;
+import com.itisi.guizhou.adapter.SelectedImgAdapter;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.model.bean.SelectedImgBean;
 import com.itisi.guizhou.utils.ToastUtil;

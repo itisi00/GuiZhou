@@ -1,4 +1,4 @@
-package com.itisi.guizhou.mvp.adapter;
+package com.itisi.guizhou.adapter;
 
 import android.support.annotation.LayoutRes;
 
@@ -18,14 +18,14 @@ import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
  * *********************
  */
 
-public class ItToolAdapter extends BaseQuickAdapter<MeiZiBean, BaseViewHolder> {
+public class TeChanAdapter extends BaseQuickAdapter<MeiZiBean, BaseViewHolder> {
 
-    public ItToolAdapter(@LayoutRes int layoutResId) {
+    public TeChanAdapter(@LayoutRes int layoutResId) {
         super(layoutResId);
     }
 
     @Override
     protected void convert(BaseViewHolder helper, MeiZiBean item) {
 
-    }
+        }
 }

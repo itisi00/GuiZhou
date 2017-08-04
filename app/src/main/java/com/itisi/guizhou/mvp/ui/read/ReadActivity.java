@@ -7,7 +7,7 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
-import com.itisi.guizhou.mvp.adapter.ReadAdapter;
+import com.itisi.guizhou.adapter.ReadAdapter;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.ui.jingxuan.JingXuanDetailActivity;
 import com.itisi.guizhou.utils.ActivityUtil;

@@ -7,7 +7,7 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itisi.guizhou.R;
 import com.itisi.guizhou.base.RootActivity;
-import com.itisi.guizhou.mvp.adapter.ItToolAdapter;
+import com.itisi.guizhou.adapter.ItToolAdapter;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.ui.ittool.detail.ItToolAddActivity;
 import com.itisi.guizhou.mvp.ui.ittool.detail.ItToolDetailActivity;

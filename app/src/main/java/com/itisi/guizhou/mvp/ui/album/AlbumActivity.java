@@ -6,8 +6,8 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itisi.guizhou.R;
+import com.itisi.guizhou.adapter.AlbumAdapter;
 import com.itisi.guizhou.base.RootActivity;
-import com.itisi.guizhou.mvp.adapter.RentalAdapter;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 import com.itisi.guizhou.mvp.ui.rental.detail.RentalDetailActivity;
 import com.itisi.guizhou.utils.ActivityUtil;
@@ -20,7 +20,7 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- ***********************
+ * **********************
  * 功 能:我的相册
  * 创建人:itisi
  * 邮  箱:itisivip@qq.com
@@ -42,7 +42,7 @@ public class AlbumActivity extends RootActivity<AlbumPresenter>
     PullToRefreshView mPullToRefreshView;
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
-    RentalAdapter mAdapter;
+    AlbumAdapter mAdapter;
     private int pageSize = 10;//页大小
     private int pageIndex = 1;//页数
     private int totalCount = 0;//服务器返回的总的数量 有些接口可能没有
@@ -62,7 +62,7 @@ public class AlbumActivity extends RootActivity<AlbumPresenter>
         setToolbarMoreClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               ToastUtil.Info("我的相册");
+                ToastUtil.Info("相册");
 
             }
         });
@@ -77,7 +77,7 @@ public class AlbumActivity extends RootActivity<AlbumPresenter>
                 new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         layoutManager.setItemPrefetchEnabled(false);
 
-        mAdapter = new RentalAdapter(R.layout.item_rental);
+        mAdapter = new AlbumAdapter(R.layout.item_album);
         mAdapter.setOnItemClickListener(this);
         mAdapter.setOnItemLongClickListener(this);
         mAdapter.setOnLoadMoreListener(this, mRecyclerView);
@@ -98,7 +98,7 @@ public class AlbumActivity extends RootActivity<AlbumPresenter>
 
     @Override
     protected String setToolbarTvTitle() {
-        return "我的相册";
+        return "相册";
     }
 
     @Override
