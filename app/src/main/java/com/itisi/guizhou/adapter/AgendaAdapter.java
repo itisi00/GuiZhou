@@ -4,6 +4,7 @@ import android.support.annotation.LayoutRes;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.itisi.guizhou.R;
 import com.itisi.guizhou.mvp.model.bean.MeiZiBean;
 
 /**
@@ -26,6 +27,22 @@ public class AgendaAdapter extends BaseQuickAdapter<MeiZiBean, BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder helper, MeiZiBean item) {
+        int position = helper.getAdapterPosition();
+        helper.getPosition();
+//        iv_cover tv_title  tv_address tv_time tv_remind_count
+//        view_circle_accent view_circle_primary view_circle_gray
+        if (position<=3){
+            helper.setTextColor(R.id.tv_time,mContext.getResources().getColor(R.color.colorAccent));
+            helper.setVisible(R.id.view_circle_accent,true);
+            helper.setVisible(R.id.tv_remind_count,true);
+            helper.setText(R.id.tv_remind_count,"已提醒"+(4-position)+"次");
+        }else if(position<=6&&position>3){
+            helper.setVisible(R.id.view_circle_primary,true);
 
+
+        }else if(position>6){
+            helper.setVisible(R.id.view_circle_gray,true);
+
+        }
     }
 }

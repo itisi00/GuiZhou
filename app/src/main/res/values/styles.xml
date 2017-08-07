@@ -209,6 +209,15 @@
         <item name="android:textColor">@color/colorImportent</item>
 
     </style>
+    <!--日历&#45;&#45;周的样式-->
+    <style name="weekIndicatorStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
     <!--一条分割线-->
     <style name="LineDivider">
         <item name="android:layout_width">match_parent</item>

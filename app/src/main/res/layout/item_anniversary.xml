@@ -28,13 +28,13 @@
             />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tv_title"
             android:layout_width="@dimen/d_0"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="梅西决战某某某梅西决战某某某梅西决战某某某梅西决战某某某"
+            android:text="傻傻的纪念日"
             android:textSize="@dimen/txt_18"
             android:drawablePadding="@dimen/d_10"
             android:layout_marginRight="@dimen/d_10"

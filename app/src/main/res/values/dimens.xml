@@ -58,6 +58,7 @@
     <dimen name="d_150">150dp</dimen>
     <dimen name="d_180">180dp</dimen>
     <dimen name="d_260">260dp</dimen>
+    <dimen name="d_270">270dp</dimen>
     <dimen name="d_280">280dp</dimen>
     <dimen name="d_300">300dp</dimen>
 

@@ -20,6 +20,7 @@
         >
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_cover"
             android:layout_width="@dimen/d_60"
             android:layout_height="@dimen/d_60"
             android:layout_margin="@dimen/d_10"
@@ -37,55 +38,85 @@
             >
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="和习老板谈煤生意"
-                android:textSize="@dimen/txt_18"
                 android:textColor="@color/colorImportent"
+                android:textSize="@dimen/txt_18"
                 />
 
             <TextView
+                android:id="@+id/tv_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/d_5"
+                android:layout_marginTop="@dimen/d_5"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="金阳高新区会展东路大唐36层312楼"
+                android:textColor="@color/colorSecondary"
                 android:textSize="@dimen/txt_13"
-                android:textColor="@color/colorSecondary"
-                android:layout_marginTop="@dimen/d_5"
-                android:layout_marginBottom="@dimen/d_5"
                 />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/txt_12"
-                android:textColor="@color/colorSecondary"
-                android:text="2017-7-27 16:52:37"
-                />
+                android:orientation="horizontal"
 
+                >
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2017-7-27 16:52:37"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="@dimen/txt_12"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_remind_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/d_10"
+                    android:text="已提醒1次"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/txt_12"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
         </LinearLayout>
 
         <View
+            android:id="@+id/view_circle_accent"
             android:layout_width="@dimen/d_20"
             android:layout_height="@dimen/d_20"
+            android:layout_marginRight="@dimen/d_5"
             android:background="@drawable/bg_circle_accent"
-            android:layout_marginRight="@dimen/d_5"
+            android:visibility="gone"
+
             />
+
         <View
+            android:id="@+id/view_circle_primary"
             android:layout_width="@dimen/d_20"
             android:layout_height="@dimen/d_20"
+            android:layout_marginRight="@dimen/d_5"
             android:background="@drawable/bg_circle_primary"
-            android:layout_marginRight="@dimen/d_5"
+            android:visibility="gone"
+
             />
+
         <View
+            android:id="@+id/view_circle_gray"
             android:layout_width="@dimen/d_20"
             android:layout_height="@dimen/d_20"
-            android:background="@drawable/bg_circle_gray"
             android:layout_marginRight="@dimen/d_5"
+            android:background="@drawable/bg_circle_gray"
+            android:visibility="gone"
             />
     </LinearLayout>
 

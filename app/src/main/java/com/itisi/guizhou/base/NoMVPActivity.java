@@ -169,6 +169,7 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
         return "";
     }
 
+
     /**
      * 设置标题--此方法一般用于动态改变title
      *
@@ -182,6 +183,22 @@ public abstract class NoMVPActivity extends SwipeBackActivity { //SwipeBackActiv
         mToolbar.setTitle(title);
     }
 
+    /**
+     * 标题点击事件
+     * @param clickListener
+     */
+    protected void setToolbarTvClickListener(View.OnClickListener clickListener) {
+        mToolbarTitle.setOnClickListener(clickListener);
+
+    }
+
+    /**
+     * 标题长安事件
+     * @param longClickListener
+     */
+    protected void setToolbarTvLongClickListener(View.OnLongClickListener longClickListener) {
+        mToolbarTitle.setOnLongClickListener(longClickListener);
+    }
     /**
      * 设置更多---右边的文字 将来可换成子图图标
      *
